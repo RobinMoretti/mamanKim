@@ -1,0 +1,76 @@
+/* Give ourselves some decent defaults. */
+
+@font-face {
+  font-family: "PTSerif";
+  src: url("../fonts/PTSerif-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PTSerif";
+  src: url("../fonts/PTSerif-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "PTSerif";
+  src: url("../fonts/PTSerif-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PTSerif";
+  src: url("../fonts/PTSerif-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+	font: 1.5em "PTSerif", serif;
+	color: #222;
+	margin: 0.5em;
+	font-size: 15px;
+	padding: 0; 
+	margin: 0;
+}
+
+tw-story {
+	max-width: 35em;
+	margin: 0 auto;
+	line-height: 150%;
+	display: block;
+}
+
+tw-passage {
+  display: block;
+}
+
+a {
+	color: #222;
+	text-decoration-color: #ccc;
+}
+
+a:hover {
+	color: #cc8929;
+	text-decoration-color: #cc8929;
+}
+
+a:active {
+	color: #ffb040;
+	text-decoration-color: #cc8929;
+}
+
+tw-storydata {
+	display: none;
+}
+
+/* scale font sizes for phones */
+
+@media screen and (max-width: 480px) {
+	#passage {
+		font-size: 70%;
+	}
+}

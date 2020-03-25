@@ -1,0 +1,51 @@
+{
+  "name": "snowman",
+  "version": "2.0.4",
+  "description": "A minimal story format for authors more experienced with HTML, CSS, and JavaScript. See its <a href='https://videlais.github.io/snowman/2/' target='_blank' rel='noopener noreferrer'>documentation</a>.",
+  "license": "MIT",
+  "repository": "https://github.com/videlais/snowman/",
+  "scripts": {
+    "test": "nyc mocha test/index.js",
+    "lint": "eslint lib/**/*.js test/index.js",
+    "build": "node scripts/build-format.js",
+    "report-coverage": "nyc report --reporter=text-lcov > coverage.lcov"
+  },
+  "keywords": [
+    "twine",
+    "storyformat"
+  ],
+  "author": "Dan Cox",
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "babel-core": "^6.26.3",
+    "jquery": "^3.4.1",
+    "jsdom": "^16.2.1",
+    "lz-string": "^1.4.4",
+    "marked": "^0.8.0",
+    "underscore": "^1.9.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@fintechstudios/eslint-plugin-chai-as-promised": "^2.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "child-process-promise": "^2.2.1",
+    "clean-css": "^4.2.3",
+    "ejs": "^3.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsdoc": "^22.0.1",
+    "eslint-plugin-mocha": "^6.3.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^7.1.0",
+    "nyc": "^15.0.0",
+    "shelljs": "^0.8.3",
+    "uglifyify": "^5.0.2"
+  }
+}
