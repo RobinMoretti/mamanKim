@@ -1,3 +1,27 @@
-"Voiture de la proprio":
+voiture-1:
+  name: Voiture de la proprio
+  weight: 100
+  picto: 🚙
   description: >
     clio grise, plutot ancienne.
+telephone-1:
+  name: Téléphone
+  weight: 0.5
+  picto: 📞
+  description: >
+    Samsung android A5 de 2016.
+    L'écran est cassé mais il est toujours fonctionnelle
+velo-1:
+  name: Vélo
+  weight: 10
+  picto: 🚴‍
+  description: >
+    Vélo récent, presque neuf. Il as l'air chère.
+    Il n'est pas attaché.
+publicite-1:
+  name: Publicité
+  weight: 0.01
+  picto: <img src='objects/publicite.jpg' >
+  description: >
+    Un flyer pour du poulet frix, beaucoup de couleur, de mauvais gout.
+    Le logo représente un poulet heureux.

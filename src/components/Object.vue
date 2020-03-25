@@ -1,7 +1,6 @@
 <template>
   <span class="object">
-    <span v-on:click="picked">{{ object.name }}</span> - 
-    <span v-on:click="displayObject">détails</span> <!-- <span v-on:click="deleteObject">X</span> -->
+    <span v-on:click="picked" v-html="objects[object.name].picto" v-if="objects != null && object"></span>
   </span>
 </template>
 
@@ -13,6 +12,14 @@ export default {
       type: String,
     }
   },
+  computed:{
+    objects: function(){
+      return this.$store.state.objects.objects;
+    },
+    playMode: function(){
+      return this.$store.state.playMode;
+    },
+  },
   methods: {
     deleteObject: function(){
       if (this.space != "hands") {
@@ -22,13 +29,18 @@ export default {
       }
     },
     picked: function(){
-      if (this.space != "hands") {
-        this.$store.commit("places/removeObject", { place: this.space, object: this.object })
-        this.$store.commit("places/addObject", { place: "hands", object: this.object })
-      }else {
-        this.$store.commit("places/removeObject", { place: "hands", object: this.object })
-        this.$store.commit("places/addObject", { place: this.$store.state.places.activePlace, object: this.object });
-        console.log(this.$store.state.places.activePlace)
+      if(this.playMode == "picking"){
+        console.log("this.space = ", this.space);
+        if (this.space != "hands") {
+          this.$store.commit("places/removeObject", { place: this.space, object: this.object })
+          this.$store.commit("places/addObject", { place: "hands", object: this.object })
+        }else {
+          this.$store.commit("places/removeObject", { place: "hands", object: this.object })
+          this.$store.commit("places/addObject", { place: this.$store.state.places.activePlace, object: this.object });
+          console.log(this.$store.state.places.activePlace)
+        }
+      }else if(this.playMode == "looking"){
+        this.displayObject();
       }
     },
     displayObject: function(){

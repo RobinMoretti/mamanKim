@@ -21,19 +21,21 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
   modules: {
-    player, 
+    player,
     places,
     objects
   },
   strict: debug,
   state:{
-
+    playMode: "picking"
   },
   actions: {
 
   },
   mutations: {
-
+    changePlayMode: function(state, mode){
+      state.playMode = mode;
+    }
   },
   plugins: [vuexLocal.plugin]
 })

@@ -1,10 +1,10 @@
 <template>
   <div class="place-inventory" :style="inventoryStyle">
-    <p-object 
+    <p-object
         :space="name"
-        :object="object" 
+        :object="object"
         v-for="(object, key) in placeObjects"
-        :key="key">      
+        :key="key">
     </p-object>
   </div>
 </template>
@@ -39,6 +39,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .place-inventory{
+    display: flex;
+    flex-wrap: wrap;
     border: black 1px solid;
     padding: 1rem;
   }

@@ -3,9 +3,10 @@
 import placesYml from './../../places.yml'
 
 const state = {
-  activePlace: "garage",
+  activePlace: null,
   places: null,
   player: [],
+  displayPlace: false
 }
 
 // getters
@@ -21,21 +22,41 @@ const getters = {
 
 // actions
 const actions = {
-  init: function({commit}){
-    console.log('init places')
+  init: function({dispatch, commit, state}){
+    commit('toggleDisplayPlace', false);
+
     commit('initPlaces');
+
+    commit('toggleDisplayPlace', true);
+
+    if(!state.activePlace){
+      console.log("garage = ");
+      dispatch("goTo", "garage");
+    }
+
   },
   goTo: function({commit}, place){
-    console.log('goTo')
     commit('setActivePlace', place);
-    this.$app.story.show(place);
+    if(this.$app){
+      this.$app.story.show(place);
+    }
   }
 }
 
 // mutations
 const mutations = {
+  toggleDisplayPlace: function(state, payload = "toggle"){
+    if(state == "toggle")
+      state.displayPlace = !state.displayPlace;
+    else{
+      state.displayPlace = payload;
+    }
+  },
   setActivePlace: function(state, place){
-    state.activePlace = place;
+    // var filter = false;
+
+    if(state.places[place])
+      state.activePlace = place;
   },
   resetPlayer: function(state){
     state.player = [];
@@ -53,18 +74,20 @@ const mutations = {
     }
   },
   removeObject: function(state, payload){
-
     var inventory = null;
-    
+
     if(payload.place == "hands"){
       inventory = state.player;
     }else {
       inventory = state.places[payload.place].inventory;
     }
-
+    console.log("inventory = ", inventory);
+    console.log("inventory = ", payload.object);
     for (var i = 0; i < inventory.length; i++) {
-      if(inventory[i].name == payload.object.name)
+      if(inventory[i].name == payload.object.name){
         inventory.splice(i,1);
+        break;
+      }
     }
   },
 }

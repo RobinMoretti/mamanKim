@@ -2,7 +2,7 @@
 outside:
   inventory:
     - name: Carte
-  connections: 
+  connections:
     place: "garage"
     condition: true
 
@@ -11,9 +11,9 @@ garage:
   height: 400
   infinite: true
   inventory:
-    - name: Voiture de la proprio
-    - name: Vélo pas attaché
-  connections: 
+    - name: voiture-1
+    - name: velo-1
+  connections:
     - place: "palier"
       condition: true
   description: >
@@ -26,21 +26,21 @@ garage:
 palier:
   inventory:
     - name: Carte
-  connections: 
+  connections:
     - place: "garage"
       condition: true
     - place: "vestibule"
       condition: true
   description: >
-    Le sole est un peu vieu mais plutot propre. 
+    Le sole est un peu vieu mais plutot propre.
     Les porte peintent en bleu son en métal avec un étrange truc en plastique au mileu,
     Comme une chatière en métale avec une jolie décoration floral,
-    mais qui apparement servait pour la poste. 
+    mais qui apparement servait pour la poste.
 
 vestibule:
   inventory:
     - name: Carte
-  connections: 
+  connections:
     - place: "palier"
       condition: true
     - place: "salle-de-bain"
@@ -51,6 +51,6 @@ vestibule:
 salle-de-bain:
   inventory:
     - name: Téléphone
-  connections: 
+  connections:
     - place: "vestibule"
       condition: true

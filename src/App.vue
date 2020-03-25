@@ -3,20 +3,26 @@
     <div class="mains">
       <h3>Dans les mains</h3>
       <inventory name="hands" :width="50" :height="80"></inventory>
+      <p class="play-mode">
+        <span :class="playMode == 'looking' ? 'selected' : ''" v-on:click="changePlayMode('looking')">👁</span>
+        <span :class="playMode == 'picking' ? 'selected' : ''" v-on:click="changePlayMode('picking')">🖐</span>
+      </p>
     </div>
 
     <div class="space">
-      <h3>{{activePlaceName}}</h3>
-      <inventory :name="activePlaceName" :width="activePlaceObj.width" :height="activePlaceObj.width"></inventory>
+      <div v-if="displayPlace && activePlaceObj">
+        <h3>{{activePlaceName}}</h3>
+        <inventory :name="activePlaceName" :width="activePlaceObj.width" :height="activePlaceObj.width"></inventory>
 
-      <p>{{activePlaceObj.description}}</p>
-  
-      <div class="places-available">
-        <button 
-          v-for="connection in activePlaceObj.connections" 
-          v-on:click="goToPlace(connection.place)">
-            {{ connection.place }}
-        </button>
+        <p>{{activePlaceObj.description}}</p>
+
+        <div class="places-available">
+          <button
+            v-for="connection in activePlaceObj.connections"
+            v-on:click="goToPlace(connection.place)">
+              {{ connection.place }}
+          </button>
+        </div>
       </div>
     </div>
 
@@ -26,7 +32,7 @@
     </div>
 
     <div class="object">
-      <h3 v-if="activeObjectObj">{{activeObjectName}}</h3>
+      <h3 v-if="activeObjectObj">{{activeObjectObj.name}}</h3>
 
       <p v-if="activeObjectObj">{{activeObjectObj.description}}</p>
     </div>
@@ -46,21 +52,33 @@ export default {
   components: {
   },
   computed: {
+    playMode: function(){
+      return this.$store.state.playMode;
+    },
+    placeStore: function(){
+      return this.$store.state.places;
+    },
+    objectStore: function(){
+      return this.$store.state.objects;
+    },
+    displayPlace: function(){
+      return this.placeStore.displayPlace;
+    },
     activePlaceObj: function(){
-      var placeStore = this.$store.state.places;
-      return placeStore.places[placeStore.activePlace];
+      return this.placeStore.places[this.placeStore.activePlace];
     },
     activePlaceName: function(){
-      var placeStore = this.$store.state.places;
-      return placeStore.activePlace;
+      return this.placeStore.activePlace;
     },
     activeObjectObj: function(){
-      var objectStore = this.$store.state.objects;
-      return objectStore.objects[objectStore.activeObject];
+      if(this.objectStore.activeObject){
+        return this.objectStore.objects[this.objectStore.activeObject];
+      }
+      else
+        return false;
     },
     activeObjectName: function(){
-      var objectStore = this.$store.state.objects;
-      return objectStore.activeObject;
+      return this.objectStore.activeObject;
     }
   },
   methods: {
@@ -69,6 +87,9 @@ export default {
     },
     goToPlace: function(place){
       this.$store.dispatch("places/goTo", place);
+    },
+    changePlayMode: function(mode){
+      this.$store.commit("changePlayMode", mode);
     }
   },
   mounted: function(){
@@ -82,12 +103,15 @@ export default {
 .hidden{
   visibility: hidden;
 }
+
 html, #twee{
   font-family: "PTSerif", serif;
   font-size: 15px;
 }
 #app {
   display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 #twee{
@@ -108,6 +132,16 @@ html, #twee{
 }
 .mains{
   margin-right: 20px;
+  width: 300px;
+}
+
+.play-mode{
+  span{
+    margin: 2px;
+  }
+  .selected{
+    border: 1px solid black;
+  }
 }
 
 // fonts

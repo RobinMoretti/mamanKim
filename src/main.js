@@ -16,11 +16,10 @@ Vue.config.productionTip = false
 window.passage = null;
 
 Vue.mixin({
-	data: function () {
-		return {
-			passage: null
-		}
-	},
+	// data: function () {
+	// 	return {
+	// 	}
+	// },
 	computed: {
 		story: function(){
 			var story = document.getElementById("twee");
@@ -30,12 +29,13 @@ Vue.mixin({
 			}
 
 			return false;
-		}, 
+		},
 	},
 	methods:{
 		updatePassage:function(passage){
-
-			this.$store.commit("places/setActivePlace", passage.name);
+			if(passage && passage.name != "Introduction"){
+				this.$store.commit("places/setActivePlace", passage.name);
+			}
 			// this.$router.push(passage.name);
 		},
 	}
