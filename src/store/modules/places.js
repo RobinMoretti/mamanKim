@@ -6,7 +6,10 @@ const state = {
   activePlace: null,
   places: null,
   player: [],
-  displayPlace: false
+  playerMaximunWeight: 40,
+  playerWidth: 80,
+  playerHeight: 80,
+  displayPlace: false,
 }
 
 // getters
@@ -18,19 +21,33 @@ const getters = {
   //   else
   //     return false;
   // },
+  handsObject: function(state){
+    var hands = {
+      name: 'hands',
+      width: state.playerWidth,
+      height: state.playerHeight,
+    }
+
+    return hands;
+  }
+
 }
 
 // actions
 const actions = {
-  init: function({dispatch, commit, state}){
+  init: function({dispatch, commit, state, rootState}){
+
     commit('toggleDisplayPlace', false);
 
-    commit('initPlaces');
+    if(!rootState.gameStarted){
+      commit('initPlaces');
+
+    }
 
     commit('toggleDisplayPlace', true);
 
-    if(!state.activePlace){
-      console.log("garage = ");
+    if(!state.activePlace && !rootState.gameStarted){
+      //first place of the game
       dispatch("goTo", "garage");
     }
 
@@ -40,11 +57,37 @@ const actions = {
     if(this.$app){
       this.$app.story.show(place);
     }
-  }
+  },
+  createNewPlace: function({commit, dispatch}, payload){
+    console.log("create New place!!!");
+    commit('createNewPlace', payload);
+    // dispatch("goTo", payload.name);
+  },
 }
 
 // mutations
 const mutations = {
+  setConnectionsToPlaceObject: function(state, payload){
+    console.log("payload.placeObj.place = " + payload.placeObj.place);
+    console.log("state.activePlace = " + state.activePlace);
+    if(payload.placeObj.place != state.activePlace){
+      place = state.places[payload.name];
+      place.connections = [payload.placeObj];
+
+      this.$app.$set(state.places, payload.name, place);
+    }
+    // state.places[payload.name].connections = []
+
+  },
+  checkPlaceWeight: function(state, placeName){
+    console.log("checkPlaceWeight = " + placeName);
+    if(!state.places[placeName].actualWeight){
+      state.places[placeName].actualWeight = this.$app.getPlaceWeight(placeName);
+    }
+  },
+  createNewPlace: function(state, payload){
+    this.$app.$set(state.places, payload.name, payload.place);
+  },
   toggleDisplayPlace: function(state, payload = "toggle"){
     if(state == "toggle")
       state.displayPlace = !state.displayPlace;
@@ -61,14 +104,30 @@ const mutations = {
   resetPlayer: function(state){
     state.player = [];
   },
-  initPlaces: function(state){
-    console.log(placesYml)
+  initPlaces: function(state, rootState){
     state.places = placesYml;
+
+    var weight = 0;
+
+    for (var property in state.places) {
+      // console.log("property = ", property);
+      // console.log("this.$app. = ", this.$app);
+      // console.log("this.$app.getPlaceWeight(property) = " + this.$app.getPlaceWeight(property));
+      weight += this.$app.getPlaceWeight(property);
+      console.log('weight ==== ' + weight)
+      state.places[property].actualWeight = weight;
+      // console.log("state.places[property] = ", state.places[property]);
+
+      // this.$app.$set(state.places[property], actualWeight, weight);
+    }
   },
   addObject: function(state, payload){
-    console.log(payload)
+    // console.log(payload)
     if(payload.place != "hands"){
       state.places[payload.place].inventory.push(payload.object);
+
+      var weight = state.places[payload.place].actualWeight + payload.object.weight;
+      this.$app.$set(state.places[payload.place], actualWeight, weight);
     }else {
       state.player.push(payload.object);
     }
@@ -81,10 +140,16 @@ const mutations = {
     }else {
       inventory = state.places[payload.place].inventory;
     }
-    console.log("inventory = ", inventory);
-    console.log("inventory = ", payload.object);
+    // console.log("inventory = ", inventory);
+    // console.log("inventory = ", payload.object);
     for (var i = 0; i < inventory.length; i++) {
       if(inventory[i].name == payload.object.name){
+
+        if(payload.place != "hands"){
+          var weight = state.places[payload.place].actualWeight - payload.object.weight;
+          this.$app.$set(state.places[payload.place], actualWeight, weight);
+        }
+
         inventory.splice(i,1);
         break;
       }

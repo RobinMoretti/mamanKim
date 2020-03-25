@@ -1,12 +1,16 @@
 voiture-1:
   name: Voiture de la proprio
   weight: 100
+  width: 250
+  height: 500
   picto: 🚙
   description: >
     clio grise, plutot ancienne.
 telephone-1:
   name: Téléphone
   weight: 0.5
+  width: 0.5
+  height: 0.8
   picto: 📞
   description: >
     Samsung android A5 de 2016.
@@ -14,13 +18,51 @@ telephone-1:
 velo-1:
   name: Vélo
   weight: 10
+  width: 200
+  height: 40
   picto: 🚴‍
   description: >
-    Vélo récent, presque neuf. Il as l'air chère.
-    Il n'est pas attaché.
+    Récent, presque neuf. Il as l'air chère.
+    Il n'est jamais attaché.
+poubelle-1:
+  name: Poubelle en carte
+  weight: 0.7
+  width: 30
+  height: 30
+  picto: P
+  description: >
+    En trés mauvaise état elle set de tris.
+  place:
+    name: Poubelle
+    width: 150
+    height: 150
+    infinite: true
+    scrollable: true
+    maximumWeight: 10
+    inventory:
+      - name: poubelle-2
+poubelle-2:
+  name: Poubelle en carte
+  weight: 0.7
+  width: 30
+  height: 30
+  picto: P
+  description: >
+    En trés mauvaise état elle set de tris.
+  place:
+    name: Poubelle
+    width: 150
+    height: 150
+    infinite: true
+    scrollable: true
+    maximumWeight: 10
+    inventory:
+      - name: velo-1
 publicite-1:
   name: Publicité
   weight: 0.01
+  width: 15
+  height: 10
   picto: <img src='objects/publicite.jpg' >
   description: >
     Un flyer pour du poulet frix, beaucoup de couleur, de mauvais gout.

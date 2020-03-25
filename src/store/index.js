@@ -27,12 +27,20 @@ export default new Vuex.Store({
   },
   strict: debug,
   state:{
-    playMode: "picking"
+    playMode: "picking",
+    gameStarted: false,
   },
   actions: {
+    init: function({dispatch, commit, state}){
+      commit("startGame");
+
+    },
 
   },
   mutations: {
+    startGame: function(state){
+      state.gameStarted = true;
+    },
     changePlayMode: function(state, mode){
       state.playMode = mode;
     }
