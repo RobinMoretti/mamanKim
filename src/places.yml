@@ -1,0 +1,56 @@
+
+outside:
+  inventory:
+    - name: Carte
+  connections: 
+    place: "garage"
+    condition: true
+
+garage:
+  width: 200
+  height: 400
+  infinite: true
+  inventory:
+    - name: Voiture de la proprio
+    - name: Vélo pas attaché
+  connections: 
+    - place: "palier"
+      condition: true
+  description: >
+    Les sont gris bleu, plutot sale, des déchets sont parfaitements triées.
+    Il n'y as pas de porte métalique fermant le garage.
+    Seulement grand ouvert. C'est très lumineu.
+    Une porte donne sur le palier du Rez de chaussé.
+
+
+palier:
+  inventory:
+    - name: Carte
+  connections: 
+    - place: "garage"
+      condition: true
+    - place: "vestibule"
+      condition: true
+  description: >
+    Le sole est un peu vieu mais plutot propre. 
+    Les porte peintent en bleu son en métal avec un étrange truc en plastique au mileu,
+    Comme une chatière en métale avec une jolie décoration floral,
+    mais qui apparement servait pour la poste. 
+
+vestibule:
+  inventory:
+    - name: Carte
+  connections: 
+    - place: "palier"
+      condition: true
+    - place: "salle-de-bain"
+      condition: true
+    - place: "entree-salle-principale"
+      condition: "empty-inventory"
+
+salle-de-bain:
+  inventory:
+    - name: Téléphone
+  connections: 
+    - place: "vestibule"
+      condition: true

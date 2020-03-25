@@ -7,11 +7,15 @@
 
 <script>
 export default {
-  props: {
+	props: {
 
-  },
-  computed: {
-  }
+	},
+	computed: {
+	},
+	mounted: function(){
+		// console.log(this.twee)
+		this.story.show("Vestibule");
+	}
 }
 </script>
 

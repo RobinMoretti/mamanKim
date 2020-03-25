@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import player from './modules/player'
 import places from './modules/places'
+import objects from './modules/objects'
 
 // import products from './modules/products'
 
@@ -22,6 +23,7 @@ export default new Vuex.Store({
   modules: {
     player, 
     places,
+    objects
   },
   strict: debug,
   state:{

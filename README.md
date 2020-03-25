@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Inventory
+
+width: 50px == 1kg auround
+height: 20px == 1kg auround

@@ -1,15 +1,11 @@
 // initial state
+
+import placesYml from './../../places.yml'
+
 const state = {
-  places: {
-    "vestibule": [
-      { name: "carte", weight: 0.2 },
-    ],
-    "salle-de-bain": [
-      { name: "savon", weight: 0.5 },
-    ],
-    "hands": [
-    ]
-  }
+  activePlace: "garage",
+  places: null,
+  player: [],
 }
 
 // getters
@@ -25,39 +21,52 @@ const getters = {
 
 // actions
 const actions = {
-  // init: function({commit, state, dispatch}){
-  //   // get last news date
-  //   dispatch("getLastNewsDate").then(
-  //     (date) => {
-  //       if(state.lastReadNewsDate == null || state.lastReadNewsDate < date){
-
-  //         dispatch("getLastNews").then(
-  //           () => {
-  //             commit("setLastNews");
-  //             commit("displayLastNews");
-  //           });
-  //       }
-  //     }
-  //   );
-  //   //check with lastReadNewsDate
-  //   // if not read load it and display it
-  //   // else do nothing
-  // },
+  init: function({commit}){
+    console.log('init places')
+    commit('initPlaces');
+  },
+  goTo: function({commit}, place){
+    console.log('goTo')
+    commit('setActivePlace', place);
+    this.$app.story.show(place);
+  }
 }
 
 // mutations
 const mutations = {
-	addObject: function(state, payload){
-		state.places[payload.place].push(payload.object);
-	},
-	removeObject: function(state, payload){
-    var inventory = state.places[payload.place];
-    console.log(inventory);
-		for (var i = 0; i < inventory.length; i++) {
-			if(inventory[i].name == payload.object.name)
-				inventory.splice(i,1);
-		}
-	},
+  setActivePlace: function(state, place){
+    state.activePlace = place;
+  },
+  resetPlayer: function(state){
+    state.player = [];
+  },
+  initPlaces: function(state){
+    console.log(placesYml)
+    state.places = placesYml;
+  },
+  addObject: function(state, payload){
+    console.log(payload)
+    if(payload.place != "hands"){
+      state.places[payload.place].inventory.push(payload.object);
+    }else {
+      state.player.push(payload.object);
+    }
+  },
+  removeObject: function(state, payload){
+
+    var inventory = null;
+    
+    if(payload.place == "hands"){
+      inventory = state.player;
+    }else {
+      inventory = state.places[payload.place].inventory;
+    }
+
+    for (var i = 0; i < inventory.length; i++) {
+      if(inventory[i].name == payload.object.name)
+        inventory.splice(i,1);
+    }
+  },
 }
 
 export default {

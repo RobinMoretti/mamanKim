@@ -1,26 +1,38 @@
 <template>
-  <ul class="place-inventory">
+  <div class="place-inventory" :style="inventoryStyle">
     <p-object 
         :space="name"
         :object="object" 
         v-for="(object, key) in placeObjects"
         :key="key">      
     </p-object>
-  </ul>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
     name: String,
+    width: Number,
+    height: Number,
+  },
+  computed: {
+    inventoryStyle: function(){
+      return "width: " + this.width + "; height: " + this.height + ";";
+    },
+    placeObjects: function () {
+      if(this.name != "hands"){
+        var placeStore = this.$store.state.places;
+        return placeStore.places[this.name].inventory;
+      }
+      else {
+        var placeStore = this.$store.state.places;
+        return placeStore.player;
+      }
+    },
   },
   methods: {
   },
-  computed: {
-    placeObjects: function () {
-      return this.$store.state.places.places[this.name];
-    },
-  }
 }
 </script>
 

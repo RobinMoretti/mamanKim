@@ -13,6 +13,34 @@ Vue.component('inventory', Inventory);
 
 Vue.config.productionTip = false
 
+window.passage = null;
+
+Vue.mixin({
+	data: function () {
+		return {
+			passage: null
+		}
+	},
+	computed: {
+		story: function(){
+			var story = document.getElementById("twee");
+
+			if(story && story.contentWindow.story){
+				return story.contentWindow.story;
+			}
+
+			return false;
+		}, 
+	},
+	methods:{
+		updatePassage:function(passage){
+
+			this.$store.commit("places/setActivePlace", passage.name);
+			// this.$router.push(passage.name);
+		},
+	}
+})
+
 const app = new Vue({
 	router: router,
 	store,
@@ -22,3 +50,4 @@ const app = new Vue({
 // store configaration
 store.$app = app;
 router.$app = app;
+window.$app = app;
