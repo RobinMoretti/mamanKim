@@ -97,8 +97,8 @@ export default {
   },
   mounted: function(){
     setTimeout(()=>{
-      this.$store.dispatch("places/init");
       this.$store.dispatch("objects/init");
+      this.$store.dispatch("places/init");
       this.$store.dispatch("init");
     }, 300)
   }

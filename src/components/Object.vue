@@ -153,8 +153,8 @@ export default {
               },
               target: this.object.name
             });
-
-            this.$store.dispatch("places/goTo", this.name);
+            console.log("this.name = " + this.object.name);
+            this.$store.dispatch("places/goTo", this.object.name);
         }
       }else{
         this.$store.commit("objects/setActiveObject", this.object);
@@ -177,11 +177,8 @@ export default {
       // space available ------------
       var heightAvailable = false;
 
-
       if(target == "hands"){
         var handHeight = this.placesStore.playerHeight;
-
-        console.log("space height = " + (this.inventorySpaceHeight(target)));
 
         // console.log("handHeight = " + handHeight);
         if(this.inventorySpaceHeight(target) + this.detailObject.height <= handHeight){

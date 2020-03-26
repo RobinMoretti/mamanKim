@@ -21,7 +21,6 @@ const getters = {
 // actions
 const actions = {
   init: function({commit}){
-    console.log('init places')
     commit('initObjects');
   },
   // goTo: function({commit}, place){

@@ -61,27 +61,27 @@ Vue.mixin({
 
 					var detailObject = objects[inventory[i].name];
 					// si l'object est une place et quil nexiste pas déja, lajouter au places disponible
-					if(detailObject.place && !storeStates.places[inventory[i].name]){
-						console.log("detailObject.place = " + detailObject.name);
-						console.log("detailObject.place = " + detailObject.place);
-						console.log("storeStates.places[inventory[i].name] = " + storeStates.places[inventory[i].name]);
-			            this.$store.dispatch("places/createNewPlace",
-			              {
-			                place: {
-			                  name: detailObject.place.name,
-			                  width: detailObject.place.width,
-			                  height: detailObject.place.height,
-			                  scrollable: detailObject.place.scrollable,
-			                  infinite: detailObject.place.infinite,
-			                  maximumWeight: detailObject.place.maximumWeight,
-			                  inventory: detailObject.place.inventory,
-			                },
-			                name: inventory[i].name,
-			              }
-			            );
+					// if(detailObject.place && !storeStates.places[inventory[i].name]){
+					// 	console.log("detailObject.place = " + detailObject.name);
+					// 	console.log("detailObject.place = " + detailObject.place);
+					// 	console.log("storeStates.places[inventory[i].name] = " + storeStates.places[inventory[i].name]);
+			  //           this.$store.dispatch("places/createNewPlace",
+			  //             {
+			  //               place: {
+			  //                 name: detailObject.place.name,
+			  //                 width: detailObject.place.width,
+			  //                 height: detailObject.place.height,
+			  //                 scrollable: detailObject.place.scrollable,
+			  //                 infinite: detailObject.place.infinite,
+			  //                 maximumWeight: detailObject.place.maximumWeight,
+			  //                 inventory: detailObject.place.inventory,
+			  //               },
+			  //               name: inventory[i].name,
+			  //             }
+			  //           );
 
-	      				this.$store.commit('places/checkPlaceWeight', inventory[i].name);
-					}
+	    //   				// this.$store.commit('places/checkPlaceWeight', inventory[i].name);
+					// }
 
 					weight += detailObject.weight;
 				}
