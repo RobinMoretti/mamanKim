@@ -1,5 +1,5 @@
 <template>
-  <span class="object" :style="objectStyle" v-on:click="picked">
+  <span class="object" :id='space + "-" + object.name' :style="objectStyle" v-on:click="picked">
     <span v-html="detailObject.picto" v-if="objects != null && object"></span>
   </span>
 </template>
@@ -47,48 +47,49 @@ export default {
   },
   methods: {
     inventorySpaceHeight: function(target){
-      var height = 0;
-      var maximunHeight = 0;
-      var width = 0;
-      var inventory = null;
-      var place = null;
+      // var height = 0;
+      // var maximunHeight = 0;
+      // var width = 0;
+      // var inventory = null;
+      // var place = null;
 
-      if(target == "hands"){
-        inventory = this.placesStore.player;
-        place = this.handsObject;
-      }else{
-        inventory = this.placesStore.places[target].inventory;
-        place = this.placesStore.places[target];
-      }
-
-
-      for (var i = 0; i < inventory.length; i++) {
-        var iObject = {...this.objects[inventory[i].name]};
-        iObject.width < 20 ? iObject.width = 20 : '';
-        iObject.height < 20 ? iObject.height = 20 : '';
-        // console.log("width = ", width);
-        // console.log("iObject.width = ", iObject.width);
-        // console.log("place.width = ", place.width);
-        // console.log("place.width = ", place.width);
-        // console.log("-------------------");
+      // if(target == "hands"){
+      //   inventory = this.placesStore.player;
+      //   place = this.handsObject;
+      // }else{
+      //   inventory = this.placesStore.places[target].inventory;
+      //   place = this.placesStore.places[target];
+      // }
 
 
-        if(width + iObject.width < place.width && i < inventory.length - 1){
-          width += iObject.width;
-          if(iObject.height > maximunHeight){
-            maximunHeight = iObject.height;
-          }
-        }else{
-          width = 0;
-          height += maximunHeight;
-          // console.log("maximunHeight = " + maximunHeight);
-          // console.log("height = " + height);
-          // console.log("-------------------");
-          maximunHeight = 0;
-        }
-      }
-      // console.log("height = " + height);
+      // for (var i = 0; i < inventory.length; i++) {
+      //   var iObject = {...this.objects[inventory[i].name]};
+      //   iObject.width < 20 ? iObject.width = 20 : '';
+      //   iObject.height < 20 ? iObject.height = 20 : '';
+
+      //   console.log("width = ", width);
+      //   console.log("iObject.width = ", iObject.width);
+      //   console.log("height = ", height);
+      //   console.log("place.width = ", place.width);
       //   console.log("-------------------");
+
+
+      //   if(width + iObject.width < place.width && i < inventory.length - 1){
+      //     width += iObject.width;
+      //     if(iObject.height > maximunHeight){
+      //       maximunHeight = iObject.height;
+      //     }
+      //   }else{
+      //     width = 0;
+      //     height += maximunHeight;
+      //     // console.log("maximunHeight = " + maximunHeight);
+      //     // console.log("height = " + height);
+      //     // console.log("-------------------");
+      //     maximunHeight = 0;
+      //   }
+      // }
+      // // console.log("height = " + height);
+      // //   console.log("-------------------");
 
       return height;
     },
@@ -124,8 +125,6 @@ export default {
     },
     picked: function(){
       if(this.playMode == "picking"){
-        console.log("object.name = " + this.object.name);
-        console.log("this.$store.state.places.activePlace = " + this.$store.state.places.activePlace);
         if(this.object.name != this.$store.state.places.activePlace){
           if (this.space != "hands") {
             if(this.objectIspackable("hands")){
@@ -160,10 +159,7 @@ export default {
     objectIspackable: function(target){
       // weight available ------------
       var weightState = false;
-      console.log("this.inventoryMaximumWeight(target) = " + this.inventoryMaximumWeight(target));
       if(this.inventoryMaximumWeight(target) > 0){
-        console.log("this.inventoryWeight(target) + this.detailObject.weight = " + (this.inventoryWeight(target) + this.detailObject.weight));
-        console.log("this.inventoryMaximumWeight(target) = " + this.inventoryMaximumWeight(target));
         if((this.inventoryWeight(target) + this.detailObject.weight) <= this.inventoryMaximumWeight(target)){
           weightState = true;
         }
@@ -174,26 +170,26 @@ export default {
         weightState = true;
 
       // space available ------------
-      var heightAvailable = false;
 
-      if(target == "hands"){
-        var handHeight = this.placesStore.playerHeight;
+      // var heightAvailable = this.$store.dispatch("places/checkAvailableSpace");
 
-        // console.log("handHeight = " + handHeight);
-        if(this.inventorySpaceHeight(target) + this.detailObject.height <= handHeight){
-          heightAvailable = true;
-        }
-      }else{
-        var targetPlace = this.placesStore.places[target];
-
-        if(targetPlace.infinite == true && targetPlace.scrollable == true ){
-          heightAvailable = true;
-        }else{
-          if(this.inventorySpaceHeight(target) + this.detailObject.height <= targetPlace.height){
-            heightAvailable = true;
-          }
-        }
-      }
+      // if(target == "hands"){
+      //   var handHeight = this.placesStore.playerHeight;
+      //   console.log("this.inventorySpaceHeight(target) = " + this.inventorySpaceHeight(target));
+      //   if(this.inventorySpaceHeight(target) + this.detailObject.height <= handHeight){
+      //     heightAvailable = true;
+      //   }
+      // }else{
+      //   var targetPlace = this.placesStore.places[target];
+      //   console.log("this.inventorySpaceHeight(target) = " + this.inventorySpaceHeight(target));
+      //   if(targetPlace.infinite == true && targetPlace.scrollable == true ){
+      //     heightAvailable = true;
+      //   }else{
+      //     if(this.inventorySpaceHeight(target) + this.detailObject.height <= targetPlace.height){
+      //       heightAvailable = true;
+      //     }
+      //   }
+      // }
 
       if(weightState && heightAvailable){
         return true;

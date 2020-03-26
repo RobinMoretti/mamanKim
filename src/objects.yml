@@ -67,3 +67,11 @@ publicite-1:
   description: >
     Un flyer pour du poulet frix, beaucoup de couleur, de mauvais gout.
     Le logo représente un poulet heureux.
+fictif-1:
+  name: fictif
+  weight: 0
+  width: 0
+  height: 0
+  picto: d
+  description: >
+    Debug

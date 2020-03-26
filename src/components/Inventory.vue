@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="place-inventory" :style="inventoryStyle">
+    <div class="place-inventory" :id="name" :style="inventoryStyle">
       <p-object
           :space="name"
           :object="object"

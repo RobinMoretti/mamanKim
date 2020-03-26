@@ -87,6 +87,20 @@ const actions = {
         );
       }
     }
+    console.log("placeName = " + placeName);
+    if(placeName == "hands"){
+      console.log("state.player = ", state.player);
+      if(!state.player["fictif-1"]){
+        commit("addObject", { place: placeName, object: { name: "fictif-1" }});
+      }
+    }
+    else{
+      if(!state.places[placeName].inventory["fictif-1"]){
+        commit("addObject", { place: placeName, object: { name: "fictif-1" }});
+      }
+    }
+    // console.log("top = " + document.getElementById(placeName + '-fictif-1').offsetTop );
+    // this.dispatch("removeObject", { place: placeName, object: { name: "fictif-1" }});
 
   },
   getInventoryWeight: function({dispatch, state, commit}, payload){
@@ -119,9 +133,10 @@ const actions = {
       }
     }
   },
-  goTo: function({commit}, place){
+  goTo: function({commit, dispatch}, place){
     // console.log("GoTo = " + place);
     commit('setActivePlace', place);
+    dispatch('updatePlaceWeight', place);
 
     if(this.$app){
       if(this.$app.story.passages[place]){
@@ -214,6 +229,7 @@ const mutations = {
     for (var place in placesYml) {
       var newPlace = placesYml[place];
       newPlace.actualWeight = 0;
+      newPlace.haveEnoughSpace = false;
       this.$app.$set(state.places, place, newPlace);
     }
     // var weight = 0;
