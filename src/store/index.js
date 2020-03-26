@@ -33,9 +33,10 @@ export default new Vuex.Store({
   actions: {
     init: function({dispatch, commit, state}){
       commit("startGame");
-
     },
-
+    reset: function({dispatch, commit, state}){
+      // commit("startGame");
+    },
   },
   mutations: {
     startGame: function(state){

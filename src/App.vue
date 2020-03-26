@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app">    
     <div class="mains">
       <h3>Dans les mains</h3>
       <inventory name="hands" :active-place-obj="handsObject"></inventory>
@@ -24,8 +24,9 @@
         <div class="places-available">
           <button
             v-for="connection in activePlaceObj.connections"
-            v-on:click="goToPlace(connection.place)">
-              {{ connection.place }}
+            v-on:click="goToPlace(connection.place)"
+            v-if="placeStore.places[connection.place]">
+              {{ placeStore.places[connection.place].name}}
           </button>
           <div v-if="activePlaceObj.parentPlace">
             <button
@@ -50,11 +51,11 @@
       <p v-if="activeObjectObj">{{activeObjectObj.description}}</p>
     </div>
 
-    <!-- <router-view></router-view> -->
-
-   <!--  <div class="options">
-      <button v-on:click="resetPlayer">resetPlayer</button>
-    </div> -->
+    <footer> 
+      <h1>Maman Kim</h1> - 
+      <a href="http://robinmoretti.eu">Robin Moretti</a>
+      - <p v-on:click="resetGame">reset</p>
+    </footer>
   </div>
 </template>
 
@@ -99,6 +100,9 @@ export default {
     }
   },
   methods: {
+    resetGame: function() {
+      this.$store.dispatch("reset");
+    },
     resetPlayer: function(){
       this.$store.commit("places/resetPlayer");
     },
@@ -148,8 +152,9 @@ body{
   // align-items: flex-start;
   // align-content: center;
   height: 100%;
-  border: grey solid 1px;
+  // border: grey solid 1px;
 }
+
 
 #app > div{
   display: inline-block !important;
@@ -161,7 +166,6 @@ body{
   width: 300px;
   height: 100vh;
   margin-right: 20px;
-
 }
 
 .space{
@@ -189,10 +193,33 @@ body{
 .play-mode{
   span{
     margin: 2px;
+    padding: 2px;
   }
   .selected{
     border: 1px solid black;
   }
+}
+
+.places-available button{
+  background: rgba(0,0,0,0);
+  border-radius: 0;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  margin-right: 10px;
+}
+
+footer{
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 10px;
+  h1,a{
+    font-size: 16px;
+  }
+  font-style: italic;
 }
 
 // fonts

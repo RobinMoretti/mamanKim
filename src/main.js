@@ -121,3 +121,5 @@ const app = new Vue({
 store.$app = app;
 router.$app = app;
 window.$app = app;
+
+

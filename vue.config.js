@@ -1,4 +1,5 @@
 module.exports = {
-  runtimeCompiler: true,
-  lintOnSave: false,	
+	runtimeCompiler: true,
+	lintOnSave: false,
+	publicPath: process.env.NODE_ENV === 'production' ? '/maman-kim/' : '/'	
 }
