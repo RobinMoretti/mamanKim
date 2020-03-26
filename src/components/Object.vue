@@ -46,53 +46,6 @@ export default {
     },
   },
   methods: {
-    inventorySpaceHeight: function(target){
-      // var height = 0;
-      // var maximunHeight = 0;
-      // var width = 0;
-      // var inventory = null;
-      // var place = null;
-
-      // if(target == "hands"){
-      //   inventory = this.placesStore.player;
-      //   place = this.handsObject;
-      // }else{
-      //   inventory = this.placesStore.places[target].inventory;
-      //   place = this.placesStore.places[target];
-      // }
-
-
-      // for (var i = 0; i < inventory.length; i++) {
-      //   var iObject = {...this.objects[inventory[i].name]};
-      //   iObject.width < 20 ? iObject.width = 20 : '';
-      //   iObject.height < 20 ? iObject.height = 20 : '';
-
-      //   console.log("width = ", width);
-      //   console.log("iObject.width = ", iObject.width);
-      //   console.log("height = ", height);
-      //   console.log("place.width = ", place.width);
-      //   console.log("-------------------");
-
-
-      //   if(width + iObject.width < place.width && i < inventory.length - 1){
-      //     width += iObject.width;
-      //     if(iObject.height > maximunHeight){
-      //       maximunHeight = iObject.height;
-      //     }
-      //   }else{
-      //     width = 0;
-      //     height += maximunHeight;
-      //     // console.log("maximunHeight = " + maximunHeight);
-      //     // console.log("height = " + height);
-      //     // console.log("-------------------");
-      //     maximunHeight = 0;
-      //   }
-      // }
-      // // console.log("height = " + height);
-      // //   console.log("-------------------");
-
-      return height;
-    },
     inventoryMaximumWeight: function(target){
       if(target == "hands"){
         return this.placesStore.playerMaximunWeight;
@@ -123,8 +76,9 @@ export default {
         this.$store.commit("places/removeObject", { place: "hands", object: this.object })
       }
     },
-    picked: function(){
-      if(this.playMode == "picking"){
+    picked: function(event, shift = false){
+      console.log(shift)
+      if(this.playMode == "picking" || shift){
         if(this.object.name != this.$store.state.places.activePlace){
           if (this.space != "hands") {
             if(this.objectIspackable("hands")){
@@ -171,25 +125,17 @@ export default {
 
       // space available ------------
 
-      // var heightAvailable = this.$store.dispatch("places/checkAvailableSpace");
+      var heightAvailable = true;
+      var targetMaxHeight = target == "hands" ? 80 : this.placesStore.places[target].height;
+      var targetMaxWidth = target == "hands" ? 80 : this.placesStore.places[target].width;
+      // var objectWidth = "hands" ? 80 : this.placesStore.places[target].width;
+      var fictifHeightOffset = document.querySelector("#" + target + " .fictif").offsetTop - 4;
 
-      // if(target == "hands"){
-      //   var handHeight = this.placesStore.playerHeight;
-      //   console.log("this.inventorySpaceHeight(target) = " + this.inventorySpaceHeight(target));
-      //   if(this.inventorySpaceHeight(target) + this.detailObject.height <= handHeight){
-      //     heightAvailable = true;
-      //   }
-      // }else{
-      //   var targetPlace = this.placesStore.places[target];
-      //   console.log("this.inventorySpaceHeight(target) = " + this.inventorySpaceHeight(target));
-      //   if(targetPlace.infinite == true && targetPlace.scrollable == true ){
-      //     heightAvailable = true;
-      //   }else{
-      //     if(this.inventorySpaceHeight(target) + this.detailObject.height <= targetPlace.height){
-      //       heightAvailable = true;
-      //     }
-      //   }
-      // }
+      console.log(fictifHeightOffset)
+      console.log(fictifHeightOffset)
+      if(fictifHeightOffset + this.detailObject.height >= targetMaxHeight){
+        heightAvailable = false;  
+      }
 
       if(weightState && heightAvailable){
         return true;
@@ -203,7 +149,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .object{
-    float: left;
+    // float: left;
+    // position: relative;
+    // bottom: 10px;
+    margin-top: -4px !important;
     min-width: 14px;
     min-height: 14px;
     font-size: 10px;

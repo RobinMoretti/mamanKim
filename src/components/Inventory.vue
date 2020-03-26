@@ -7,6 +7,8 @@
           v-for="(object, key) in placeObjects"
           :key="key">
       </p-object>
+
+      <span class="fictif">f</span>
     </div>
 
     <div class="informations">
@@ -60,7 +62,7 @@ export default {
     inventoryStyle: function(){
       var style = "";
       if(this.activePlaceObj && this.activePlaceObj.width && this.activePlaceObj.height){
-        style += "width: " + (this.activePlaceObj.width + 2) + "px; height: " + (this.activePlaceObj.height + 2) + "px;";
+        style += "width: " + (this.activePlaceObj.width + 2) + "px; height: " + (this.activePlaceObj.height) + "px;";
       }
 
       // if(this.activePlaceObj.infinite){
@@ -100,12 +102,31 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .place-inventory{
-    // display: flex;
-    // flex-wrap: wrap;
+    padding-top: 4px;
     border: black 1px solid;
     // padding: 1rem;
     position: relative;
     overflow: visible;
     box-sizing: border-box;
+
+    .fictif{
+      opacity: 0;
+      // margin-top: -4px !important;
+      width: 20px; height: 20px;
+      display: inline-block;
+      border: 1px solid black;
+      box-sizing: border-box;
+      margin-top: -4px !important;
+      min-width: 14px;
+      min-height: 14px;
+      font-size: 10px;
+      display: inline-block;
+      border: solid black 1px;
+      padding: 2px;
+      box-sizing: border-box;
+      margin: 0;
+
+      position: relative;
+    }
   }
 </style>

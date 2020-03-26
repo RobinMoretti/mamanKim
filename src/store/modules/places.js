@@ -87,21 +87,6 @@ const actions = {
         );
       }
     }
-    console.log("placeName = " + placeName);
-    if(placeName == "hands"){
-      console.log("state.player = ", state.player);
-      if(!state.player["fictif-1"]){
-        commit("addObject", { place: placeName, object: { name: "fictif-1" }});
-      }
-    }
-    else{
-      if(!state.places[placeName].inventory["fictif-1"]){
-        commit("addObject", { place: placeName, object: { name: "fictif-1" }});
-      }
-    }
-    // console.log("top = " + document.getElementById(placeName + '-fictif-1').offsetTop );
-    // this.dispatch("removeObject", { place: placeName, object: { name: "fictif-1" }});
-
   },
   getInventoryWeight: function({dispatch, state, commit}, payload){
 
@@ -138,8 +123,14 @@ const actions = {
     commit('setActivePlace', place);
     dispatch('updatePlaceWeight', place);
 
-    if(this.$app){
-      if(this.$app.story.passages[place]){
+    if(this.$app){      
+      var passagesFiltered = this.$app.story.passages.filter((passage) => {
+        return passage.name == place;
+      })
+      console.log(passagesFiltered)
+
+      if(passagesFiltered){
+
         this.$app.story.show(place);
       }
     }
@@ -218,6 +209,8 @@ const mutations = {
       }
 
       state.activePlace = place;
+
+
     }
   },
   resetPlayer: function(state){
