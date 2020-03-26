@@ -14,6 +14,8 @@ garage:
   inventory:
     - name: poubelle-1
     - name: velo-1
+    - name: velo-1
+    - name: velo-1
     - name: telephone-1
     - name: telephone-1
     - name: telephone-1

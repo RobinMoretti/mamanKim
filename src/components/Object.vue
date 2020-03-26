@@ -96,8 +96,8 @@ export default {
       if(target == "hands"){
         return this.placesStore.playerMaximunWeight;
       }else{
-        if(this.placesStore.places[target].maximunWeight){
-          return this.placesStore.places[target].maximunWeight;
+        if(this.placesStore.places[target].maximumWeight){
+          return this.placesStore.places[target].maximumWeight;
         }else {
           return 0;
         }
@@ -108,13 +108,9 @@ export default {
       var weight = 0;
 
       if(target == "hands"){
-        inventory = this.placesStore.player;
+        weight = this.placesStore.playerActualWeight;
       }else{
-        inventory = this.placesStore.places[target].inventory;
-      }
-
-      for (var i = 0; i < inventory.length; i++) {
-        weight += this.objects[inventory[i].name].weight;
+        weight = this.placesStore.places[target].actualWeight;
       }
 
       return weight;
@@ -128,17 +124,26 @@ export default {
     },
     picked: function(){
       if(this.playMode == "picking"){
-        if (this.space != "hands") {
-          if(this.objectIspackable("hands")){
-            this.$store.commit("places/removeObject", { place: this.space, object: this.object })
-            this.$store.commit("places/addObject", { place: "hands", object: this.object })
+        console.log("object.name = " + this.object.name);
+        console.log("this.$store.state.places.activePlace = " + this.$store.state.places.activePlace);
+        if(this.object.name != this.$store.state.places.activePlace){
+          if (this.space != "hands") {
+            if(this.objectIspackable("hands")){
+              this.$store.commit("places/removeObject", { place: this.space, object: this.object })
+              this.$store.commit("places/addObject", { place: "hands", object: this.object })
+            }
+          }else {
+            console.log("this.$store.state.places.activePlace = " + this.$store.state.places.activePlace);
+            if(this.objectIspackable(this.$store.state.places.activePlace)){
+              this.$store.commit("places/removeObject", { place: "hands", object: this.object })
+              this.$store.commit("places/addObject", { place: this.$store.state.places.activePlace, object: this.object });
+            }
           }
-        }else {
-          if(this.objectIspackable(this.$store.state.places.activePlace)){
-            this.$store.commit("places/removeObject", { place: "hands", object: this.object })
-            this.$store.commit("places/addObject", { place: this.$store.state.places.activePlace, object: this.object });
-          }
+
+          this.$store.dispatch('places/updatePlaceWeight', "hands");
+          this.$store.dispatch('places/updatePlaceWeight', this.$store.state.places.activePlace);
         }
+
       }else if(this.playMode == "looking"){
         this.displayObject();
       }
@@ -146,14 +151,6 @@ export default {
     displayObject: function(){
       if(this.detailObject.place){
         if(this.placesStore.places[this.object.name]){
-            this.$store.commit("places/setConnectionsToPlaceObject", {
-              placeObj: {
-                place: this.placesStore.activePlace,
-                condition: true
-              },
-              target: this.object.name
-            });
-            console.log("this.name = " + this.object.name);
             this.$store.dispatch("places/goTo", this.object.name);
         }
       }else{
@@ -163,8 +160,10 @@ export default {
     objectIspackable: function(target){
       // weight available ------------
       var weightState = false;
-
+      console.log("this.inventoryMaximumWeight(target) = " + this.inventoryMaximumWeight(target));
       if(this.inventoryMaximumWeight(target) > 0){
+        console.log("this.inventoryWeight(target) + this.detailObject.weight = " + (this.inventoryWeight(target) + this.detailObject.weight));
+        console.log("this.inventoryMaximumWeight(target) = " + this.inventoryMaximumWeight(target));
         if((this.inventoryWeight(target) + this.detailObject.weight) <= this.inventoryMaximumWeight(target)){
           weightState = true;
         }

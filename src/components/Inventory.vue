@@ -17,6 +17,10 @@
 
 <script>
 export default {
+  // data: function () {
+  //  return {
+  //  }
+  // },
   props: {
     name: String,
     activePlaceObj: Object
@@ -25,19 +29,19 @@ export default {
     actualWeight: function(){
       var weight = 0;
 
-      for (var i = 0; i < this.placeObjects.length; i++) {
-        var iObject = this.objects[this.placeObjects[i].name];
-
-        // if(iObject.place){
-        //   for (var i = 0; i < iObject.place.inventory.length; i++) {
-        //     weight += iObject.place.inventory[i].weight;
-        //   }
-        // }
-
-        weight += iObject.weight;
+      if(this.activePlaceObj.name == "hands"){
+        weight = this.$store.state.places.playerActualWeight;
+      }else{
+        if(this.activePlaceObj.actualWeight){
+          weight = this.activePlaceObj.actualWeight;
+        }else {
+          weight = 0;
+        }
       }
 
-      return weight.toFixed(2)
+      weight = Math.round((weight + Number.EPSILON) * 100) / 100
+
+      return weight;
     },
     maximumWeight: function(){
       if(this.name == "hands"){
@@ -86,6 +90,10 @@ export default {
   },
   methods: {
   },
+  mounted: function(){
+    this.$store.dispatch('places/updatePlaceWeight', this.name);
+    // this.actualWeight = weight;
+  }
 }
 </script>
 

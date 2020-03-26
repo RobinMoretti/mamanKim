@@ -6,9 +6,11 @@ import objectsYml from './../../objects.yml'
 
 const state = {
   activePlace: null,
-  places: null,
+  lastActivePlace: false,
+  places: {},
   player: [],
   playerMaximunWeight: 40,
+  playerActualWeight: 0,
   playerWidth: 80,
   playerHeight: 80,
   displayPlace: false,
@@ -45,6 +47,13 @@ const actions = {
       commit('initPlaces');
       commit('addAllObjectSpaces');
 
+      // define parent places to the inventory --------
+      for (var place in state.places) {
+        if(state.places[place].inventory){
+          dispatch('defineInventoryParentPlaces', { inventory: state.places[place].inventory, parentPlaceName: place});
+        }
+      }
+
     }
 
     commit('toggleDisplayPlace', true);
@@ -55,8 +64,63 @@ const actions = {
     }
 
   },
+  updatePlaceWeight: function({dispatch, state, commit}, placeName){
+    if(placeName == "hands"){
+      commit("resetPlayerWeight");
+      if(state.player){
+        dispatch("getInventoryWeight",
+            {
+              inventory: state.player,
+              targetPlaceName: placeName
+            }
+          );
+      }
+    }
+    else {
+      commit("resetPlaceWeight", placeName);
+      if(state.places[placeName].inventory){
+        dispatch("getInventoryWeight",
+          {
+            inventory: state.places[placeName].inventory,
+            targetPlaceName: placeName
+          }
+        );
+      }
+    }
+
+  },
+  getInventoryWeight: function({dispatch, state, commit}, payload){
+
+    var inventory = payload.inventory;
+
+    for (var i = 0; i < inventory.length; i++) {
+      // console.log("payload = ", payload);
+      commit("addWeightToPlace", { placeName: payload.targetPlaceName, weight: objectsYml[inventory[i].name].weight})
+
+      if(objectsYml[inventory[i].name].place && objectsYml[inventory[i].name].place.inventory){
+        dispatch("getInventoryWeight",
+          {
+            inventory: objectsYml[inventory[i].name].place.inventory,
+            targetPlaceName: payload.targetPlaceName
+          }
+        );
+      }
+    }
+  },
+  defineInventoryParentPlaces: function({dispatch, commit}, payload){
+    var targetInventory = payload.inventory;
+    var place = payload.parentPlaceName;
+
+    for (var i = 0; i < targetInventory.length; i++) {
+      // console.log("iObject = ", targetInventory[i]);
+      if(objectsYml[targetInventory[i].name].place){
+        commit('setSpaceParent', { placeName: targetInventory[i].name, parentName: place });
+        dispatch('defineInventoryParentPlaces', { inventory: objectsYml[targetInventory[i].name].place.inventory, parentPlaceName: targetInventory[i].name} );
+      }
+    }
+  },
   goTo: function({commit}, place){
-    console.log("GoTo = " + place);
+    // console.log("GoTo = " + place);
     commit('setActivePlace', place);
 
     if(this.$app){
@@ -66,7 +130,7 @@ const actions = {
     }
   },
   createNewPlace: function({commit, dispatch}, payload){
-    console.log("create New place!!!");
+    // console.log("create New place!!!");
     commit('createNewPlace', payload);
     // dispatch("goTo", payload.name);
   },
@@ -74,11 +138,33 @@ const actions = {
 
 // mutations
 const mutations = {
+  resetPlaceWeight: function(state, placeName){
+    state.places[placeName].actualWeight = 0;
+  },
+  resetPlayerWeight: function(state){
+    state.playerActualWeight = 0;
+  },
+  addWeightToPlace: function(state, payload){
+      if(payload.placeName == "hands"){
+        state.playerActualWeight += payload.weight;
+      }
+      else{
+        // console.log("payload.placeName = ", payload.placeName);
+        // console.log("state.places[payload.placeName] = ", state.places[payload.placeName]);
+
+        state.places[payload.placeName].actualWeight += payload.weight;
+
+        // this.$app.$set(state.places, payload.placeName, state.places[payload.placeName]);
+      }
+  },
   setConnectionsToPlaceObject: function(state, payload){
-    // console.log("payload.placeObj.place = " + payload.placeObj.place);
-    // console.log("state.activePlace = " + state.activePlace);
-    if(payload.placeObj.place != state.activePlace){
-      place = state.places[payload.name];
+    console.log("payload.placeObj.place = " + payload.placeObj.place);
+    console.log("state.activePlace = " + state.activePlace);
+    console.log('payload = ', payload)
+    console.log('payload = ', payload.placeObj.place !== state.activePlace)
+    if(payload.placeObj.place !== state.activePlace){
+      var place = state.places[payload.name];
+      console.log('place = ', place)
       place.connections = [payload.placeObj];
 
       this.$app.$set(state.places, payload.name, place);
@@ -105,15 +191,31 @@ const mutations = {
   setActivePlace: function(state, place){
     // var filter = false;
 
-    if(state.places[place])
+    if(state.places[place]){
+      console.log('setting last active place ...')
+      console.log("checkAllParent(state.places[place], state.places) = " + checkAllParent(state.places[place], state.places));
+      if(!state.lastActivePlace){
+        state.lastActivePlace = place;
+      }
+      else if(checkAllParent(state.places[place], state.places)){
+        console.log('setted')
+        state.lastActivePlace = state.activePlace;
+      }
+
       state.activePlace = place;
+    }
   },
   resetPlayer: function(state){
     state.player = [];
   },
   initPlaces: function(state, rootState){
-    state.places = placesYml;
+    // state.places = placesYml;
 
+    for (var place in placesYml) {
+      var newPlace = placesYml[place];
+      newPlace.actualWeight = 0;
+      this.$app.$set(state.places, place, newPlace);
+    }
     // var weight = 0;
 
 
@@ -129,18 +231,9 @@ const mutations = {
     //   // this.$app.$set(state.places[property], actualWeight, weight);
     // }
   },
-  addAllObjectSpaces: function(state, rootState){
-    console.log(" 1  objectsYml = ", objectsYml);
-
+  addAllObjectSpaces: function(state){
     for (var iObjectName in objectsYml) {
-
-      console.log("objectsYml = ", objectsYml);
-      console.log("iObjectName = ", iObjectName);
-      console.log("objectsYml[iObjectName] = ", objectsYml[iObjectName]);
-
       if(objectsYml[iObjectName].place){
-        console.log("having place...");
-
         this.$app.$set(state.places, iObjectName, {
                         name: objectsYml[iObjectName].place.name,
                         width: objectsYml[iObjectName].place.width,
@@ -149,22 +242,29 @@ const mutations = {
                         infinite: objectsYml[iObjectName].place.infinite,
                         maximumWeight: objectsYml[iObjectName].place.maximumWeight,
                         inventory: objectsYml[iObjectName].place.inventory,
+                        actualWeight: 0,
+                        connections: [],
                       });
-
-        console.log("Place = " + iObjectName + " added.");
+        // console.log("Place = " + iObjectName + " added.");
       }
-
     }
   },
+  setSpaceParent: function(state, payload){
+    // console.log("setSpaceParent = ", payload);
+    var PlaceWithParent = state.places[payload.placeName];
+    PlaceWithParent.parentPlace = payload.parentName;
+    this.$app.$set(state.places, payload.placeName, PlaceWithParent);
+  },
   addObject: function(state, payload){
-    // console.log(payload)
     if(payload.place != "hands"){
       state.places[payload.place].inventory.push(payload.object);
-
-      var weight = state.places[payload.place].actualWeight + payload.object.weight;
-      this.$app.$set(state.places[payload.place], actualWeight, weight);
     }else {
       state.player.push(payload.object);
+    }
+
+    // if place is object, update parent
+    if(state.places[payload.object.name]){
+      state.places[payload.object.name].parentPlace = payload.place;
     }
   },
   removeObject: function(state, payload){
@@ -198,4 +298,29 @@ export default {
   getters,
   actions,
   mutations
+}
+
+
+// helper ---------
+
+function checkAllParent(targetPlace, places){
+  // return true if no hand parent or grant parent
+  var booleanParent = true;
+
+  if(targetPlace.parentPlace && targetPlace.parentPlace != "hands"){
+    while (targetPlace.parentPlace && booleanParent) {
+      if(targetPlace.parentPlace && targetPlace.parentPlace == "hands"){
+        booleanParent = false;
+      }
+      else{
+        targetPlace = places[targetPlace.parentPlace];
+      }
+
+    }
+  }
+  if(targetPlace.parentPlace && targetPlace.parentPlace == "hands"){
+    booleanParent = false;
+  }
+
+  return booleanParent;
 }

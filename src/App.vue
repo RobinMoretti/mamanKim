@@ -15,7 +15,8 @@
 
     <div class="space">
       <div v-if="displayPlace && activePlaceObj">
-        <h3>{{activePlaceName}}</h3>
+        <h3 v-if="placeStore.places[activePlaceName]">{{ placeStore.places[activePlaceName].name }}</h3>
+
         <inventory :name="activePlaceName" :active-place-obj="activePlaceObj" v-if="activePlaceObj"></inventory>
 
         <p class="description">{{activePlaceObj.description}}</p>
@@ -26,6 +27,19 @@
             v-on:click="goToPlace(connection.place)">
               {{ connection.place }}
           </button>
+          <div v-if="activePlaceObj.parentPlace">
+            <button
+                v-if="activePlaceObj.parentPlace != 'hands'"
+                v-on:click="goToPlace(activePlaceObj.parentPlace)">
+                {{ placeStore.places[activePlaceObj.parentPlace].name }}
+            </button>
+            <button
+                v-else-if="activePlaceObj.parentPlace == 'hands'"
+                v-on:click="goToPlace(placeStore.lastActivePlace)">
+                {{ placeStore.places[placeStore.lastActivePlace].name }}
+            </button>
+          </div>
+
         </div>
       </div>
     </div>
