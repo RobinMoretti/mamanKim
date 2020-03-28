@@ -7,7 +7,7 @@
 }
 
 ::StoryTitle
-Escape from Earth
+Maman Kim
 
 ::Start
 <script>story.show('Introduction');</script>

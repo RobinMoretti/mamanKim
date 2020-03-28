@@ -2,8 +2,22 @@
 outside:
   name: Dehors
   connections:
-    place: "garage"
-    condition: true
+    - place: "garage"
+      condition: true
+  infinite: true
+  scrollable: true
+  description: >
+    Grand ciel bleu, légèrement crème, surment la polution.
+    Il n'y as pas vraiment de trottoire, seulement du goudron. 
+    Les murs de mon batiment, villa ( villa en coreéen ) sont fait de brique rouge avec des angles légèrement arondis. 
+    Il y as toutes sortes de chose grimpante le long des murs. 
+    Tuyaux de gaz, cables internet, climatisations. 
+    En l'air, beaucoups de cables electrics, désordonées.
+    Les batiments sont trés carré ici.
+    C'est un quartier plutot riche en apparence, 
+    la plus part des petits immeuble sont en réalité une seul propriété.
+    Plus les appartements sont bas en niveau, plus ils sont petits et souvent délabré. 
+    Le derniers étage est souvent celui du propriétaire. 
 
 garage:
   name: Garage
@@ -13,33 +27,19 @@ garage:
   scrollable: true
   inventory:
     - name: poubelle-1
-    - name: velo-1
-    - name: velo-1
-    - name: velo-1
-    - name: telephone-1
-    - name: telephone-1
-    - name: telephone-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
+    # - name: dechet-bouteil-1
+    - name: voiture-1
   connections:
+    - place: "outside"
+      condition: true
     - place: "palier"
       condition: true
   description: >
-    Les sont gris bleu, plutot sale, des déchets sont parfaitements triées.
+    Les sont murs sont gris bleu, plutot sale.
+    Il y as une marche le long du mur droit jusqu'as la porte.
+    Le début de la marche fait office de zone pour les poubelles
     Il n'y as pas de porte métalique fermant le garage.
-    Seulement grand ouvert. C'est très lumineu.
+    C'est simplement une grande pièce grand ouverte. C'est très lumineu.
     Une porte donne sur le palier du Rez de chaussé.
 
 

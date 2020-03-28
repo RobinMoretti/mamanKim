@@ -101,14 +101,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+  .informations{
+    p{
+      margin-top: 0;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+  }
+
   .place-inventory{
     padding-top: 4px;
-    border: black 1px solid;
+    // border: black 1px solid;
     // padding: 1rem;
     position: relative;
     overflow: visible;
     box-sizing: border-box;
-
+    background-image: url("~@/assets/inventory-bg.svg");
+    background-size: 20px;
+    // background-clip: border-box;
+    
     .fictif{
       opacity: 0;
       // margin-top: -4px !important;

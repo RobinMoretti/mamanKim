@@ -149,6 +149,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .object{
+    background: white;
     // float: left;
     // position: relative;
     // bottom: 10px;

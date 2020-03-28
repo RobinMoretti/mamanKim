@@ -23,6 +23,9 @@ const actions = {
   init: function({commit}){
     commit('initObjects');
   },
+  reset: function({dispatch, state, commit}, placeName){
+    commit("resetVariables");
+  },
   // goTo: function({commit}, place){
   //   console.log('goTo')
   //   commit('setActivePlace', place);
@@ -32,6 +35,10 @@ const actions = {
 
 // mutations
 const mutations = {
+  resetVariables: function(state, placeName){
+    state.activeObject = "";
+    state.objects = null;
+  },
   setActiveObject: function(state, object){
     console.log(object)
     state.activeObject = object.name;

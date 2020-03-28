@@ -12,7 +12,7 @@ import VuexPersistence from 'vuex-persist'
 
 const vuexLocal = new VuexPersistence({
   key: 'vuex',
-  storage: window.localStorage
+  storage: window.localStorage,
 })
 
 Vue.use(Vuex)
@@ -29,18 +29,44 @@ export default new Vuex.Store({
   state:{
     playMode: "picking",
     gameStarted: false,
+    storyId: null,
+    saveId: null,
+  },
+  getters:{
+    hasAutosave: state => {
+      return state.saveId ? true : false;
+    }
   },
   actions: {
-    init: function({dispatch, commit, state}){
+    init: function({dispatch, commit, state, getters}){
       commit("startGame");
     },
-    reset: function({dispatch, commit, state}){
-      // commit("startGame");
+    saveGame: function({commit, state}) {
+      console.log(state.loaded)
+      if (this.$app.story() && state.loaded) {
+        console.log('saving...')
+        commit('createAutoSave', this.$app.story().saveHash());
+      }
     },
+    reset: function({dispatch, commit, state}){
+      dispatch("places/reset");
+      dispatch("objects/reset");
+      commit("resetSave");
+      location.reload(true);
+    }
   },
   mutations: {
+    resetSave: function(state){
+      state.playMode = "picking";
+      state.gameStarted = false;
+      state.storyId = null
+    },
+    createAutoSave: function(state, hash){
+      state.saveId = hash;
+    },
     startGame: function(state){
       state.gameStarted = true;
+      state.loaded = true;
     },
     changePlayMode: function(state, mode){
       state.playMode = mode;

@@ -1,12 +1,45 @@
 ::Introduction
-Bon, on s'y mets?
+yeah
+Fouu.
 
-Maman rentre pas avant 8h ce soir. C'est bien si on fait de la place!
+Il fait trop beau dehors.
 
-[[Mais qu'est ce qu'on doit faire j'ai oublié ->explication]]
+...
+fdf
+prouuutt!
+<a href="javascript:story.save()">Save to URL</a> (create a bookmark after clicking this)
+[[J'avou, ça fait tellement du bien ->Introduction suite - 1]]
 
-[[Ok on y vas! ->palier]]
+
+
+::Introduction suite - 1
+...
+
+[[... ->Introduction suite - 1]]
+
+<% if(visited("Introduction suite - 1") >= 2){ %>
+
+[[On devais pas faire quelque chose? ->Introduction suite - 2]]
+
+<% } %>
+
+::Introduction suite - 2
+Si, on doit ranger chez maman.
+Elle rentre pas avant 8h ce soir. 
+C'est bien si on s'y met!
+
+[[ ? ->explication]]
+
+[[Un peu la flemme, mais faut s'y mettre. ->endIntro]]
 
 ::explication
+?
 
-bas il faut qu'on range! cest le bordel la dedans !!! on est venue de france exprais, c'est le moment.
+Il faut qu'on range, cest le bordel la dedans !!! 
+On est venue de france pour ça.
+Maman commence à veillir et comme elle travail tout le temps, c'est le moment.
+
+[[Ok ok, 대한민국 comme on dit. ->endIntro]]
+
+
+::endIntro

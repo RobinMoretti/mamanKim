@@ -1,61 +1,75 @@
 <template>
-  <div id="app">    
-    <div class="mains">
-      <h3>Dans les mains</h3>
-      <inventory name="hands" :active-place-obj="handsObject"></inventory>
-      <p class="play-mode">
-        <span :class="playMode == 'looking' ? 'selected' : ''" v-on:click="changePlayMode('looking')">👁</span>
-        <span :class="playMode == 'picking' ? 'selected' : ''" v-on:click="changePlayMode('picking')">🖐</span>
-      </p>
+  <div>
+    <transition-group name="fade">
+      <div v-show="!loaded" key="1">Loading...</div>
+      <div id="app"  v-show="loaded" key="2">
+        <div class="mains">
+          <h3>Dans les mains</h3>
+          <inventory name="hands" :active-place-obj="handsObject"></inventory>
+          <p class="play-mode">
+            <span :class="playMode == 'looking' ? 'selected' : ''" v-on:click="changePlayMode('looking')">👁</span>
+            <span :class="playMode == 'picking' ? 'selected' : ''" v-on:click="changePlayMode('picking')">🖐</span>
+          </p>
 
-      <hr>
+          <hr>
 
-      <iframe src="twee-build/index.html" id="twee" ref="twee"></iframe>
-    </div>
-
-    <div class="space">
-      <div v-if="displayPlace && activePlaceObj">
-        <h3 v-if="placeStore.places[activePlaceName]">{{ placeStore.places[activePlaceName].name }}</h3>
-
-        <inventory :name="activePlaceName" :active-place-obj="activePlaceObj" v-if="activePlaceObj"></inventory>
-
-        <p class="description">{{activePlaceObj.description}}</p>
-
-        <div class="places-available">
-          <button
-            v-for="connection in activePlaceObj.connections"
-            v-on:click="goToPlace(connection.place)"
-            v-if="placeStore.places[connection.place]">
-              {{ placeStore.places[connection.place].name}}
-          </button>
-          <div v-if="activePlaceObj.parentPlace">
-            <button
-                v-if="activePlaceObj.parentPlace != 'hands'"
-                v-on:click="goToPlace(activePlaceObj.parentPlace)">
-                {{ placeStore.places[activePlaceObj.parentPlace].name }}
-            </button>
-            <button
-                v-else-if="activePlaceObj.parentPlace == 'hands'"
-                v-on:click="goToPlace(placeStore.lastActivePlace)">
-                {{ placeStore.places[placeStore.lastActivePlace].name }}
-            </button>
-          </div>
-
+          <iframe :src="tweeUrl" id="twee" ref="twee" @load="iframeLoaded" v-if="displayIframe"></iframe>
         </div>
+
+        <div class="space">
+          <transition name="fade">
+
+            <div v-if="displayPlace && activePlaceObj">
+              <h3 v-if="placeStore.places[activePlaceName]">{{ placeStore.places[activePlaceName].name }}</h3>
+
+              <inventory :name="activePlaceName" :active-place-obj="activePlaceObj" v-if="activePlaceObj"></inventory>
+
+              <p class="description">{{activePlaceObj.description}}</p>
+
+              <div class="places-available">
+                <button
+                  v-for="connection in activePlaceObj.connections"
+                  v-on:click="goToPlace(connection.place)"
+                  v-if="placeStore.places[connection.place]">
+                    {{ placeStore.places[connection.place].name }}
+                </button>
+                <div v-if="activePlaceObj.parentPlace">
+                  <button
+                      v-if="activePlaceObj.parentPlace != 'hands'"
+                      v-on:click="goToPlace(activePlaceObj.parentPlace)">
+                      {{ placeStore.places[activePlaceObj.parentPlace].name }}
+                  </button>
+                  <button
+                      v-else-if="activePlaceObj.parentPlace == 'hands'"
+                      v-on:click="goToPlace(placeStore.lastActivePlace)">
+                      {{ placeStore.places[placeStore.lastActivePlace].name }}
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </transition>
+        </div>
+
+        <div class="object" v-if="displayPlace">
+          <h3 v-if="activeObjectObj">{{activeObjectObj.name}}</h3>
+
+          <p v-if="activeObjectObj">{{activeObjectObj.description}}</p>
+        </div>
+
+        <footer> 
+          <h1>Maman Kim</h1> 
+          - 
+          <a href="http://robinmoretti.eu">Robin Moretti</a>
+          -   
+          <transition name="fade">
+            <p v-on:click="dResetGame" v-if="!displayResetGame"> Recommencer</p>
+            <p v-else> <a href="#" v-on:click="resetGame">vraiment ?</a> la sauvegarde vas être supprimé. </p>
+          </transition>
+        </footer>
       </div>
-    </div>
 
-    <div class="object">
-      <h3 v-if="activeObjectObj">{{activeObjectObj.name}}</h3>
-
-      <p v-if="activeObjectObj">{{activeObjectObj.description}}</p>
-    </div>
-
-    <footer> 
-      <h1>Maman Kim</h1> - 
-      <a href="http://robinmoretti.eu">Robin Moretti</a>
-      - <p v-on:click="resetGame">reset</p>
-    </footer>
+    </transition-group>
   </div>
 </template>
 
@@ -63,9 +77,21 @@
 
 export default {
   name: 'App',
+  data () {
+    return {
+      displayResetGame: false,
+      tweeUrl: "twee-build/index.html",
+      displayIframe: false,
+      loaded: false,
+    }
+  },
   components: {
   },
   computed: {
+    saveId: function(){
+      // console.log("this.$store.getters = ", this.$store.getters['places/handsObject']);
+      return this.$store.state.saveId;
+    },
     handsObject: function(){
       // console.log("this.$store.getters = ", this.$store.getters['places/handsObject']);
       return this.$store.getters['places/handsObject'] ;
@@ -100,6 +126,16 @@ export default {
     }
   },
   methods: {
+    iframeLoaded: function() {
+      this.loaded = true;
+      // this.$store.commit("toggleIframe", true);
+    },
+    dResetGame: function() {
+      this.displayResetGame = true;
+      setTimeout(()=>{
+        this.displayResetGame = true;
+      }, 3000);
+    },
     resetGame: function() {
       this.$store.dispatch("reset");
     },
@@ -119,6 +155,13 @@ export default {
       this.$store.dispatch("places/init");
       this.$store.dispatch("init");
     }, 300)
+
+
+    if(this.$store.state.saveId){
+      this.tweeUrl += "#" + this.$store.state.saveId;
+    }
+
+    this.displayIframe = true;
   }
 };
 </script>
@@ -131,6 +174,7 @@ export default {
 html, #twee{
   font-family: "PTSerif", serif;
   font-size: 15px;
+  line-height: 1.5;
 }
 
 body{
@@ -174,12 +218,13 @@ body{
   .description{
 
     width: 300px;
+    line-height: 1.5;
   }
 }
 
 .object{
-
-    width: 300px;
+    // width: 300px;
+    margin-left: 20px;
 }
 
 .iframe{
@@ -208,6 +253,12 @@ body{
   margin-right: 10px;
 }
 
+hr{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
 footer{
   position: absolute;
   left: 0; bottom: 0;
@@ -216,38 +267,56 @@ footer{
   flex-direction: row;
   align-items: baseline;
   padding: 10px;
+
+  p, a{
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  h1{
+    margin-right: 5px;
+  }
   h1,a{
     font-size: 16px;
   }
+
   font-style: italic;
 }
 
 // fonts
 @font-face {
   font-family: "PTSerif";
-  src: url("/fonts/PTSerif-Regular.ttf") format("truetype");
+  src: url("~@/assets/fonts/PTSerif-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "PTSerif";
-  src: url("/fonts/PTSerif-Italic.ttf") format("truetype");
+  src: url("~@/assets/fonts/PTSerif-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "PTSerif";
-  src: url("/fonts/PTSerif-Bold.ttf") format("truetype");
+  src: url("~@/assets/fonts/PTSerif-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "PTSerif";
-  src: url("/fonts/PTSerif-BoldItalic.ttf") format("truetype");
+  src: url("~@/assets/fonts/PTSerif-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
+}
+
+// annimation 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

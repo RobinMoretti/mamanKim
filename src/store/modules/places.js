@@ -3,9 +3,8 @@
 import placesYml from './../../places.yml'
 import objectsYml from './../../objects.yml'
 
-
 const state = {
-  activePlace: null,
+  activePlace: "outside",
   lastActivePlace: false,
   places: {},
   player: [],
@@ -56,13 +55,14 @@ const actions = {
 
     }
 
-    commit('toggleDisplayPlace', true);
-
     if(!state.activePlace && !rootState.gameStarted){
       //first place of the game
-      dispatch("goTo", "garage");
+      // dispatch("goTo", "outside");
     }
 
+  },
+  reset: function({dispatch, state, commit}, placeName){
+    commit("resetVariables");
   },
   updatePlaceWeight: function({dispatch, state, commit}, placeName){
     if(placeName == "hands"){
@@ -119,21 +119,26 @@ const actions = {
     }
   },
   goTo: function({commit, dispatch}, place){
-    // console.log("GoTo = " + place);
+    console.log("GoTo = " + place);
+    
     commit('setActivePlace', place);
     dispatch('updatePlaceWeight', place);
 
-    if(this.$app){      
-      var passagesFiltered = this.$app.story.passages.filter((passage) => {
+    if(this.$app && this.$app.story().passages){      
+      var passagesFiltered = this.$app.story().passages.filter((passage) => {
         return passage.name == place;
       })
+
       console.log(passagesFiltered)
 
-      if(passagesFiltered){
+      if(passagesFiltered.length){
 
-        this.$app.story.show(place);
+        this.$app.story().show(place);
       }
     }
+
+    dispatch("saveGame", null, { root: true });
+    console.log('tried to save')
   },
   createNewPlace: function({commit, dispatch}, payload){
     // console.log("create New place!!!");
@@ -144,6 +149,17 @@ const actions = {
 
 // mutations
 const mutations = {
+  resetVariables: function(state, placeName){
+    state.activePlace = "outside";
+    state.lastActivePlace = false;
+    state.places = {};
+    state.player = [];
+    state.playerMaximunWeight = 40;
+    state.playerActualWeight = 0;
+    state.playerWidth = 80;
+    state.playerHeight = 80;
+    state.displayPlace = false;
+  },
   resetPlaceWeight: function(state, placeName){
     state.places[placeName].actualWeight = 0;
   },
@@ -209,8 +225,6 @@ const mutations = {
       }
 
       state.activePlace = place;
-
-
     }
   },
   resetPlayer: function(state){

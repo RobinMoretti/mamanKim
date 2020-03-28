@@ -25,22 +25,30 @@ velo-1:
     Récent, presque neuf. Il as l'air chère.
     Il n'est jamais attaché.
 poubelle-1:
-  name: Poubelle en carte
+  name: Poubelle, boite en carton
   weight: 0.7
   width: 30
   height: 30
   picto: P
   description: >
-    En trés mauvaise état elle set de tris.
+    Carton usagé "coupang" avec un intèrieur en aluminium.
   place:
-    name: Poubelle
+    name: Interieure de la boite en carton
     width: 150
     height: 150
-    infinite: true
-    scrollable: true
+    infinite: false
+    scrollable: false
     maximumWeight: 10
     inventory:
-      - name: poubelle-2
+      - name: dechet-carton-1
+dechet-carton-1:
+  name: Tas de déchet de papier ou de carton
+  weight: 2
+  width: 30
+  height: 30
+  picto: D
+  description: >
+    Tas de déchet de papier ou de choses carton.
 poubelle-2:
   name: Poubelle en carte
   weight: 0.7
@@ -63,7 +71,7 @@ publicite-1:
   weight: 0.01
   width: 15
   height: 10
-  picto: <img src='objects/publicite.jpg' >
+  picto: <img src='mamanKim/objects/publicite.jpg' >
   description: >
     Un flyer pour du poulet frix, beaucoup de couleur, de mauvais gout.
     Le logo représente un poulet heureux.

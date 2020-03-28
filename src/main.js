@@ -20,94 +20,46 @@ import styles from 'normalize.css'
 import objectsYml from './objects.yml'
 
 Vue.mixin({
-	// data: function () {
-	// 	return {
-	// 	}
-	// },
+	data () {
+	  return {
+	    publicPath: process.env.BASE_URL,
+	  }
+	},
 	computed: {
+	},
+	methods:{
 		story: function(){
 			var story = document.getElementById("twee");
-
 			if(story && story.contentWindow.story){
 				return story.contentWindow.story;
 			}
+			else {
+				return false;
+			}
+			// return false;
+		},
+		updatePassage:function(passage){
+			console.log(passage.name)
+			if(passage && passage.name != "Introduction" && passage.name != "endIntro"){
+				this.$store.commit("places/setActivePlace", passage.name);
+				if(!this.$store.state.places.displayPlace){
+    				this.$store.commit('places/toggleDisplayPlace', true);
+				}
+			} 
+			else if(passage && passage.name){
+				console.log('init')
+				if(!this.$store.state.saveId){
+					console.log('goTo')
+					this.$store.dispatch("places/goTo", "outside")
+				}
 
-			return false;
+    			this.$store.commit('places/toggleDisplayPlace', true);
+			}
+
+        	this.$store.dispatch("saveGame");
 		},
 	},
-	methods:{
-		updatePassage:function(passage){
-			if(passage && passage.name != "Introduction"){
-				this.$store.commit("places/setActivePlace", passage.name);
-			}
-			// this.$router.push(passage.name);
-		},
-		getPlaceWeight: function(placeName){
-			var storeStates = this.$store.state.places;
-		    var place = storeStates.places[placeName];
-		    var objects = objectsYml;
-			var weight = 0;
-
-			    // console.log("inventory = ", inventory);
-			    // console.log("objects = ", objects);
-			    // console.log("placeName = ", placeName);
-		    if(place && place.inventory){
-		    	var inventory = place.inventory;
-
-				var index = 0;
-				for (var i = 0; i < inventory.length; i++) {
-
-					// console.log("inventory.length[i] = ", objects[inventory[i].name]);
-
-					var detailObject = objects[inventory[i].name];
-					// si l'object est une place et quil nexiste pas déja, lajouter au places disponible
-					// if(detailObject.place && !storeStates.places[inventory[i].name]){
-					// 	console.log("detailObject.place = " + detailObject.name);
-					// 	console.log("detailObject.place = " + detailObject.place);
-					// 	console.log("storeStates.places[inventory[i].name] = " + storeStates.places[inventory[i].name]);
-			  //           this.$store.dispatch("places/createNewPlace",
-			  //             {
-			  //               place: {
-			  //                 name: detailObject.place.name,
-			  //                 width: detailObject.place.width,
-			  //                 height: detailObject.place.height,
-			  //                 scrollable: detailObject.place.scrollable,
-			  //                 infinite: detailObject.place.infinite,
-			  //                 maximumWeight: detailObject.place.maximumWeight,
-			  //                 inventory: detailObject.place.inventory,
-			  //               },
-			  //               name: inventory[i].name,
-			  //             }
-			  //           );
-
-	    //   				// this.$store.commit('places/checkPlaceWeight', inventory[i].name);
-					// }
-
-					weight += detailObject.weight;
-				}
-		    }
-
-			return weight;
-
-
-		//       // for (var x = 0; x < state.places[property].inventory.length; x++) {
-		//       //   var objectName = state.places[property].inventory[x].name;
-		//       //   if(objectsYml[objectName]){
-
-		//       //     var detailObject = objectsYml[objectName];
-
-		//       //     weight += detailObject.weight;
-
-		//       //     if(detailObject.place){
-		//       //       for (var i = 0; i < detailObject.place.length; i++) {
-		//       //         Things[i]
-		//       //       }
-		//       //     }
-
-		//       //   }
-		//       // }
-
-		},
+	mounted: function () {
 	}
 })
 
