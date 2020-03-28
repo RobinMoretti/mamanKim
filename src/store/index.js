@@ -42,7 +42,6 @@ export default new Vuex.Store({
       commit("startGame");
     },
     saveGame: function({commit, state}) {
-      console.log(state.loaded)
       if (this.$app.story() && state.loaded) {
         console.log('saving...')
         commit('createAutoSave', this.$app.story().saveHash());
@@ -59,7 +58,8 @@ export default new Vuex.Store({
     resetSave: function(state){
       state.playMode = "picking";
       state.gameStarted = false;
-      state.storyId = null
+      state.saveId = null;
+      state.storyId = null;
     },
     createAutoSave: function(state, hash){
       state.saveId = hash;

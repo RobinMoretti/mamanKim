@@ -45,6 +45,7 @@ const mutations = {
   },
   initObjects: function(state){
     state.objects = objectsYml;
+    console.log('objectsYml', objectsYml )
   },
 }
 

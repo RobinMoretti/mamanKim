@@ -6,18 +6,8 @@ outside:
       condition: true
   infinite: true
   scrollable: true
-  description: >
-    Grand ciel bleu, légèrement crème, surment la polution.
-    Il n'y as pas vraiment de trottoire, seulement du goudron. 
-    Les murs de mon batiment, villa ( villa en coreéen ) sont fait de brique rouge avec des angles légèrement arondis. 
-    Il y as toutes sortes de chose grimpante le long des murs. 
-    Tuyaux de gaz, cables internet, climatisations. 
-    En l'air, beaucoups de cables electrics, désordonées.
-    Les batiments sont trés carré ici.
-    C'est un quartier plutot riche en apparence, 
-    la plus part des petits immeuble sont en réalité une seul propriété.
-    Plus les appartements sont bas en niveau, plus ils sont petits et souvent délabré. 
-    Le derniers étage est souvent celui du propriétaire. 
+  description: >    
+    Il n'y a pas vraiment de trottoir dans cette rue, seulement du goudron. Les murs de mon bâtiment, villa-빌라 si on traduit littéralement. Ils sont fait de briques rouges aux angles légèrement arrondis. Il y a toute chose de chose grimpante le long des murs, tuyaux de gaz, câbles internet, climatisations.    En l'air, un grand ciel bleu légèrement crème, sûrement due à la pollution, beaucoup de câbles électriques désordonnés. Les bâtiments sont très carrés ici. C'est un quartier plutôt riche en apparence, GanamGu-강남구, le  quartier des riches éclaires-벼랔바자. La plupart des petits immeubles appartiennent à une seule personne. Plus les appartements sont bas en niveau, plus ils sont petits et souvent délabrés. Le dernier étage est souvent le plus grand et luxurieu, celui du propriétaire.
 
 garage:
   name: Garage
@@ -27,7 +17,7 @@ garage:
   scrollable: true
   inventory:
     - name: poubelle-1
-    # - name: dechet-bouteil-1
+    - name: dechet-carton-1
     - name: voiture-1
   connections:
     - place: "outside"
@@ -35,35 +25,28 @@ garage:
     - place: "palier"
       condition: true
   description: >
-    Les sont murs sont gris bleu, plutot sale.
-    Il y as une marche le long du mur droit jusqu'as la porte.
-    Le début de la marche fait office de zone pour les poubelles
-    Il n'y as pas de porte métalique fermant le garage.
-    C'est simplement une grande pièce grand ouverte. C'est très lumineu.
-    Une porte donne sur le palier du Rez de chaussé.
-
+    Les murs et le sol sont gris bleus, plutôt sale avec beaucoup de traces d'huile. Il y a une marche sur le côté droit qui vas jusqu'à la porte. Le début de la marche fait office de zone à poubelle. Il n'y a pas de porte métallique fermant le garage. C'est simplement une grande pièce grande ouverte. Plein sud, c'est très lumineux. Une porte donne sur le palier du rez-de-chaussée.
 
 palier:
-  name: Palier
-  width: 200
-  height: 400
+  name: Palier du 1er étage
+  width: 300
+  height: 300
   infinite: true
-  scrollable: true
+  scrollable: false
   inventory:
     - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
-    - name: publicite-1
+    - name: publicite-2
+    - name: colis-1
+    - name: colis-2
+    - name: reste-restau-chinois-1
   connections:
     - place: "garage"
       condition: true
     - place: "vestibule"
       condition: true
   description: >
-    Le sole est un peu vieu mais plutot propre.
-    Les porte peintent en bleu son en métal avec un étrange truc en plastique au mileu,
-    Comme une chatière en métale avec une jolie décoration floral,
-    mais qui apparement servait pour la poste.
+    Au sol, des carreaux gris marbré, les murs sont blanc, crépis. Le sol est un peu vieux, mais plutôt propre. Les portes bleues sont en métal avec une étrange chatière au couleur bronze. Elles servaient pour donner le courrier autre fois. On peut y voir des décorations florales en bas-relief. Les poignets métalliques sont rondes. Au-dessus de la poignet, un clavier digital sert de verrous. Il y a également un panneau électrique avec une porte métallique fermée prête à tomber même si deux gros morceaux de scotch la supporte.
+
 
 vestibule:
   name: Vestibule

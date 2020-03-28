@@ -1,7 +1,6 @@
 /* eslint no-unused-vars: "off", curly: "error" */
 
 import Vue from 'vue'
-import router from './router';
 import App from './App.vue'
 import store from './store'
 
@@ -40,21 +39,16 @@ Vue.mixin({
 		},
 		updatePassage:function(passage){
 			console.log(passage.name)
-			if(passage && passage.name != "Introduction" && passage.name != "endIntro"){
+			console.log(passage.name.includes('Intro'))
+			console.log(passage.name.includes('Start'))
+
+			if(passage && !passage.name.includes('Intro') && passage.name != "Start"){
+				console.log("toggleDisplayPlace")
 				this.$store.commit("places/setActivePlace", passage.name);
 				if(!this.$store.state.places.displayPlace){
     				this.$store.commit('places/toggleDisplayPlace', true);
 				}
 			} 
-			else if(passage && passage.name){
-				console.log('init')
-				if(!this.$store.state.saveId){
-					console.log('goTo')
-					this.$store.dispatch("places/goTo", "outside")
-				}
-
-    			this.$store.commit('places/toggleDisplayPlace', true);
-			}
 
         	this.$store.dispatch("saveGame");
 		},
@@ -64,14 +58,12 @@ Vue.mixin({
 })
 
 const app = new Vue({
-	router: router,
 	store,
 	render: h => h(App),
 }).$mount('#app')
 
 // store configaration
 store.$app = app;
-router.$app = app;
 window.$app = app;
 
 

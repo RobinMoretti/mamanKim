@@ -39,9 +39,6 @@ const getters = {
 // actions
 const actions = {
   init: function({dispatch, commit, state, rootState}){
-
-    commit('toggleDisplayPlace', false);
-
     if(!rootState.gameStarted){
       commit('initPlaces');
       commit('addAllObjectSpaces');
@@ -52,14 +49,7 @@ const actions = {
           dispatch('defineInventoryParentPlaces', { inventory: state.places[place].inventory, parentPlaceName: place});
         }
       }
-
     }
-
-    if(!state.activePlace && !rootState.gameStarted){
-      //first place of the game
-      // dispatch("goTo", "outside");
-    }
-
   },
   reset: function({dispatch, state, commit}, placeName){
     commit("resetVariables");
@@ -111,7 +101,8 @@ const actions = {
     var place = payload.parentPlaceName;
 
     for (var i = 0; i < targetInventory.length; i++) {
-      // console.log("iObject = ", targetInventory[i]);
+      // console.log("iObject = ", targetInventory[i].name);
+      // console.log("iObject = ", objectsYml[targetInventory[i].name]);
       if(objectsYml[targetInventory[i].name].place){
         commit('setSpaceParent', { placeName: targetInventory[i].name, parentName: place });
         dispatch('defineInventoryParentPlaces', { inventory: objectsYml[targetInventory[i].name].place.inventory, parentPlaceName: targetInventory[i].name} );
@@ -120,7 +111,7 @@ const actions = {
   },
   goTo: function({commit, dispatch}, place){
     console.log("GoTo = " + place);
-    
+
     commit('setActivePlace', place);
     dispatch('updatePlaceWeight', place);
 
@@ -137,6 +128,8 @@ const actions = {
       }
     }
 
+    dispatch("checkForInventoryEvent");
+
     dispatch("saveGame", null, { root: true });
     console.log('tried to save')
   },
@@ -144,6 +137,16 @@ const actions = {
     // console.log("create New place!!!");
     commit('createNewPlace', payload);
     // dispatch("goTo", payload.name);
+  },
+  checkForInventoryEvent: function({commit, dispatch, state}){
+    console.log('checking !!!!!!')
+    console.log(state.player)
+    for (var i = 0; i < state.player.length; i++) {
+      console.log(state.player[i])
+      if(objectsYml[state.player[i]].events){
+        console.log("events = " + objectsYml[state.player[i]].events)
+      }
+    }
   },
 }
 

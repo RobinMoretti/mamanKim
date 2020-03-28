@@ -31,9 +31,9 @@ poubelle-1:
   height: 30
   picto: P
   description: >
-    Carton usagé "coupang" avec un intèrieur en aluminium.
+    Carton usagé de livraison 로겟배송 *Coupang* avec un intèrieur doublé en aluminium. Le *Amazon* Coréen.
   place:
-    name: Interieure de la boite en carton
+    name: Intèrieure de la boite en carton
     width: 150
     height: 150
     infinite: false
@@ -41,45 +41,86 @@ poubelle-1:
     maximumWeight: 10
     inventory:
       - name: dechet-carton-1
+      - name: dechet-carton-1
+      - name: canette-1
+      - name: canette-1
+canette-1:
+  name: Cadavre de bière
+  weight: 2
+  width: 20
+  height: 30
+  picto: Cass
+  description: >
+    Canette de bière *Cass*, écrasé sur le côté. 
 dechet-carton-1:
   name: Tas de déchet de papier ou de carton
   weight: 2
-  width: 30
-  height: 30
+  width: 20
+  height: 20
   picto: D
   description: >
     Tas de déchet de papier ou de choses carton.
-poubelle-2:
-  name: Poubelle en carte
-  weight: 0.7
-  width: 30
-  height: 30
-  picto: P
-  description: >
-    En trés mauvaise état elle set de tris.
-  place:
-    name: Poubelle
-    width: 150
-    height: 150
-    infinite: true
-    scrollable: true
-    maximumWeight: 10
-    inventory:
-      - name: velo-1
 publicite-1:
-  name: Publicité
+  name: Publicité de un restaurant chinois
   weight: 0.01
   width: 15
   height: 10
-  picto: <img src='mamanKim/objects/publicite.jpg' >
+  picto: 📃
   description: >
-    Un flyer pour du poulet frix, beaucoup de couleur, de mauvais gout.
-    Le logo représente un poulet heureux.
-fictif-1:
-  name: fictif
-  weight: 0
-  width: 0
-  height: 0
-  picto: d
+    Flyer d'un restaurant chinois, beaucoup de rouge, plutôt de mauvais gout. Nouilles Chachang-짜장면, Tangsuyuk-탕수육 et autres classique de se genre de restaurants.
+publicite-2:
+  name: Publicité de un restaurant de poulet frit
+  weight: 0.01
+  width: 25
+  height: 13
+  picto: Pub
   description: >
-    Debug
+    Flyer d'un restaurant de poulet frit. Le logo représente un poulet heureux. Il y as toutes sorte de recettes, piquant, au miel, classique.
+
+reste-restau-chinois-1:
+  name: Restes d'une livraison
+  weight: 3
+  width: 30
+  height: 30
+  picto: 🥣
+  description: >
+    Sac en plastique remplis d'assiètes et de bols sales avec des restes de nourritures et de soupes pas finit. C'est visuellement assez dégueulasse. Le livreur passeras chercher le sacs plus tard pour les néttoyer.  
+    
+colis-1:
+  name: Livraison *Coupang*
+  weight: 10
+  width: 80
+  height: 50
+  picto: 📦
+  description: >
+    Carton en parfaite état. Au nom de Park Su yoon-박수윤.
+colis-2:
+  name: Livraison *Coupang*
+  weight: 5
+  width: 50
+  height: 40
+  picto: 📦
+  events:
+    - name: enterGoPassage
+      params:   
+        room: vestibule
+        passage: vole colis-1
+    - name: enterGoPassage
+      params: 
+        room: vestibule
+        passage: vole colis-1
+    - name: setTweeVariable
+      params: 
+        name: colis-1-owner
+        value: Park Eun Su-박은수
+    - name: setTweeVariable
+      params: 
+        name: colis-1-owner
+        value: Park Eun Su-박은수
+    - name: exitSetTweeVariable
+      params: 
+        name: porteClaque
+        value: true
+  description: >
+    Carton en parfaite état. Au nom de Park Eun Su-박은수.
+

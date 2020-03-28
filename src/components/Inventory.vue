@@ -103,7 +103,7 @@ export default {
 <style lang="scss">
   .informations{
     p{
-      margin-top: 0;
+      margin-top: 10px;
       font-size: 12px;
       opacity: 0.8;
     }
@@ -118,8 +118,11 @@ export default {
     box-sizing: border-box;
     background-image: url("~@/assets/inventory-bg.svg");
     background-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     // background-clip: border-box;
-    
+
     .fictif{
       opacity: 0;
       // margin-top: -4px !important;

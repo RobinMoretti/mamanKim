@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img src="/objects/publicite.jpg" alt="test">
     <transition-group name="fade">
       <div v-show="!loaded" key="1">Loading...</div>
       <div id="app"  v-show="loaded" key="2">
