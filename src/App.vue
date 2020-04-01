@@ -1,10 +1,9 @@
 <template>
   <div>
-    <img src="/objects/publicite.jpg" alt="test">
     <transition-group name="fade">
       <div v-show="!loaded" key="1">Loading...</div>
       <div id="app"  v-show="loaded" key="2">
-        <div class="mains">
+        <vue-custom-scrollbar class="mains">
           <h3>Dans les mains</h3>
           <inventory name="hands" :active-place-obj="handsObject"></inventory>
           <p class="play-mode">
@@ -15,9 +14,9 @@
           <hr>
 
           <iframe :src="tweeUrl" id="twee" ref="twee" @load="iframeLoaded" v-if="displayIframe"></iframe>
-        </div>
+        </vue-custom-scrollbar>
 
-        <div class="space">
+        <vue-custom-scrollbar class="space">
           <transition name="fade">
 
             <div v-if="displayPlace && activePlaceObj">
@@ -50,19 +49,19 @@
               </div>
             </div>
           </transition>
-        </div>
+        </vue-custom-scrollbar>
 
-        <div class="object" v-if="displayPlace">
+        <vue-custom-scrollbar class="object-container" v-if="displayPlace">
           <h3 v-if="activeObjectObj">{{activeObjectObj.name}}</h3>
 
           <p v-if="activeObjectObj">{{activeObjectObj.description}}</p>
-        </div>
+        </vue-custom-scrollbar>
 
-        <footer> 
-          <h1>Maman Kim</h1> 
-          - 
+        <footer>
+          <h1>Maman Kim</h1>
+          -
           <a href="http://robinmoretti.eu">Robin Moretti</a>
-          -   
+          -
           <transition name="fade">
             <p v-on:click="dResetGame" v-if="!displayResetGame"> Recommencer</p>
             <p v-else> <a href="#" v-on:click="resetGame">vraiment ?</a> la sauvegarde vas être supprimé. </p>
@@ -76,17 +75,22 @@
 
 <script>
 
+import vueCustomScrollbar from 'vue-custom-scrollbar'
 export default {
+  components: {
+    vueCustomScrollbar
+  },
   name: 'App',
   data () {
     return {
+      scrollbarSettings: {
+        maxScrollbarLength: 60
+      },
       displayResetGame: false,
       tweeUrl: "twee-build/index.html",
       displayIframe: false,
       loaded: false,
     }
-  },
-  components: {
   },
   computed: {
     saveId: function(){
@@ -177,14 +181,15 @@ html, #twee{
   font-size: 15px;
   line-height: 1.5;
 }
-
+html, body{
+  overflow: hidden;
+}
 body{
   height: 100vh;
   width: 1300px;
   margin: 0;
   padding: 10px;
   box-sizing: border-box;
-  overflow-y: hidden;
 }
 
 #app {
@@ -202,6 +207,12 @@ body{
 
 
 #app > div{
+}
+
+.space, .mains, .object-container{
+  max-height: calc( 100vh - 50px );
+  overflow-y: scroll;
+  padding-right: 40px;
   display: inline-block !important;
   margin: 10px;
 }
@@ -209,7 +220,7 @@ body{
 #twee{
   border: unset;
   width: 300px;
-  height: 100vh;
+  height: calc( 100vh - 300px );
   margin-right: 20px;
 }
 
@@ -223,7 +234,7 @@ body{
   }
 }
 
-.object{
+.object-container{
     // width: 300px;
     margin-left: 20px;
 }
@@ -263,15 +274,18 @@ hr{
 footer{
   position: absolute;
   left: 0; bottom: 0;
-  width: 100%;
+  // width: 100%;
   display: flex;
+  justify-content: flex-start;
   flex-direction: row;
-  align-items: baseline;
+  align-items: flex-end;
   padding: 10px;
 
   p, a{
     margin-right: 5px;
     margin-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   h1{
@@ -279,6 +293,8 @@ footer{
   }
   h1,a{
     font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   font-style: italic;
@@ -313,7 +329,7 @@ footer{
   font-style: italic;
 }
 
-// annimation 
+// annimation
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

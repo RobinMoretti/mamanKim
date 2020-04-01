@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="place-inventory" :id="name" :style="inventoryStyle">
+    <vue-custom-scrollbar class="place-inventory" :id="name" :style="inventoryStyle">
       <p-object
           :space="name"
           :object="object"
@@ -9,7 +9,7 @@
       </p-object>
 
       <span class="fictif">f</span>
-    </div>
+    </vue-custom-scrollbar>
 
     <div class="informations">
       <p>Poid maximum: {{actualWeight}}/{{maximumWeight}}</p>
@@ -18,7 +18,12 @@
 </template>
 
 <script>
+import vueCustomScrollbar from 'vue-custom-scrollbar'
+
 export default {
+  components: {
+    vueCustomScrollbar
+  },
   // data: function () {
   //  return {
   //  }
