@@ -29,19 +29,20 @@
               <div class="places-available">
                 <button
                   v-for="connection in activePlaceObj.connections"
-                  v-on:click="goToPlace(connection.place)"
-                  v-if="placeStore.places[connection.place]">
+                  v-on:click="goToPlace(connection.place, placeStore.places[connection.place])"
+                  v-if="placeStore.places[connection.place]"
+                  :class="{ locked: placeStore.places[connection.place].locked }">
                     {{ placeStore.places[connection.place].name }}
                 </button>
                 <div v-if="activePlaceObj.parentPlace">
                   <button
                       v-if="activePlaceObj.parentPlace != 'hands'"
-                      v-on:click="goToPlace(activePlaceObj.parentPlace)">
+                      v-on:click="goToPlace(activePlaceObj.parentPlace, placeStore.places[activePlaceObj.parentPlace])">
                       {{ placeStore.places[activePlaceObj.parentPlace].name }}
                   </button>
                   <button
                       v-else-if="activePlaceObj.parentPlace == 'hands'"
-                      v-on:click="goToPlace(placeStore.lastActivePlace)">
+                      v-on:click="goToPlace(placeStore.lastActivePlace, placeStore.places[placeStore.lastActivePlace])">
                       {{ placeStore.places[placeStore.lastActivePlace].name }}
                   </button>
                 </div>
@@ -147,8 +148,10 @@ export default {
     resetPlayer: function(){
       this.$store.commit("places/resetPlayer");
     },
-    goToPlace: function(place){
-      this.$store.dispatch("places/goTo", place);
+    goToPlace: function(place, placeObj){
+      if(placeObj.locked != true){
+        this.$store.dispatch("places/goTo", place);
+      }
     },
     changePlayMode: function(mode){
       this.$store.commit("changePlayMode", mode);
@@ -225,6 +228,7 @@ body{
 }
 
 .space{
+  flex-shrink: 0;
   min-width: 300px;
   margin-right: 20px;
   .description{
@@ -243,6 +247,7 @@ body{
   width: 100%;
 }
 .mains{
+  flex-shrink: 0;
   margin-right: 20px;
   width: 300px;
 }
@@ -299,8 +304,10 @@ footer{
 
   font-style: italic;
 }
-
-// fonts
+.locked{
+  opacity: 0.3;
+}
+// fonts ---------------
 @font-face {
   font-family: "PTSerif";
   src: url("~@/assets/fonts/PTSerif-Regular.ttf") format("truetype");
@@ -329,7 +336,8 @@ footer{
   font-style: italic;
 }
 
-// annimation
+// annimation ---------------
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }

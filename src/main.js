@@ -38,19 +38,33 @@ Vue.mixin({
 			// return false;
 		},
 		updatePassage:function(passage){
-			console.log(passage.name)
-			console.log(passage.name.includes('Intro'))
-			console.log(passage.name.includes('Start'))
+			// console.log(passage.name)
+			// console.log(passage.name.includes('Intro'))
+			// console.log(passage.name.includes('Start'))
 
 			if(passage && !passage.name.includes('Intro') && passage.name != "Start"){
-				console.log("toggleDisplayPlace")
-				this.$store.commit("places/setActivePlace", passage.name);
+				// console.log("toggleDisplayPlace")
+
+				if(this.$store.state.places.activePlace != passage.name){
+					this.$store.commit("places/setActivePlace", passage.name);
+				}
+
 				if(!this.$store.state.places.displayPlace){
     				this.$store.commit('places/toggleDisplayPlace', true);
 				}
-			} 
+			}
 
         	this.$store.dispatch("saveGame");
+
+        	if(!this.story().$vue){
+        		this.story().$vue = this;
+        	}
+		},
+		storyFunctions: function(name, payload){
+			if(name == "toggle-place"){
+				console.log('Lock room')
+    			this.$store.commit('places/togglePlace', payload);
+			}
 		},
 	},
 	mounted: function () {

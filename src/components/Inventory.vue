@@ -123,15 +123,18 @@ export default {
     box-sizing: border-box;
     background-image: url("~@/assets/inventory-bg.svg");
     background-size: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: flex-start;
     // background-clip: border-box;
-
+    > div{
+      display: inline-block;
+      line-height: 0;
+    }
     .fictif{
       opacity: 0;
       // margin-top: -4px !important;
-      width: 20px; height: 20px;
+      width: calc(100% - 5px); height: 20px;
       display: inline-block;
       border: 1px solid black;
       box-sizing: border-box;

@@ -2,7 +2,7 @@ voiture-1:
   name: Voiture de la proprio
   weight: 100
   width: 250
-  height: 500
+  height: 300
   picto: 🚙
   description: >
     clio grise, plutot ancienne.
@@ -51,7 +51,7 @@ canette-1:
   height: 30
   picto: Cass
   description: >
-    Canette de bière *Cass*, écrasé sur le côté. 
+    Canette de bière *Cass*, écrasé sur le côté.
 dechet-carton-1:
   name: Tas de déchet de papier ou de carton
   weight: 2
@@ -84,8 +84,8 @@ reste-restau-chinois-1:
   height: 30
   picto: 🥣
   description: >
-    Sac en plastique remplis d'assiètes et de bols sales avec des restes de nourritures et de soupes pas finit. C'est visuellement assez dégueulasse. Le livreur passeras chercher le sacs plus tard pour les néttoyer.  
-    
+    Sac en plastique remplis d'assiètes et de bols sales avec des restes de nourritures et de soupes pas finit. C'est visuellement assez dégueulasse. Le livreur passeras chercher le sacs plus tard pour les néttoyer.
+
 colis-1:
   name: Livraison *Coupang*
   weight: 10
@@ -101,26 +101,24 @@ colis-2:
   height: 40
   picto: 📦
   events:
-    - name: enterGoPassage
-      params:   
-        room: vestibule
-        passage: vole colis-1
-    - name: enterGoPassage
-      params: 
-        room: vestibule
+    - name: goPassage
+      params:
+        path: enter
+        place: vestibule
         passage: vole colis-1
     - name: setTweeVariable
-      params: 
+      params:
+        path: enter
+        place: vestibule
         name: colis-1-owner
         value: Park Eun Su-박은수
-    - name: setTweeVariable
-      params: 
-        name: colis-1-owner
-        value: Park Eun Su-박은수
-    - name: exitSetTweeVariable
-      params: 
-        name: porteClaque
-        value: true
+    # - name: setTweeVariable
+    #   params:
+    #     path: exit
+    #     place: vestibule
+    #     name: porte-claque
+    #     value: 1
+    #     increment: true
   description: >
     Carton en parfaite état. Au nom de Park Eun Su-박은수.
 

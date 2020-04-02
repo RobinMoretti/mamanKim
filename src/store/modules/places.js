@@ -115,12 +115,12 @@ const actions = {
     commit('setActivePlace', place);
     dispatch('updatePlaceWeight', place);
 
-    if(this.$app && this.$app.story().passages){      
+    if(this.$app && this.$app.story().passages){
       var passagesFiltered = this.$app.story().passages.filter((passage) => {
         return passage.name == place;
       })
 
-      console.log(passagesFiltered)
+      // console.log(passagesFiltered)
 
       if(passagesFiltered.length){
 
@@ -131,7 +131,7 @@ const actions = {
     dispatch("checkForInventoryEvent");
 
     dispatch("saveGame", null, { root: true });
-    console.log('tried to save')
+    // console.log('tried to save')
   },
   createNewPlace: function({commit, dispatch}, payload){
     // console.log("create New place!!!");
@@ -139,19 +139,82 @@ const actions = {
     // dispatch("goTo", payload.name);
   },
   checkForInventoryEvent: function({commit, dispatch, state}){
-    console.log('checking !!!!!!')
-    console.log(state.player)
+
     for (var i = 0; i < state.player.length; i++) {
-      console.log(state.player[i])
-      if(objectsYml[state.player[i]].events){
-        console.log("events = " + objectsYml[state.player[i]].events)
+
+      if(objectsYml[state.player[i].name].events){
+        for(const eventObjProperty in objectsYml[state.player[i].name].events){
+          var payload = {...objectsYml[state.player[i].name].events[eventObjProperty].params};
+
+          // console.log("checkForInventoryEvent");
+          // console.log("payload = ", payload);
+          // console.log("state.lastActivePlace = ", state.lastActivePlace);
+          // console.log("state.activePlace = ", state.activePlace);
+
+          if(payload.path == 'enter'){
+            console.log("enter.");
+            console.log("state.activePlace = ", state.lastActivePlace);
+            console.log(" payload.place = ",  payload.place);
+            // console.log("enter.");
+            if(state.activePlace == payload.place){
+            // console.log("enter validate.");
+              dispatch(objectsYml[state.player[i].name].events[eventObjProperty].name, payload);
+            }
+          }else if(payload.path == 'exit'){
+            console.log("exit.");
+            console.log("state.lastActivePlace = ", state.lastActivePlace);
+            console.log(" payload.place = ",  payload.place);
+            if(state.lastActivePlace == payload.place){
+            // console.log("exit validate.");
+              dispatch(objectsYml[state.player[i].name].events[eventObjProperty].name, payload);
+            }
+          }
+
+        }
       }
+    }
+
+  },
+
+  // inventory events -------------------------
+
+  goPassage: function({commit, dispatch, state}, payload){
+    // console.log("passages = " , this.$app.story().passages);
+    var passagesFiltered = this.$app.story().passages.filter((passage) => {
+      return passage.name == payload.passage;
+    })
+
+    if(passagesFiltered.length){
+      this.$app.story().show(payload.passage);
+    }
+  },
+  setTweeVariable: function({commit, dispatch, state}, payload){
+
+    if(!this.$app.story().state[payload.name]){
+      this.$app.story().state[payload.name] = 0;
+    }
+
+    if(payload.increment){
+      console.log('incremmmenntt ----')
+      console.log(payload.name)
+      console.log(payload.value)
+      this.$app.story().state[payload.name] += payload.value;
+      console.log(this.$app.story().state[payload.name] )
+    }
+    else if(payload.decrement){
+      this.$app.story().state[payload.name] -= payload.value;
+    }
+    else{
+      this.$app.story().state[payload.name] = payload.value;
     }
   },
 }
 
 // mutations
 const mutations = {
+  togglePlace: function(state, payload){
+    this.$app.$set(state.places[payload.place], "locked",  payload.value);
+  },
   resetVariables: function(state, placeName){
     state.activePlace = "outside";
     state.lastActivePlace = false;
@@ -183,13 +246,13 @@ const mutations = {
       }
   },
   setConnectionsToPlaceObject: function(state, payload){
-    console.log("payload.placeObj.place = " + payload.placeObj.place);
-    console.log("state.activePlace = " + state.activePlace);
-    console.log('payload = ', payload)
-    console.log('payload = ', payload.placeObj.place !== state.activePlace)
+    // console.log("payload.placeObj.place = " + payload.placeObj.place);
+    // console.log("state.activePlace = " + state.activePlace);
+    // console.log('payload = ', payload)
+    // console.log('payload = ', payload.placeObj.place !== state.activePlace)
     if(payload.placeObj.place !== state.activePlace){
       var place = state.places[payload.name];
-      console.log('place = ', place)
+      // console.log('place = ', place)
       place.connections = [payload.placeObj];
 
       this.$app.$set(state.places, payload.name, place);
@@ -198,7 +261,7 @@ const mutations = {
 
   },
   checkPlaceWeight: function(state, placeName){
-    console.log("checkPlaceWeight = " + placeName);
+    // console.log("checkPlaceWeight = " + placeName);
     if(!state.places[placeName].actualWeight){
       state.places[placeName].actualWeight = this.$app.getPlaceWeight(placeName);
     }
@@ -216,18 +279,21 @@ const mutations = {
   setActivePlace: function(state, place){
     // var filter = false;
 
-    if(state.places[place]){
-      console.log('setting last active place ...')
-      console.log("checkAllParent(state.places[place], state.places) = " + checkAllParent(state.places[place], state.places));
+    if(state.places[place] && place != state.activePlace){
+      // console.log('setting last active place ...')
+      // console.log("checkAllParent(state.places[place], state.places) = " + checkAllParent(state.places[place], state.places));
       if(!state.lastActivePlace){
         state.lastActivePlace = place;
       }
       else if(checkAllParent(state.places[place], state.places)){
-        console.log('setted')
+        // console.log('setted')
         state.lastActivePlace = state.activePlace;
       }
 
       state.activePlace = place;
+      console.log("setActivePlace .......");
+      console.log("state.lastActivePlace = " + state.lastActivePlace);
+      console.log("state.activePlace = " + state.activePlace);
     }
   },
   resetPlayer: function(state){

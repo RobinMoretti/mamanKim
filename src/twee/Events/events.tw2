@@ -2,4 +2,5 @@
 [[ Chérie, il y avait des colis dehors... ->vole colis-1-1]]
 
 ::vole colis-1-1
-Ah ce n'est pas à nous ! Regarde ce n'est à nos noms ! 
+Ah ce n'est pas à nous ! Regarde ce n'est à nos noms !
+<%= s["colis-1-owner"] %>

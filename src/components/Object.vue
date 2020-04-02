@@ -134,7 +134,7 @@ export default {
       console.log(fictifHeightOffset)
       console.log(fictifHeightOffset)
       if(fictifHeightOffset + this.detailObject.height >= targetMaxHeight){
-        heightAvailable = false;  
+        heightAvailable = false;
       }
 
       if(weightState && heightAvailable){
@@ -162,6 +162,7 @@ export default {
     padding: 2px;
     box-sizing: border-box;
     margin: 0;
+      vertical-align: top;
 
     position: relative;
 
