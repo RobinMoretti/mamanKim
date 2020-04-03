@@ -6,7 +6,7 @@ outside:
       condition: true
   infinite: true
   scrollable: true
-  description: >    
+  description: >
     Il n'y a pas vraiment de trottoir dans cette rue, seulement du goudron. Les murs de mon bâtiment, villa-빌라 si on traduit littéralement. Ils sont fait de briques rouges aux angles légèrement arrondis. Il y a toute chose de chose grimpante le long des murs, tuyaux de gaz, câbles internet, climatisations.    En l'air, un grand ciel bleu légèrement crème, sûrement due à la pollution, beaucoup de câbles électriques désordonnés. Les bâtiments sont très carrés ici. C'est un quartier plutôt riche en apparence, GanamGu-강남구, le  quartier des riches éclaires-벼랔바자. La plupart des petits immeubles appartiennent à une seule personne. Plus les appartements sont bas en niveau, plus ils sont petits et souvent délabrés. Le dernier étage est souvent le plus grand et luxurieu, celui du propriétaire.
 
 garage:
@@ -50,17 +50,37 @@ palier:
 
 vestibule:
   name: Vestibule
-  width: 100
-  height: 200
+  width: 150
+  height: 250
   infinite: false
   scrollable: false
+  topAvailable:
+    top: 140
+  inventory:
+    - name: pot-plastique-1
+    - name: parapluie-1
+    - name: parapluie-2
+    - name: parapluie-1
+    - name: meuble-1
+    - name: meuble-metallique-1
+    - name: chaussure-2
+    - name: chaussure-2
+    - name: chaussure-2
+    - name: chaussure-1
+    - name: chaussure-1
+    - name: chaussure-3
+    - name: pantoufle-1
+    - name: pantoufle-1
+    - name: pantoufle-1
   connections:
     - place: "palier"
       condition: true
     - place: "salle-de-bain"
-      condition: true
+      condition: "topAvailable"
     - place: "entree-salle-principale"
-      condition: "empty-inventory"
+      condition: "topAvailable"
+  description: >
+    Comme sur le palier, au sol, les carreaux sont gris marbré. C'est une petite pièce de quatre mètres carré. Tout les murs sont tapissé d'un papier texturé beige, parfois légèrement rosé. Sur un des murs, un cadre en bois imposant sous verre contient un tableau tissé d'un champ de coquelicot et d'une montagne en fond. Juste à côté, une petite horloge ronde, fixé sur le même clou qu'un calendrier.
 
 salle-de-bain:
   name: Salle de bain un peu dégueu

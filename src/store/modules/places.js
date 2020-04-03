@@ -4,7 +4,7 @@ import placesYml from './../../places.yml'
 import objectsYml from './../../objects.yml'
 
 const state = {
-  activePlace: "outside",
+  activePlace: "palier",
   lastActivePlace: false,
   places: {},
   player: [],
@@ -104,9 +104,33 @@ const actions = {
       // console.log("iObject = ", targetInventory[i].name);
       // console.log("iObject = ", objectsYml[targetInventory[i].name]);
       if(objectsYml[targetInventory[i].name].place){
-        commit('setSpaceParent', { placeName: targetInventory[i].name, parentName: place });
-        dispatch('defineInventoryParentPlaces', { inventory: objectsYml[targetInventory[i].name].place.inventory, parentPlaceName: targetInventory[i].name} );
+
+        try {
+          commit('setSpaceParent', { placeName: targetInventory[i].name, parentName: place });
+          dispatch('defineInventoryParentPlaces', { inventory: objectsYml[targetInventory[i].name].place.inventory, parentPlaceName: targetInventory[i].name} );
+        } catch(e) {
+          // statements
+          console.log("error in defineInventoryParentPlaces!");
+          console.log(targetInventory);
+          console.log(place);
+          console.log(e);
+        }
       }
+    }
+  },
+  updateConnectionsConditions: function({commit, dispatch, state}){
+    var placeObj = state.places[state.activePlace];
+
+    for (var i = 0; i < placeObj.connections.length; i++) {
+      if (placeObj.connections[i].condition == true || placeObj.connections[i].condition == false) {
+        commit('setConnectionsAvaibility', {connection: placeObj.connections[i], value: placeObj.connections[i].condition })
+      }
+      else{
+        commit('setConnectionsAvaibility', {connection: placeObj.connections[i], value: checkConnectionSpecialCondition({ condition: placeObj.connections[i].condition, placeObj: placeObj, activePlace: state.activePlace}) })
+
+        // this.$app.$set(placeObj.connections[i], "available",);
+      }
+      // console.log("connections[i] = " + connections[i]);
     }
   },
   goTo: function({commit, dispatch}, place){
@@ -212,11 +236,15 @@ const actions = {
 
 // mutations
 const mutations = {
+  setConnectionsAvaibility: function(state, payload){
+    console.log("payload.value = " + payload.value);
+    this.$app.$set(payload.connection, "available", payload.value);
+  },
   togglePlace: function(state, payload){
     this.$app.$set(state.places[payload.place], "locked",  payload.value);
   },
   resetVariables: function(state, placeName){
-    state.activePlace = "outside";
+    state.activePlace = "palier";
     state.lastActivePlace = false;
     state.places = {};
     state.player = [];
@@ -285,8 +313,9 @@ const mutations = {
       if(!state.lastActivePlace){
         state.lastActivePlace = place;
       }
-      else if(checkAllParent(state.places[place], state.places)){
+      else if(checkAllParent(state.places[state.activePlace], state.places)){
         // console.log('setted')
+        console.log("checkAllParent = " + checkAllParent(state.places[place], state.places));
         state.lastActivePlace = state.activePlace;
       }
 
@@ -328,6 +357,7 @@ const mutations = {
       if(objectsYml[iObjectName].place){
         this.$app.$set(state.places, iObjectName, {
                         name: objectsYml[iObjectName].place.name,
+                        description: objectsYml[iObjectName].description,
                         width: objectsYml[iObjectName].place.width,
                         height: objectsYml[iObjectName].place.height,
                         scrollable: objectsYml[iObjectName].place.scrollable,
@@ -349,9 +379,9 @@ const mutations = {
   },
   addObject: function(state, payload){
     if(payload.place != "hands"){
-      state.places[payload.place].inventory.push(payload.object);
+      state.places[payload.place].inventory.unshift(payload.object);
     }else {
-      state.player.push(payload.object);
+      state.player.unshift(payload.object);
     }
 
     // if place is object, update parent
@@ -395,24 +425,41 @@ export default {
 
 // helper ---------
 
+function checkConnectionSpecialCondition(payload){
+  if(payload.condition == "topAvailable"){
+    var actualFictifHeight = document.getElementById(payload.activePlace).getElementsByClassName("fictif")[0].offsetTop;
+    var topLimit = payload.placeObj.topAvailable.top;
+    if(actualFictifHeight <= topLimit){
+      return true;
+    }else {
+      return false;
+    }
+  }
+}
+
 function checkAllParent(targetPlace, places){
   // return true if no hand parent or grant parent
   var booleanParent = true;
+   console.log("checkAllParent----------");
 
-  if(targetPlace.parentPlace && targetPlace.parentPlace != "hands"){
-    while (targetPlace.parentPlace && booleanParent) {
-      if(targetPlace.parentPlace && targetPlace.parentPlace == "hands"){
+   console.log("targetPlace.parentPlace = " + targetPlace);
+
+  if(targetPlace.parentPlace != null && targetPlace.parentPlace != "hands"){
+    console.log("targetPlace = ", targetPlace);
+    while (targetPlace.parentPlace != null && booleanParent) {
+      if(targetPlace.parentPlace != null && targetPlace.parentPlace == "hands"){
         booleanParent = false;
       }
       else{
         targetPlace = places[targetPlace.parentPlace];
       }
-
     }
   }
-  if(targetPlace.parentPlace && targetPlace.parentPlace == "hands"){
+
+  if(targetPlace.parentPlace != null && targetPlace.parentPlace == "hands"){
     booleanParent = false;
   }
 
+  console.log("booleanParent = " + booleanParent);
   return booleanParent;
 }

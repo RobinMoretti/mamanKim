@@ -82,20 +82,32 @@ reste-restau-chinois-1:
   weight: 3
   width: 30
   height: 30
-  picto: 🥣
+  picto: 🍽
   description: >
     Sac en plastique remplis d'assiètes et de bols sales avec des restes de nourritures et de soupes pas finit. C'est visuellement assez dégueulasse. Le livreur passeras chercher le sacs plus tard pour les néttoyer.
 
 colis-1:
-  name: Livraison *Coupang*
+  name: Livraison Coupang
   weight: 10
   width: 80
   height: 50
   picto: 📦
+  events:
+    - name: goPassage
+      params:
+        path: enter
+        place: vestibule
+        passage: vole colis-1
+    - name: setTweeVariable
+      params:
+        path: enter
+        place: vestibule
+        name: colis-1-owner
+        value: Park Su yoon-박수윤
   description: >
     Carton en parfaite état. Au nom de Park Su yoon-박수윤.
 colis-2:
-  name: Livraison *Coupang*
+  name: Livraison Coupang
   weight: 5
   width: 50
   height: 40
@@ -121,4 +133,390 @@ colis-2:
     #     increment: true
   description: >
     Carton en parfaite état. Au nom de Park Eun Su-박은수.
+
+
+
+# vestibule ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+pot-plastique-1:
+  name: Pot en plastique
+  weight: 1.5
+  width: 40
+  height: 60
+  picto: ⬜️
+  description: >
+    Pot cylindrique en plastique.
+  place:
+    name: Intèrieure de la boite en carton
+    width: 100
+    height: 200
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: parapluie-1
+      - name: parapluie-2
+      - name: parapluie-1
+
+parapluie-1:
+  name: Vieu parapluie rouillé
+  weight: 1
+  width: 20
+  height: 60
+  picto: 🌂
+  description: >
+    Vieux parapluie noir en mauvaise états, **C you**.
+
+parapluie-2:
+  name: Parapluie usé
+  weight: 1
+  width: 25
+  height: 70
+  picto: ☂️
+  description: >
+    Parapluie rose avec des dessins fleurales plutot usagé, **7 Eleven**.
+
+meuble-metallique-1:
+  name: Structure métalique à étages
+  weight: 2
+  width: 40
+  height: 60
+  picto: 🗄
+  description: >
+    Petit meuble métallique noir, avec trois étagères. Les 3 étagères sont constitués d'un maillage fin métallique.
+  place:
+    name: Structure métalique à étages
+    width: 80
+    height: 120
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: etagere-structure-metallique-1
+      - name: etagere-structure-metallique-2
+      - name: etagere-structure-metallique-3
+
+etagere-structure-metallique-1:
+  name: Étagère métallique
+  weight: 1
+  width: 80
+  height: 40
+  takable: false
+  picto: ⌣
+  description: >
+    Étagère sont constitués d'un maillage fin métallique.
+  place:
+    name: Étagère métallique
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: sac-1
+
+etagere-structure-metallique-2:
+  name: Étagère métallique
+  weight: 1
+  width: 80
+  height: 40
+  takable: false
+  picto:  ⌣
+  description: >
+    Étagère sont constitués d'un maillage fin métallique.
+  place:
+    name: Étagère métallique
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: sac-1
+
+etagere-structure-metallique-3:
+  name: Étagère métallique
+  weight: 1
+  width: 80
+  height: 40
+  takable: false
+  picto:  ⌣
+  description: >
+    Étagère sont constitués d'un maillage fin métallique.
+  place:
+    name: Étagère métallique
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: sac-1
+
+meuble-1:
+  name: Meuble en bois
+  weight: 30
+  width: 150
+  height: 40
+  takable: false
+  picto:  🗄
+  description: >
+    Meuble en bois foncé vernis. Il est posé sur le côté. Semble servir pour ranger les chaussures.
+  place:
+    name: Meuble en bois
+    width: 300
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: casier-meuble-1-1
+      - name: casier-meuble-1-2
+      - name: casier-meuble-1-3
+      - name: casier-meuble-1-4
+      - name: casier-meuble-1-5
+
+casier-meuble-1-1:
+  name: Casier du meuble en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: 🔲
+  takable: false
+  description: >
+    Casier du meuble en bois.
+  place:
+    name: Casier du meuble en bois
+    width: 60
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: sac-1
+
+casier-meuble-1-2:
+  name: Casier du meuble en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: 🔲
+  takable: false
+  description: >
+    Casier du meuble en bois.
+  place:
+    name: Casier du meuble en bois
+    width: 60
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: sac-1
+
+casier-meuble-1-3:
+  name: Casier du meuble en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: 🔲
+  takable: false
+  description: >
+    Casier du meuble en bois.
+  place:
+    name: Casier du meuble en bois
+    width: 60
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: sac-1
+
+casier-meuble-1-4:
+  name: Casier du meuble en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: 🔲
+  takable: false
+  description: >
+    Casier du meuble en bois.
+  place:
+    name: Casier du meuble en bois
+    width: 60
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: sac-1
+
+casier-meuble-1-5:
+  name: Casier du meuble en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: 🔲
+  takable: false
+  description: >
+    Casier du meuble en bois.
+  place:
+    name: Casier du meuble en bois
+    width: 60
+    height: 60
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: sac-1
+
+sac-1:
+  name: Cabas en plastique
+  weight: 0.5
+  width: 40
+  height: 40
+  picto:  👜
+  description: >
+    Cabas en plastique bleu sans marque.
+
+sac-2:
+  name: Cabas en plastique
+  weight: 0.5
+  width: 50
+  height: 50
+  picto:  👜
+  description: >
+    Cabas en plastique rose sans marque.
+
+sac-a-dos-1:
+  name: Sac à dos de randonné
+  weight: 0.5
+  width: 50
+  height: 50
+  picto:  👜
+  description: >
+    Sac à dos de randonné. Sans marque.
+
+bob-1:
+  name: Chapeau beige
+  weight: 0.2
+  width: 30
+  height: 20
+  picto:  👒
+  description: >
+    Chapeau beige sans marque et san motif particulier.
+bob-2:
+  name: Chapeau blanc fleural
+  weight: 0.2
+  width: 30
+  height: 20
+  picto:  👒
+  description: >
+    Chapeau blanc sans marque aux motif florales.
+bob-3:
+  name: Chapeau bleu foncé
+  weight: 0.2
+  width: 30
+  height: 20
+  picto:  👒
+  description: >
+    Chapeau bleu foncé sans marque.
+bob-4:
+  name: Chapeau bleu tricoté
+  weight: 0.2
+  width: 30
+  height: 20
+  picto:  👒
+  description: >
+    Chapeau bleu foncé sans marque.
+
+chaussure-1:
+  name: Basquette
+  weight: 1.5
+  width: 16
+  height: 37
+  picto:  👟
+  description: >
+    Basquette de petite taille sans marque multicolore. En bonne état.
+chaussure-2:
+  name: Basquette bleu
+  weight: 1.6
+  width: 20
+  height: 50
+  picto:  👟
+  description: >
+    Basquette bleu de taille normale sans marque. En trés bonne état. Ressemble énormément à des runneurs Nique...
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: Basquette bleu
+
+chaussure-3:
+  name: Chaussure
+  weight: 1.5
+  width: 18
+  height: 40
+  picto:  👞
+  description: >
+    Chaussure simili cuire sans marque. Usée.
+chaussure-4:
+  name: Ballerines
+  weight: 1.5
+  width: 16
+  height: 38
+  picto:  👡
+  description: >
+    Ballerines au motif fleural.
+pantoufle-1:
+  name: Claquettes
+  weight: 1
+  width: 20
+  height: 40
+  picto:  👟
+  description: >
+    Ressemble à des claquettes de piscine. A chaqune sont utilité. Marché dehors de la maison, salle de bain etc.
+# chaussure-4:
+# chaussure-4:
+# chaussure-4:
+# pantoufle-1:
+# pantoufle-2:
+# pantoufle-3:
+# gant-1:
+# gant-2:
+# gant-3:
+# serre-tete-1:
+# serre-tete-2:
+# serre-tete-3:
+# serre-tete-4:
+# pochette-fermeture-eclaire:
+# sac-en-plastique-1:
+# bouteille-vide-de-biere-1:
+# bouteille-vide-de-biere-2:
+# tableau-peinture-encre-1:
+# paquet-salade-1:
+# bac-plastique-2:
+# bac-plastique-3:
+# bac-plastique-4:
+# bac-plastique-5:
+# casserol-metal-1:
+# rouleau-papier-toilette-1:
+# bouteille-de-chaimpoing-1:
+# bouteille-de-chaimpoing-2:
+# bouteille-de-chaimpoing-3:
+# bouteille-de-javelle-1:
+# bouteille-de-desinfection-1:
+# bouteille-de-desinfection-1:
+# petit-parapluie-3:
+# petit-bol-plastique-1:
+
+
+
+
+
+# vestibule ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
 

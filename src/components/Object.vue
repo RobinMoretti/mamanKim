@@ -1,5 +1,11 @@
 <template>
-  <span class="object" :id='space + "-" + object.name' :style="objectStyle" v-on:click="picked">
+  <span
+      class="object"
+      :class="objectClass"
+      :id='space + "-" +
+      object.name'
+      :style="objectStyle"
+      v-on:click="picked">
     <span v-html="detailObject.picto" v-if="objects != null && object"></span>
   </span>
 </template>
@@ -44,6 +50,15 @@ export default {
       style += "height:" + height + "px;";
       return style;
     },
+    objectClass: function(){
+      var classes = "";
+
+      if(this.detailObject.takable != null && this.detailObject.takable == false){
+        classes += " untakable";
+      }
+
+      return classes;
+    },
   },
   methods: {
     inventoryMaximumWeight: function(target){
@@ -77,31 +92,54 @@ export default {
       }
     },
     picked: function(event, shift = false){
-      console.log(shift)
+      var fictifDiv = document.querySelector("#" + this.space + " .fictif");
+
+      fictifDiv.style.height = this.detailObject.height + "px";
+      fictifDiv.style.width = this.detailObject.width + "px";
+
       if(this.playMode == "picking" || shift){
-        if(this.object.name != this.$store.state.places.activePlace){
-          if (this.space != "hands") {
-            if(this.objectIspackable("hands")){
-              this.$store.commit("places/removeObject", { place: this.space, object: this.object })
-              this.$store.commit("places/addObject", { place: "hands", object: this.object })
+        this.$nextTick(() => {
+          if(this.object.name != this.$store.state.places.activePlace){
+            if(this.detailObject.takable != null && this.detailObject.takable == false){
             }
-          }else {
-            console.log("this.$store.state.places.activePlace = " + this.$store.state.places.activePlace);
-            if(this.objectIspackable(this.$store.state.places.activePlace)){
-              this.$store.commit("places/removeObject", { place: "hands", object: this.object })
-              this.$store.commit("places/addObject", { place: this.$store.state.places.activePlace, object: this.object });
+            else{
+              if (this.space != "hands") {
+                if(this.objectIspackable("hands")){
+                  this.$store.commit("places/removeObject", { place: this.space, object: this.object })
+                  this.$store.commit("places/addObject", { place: "hands", object: this.object })
+                }
+              }else {
+                if(this.objectIspackable(this.$store.state.places.activePlace)){
+                  this.$store.commit("places/removeObject", { place: "hands", object: this.object })
+                  this.$store.commit("places/addObject", { place: this.$store.state.places.activePlace, object: this.object });
+                }
+              }
+
+              this.$store.dispatch('places/updatePlaceWeight', "hands");
+              this.$store.dispatch('places/updatePlaceWeight', this.$store.state.places.activePlace);
+
+              this.$nextTick(() => {
+                this.$store.dispatch('places/updateConnectionsConditions');
+              })
             }
           }
-
-          this.$store.dispatch('places/updatePlaceWeight', "hands");
-          this.$store.dispatch('places/updatePlaceWeight', this.$store.state.places.activePlace);
-        }
-
+        });
       }else if(this.playMode == "looking"){
         this.displayObject();
       }
+
     },
     displayObject: function(){
+      if(this.detailObject.events && this.detailObject.events.length){
+        var clickEvents = this.detailObject.events.filter((event) => {
+          return event.name == "goPassage" && event.params.path == "click";
+        })
+
+        for (var i = 0; i < clickEvents.length; i++) {
+          this.story().show(clickEvents[i].params.passage)
+        }
+      }
+
       if(this.detailObject.place){
         if(this.placesStore.places[this.object.name]){
             this.$store.dispatch("places/goTo", this.object.name);
@@ -129,11 +167,12 @@ export default {
       var targetMaxHeight = target == "hands" ? 80 : this.placesStore.places[target].height;
       var targetMaxWidth = target == "hands" ? 80 : this.placesStore.places[target].width;
       // var objectWidth = "hands" ? 80 : this.placesStore.places[target].width;
-      var fictifHeightOffset = document.querySelector("#" + target + " .fictif").offsetTop - 4;
 
-      console.log(fictifHeightOffset)
-      console.log(fictifHeightOffset)
-      if(fictifHeightOffset + this.detailObject.height >= targetMaxHeight){
+      var fictifDiv = document.querySelector("#" + target + " .fictif");
+
+      var fictifHeightOffset = fictifDiv.offsetTop - 4;
+
+      if((fictifHeightOffset +  this.detailObject.height) >= targetMaxHeight){
         heightAvailable = false;
       }
 
@@ -168,7 +207,11 @@ export default {
 
     span{
       position: absolute;
-      left: 1px; top: 1px;
+      left: 1px; top: 3px;
     }
+  }
+
+  .untakable{
+    background: #FFCA00;
   }
 </style>

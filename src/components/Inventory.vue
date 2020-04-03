@@ -1,6 +1,11 @@
 <template>
   <div>
-    <vue-custom-scrollbar class="place-inventory" :id="name" :style="inventoryStyle">
+
+    <vue-custom-scrollbar
+        class="place-inventory"
+        :id="name"
+        :style="inventoryStyle"
+        v-if="activePlaceObj.scrollable">
       <p-object
           :space="name"
           :object="object"
@@ -9,7 +14,25 @@
       </p-object>
 
       <span class="fictif">f</span>
+
+      <div class="top-available-hidder"
+          v-if="topAvailable"
+          :style="topAvailableStyle"></div>
     </vue-custom-scrollbar>
+    <div class="place-inventory" :id="name" :style="inventoryStyle"  v-else>
+      <p-object
+          :space="name"
+          :object="object"
+          v-for="(object, key) in placeObjects"
+          :key="key">
+      </p-object>
+
+      <span class="fictif">f</span>
+
+      <div class="top-available-hidder"
+          v-if="topAvailable"
+          :style="topAvailableStyle"></div>
+    </div>
 
     <div class="informations">
       <p>Poid maximum: {{actualWeight}}/{{maximumWeight}}</p>
@@ -33,6 +56,16 @@ export default {
     activePlaceObj: Object
   },
   computed: {
+    topAvailableStyle: function(){
+      return 'top:' + this.topAvailable.top + 'px; height:' + (this.activePlaceObj.height - this.topAvailable.top) + 'px';
+    },
+    topAvailable: function(){
+      if(this.activePlaceObj.topAvailable != null){
+        return this.activePlaceObj.topAvailable;
+      }else {
+        return false;
+      }
+    },
     actualWeight: function(){
       var weight = 0;
 
@@ -133,6 +166,7 @@ export default {
     }
     .fictif{
       opacity: 0;
+      pointer-events: none;
       // margin-top: -4px !important;
       width: calc(100% - 5px); height: 20px;
       display: inline-block;
@@ -149,6 +183,13 @@ export default {
       margin: 0;
 
       position: relative;
+    }
+
+    .top-available-hidder{
+      background: rgba(0,0,0,0.2);
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%;
     }
   }
 </style>

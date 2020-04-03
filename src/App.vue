@@ -22,16 +22,20 @@
             <div v-if="displayPlace && activePlaceObj">
               <h3 v-if="placeStore.places[activePlaceName]">{{ placeStore.places[activePlaceName].name }}</h3>
 
-              <inventory :name="activePlaceName" :active-place-obj="activePlaceObj" v-if="activePlaceObj"></inventory>
+              <inventory
+                :name="activePlaceName"
+                :active-place-obj="activePlaceObj"
+                v-if="activePlaceObj"
+                ref="placeInventory"></inventory>
 
               <p class="description">{{activePlaceObj.description}}</p>
 
               <div class="places-available">
                 <button
                   v-for="connection in activePlaceObj.connections"
-                  v-on:click="goToPlace(connection.place, placeStore.places[connection.place])"
+                  v-on:click="goToPlace(connection.place, placeStore.places[connection.place], 'place')"
                   v-if="placeStore.places[connection.place]"
-                  :class="{ locked: placeStore.places[connection.place].locked }">
+                  :class="{ 'locked': (placeStore.places[connection.place].locked || connection.condition != null && connection.condition == false || connection.available != null && connection.available == false) }">
                     {{ placeStore.places[connection.place].name }}
                 </button>
                 <div v-if="activePlaceObj.parentPlace">
@@ -148,13 +152,47 @@ export default {
     resetPlayer: function(){
       this.$store.commit("places/resetPlayer");
     },
-    goToPlace: function(place, placeObj){
-      if(placeObj.locked != true){
-        this.$store.dispatch("places/goTo", place);
+    goToPlace: function(place, placeObj, type = "object"){
+      if(type == "place"){
+        console.log(" this.placeConditionsValidate(place) = " +  this.placeConditionsValidate(place));
+        if(placeObj.locked != true && this.placeConditionsValidate(place)){
+          this.$store.dispatch("places/goTo", place);
+        }
+      }else{
+        if(placeObj.locked != true){
+          this.$store.dispatch("places/goTo", place);
+        }
       }
     },
     changePlayMode: function(mode){
       this.$store.commit("changePlayMode", mode);
+    },
+    placeConditionsValidate: function(placeTargetName){
+
+      var connections = this.activePlaceObj.connections.filter(connection =>{
+        return connection.place == placeTargetName;
+      });
+
+      var connection = connections[0];
+
+      // console.log("connections = ", connection);
+      // console.log("connection = ", connection.condition == true);
+
+      if(connection.condition == true || connection.condition == false){
+        return connection.condition;
+      }else{
+        if(connection.available == true){
+          return true;
+        }else{
+          return false;
+        }
+      }
+      // if(connections.condition != true && connections.condition != false){
+      //   if(connections.condition == "topAvailable"){
+      //     console.log("offsettop = ", this.$refs.placeInventory.getElementsByClassName("fictif")[0].offsetTop);
+      //     // if()
+      //   }
+      // }
     }
   },
   mounted: function(){
