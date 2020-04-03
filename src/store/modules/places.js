@@ -86,7 +86,7 @@ const actions = {
       // console.log("payload = ", payload);
       commit("addWeightToPlace", { placeName: payload.targetPlaceName, weight: objectsYml[inventory[i].name].weight})
 
-      if(objectsYml[inventory[i].name].place && objectsYml[inventory[i].name].place.inventory){
+      if(objectsYml[inventory[i].name].place && objectsYml[inventory[i].name].place.inventory != null){
         dispatch("getInventoryWeight",
           {
             inventory: objectsYml[inventory[i].name].place.inventory,
@@ -97,17 +97,20 @@ const actions = {
     }
   },
   defineInventoryParentPlaces: function({dispatch, commit}, payload){
+    console.log("targetInventory = ", targetInventory);
     var targetInventory = payload.inventory;
     var place = payload.parentPlaceName;
 
     for (var i = 0; i < targetInventory.length; i++) {
-      // console.log("iObject = ", targetInventory[i].name);
-      // console.log("iObject = ", objectsYml[targetInventory[i].name]);
-      if(objectsYml[targetInventory[i].name].place){
+    //   // console.log("iObject = ", targetInventory[i].name);
+    //   // console.log("iObject = ", objectsYml[targetInventory[i].name]);
+      if(objectsYml[targetInventory[i].name] != null && objectsYml[targetInventory[i].name].place){
 
         try {
           commit('setSpaceParent', { placeName: targetInventory[i].name, parentName: place });
-          dispatch('defineInventoryParentPlaces', { inventory: objectsYml[targetInventory[i].name].place.inventory, parentPlaceName: targetInventory[i].name} );
+          if( objectsYml[targetInventory[i].name].place.inventory != null){
+            dispatch('defineInventoryParentPlaces', { inventory: objectsYml[targetInventory[i].name].place.inventory, parentPlaceName: targetInventory[i].name} );
+          }
         } catch(e) {
           // statements
           console.log("error in defineInventoryParentPlaces!");
@@ -355,18 +358,21 @@ const mutations = {
   addAllObjectSpaces: function(state){
     for (var iObjectName in objectsYml) {
       if(objectsYml[iObjectName].place){
-        this.$app.$set(state.places, iObjectName, {
-                        name: objectsYml[iObjectName].place.name,
-                        description: objectsYml[iObjectName].description,
-                        width: objectsYml[iObjectName].place.width,
-                        height: objectsYml[iObjectName].place.height,
-                        scrollable: objectsYml[iObjectName].place.scrollable,
-                        infinite: objectsYml[iObjectName].place.infinite,
-                        maximumWeight: objectsYml[iObjectName].place.maximumWeight,
-                        inventory: objectsYml[iObjectName].place.inventory,
-                        actualWeight: 0,
-                        connections: [],
-                      });
+
+        var newPlace = {
+            name: objectsYml[iObjectName].place.name,
+            description: objectsYml[iObjectName].description,
+            width: objectsYml[iObjectName].place.width,
+            height: objectsYml[iObjectName].place.height,
+            scrollable: objectsYml[iObjectName].place.scrollable,
+            infinite: objectsYml[iObjectName].place.infinite,
+            maximumWeight: objectsYml[iObjectName].place.maximumWeight,
+            inventory: objectsYml[iObjectName].place.inventory != null ? objectsYml[iObjectName].place.inventory: [],
+            actualWeight: 0,
+            connections: [],
+        }
+
+        this.$app.$set(state.places, iObjectName, newPlace);
         // console.log("Place = " + iObjectName + " added.");
       }
     }
@@ -379,9 +385,9 @@ const mutations = {
   },
   addObject: function(state, payload){
     if(payload.place != "hands"){
-      state.places[payload.place].inventory.unshift(payload.object);
+      state.places[payload.place].inventory.push(payload.object);
     }else {
-      state.player.unshift(payload.object);
+      state.player.push(payload.object);
     }
 
     // if place is object, update parent

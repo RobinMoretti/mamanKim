@@ -215,6 +215,8 @@ etagere-structure-metallique-1:
     maximumWeight: 10
     inventory:
       - name: sac-1
+      - name: bob-3
+      - name: bob-4
 
 etagere-structure-metallique-2:
   name: Étagère métallique
@@ -232,8 +234,7 @@ etagere-structure-metallique-2:
     infinite: false
     scrollable: false
     maximumWeight: 10
-    inventory:
-      - name: sac-1
+    # inventory:
 
 etagere-structure-metallique-3:
   name: Étagère métallique
@@ -252,7 +253,8 @@ etagere-structure-metallique-3:
     scrollable: false
     maximumWeight: 10
     inventory:
-      - name: sac-1
+      - name: serre-tete-1
+      - name: serre-tete-2
 
 meuble-1:
   name: Meuble en bois
@@ -289,12 +291,13 @@ casier-meuble-1-1:
   place:
     name: Casier du meuble en bois
     width: 60
-    height: 40
+    height: 50
     infinite: false
     scrollable: false
     maximumWeight: 0
     inventory:
-      - name: sac-1
+      - name: chaussure-1
+      - name: chaussure-1
 
 casier-meuble-1-2:
   name: Casier du meuble en bois
@@ -308,12 +311,14 @@ casier-meuble-1-2:
   place:
     name: Casier du meuble en bois
     width: 60
-    height: 40
+    height: 50
     infinite: false
     scrollable: false
     maximumWeight: 0
     inventory:
       - name: sac-1
+      - name: serre-tete-3
+      - name: serre-tete-4
 
 casier-meuble-1-3:
   name: Casier du meuble en bois
@@ -327,12 +332,12 @@ casier-meuble-1-3:
   place:
     name: Casier du meuble en bois
     width: 60
-    height: 40
+    height: 50
     infinite: false
     scrollable: false
     maximumWeight: 0
     inventory:
-      - name: sac-1
+      - name: chaussure-1
 
 casier-meuble-1-4:
   name: Casier du meuble en bois
@@ -346,12 +351,14 @@ casier-meuble-1-4:
   place:
     name: Casier du meuble en bois
     width: 60
-    height: 40
+    height: 50
     infinite: false
     scrollable: false
     maximumWeight: 0
     inventory:
       - name: sac-1
+      - name: bob-1
+      - name: bouteille-vide-de-soju-1
 
 casier-meuble-1-5:
   name: Casier du meuble en bois
@@ -370,7 +377,9 @@ casier-meuble-1-5:
     scrollable: false
     maximumWeight: 0
     inventory:
-      - name: sac-1
+      - name: chaussure-1
+      - name: bob-2
+      - name: bob-1
 
 sac-1:
   name: Cabas en plastique
@@ -478,25 +487,79 @@ pantoufle-1:
   picto:  👟
   description: >
     Ressemble à des claquettes de piscine. A chaqune sont utilité. Marché dehors de la maison, salle de bain etc.
-# chaussure-4:
-# chaussure-4:
-# chaussure-4:
-# pantoufle-1:
-# pantoufle-2:
-# pantoufle-3:
-# gant-1:
-# gant-2:
-# gant-3:
-# serre-tete-1:
-# serre-tete-2:
-# serre-tete-3:
-# serre-tete-4:
-# pochette-fermeture-eclaire:
-# sac-en-plastique-1:
-# bouteille-vide-de-biere-1:
+serre-tete-1:
+  name: Serre tête
+  weight: 0.2
+  width: 30
+  height: 10
+  picto: Ω
+  description: >
+    Serre tête rouge
+serre-tete-2:
+  name: Serre tête
+  weight: 0.2
+  width: 30
+  height: 10
+  picto: Ω
+  description: >
+    Serre tête large, violet avec des broderies fleurales
+serre-tete-3:
+  name: Serre tête
+  weight: 0.2
+  width: 30
+  height: 10
+  picto: Ω
+  description: >
+    Serre tête, vert avec des broderies fleurales
+serre-tete-4:
+  name: Serre tête
+  weight: 0.2
+  width: 30
+  height: 10
+  picto: Ω
+  description: >
+    Serre tête rouge.
+
+sac-en-plastique-1:
+  name: Gros sac en plastique
+  weight: 0.05
+  width: 50
+  height: 50
+  picto: 🛍
+  description: >
+    Sac en platique de course
+  place:
+    name: Interieure du gros sac en plastique
+    width: 100
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 4
+    inventory:
+      - name: bouteille-vide-de-soju-1
+
+bouteille-vide-de-biere-1:
+  name: Bouteille de bière *Cass*.
+  weight: 1
+  width: 20
+  height: 40
+  picto: 🍾
+  description: >
+    Bouteille de bière vide *Cass*. Recyclabe pour 130won-원.
+
+bouteille-vide-de-soju-1:
+  name: Bouteille de soju-소주 de Crapeau-두커비.
+  weight: 1
+  width: 20
+  height: 30
+  picto: 🍾
+  description: >
+    Boutieille de soju-소주 de Crapeau-두커비. Recyclabe pour 100won-원.
+
 # bouteille-vide-de-biere-2:
-# tableau-peinture-encre-1:
 # paquet-salade-1:
+# pochette-fermeture-eclaire:
+# tableau-peinture-encre-1:
 # bac-plastique-2:
 # bac-plastique-3:
 # bac-plastique-4:

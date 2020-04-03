@@ -92,17 +92,20 @@ export default {
       }
     },
     picked: function(event, shift = false){
-      var fictifDiv = document.querySelector("#" + this.space + " .fictif");
+      var fictifDiv = document.querySelector("#" + (this.space == "hands" ? this.$store.state.places.activePlace : "hands" ) + " .fictif");
 
       fictifDiv.style.height = this.detailObject.height + "px";
       fictifDiv.style.width = this.detailObject.width + "px";
 
       if(this.playMode == "picking" || shift){
+
+      console.log("picked = ");
+
         this.$nextTick(() => {
           if(this.object.name != this.$store.state.places.activePlace){
             if(this.detailObject.takable != null && this.detailObject.takable == false){
             }
-            else{
+            else{console.log("this = !!! " + this.objectIspackable(this.$store.state.places.activePlace));
               if (this.space != "hands") {
                 if(this.objectIspackable("hands")){
                   this.$store.commit("places/removeObject", { place: this.space, object: this.object })
@@ -201,7 +204,7 @@ export default {
     padding: 2px;
     box-sizing: border-box;
     margin: 0;
-      vertical-align: top;
+    vertical-align: top;
 
     position: relative;
 

@@ -72,6 +72,15 @@ vestibule:
     - name: pantoufle-1
     - name: pantoufle-1
     - name: pantoufle-1
+    - name: bob-2
+    - name: sac-a-dos-1
+    - name: bouteille-vide-de-soju-1
+    - name: bouteille-vide-de-soju-1
+    - name: bouteille-vide-de-soju-1
+    - name: bouteille-vide-de-biere-1
+    - name: bouteille-vide-de-biere-1
+    - name: bouteille-vide-de-biere-1
+
   connections:
     - place: "palier"
       condition: true
