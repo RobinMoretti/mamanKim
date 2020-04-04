@@ -99,7 +99,7 @@ export default {
 
       if(this.playMode == "picking" || shift){
 
-      console.log("picked = ");
+      // console.log("picked = ");
 
         this.$nextTick(() => {
           if(this.object.name != this.$store.state.places.activePlace){
@@ -136,7 +136,6 @@ export default {
     },
     checkForSpecialEvent: function(){
       if(this.object.name == "bouteille-vide-de-biere-1" || this.object.name ==  "bouteille-vide-de-soju-1"){
-        console.log("this.$store.state.objects.bouteilleTaken = " + this.$store.state.objects.bouteilleTaken);
         if(this.$store.state.objects.bouteilleTaken > 6){
           this.story().show("beaucoup de bouteilles vide");
         }
@@ -165,7 +164,7 @@ export default {
       }
     },
     objectIspackable: function(target){
-      console.log("objectIspackable =  ------------/");
+      // console.log("objectIspackable =  ------------/");
       console.log('target', target)
       // weight available ------------
       var weightState = false;

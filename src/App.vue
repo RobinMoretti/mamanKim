@@ -2,7 +2,7 @@
   <div>
     <transition-group name="fade">
       <div v-show="!loaded" key="1">Loading...</div>
-      <div id="app"  v-show="loaded" key="2">
+      <div id="app" v-show="loaded" key="2">
         <vue-custom-scrollbar class="mains">
           <h3>Dans les mains</h3>
           <inventory name="hands" :active-place-obj="handsObject"></inventory>
@@ -19,7 +19,7 @@
         <vue-custom-scrollbar class="space">
           <transition name="fade">
 
-            <div v-if="displayPlace && activePlaceObj">
+            <div v-if="displayPlace && activePlaceObj && !endGame">
               <h3 v-if="placeStore.places[activePlaceName]">{{ placeStore.places[activePlaceName].name }}</h3>
 
               <inventory
@@ -56,7 +56,7 @@
           </transition>
         </vue-custom-scrollbar>
 
-        <vue-custom-scrollbar class="object-container" v-if="displayPlace">
+        <vue-custom-scrollbar class="object-container" v-if="displayPlace && !endGame">
           <h3 v-if="activeObjectObj">{{activeObjectObj.name}}</h3>
 
           <p v-if="activeObjectObj">{{activeObjectObj.description}}</p>
@@ -98,6 +98,10 @@ export default {
     }
   },
   computed: {
+    endGame: function(){
+      // console.log("this.$store.getters = ", this.$store.getters['places/handsObject']);
+      return this.$store.state.endGame;
+    },
     saveId: function(){
       // console.log("this.$store.getters = ", this.$store.getters['places/handsObject']);
       return this.$store.state.saveId;
@@ -263,6 +267,7 @@ body{
   width: 300px;
   height: calc( 100vh - 300px );
   margin-right: 20px;
+  padding-right: 20px;
 }
 
 .space{

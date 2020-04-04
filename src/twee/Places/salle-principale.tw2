@@ -1,5 +1,7 @@
 ::salle-principale
-<% if(!hasVisited("salle-principale")) { %>
+<% if(hasVisited("Crapeau", "vive-la-coree") && s["carton-pomme"] >= 2 && s["end-game"] == true ) { %>
+<script>story.show('endGame');</script>
+<% } else if(!hasVisited("salle-principale")) { %>
 Bon ! Nous y voila.
 
 J'espère qu'on aura le temps de ranger un peu.
@@ -12,6 +14,42 @@ Ranger **toutes la bouffe**, **le meuble télé** et **le frigo** et si on peut,
 Pour le reste on oublis !
 
 > Ok, lets go !
-<% } else if(visited("salle-principale") > 3 && hasVisited("pourquoi autant de pomme")) { %>
+
+<% } else if(s["carton-pomme"] == 1 && !hasVisited("pomme-1-discussion")) { %>
+<script>story.show('pomme-1-discussion');</script>
+<% } else if(s["carton-pomme"] >= 2 && !hasVisited("pomme-2-discussion") ) { %>
+<script>story.show('pomme-2-discussion');</script>
+
+<% } else if(visited("salle-principale") > 3 && hasVisited("pourquoi autant de pomme") && !s["carton-pomme"]) { %>
+
 <script>story.show('livraison');</script>
+
 <% } %>
+
+
+::pomme-1-discussion
+> Bon déjà un carton de pomme...
+
+Hein ?! Des pommes encore ?
+
+> Oui, j'espère qu'elle as au moins varié le deuxième carton...
+
+...
+
+::pomme-2-discussion
+
+Alors ?
+
+> Devine.
+
+Des pommes...
+
+> Oui mais pas que!
+
+...
+
+Du jus de pomme ? 
+
+> Non des pommes <%= s["carton-pomme-couleur"] %>s!
+
+

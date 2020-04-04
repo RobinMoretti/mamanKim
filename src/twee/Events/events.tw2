@@ -79,6 +79,7 @@ Ils sont sur le palier.
 <% } %>
 
 <% if(s["carton-pomme"] == 2) { %>
+<% s["carton-pomme-couleur"] = "rouge"; %>
 > Argh, elle as vraiment recommandé que des pommes!
 > Arrgggggg
 <% } %>
@@ -95,6 +96,7 @@ Ils sont sur le palier.
 <% } %>
 
 <% if(s["carton-pomme"] == 2) { %>
+<% s["carton-pomme-couleur"] = "verte"; %>
 > Argh, elle as vraiment recommandé que des pommes!
 > Arrgggggg
 <% } %>

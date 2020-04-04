@@ -675,6 +675,7 @@ dessus-la-table:
       - name: pomme-1
       - name: piment-1
       - name: pomme-1
+      - name: boite-conservation-nourriture-1-4
 
 filtre-a-eau-lg:
   name: Machine filtre à eau
@@ -773,7 +774,16 @@ dessous-la-table:
       - name: carton-1
       - name: carton-1
       - name: carton-2
-      - name: carton-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: boite-conservation-nourriture-1-5
 
 carton-1:
   name: Carton fermé
@@ -922,6 +932,7 @@ compartimant-3:
     maximumWeight: 0
     inventory:
       - name: pomme-1
+      - name: boite-conservation-nourriture-3-5
 
 compartimant-4:
   name: Compartiment
@@ -972,6 +983,7 @@ compartimant-5:
       - name: pomme-1
       - name: pomme-1
       - name: pomme-1
+      - name: boite-conservation-nourriture-3-4
 
 carton-pomme-1:
   name: Carton
@@ -1036,37 +1048,37 @@ carton-pomme-2:
     scrollable: false
     maximumWeight: 30
     inventory:
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
-      - name: jus-pomme-1
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2 
 
 sac-de-riz-congele:
   name: Sace de riz congelé
@@ -1090,6 +1102,14 @@ pomme-1:
   picto: 🍎
   description: >
     Grosse pomme rouge.
+pomme-2:
+  name: Pomme
+  weight: 0.7
+  width: 20
+  height: 20
+  picto: 🍏
+  description: >
+    Grosse pomme Verte.
 
 jus-pomme-1:
   name: Jus de pomme
@@ -1099,3 +1119,502 @@ jus-pomme-1:
   picto: 🍷
   description: >
     Jus de pomme contenue dans un petit sachet de 10cl. Très sucré
+
+
+
+
+# Salle principale ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+meuble-tv-1:
+  name: Meuble de télévision
+  weight: 25
+  width: 150
+  height: 60
+  picto: 📺
+  description: >
+    Meuble de télévision rose saumon en bonne état.
+  place:
+    name: Meuble de télévision 
+    width: 200
+    height: 80
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: dessus-meuble-tv
+      - name: tiroire-meuble-1
+      - name: tiroire-meuble-2
+
+
+dessus-meuble-tv:
+  name: Dessus le meuble de télévision
+  weight: 0
+  width: 150
+  height: 20
+  takable: false
+  picto: Dessus
+  description: >
+    Dessus le meuble de télévision
+  place:
+    name: Dessus le meuble de télévision 
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: tv
+      - name: petite-sculpture
+      - name: chaussure-1
+      - name: pomme-1
+      - name: jeu-de-carte-1
+      - name: boite-conservation-nourriture-3-3
+
+tiroire-meuble-1:
+  name: Tirroire gauche du meuble de télévision
+  weight: 0
+  width: 75
+  height: 60
+  takable: false
+  picto: Tirroire gauche
+  description: >
+    Tirroire gauche du meuble de télévision
+  place:
+    name: Tirroire de gauche du meuble de télévision
+    width: 100
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: rouleau-de-papier
+      - name: rouleau-de-papier
+      - name: rouleau-de-papier
+      - name: drapeau-coreen-1
+
+tiroire-meuble-2:
+  name: Tirroire droite du meuble de télévision
+  weight: 0
+  width: 75
+  height: 60
+  takable: false
+  picto: Tirroire droite
+  description: >
+    Tirroire de droite du meuble de télévision
+  place:
+    name: Tirroire gauche du meuble de télévision
+    width: 100
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: bouteille-vide-de-soju-1
+      - name: bouteille-vide-de-soju-1
+      - name: champignons-1
+      - name: pomme-de-terre-1
+      - name: pomme-1
+      - name: pomme-1
+
+rouleau-de-papier:
+  name: Rouleau de papier coréen
+  weight: 3
+  width: 20
+  height: 50
+  picto: 📜
+  description: >
+    Rouleau de papier vierge.
+
+tv:
+  name: TV Lg
+  weight: 5
+  width: 170
+  height: 20
+  takable: false
+  picto: 🖥
+  description: >
+    Télévision lg
+
+petite-sculpture:
+  name: Petite sculpture, Dol hareubangs-돌 하르방
+  weight: 1
+  width: 20
+  height: 20
+  picto: 🗿
+  description: >
+    Petite sculpture en pierre volcanique provenant de l'isle de Jejudo- une Dol hareubangs-돌 하르방. Lui toucher le nez porte bonheure.
+
+jeu-de-carte-1:
+  name: Ensemble de carte coréenne, le Godori-고도리
+  weight: 0.4
+  width: 20
+  height: 40
+  picto: 🎴
+  description: >
+    Ensemble de carte coréenne. Composé de douze categories, une pour chaque saison, elles représentent des fleur ou des terrains. Chacunes compte 4 cartes, classé entre quatre type de carte. Les cartes basique (pi), les animaux, les ceintures et  Go-Stop. Un des jeux le plus populaire est un jeu d'argent, il s'appelle Go-Stop. 
+
+
+drapeau-coreen-1:
+  name: Drapeau de la République de Corée du Sud, Taegeukgi.
+  weight: 0.4
+  width: 20
+  height: 40
+  picto: 🇰🇷
+  description: >
+    Il est composé de deux élément différentiables. L'élément centrale, Taijitu, l'équivalent coréen du yin yang et les quatre trigrammes  représentant les quatre éléments : la terre, le ciel, le feu et l'eau. Le tout est un fond blanc.
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: vive-la-coree
+
+
+# Salle principale ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+machine-a-laver:
+  name: Machine à laver d'une marque coréen
+  weight: 35
+  takable: false
+  width: 100
+  height: 80
+  picto: 🧼
+  description: >
+    Machine à lavé à tube verticale.
+
+meuble-3:
+  name: Meuble à étages
+  weight: 20
+  width: 50
+  height: 120
+  picto: Étagère
+  description: >
+    Étagère en bois
+  place:
+    name: Étagère en bois
+    width: 50
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: plateau-meuble-3-1
+      - name: plateau-meuble-3-2
+      - name: plateau-meuble-3-3
+
+plateau-meuble-3-1:
+  name: Plateau de l'étagère
+  weight: 0
+  width: 50
+  height: 20
+  picto: Plateau
+  description: >
+    Plateau de l'étagère en bois
+  place:
+    name: Plateau de l'étagère en bois
+    width: 300
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: bouteille-vide-de-soju-1
+      - name: pomme-1
+      - name: bouteille-vide-de-soju-1
+      - name: pomme-1
+      - name: boite-conservation-nourriture-3-1
+
+plateau-meuble-3-2:
+  name: Plateau de l'étagère
+  weight: 0
+  width: 50
+  height: 20
+  picto: Plateau
+  description: >
+    Plateau de l'étagère en bois
+  place:
+    name: Plateau de l'étagère en bois
+    width: 300
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-1-1
+      - name: boite-conservation-nourriture-1-2
+      - name: pomme-1
+      - name: bouteille-vide-de-biere-1
+      - name: boite-conservation-nourriture-2-1
+
+plateau-meuble-3-3:
+  name: Plateau de l'étagère
+  weight: 0
+  width: 50
+  height: 20
+  picto: Plateau
+  description: >
+    Plateau de l'étagère en bois
+  place:
+    name: Plateau de l'étagère en bois
+    width: 300
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-3-2
+
+
+# Boite de conservation ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+
+boite-conservation-nourriture-1-1:
+  name: Grande boite de conservation
+  weight: 1
+  width: 50
+  height: 50
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 5
+  place:
+    name: Plateau de l'étagère en bois
+    width: 45
+    height: 45
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-1-3
+
+boite-conservation-nourriture-1-2:
+  name: Boite de conservation
+  weight: 1
+  width: 45
+  height: 45
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 4
+  place:
+    name: Boite de conservation
+    width: 40
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+
+boite-conservation-nourriture-1-3:
+  name: Petite boite de conservation
+  weight: 1
+  width: 40
+  height: 40
+  picto: Boite 3
+  description: >
+    Boite de conservation taille 3
+  place:
+    name: Petite boite de conservation
+    width: 35
+    height: 35
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+
+boite-conservation-nourriture-1-4:
+  name: Trés petite boite de conservation
+  weight: 1
+  width: 35
+  height: 35
+  picto: Boite 2
+  description: >
+    Boite de conservation taille 2
+  place:
+    name: Trés petite boite de conservation
+    width: 20
+    height: 20
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-1-5:
+  name: Vraiment trés petite boite de conservation
+  weight: 1
+  width: 20
+  height: 20
+  picto: Boite 1
+  description: >
+    Boite de conservation taille 1
+
+# --------------
+
+
+boite-conservation-nourriture-2-1:
+  name: Grande boite de conservation
+  weight: 1
+  width: 50
+  height: 50
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 5
+  place:
+    name: Plateau de l'étagère en bois
+    width: 45
+    height: 45
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-2-2:
+  name: Boite de conservation
+  weight: 1
+  width: 45
+  height: 45
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 4
+  place:
+    name: Boite de conservation
+    width: 40
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-2-5
+
+
+boite-conservation-nourriture-2-3:
+  name: Petite boite de conservation
+  weight: 1
+  width: 40
+  height: 40
+  picto: Boite 3
+  description: >
+    Boite de conservation taille 3
+  place:
+    name: Petite boite de conservation
+    width: 35
+    height: 35
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+
+boite-conservation-nourriture-2-4:
+  name: Trés petite boite de conservation
+  weight: 1
+  width: 35
+  height: 35
+  picto: Boite 2
+  description: >
+    Boite de conservation taille 2
+  place:
+    name: Trés petite boite de conservation
+    width: 20
+    height: 20
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-2-5:
+  name: Vraiment trés petite boite de conservation
+  weight: 1
+  width: 20
+  height: 20
+  picto: Boite 1
+  description: >
+    Boite de conservation taille 1
+
+# --------------
+
+boite-conservation-nourriture-3-1:
+  name: Grande boite de conservation
+  weight: 1
+  width: 50
+  height: 50
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 5
+  place:
+    name: Plateau de l'étagère en bois
+    width: 45
+    height: 45
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-3-2:
+  name: Boite de conservation
+  weight: 1
+  width: 45
+  height: 45
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 4
+  place:
+    name: Boite de conservation
+    width: 40
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+
+boite-conservation-nourriture-3-3:
+  name: Petite boite de conservation
+  weight: 1
+  width: 40
+  height: 40
+  picto: Boite 3
+  description: >
+    Boite de conservation taille 3
+  place:
+    name: Petite boite de conservation
+    width: 35
+    height: 35
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-3-4:
+  name: Trés petite boite de conservation
+  weight: 1
+  width: 35
+  height: 35
+  picto: Boite 2
+  description: >
+    Boite de conservation taille 2
+  place:
+    name: Trés petite boite de conservation
+    width: 20
+    height: 20
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-3-5
+
+boite-conservation-nourriture-3-5:
+  name: Vraiment trés petite boite de conservation
+  weight: 1
+  width: 20
+  height: 20
+  picto: Boite 1
+  description: >
+    Boite de conservation taille 1
+
+crapeau:
+  name: Crapeau
+  weight: 1
+  width: 30
+  height: 20
+  picto: 🐸
+  description: >
+    Crapeau
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: Crapeau

@@ -31,6 +31,7 @@ export default new Vuex.Store({
     gameStarted: false,
     storyId: null,
     saveId: null,
+    endGame: false,
   },
   getters:{
     hasAutosave: state => {
@@ -40,6 +41,13 @@ export default new Vuex.Store({
   actions: {
     init: function({dispatch, commit, state, getters}){
       commit("startGame");
+
+      setTimeout(()=>{
+        this.$app.story().state["end-game"] = true;
+
+        console.log('end-game')
+      }, 900000);
+      // 900000
     },
     saveGame: function({commit, state}) {
       if (this.$app.story() && state.loaded) {
@@ -52,14 +60,21 @@ export default new Vuex.Store({
       dispatch("objects/reset");
       commit("resetSave");
       location.reload(true);
+    },
+    endGame: function({commit}) {
+      commit("toggleEndGame");
     }
   },
   mutations: {
+    toggleEndGame: function(state){
+      state.endGame = true;
+    },
     resetSave: function(state){
       state.playMode = "picking";
       state.gameStarted = false;
       state.saveId = null;
       state.storyId = null;
+      state.endGame = false;
     },
     createAutoSave: function(state, hash){
       state.saveId = hash;

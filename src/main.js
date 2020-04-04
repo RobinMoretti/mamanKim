@@ -71,11 +71,10 @@ Vue.mixin({
 			}
 		},
 		updatePassage:function(passage){
-			// console.log(passage.name)
-			// console.log(passage.name.includes('Intro'))
-			// console.log(passage.name.includes('Start'))
-
-			if(passage && !passage.name.includes('Intro') && passage.name != "Start"){
+			if(passage && !passage.name.includes('Intro') && passage.name == "endGame"){
+				this.$store.dispatch("endGame");
+			}
+			else if(passage && !passage.name.includes('Intro') && passage.name != "Start"){
 				// console.log("toggleDisplayPlace")
 
 				if(this.$store.state.places.activePlace != passage.name){

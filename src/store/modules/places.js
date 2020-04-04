@@ -4,7 +4,7 @@ import placesYml from './../../places.yml'
 import objectsYml from './../../objects.yml'
 
 const state = {
-  activePlace: "salle-principale",
+  activePlace: "outside",
   lastActivePlace: false,
   places: {},
   player: [],
@@ -257,7 +257,7 @@ const mutations = {
     this.$app.$set(state.places[payload.place], "locked",  payload.value);
   },
   resetVariables: function(state, placeName){
-    state.activePlace = "salle-principale";
+    state.activePlace = "outside";
     state.lastActivePlace = false;
     state.places = {};
     state.player = [];

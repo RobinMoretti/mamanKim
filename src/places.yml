@@ -74,6 +74,7 @@ vestibule:
     - name: pantoufle-1
     - name: bob-2
     - name: sac-a-dos-1
+    - name: boite-conservation-nourriture-2-4
     - name: bouteille-vide-de-soju-1
     - name: bouteille-vide-de-soju-1
     - name: bouteille-vide-de-soju-1
@@ -108,8 +109,11 @@ salle-principale:
     - name: table-a-manger
     - name: etandoire
     - name: frigo
+    - name: meuble-tv-1
+    - name: boite-conservation-nourriture-2-3
     - name: bouteille-vide-de-soju-1
     - name: bouteille-vide-de-soju-1
+    - name: boite-conservation-nourriture-2-2
   connections:
     - place: "vestibule"
       condition: true
@@ -120,22 +124,22 @@ salle-principale:
     Le sol est fait d'un plastique simili bois, le sol est chaud, en permanence chauffée électriquement grâce au ondol-옹덜, le chauffage au sol traditionnel. C'est parfois brûlant, mais là, c'est parfais. Au mur et aux plafonds, un papier blanc beige texturé. La pièce est très chargée. Sur le côté gauche de l'entrée, des grands placards, en face une grande rangée de fenêtres donnant plein sud. C'est très lumineux. Les vitres sont comme doublé. Il y a deux rangé de fenêtres séparer de 30 cm.
     Cet espace est rempli de fleurs et plantes en tout genre et de différentes tailles. Des cactus, des salades comestibles, des plante de sésame, dont on mange également les feuilles lorsqu'on en a suffisamment. Pas de lit dans cette pièce seulement un tas de couverture plié dans le coin à côté du meuble TV. Le sol est légèrement mou, sûrement l'épaisseur du plastique. L'appartement sent parfois la soupe de poisson, mais aujourd'hui, il sent bon l'huile de sésame.
 
-  #   - name: meuble-tv
-  #   - name: meuble-2
-  # connections:
-  #   - place: "salle-machine-a-laver"
-  #     condition: true
-  #   - place: "frigo"
-  #     condition: true
-
 buanderie:
   name: Une sorte de buanderie
-  width: 70
-  height: 200
+  width: 100
+  height: 210
   infinite: false
   scrollable: false
   inventory:
     - name: machine-a-laver
+    - name: meuble-3
+    - name: bouteille-vide-de-soju-1
+    - name: bouteille-vide-de-soju-1
+    - name: pomme-1
+    - name: boite-conservation-nourriture-2-1
+    - name: boite-conservation-nourriture-2-4
+    - name: crapeau
+
   connections:
     - place: "salle-principale"
       condition: true

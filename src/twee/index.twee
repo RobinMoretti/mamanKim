@@ -10,5 +10,6 @@
 Maman Kim
 
 ::Start
+<% s["end-game"] = false %>
 <script>window.getStyles("custom.css");</script>
 <script>story.show('Introduction');</script>

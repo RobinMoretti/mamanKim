@@ -1,0 +1,37 @@
+::endGame 
+ 
+Bili diling 🎶
+
+> Ah la porte c'est ouverte.
+
+[[C'est toi chérie ? ->end 1]]
+
+::end 1
+
+Non c'est pas moi. 
+Ça doit être maman!
+
+> Ah, déjà ?
+
+/C'est moi je suis rentré!/ 
+/Vous avez mangez?/
+
+Non maman, on as pas mangé. Mais je commence à avoir un peu faim.
+
+> comment tu fais pour avoir faim ?! 
+> On as mangé un barbecue il y as deux heure!
+
+De ranger, ça donne faim!
+
+/Alors on mange! J'ai acheté de la viande!/
+/Aprés on vas jouer au go stop!/
+
+Bonne idée ! 
+
+[[Ok, allez, on mange alors. ->credit]]
+
+::credit
+Chez maman Kim
+Crédit
+Robin hyeyoung
+Twitter / itch
