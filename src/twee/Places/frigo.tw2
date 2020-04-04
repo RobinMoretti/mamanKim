@@ -1,0 +1,42 @@
+::compartimant-1
+<% if(hasVisited("compartimant-1","compartimant-2","compartimant-3","compartimant-4","compartimant-5","congelateur") && !hasVisited("pourquoi autant de pomme")) { %>
+<script>story.show('pourquoi autant de pomme');</script>
+<% } %>
+
+::compartimant-2
+<% if(hasVisited("compartimant-1","compartimant-2","compartimant-3","compartimant-4","compartimant-5","congelateur") && !hasVisited("pourquoi autant de pomme")) { %>
+<script>story.show('pourquoi autant de pomme');</script>
+<% } %>
+
+::compartimant-3
+<% if(hasVisited("compartimant-1","compartimant-2","compartimant-3","compartimant-4","compartimant-5","congelateur") && !hasVisited("pourquoi autant de pomme")) { %>
+<script>story.show('pourquoi autant de pomme');</script>
+<% } %>
+
+::compartimant-4
+<% if(hasVisited("compartimant-1","compartimant-2","compartimant-3","compartimant-4","compartimant-5","congelateur") && !hasVisited("pourquoi autant de pomme")) { %>
+<script>story.show('pourquoi autant de pomme');</script>
+<% } %>
+
+::compartimant-5
+<% if(hasVisited("compartimant-1","compartimant-2","compartimant-3","compartimant-4","compartimant-5","congelateur") && !hasVisited("pourquoi autant de pomme")) { %>
+<script>story.show('pourquoi autant de pomme');</script>
+<% } %>
+
+::congelateur
+<% if(hasVisited("compartimant-1","compartimant-2","compartimant-3","compartimant-4","compartimant-5","congelateur") && !hasVisited("pourquoi autant de pomme")) { %>
+<script>story.show('pourquoi autant de pomme');</script>
+<% } %>
+
+::pourquoi autant de pomme
+> Chérie.
+> J'avous que je commence à en avoir un peu marre des pommes.
+
+Oui, moi aussi.
+Cette année c'est **pommes**.
+
+> Bon c'est quand même meilleurs que l'ans derniers et les raisins...
+
+Aaah non, moi je préférais le raisin !
+
+> Chacun son tour du coup.

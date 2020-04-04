@@ -55,7 +55,7 @@ vestibule:
   infinite: false
   scrollable: false
   topAvailable:
-    top: 140
+    top: 135
   inventory:
     - name: pot-plastique-1
     - name: parapluie-1
@@ -80,19 +80,83 @@ vestibule:
     - name: bouteille-vide-de-biere-1
     - name: bouteille-vide-de-biere-1
     - name: bouteille-vide-de-biere-1
-
   connections:
     - place: "palier"
       condition: true
     - place: "salle-de-bain"
       condition: "topAvailable"
-    - place: "entree-salle-principale"
+    - place: "salle-principale"
       condition: "topAvailable"
   description: >
     Comme sur le palier, au sol, les carreaux sont gris marbré. C'est une petite pièce de quatre mètres carré. Tout les murs sont tapissé d'un papier texturé beige, parfois légèrement rosé. Sur un des murs, un cadre en bois imposant sous verre contient un tableau tissé d'un champ de coquelicot et d'une montagne en fond. Juste à côté, une petite horloge ronde, fixé sur le même clou qu'un calendrier.
 
 salle-de-bain:
-  name: Salle de bain un peu dégueu
+  name: Salle de bain
   connections:
     - place: "vestibule"
       condition: true
+  description: >
+    Au sol des petit carreaux carré orange avec un doubla en bois pour laisser passer l'eau. Il y a une odeur d'humidité assez forte. C'est une sale d'eau d'environs deux mètre carrés. Un énorme rouleau de papier toilette est accroché au mur, des brosses à dents, des bouteilles de champoins sont sur une petite étagère d'angle. Il y as aussi une plante grasse avec les pieds dans un petit pot en verre, qui semble heureuse comme tout ici dans l'humidité et l'obscurité. Par contre, pas d'ouvertures, seulement une petite VMC pour absorber l'humidité.
+
+salle-principale:
+  name: La chambre/salon/salle à manger.
+  width: 250
+  height: 300
+  infinite: false
+  # scrollable: true
+  inventory:
+    - name: table-a-manger
+    - name: etandoire
+    - name: frigo
+    - name: bouteille-vide-de-soju-1
+    - name: bouteille-vide-de-soju-1
+  connections:
+    - place: "vestibule"
+      condition: true
+    - place: "buanderie"
+      condition: true
+  description: >
+    Salle principale du traditionnel One room-완룸 coréen. Tout y ai.
+    Le sol est fait d'un plastique simili bois, le sol est chaud, en permanence chauffée électriquement grâce au ondol-옹덜, le chauffage au sol traditionnel. C'est parfois brûlant, mais là, c'est parfais. Au mur et aux plafonds, un papier blanc beige texturé. La pièce est très chargée. Sur le côté gauche de l'entrée, des grands placards, en face une grande rangée de fenêtres donnant plein sud. C'est très lumineux. Les vitres sont comme doublé. Il y a deux rangé de fenêtres séparer de 30 cm.
+    Cet espace est rempli de fleurs et plantes en tout genre et de différentes tailles. Des cactus, des salades comestibles, des plante de sésame, dont on mange également les feuilles lorsqu'on en a suffisamment. Pas de lit dans cette pièce seulement un tas de couverture plié dans le coin à côté du meuble TV. Le sol est légèrement mou, sûrement l'épaisseur du plastique. L'appartement sent parfois la soupe de poisson, mais aujourd'hui, il sent bon l'huile de sésame.
+
+  #   - name: meuble-tv
+  #   - name: meuble-2
+  # connections:
+  #   - place: "salle-machine-a-laver"
+  #     condition: true
+  #   - place: "frigo"
+  #     condition: true
+
+buanderie:
+  name: Une sorte de buanderie
+  width: 70
+  height: 200
+  infinite: false
+  scrollable: false
+  inventory:
+    - name: machine-a-laver
+  connections:
+    - place: "salle-principale"
+      condition: true
+  description: >
+    Voilà une pièce particulière, dans le coin de la salle principale se trouve la buanderie-타용도실. C'est une petite pièce de deux ou trois mètres carrés dont tous les appartements sont équipés. Les carreaux au sol sont orange foncé, légèrement penché dans la direction d'un siphon, sur un des murs il y as robinet d'eau proche du sol. Un des murs est constitué de portes coulissantes en verre. Ici, elles sont constamment ouvertes. Le mur opposé accueille une rangée de fenêtres similaire à celle de la pièce principale, encore une fois remplis de toute sorte de plantes et encore une fois, c'est très lumineux.
+
+
+
+# frigo:
+#   name: frigo
+#   width: 100
+#   height: 350
+#   infinite: false
+#   scrollable: false
+#   inventory:
+#     - name: congelateur
+#     - name: etage-1
+#     - name: etage-2
+#     - name: etage-3
+#     - name: etage-4
+#     - name: bac-a-legume-1
+#   connections:
+#     - place: "salle-principale"
+

@@ -4,7 +4,7 @@ import placesYml from './../../places.yml'
 import objectsYml from './../../objects.yml'
 
 const state = {
-  activePlace: "palier",
+  activePlace: "salle-principale",
   lastActivePlace: false,
   places: {},
   player: [],
@@ -157,6 +157,8 @@ const actions = {
 
     dispatch("checkForInventoryEvent");
 
+    dispatch("checkForSpecialEvent");
+
     dispatch("saveGame", null, { root: true });
     // console.log('tried to save')
   },
@@ -200,7 +202,15 @@ const actions = {
         }
       }
     }
+  },
+  checkForSpecialEvent: function({commit, dispatch, state}){
+    console.log("passage = " + this.$app.passage().name)
 
+    if(this.$app.passage().name == "livraison"){
+      commit("addObject", { place: "palier", object: { name: "carton-pomme-1"} });
+      commit("addObject", { place: "palier", object: { name: "carton-pomme-2"} });
+    }
+    // pourquoi autant de pomme
   },
 
   // inventory events -------------------------
@@ -247,7 +257,7 @@ const mutations = {
     this.$app.$set(state.places[payload.place], "locked",  payload.value);
   },
   resetVariables: function(state, placeName){
-    state.activePlace = "palier";
+    state.activePlace = "salle-principale";
     state.lastActivePlace = false;
     state.places = {};
     state.player = [];
@@ -308,24 +318,15 @@ const mutations = {
     }
   },
   setActivePlace: function(state, place){
-    // var filter = false;
-
     if(state.places[place] && place != state.activePlace){
-      // console.log('setting last active place ...')
-      // console.log("checkAllParent(state.places[place], state.places) = " + checkAllParent(state.places[place], state.places));
       if(!state.lastActivePlace){
         state.lastActivePlace = place;
       }
       else if(checkAllParent(state.places[state.activePlace], state.places)){
-        // console.log('setted')
-        console.log("checkAllParent = " + checkAllParent(state.places[place], state.places));
         state.lastActivePlace = state.activePlace;
       }
 
       state.activePlace = place;
-      console.log("setActivePlace .......");
-      console.log("state.lastActivePlace = " + state.lastActivePlace);
-      console.log("state.activePlace = " + state.activePlace);
     }
   },
   resetPlayer: function(state){
@@ -340,20 +341,6 @@ const mutations = {
       newPlace.haveEnoughSpace = false;
       this.$app.$set(state.places, place, newPlace);
     }
-    // var weight = 0;
-
-
-    // for (var property in state.places) {
-    //   // console.log("property = ", property);
-    //   // console.log("this.$app. = ", this.$app);
-    //   // console.log("this.$app.getPlaceWeight(property) = " + this.$app.getPlaceWeight(property));
-    //   weight += this.$app.getPlaceWeight(property);
-    //   console.log('weight ==== ' + weight)
-    //   state.places[property].actualWeight = weight;
-    //   // console.log("state.places[property] = ", state.places[property]);
-
-    //   // this.$app.$set(state.places[property], actualWeight, weight);
-    // }
   },
   addAllObjectSpaces: function(state){
     for (var iObjectName in objectsYml) {
@@ -433,8 +420,10 @@ export default {
 
 function checkConnectionSpecialCondition(payload){
   if(payload.condition == "topAvailable"){
-    var actualFictifHeight = document.getElementById(payload.activePlace).getElementsByClassName("fictif")[0].offsetTop;
+    var objectsDiv = document.getElementById(payload.activePlace).getElementsByClassName("object");
+    var actualFictifHeight = objectsDiv[objectsDiv.length-1].offsetTop;
     var topLimit = payload.placeObj.topAvailable.top;
+
     if(actualFictifHeight <= topLimit){
       return true;
     }else {
@@ -446,12 +435,8 @@ function checkConnectionSpecialCondition(payload){
 function checkAllParent(targetPlace, places){
   // return true if no hand parent or grant parent
   var booleanParent = true;
-   console.log("checkAllParent----------");
-
-   console.log("targetPlace.parentPlace = " + targetPlace);
 
   if(targetPlace.parentPlace != null && targetPlace.parentPlace != "hands"){
-    console.log("targetPlace = ", targetPlace);
     while (targetPlace.parentPlace != null && booleanParent) {
       if(targetPlace.parentPlace != null && targetPlace.parentPlace == "hands"){
         booleanParent = false;
@@ -466,6 +451,5 @@ function checkAllParent(targetPlace, places){
     booleanParent = false;
   }
 
-  console.log("booleanParent = " + booleanParent);
   return booleanParent;
 }

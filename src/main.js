@@ -37,6 +37,39 @@ Vue.mixin({
 			}
 			// return false;
 		},
+		passage: function(){
+			var story = document.getElementById("twee");
+			if(story && story.contentWindow.passage){
+				return story.contentWindow.passage;
+			}
+			else {
+				return false;
+			}
+			// return false;
+		},
+		flashError: function(erorType, target){
+			console.log("target = " + target)
+			console.log("erorType = " + erorType)
+
+			if(erorType == "weight"){
+				var parentTarget = document.querySelector('#inventory-' + target + " .informations");
+
+				parentTarget.classList.add("error");
+
+				setTimeout(()=>{
+					parentTarget.classList.remove("error");
+				}, 500);
+			}
+
+			if(erorType == "space"){
+				var parentTarget = document.querySelector('#inventory-' + target + " #" + target);
+				parentTarget.classList.add("error");
+
+				setTimeout(()=>{
+					parentTarget.classList.remove("error");
+				}, 500);
+			}
+		},
 		updatePassage:function(passage){
 			// console.log(passage.name)
 			// console.log(passage.name.includes('Intro'))

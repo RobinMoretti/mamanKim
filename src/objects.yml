@@ -556,7 +556,6 @@ bouteille-vide-de-soju-1:
   description: >
     Boutieille de soju-소주 de Crapeau-두커비. Recyclabe pour 100won-원.
 
-# bouteille-vide-de-biere-2:
 # paquet-salade-1:
 # pochette-fermeture-eclaire:
 # tableau-peinture-encre-1:
@@ -579,7 +578,524 @@ bouteille-vide-de-soju-1:
 
 
 
-# vestibule ---------------------------------------------------------------------------------
+# Salle principale ---------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------
 
 
+etandoire:
+  name: Étandoire
+  weight: 4
+  width: 40
+  height: 50
+  picto: ⌤
+  description: >
+    Simple étandoire composé de tubes métallique.
+  place:
+    name: Interieure du gros sac en plastique
+    width: 300
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 8
+    inventory:
+      - name: linge-humide
+      - name: serviette-humide
+      - name: linge-humide
+      - name: linge-humide
+      - name: serviette-humide
+      - name: serviette-humide
+
+linge-humide:
+  name: Linge humide
+  weight: 1
+  width: 20
+  height: 50
+  picto: 👕
+  description: >
+    Linge humide, sortis il y as peu de la machine à laver.
+
+serviette-humide:
+  name: Serviette de bain humide
+  weight: 0.8
+  width: 20
+  height: 40
+  picto: Se
+  description: >
+    Serviette de bain humide, trés courte.
+
+table-a-manger:
+  name: Table à manger.
+  weight: 45
+  width: 100
+  height: 50
+  picto: ⎍
+  takable: false
+  description: >
+    Table en bois massife.
+  place:
+    name: Table à manger.
+    width: 300
+    height: 300
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: dessus-la-table
+      - name: dessous-la-table
+
+dessus-la-table:
+  name: Dessus de la table à manger.
+  weight: 25
+  width: 300
+  height: 40
+  takable: false
+  picto: Dessus de la table à manger
+  description: >
+    La partie supérieur de la table à manger est en bois massif vernis. Elle semble avoirs bien vécus. A certains endroits, le vernir est pas mal effacé.
+  place:
+    name: Dessus de la table à manger.
+    width: 300
+    height: 200
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: filtre-a-eau-lg
+      - name: assiete-1
+      - name: verre-d-eau-1
+      - name: sel-1
+      - name: champignons-1
+      - name: assiete-1
+      - name: patate-douce-1
+      - name: pomme-de-terre-1
+      - name: verre-d-eau-1
+      - name: pomme-de-terre-1
+      - name: piment-1
+      - name: piment-1
+      - name: pomme-1
+      - name: piment-1
+      - name: pomme-1
+
+filtre-a-eau-lg:
+  name: Machine filtre à eau
+  weight: 10
+  width: 100
+  height: 50
+  takable: false
+  picto: 🚰
+  description: >
+    Filtre à eau qui semble moderne, Lg. Il est Massife et couvert d'aluminium.
+
+verre-d-eau-1:
+  name: Verre d'eau vide
+  weight: 0.3
+  width: 25
+  height: 40
+  picto: 🥛
+  description: >
+    Verre.
+
+assiete-1:
+  name: Assiète
+  weight: 0.5
+  width: 35
+  height: 35
+  picto: 🍽
+  description: >
+    Assiète blanche.
+
+patate-douce-1:
+  name: Patate douce
+  weight: 0.5
+  width: 25
+  height: 35
+  picto: 🍠
+  description: >
+    Patate douce.
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: Patate douce
+sel-1:
+  name: Salière
+  weight: 0.4
+  width: 20
+  height: 20
+  picto: sel
+  description: >
+    Salière
+
+champignons-1:
+  name: champignons
+  weight: 0.3
+  width: 20
+  height: 40
+  picto: 🍄
+  description: >
+    Un paquet de champignons.
+
+pomme-de-terre-1:
+  name: Pomme de terre
+  weight: 0.5
+  width: 20
+  height: 30
+  picto: 🥔
+  description: >
+    Une patate.
+
+piment-1:
+  name: Pimment
+  weight: 0.5
+  width: 20
+  height: 30
+  picto: 🌶
+  description: >
+    Des pimments séché.
+
+dessous-la-table:
+  name: Dessous de la table à manger.
+  weight: 0
+  width: 300
+  height: 260
+  takable: false
+  picto: Dessous de la table à manger
+  description: >
+    La partie infèrieure de la table à manger.
+  place:
+    name: Table à manger.
+    width: 300
+    height: 200
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: carton-1
+      - name: carton-1
+      - name: carton-2
+      - name: carton-1
+
+carton-1:
+  name: Carton fermé
+  weight: 25
+  width: 100
+  height: 100
+  # takable: false
+  picto: 📦
+  description: >
+    Carton fermé par du scotch orange.
+
+carton-2:
+  name: Carton fermé
+  weight: 40
+  width: 100
+  height: 150
+  # takable: false
+  picto: 📦
+  description: >
+    Carton fermé par du scotch orange.
+
+frigo:
+  name: Frigidère
+  weight: 50
+  width: 60
+  height: 190
+  takable: false
+  picto: Frigidère
+  description: >
+    Frigière Lg
+  place:
+    name: Frigidère
+    width: 100
+    height: 300
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: congelateur
+      - name: compartimant-1
+      - name: compartimant-2
+      - name: compartimant-3
+      - name: compartimant-4
+      - name: compartimant-5
+
+congelateur:
+  name: Congélateur
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Congélateur
+  description: >
+    Congélateur
+  place:
+    name: Congélateur
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: sac-de-riz-congele
+
+compartimant-1:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+
+
+compartimant-2:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+
+compartimant-3:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+
+compartimant-4:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+
+compartimant-5:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+
+carton-pomme-1:
+  name: Carton
+  weight: 0.5
+  width: 70
+  height: 55
+  picto: 📦
+  description: >
+    Carton
+  place:
+    name: Interieure du carton
+    width: 100
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 30
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+carton-pomme-2:
+  name: Carton
+  weight: 0.5
+  width: 70
+  height: 55
+  picto: 📦
+  description: >
+    Carton
+  place:
+    name: Interieure du carton
+    width: 100
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 30
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+
+sac-de-riz-congele:
+  name: Sace de riz congelé
+  weight: 2
+  width: 50
+  height: 50
+  picto: 🍚
+  description: >
+    Gros sac de riz congelé.
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: Sace de riz congelé
+
+pomme-1:
+  name: Pomme
+  weight: 0.7
+  width: 20
+  height: 20
+  picto: 🍎
+  description: >
+    Grosse pomme rouge.
+
+jus-pomme-1:
+  name: Jus de pomme
+  weight: 0.2
+  width: 20
+  height: 20
+  picto: 🍷
+  description: >
+    Jus de pomme contenue dans un petit sachet de 10cl. Très sucré

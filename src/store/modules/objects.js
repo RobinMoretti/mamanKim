@@ -5,6 +5,7 @@ import objectsYml from './../../objects.yml'
 const state = {
   activeObject: "",
   objects: null,
+  bouteilleTaken: 0,
 }
 
 // getters
@@ -35,9 +36,13 @@ const actions = {
 
 // mutations
 const mutations = {
+  incrementBoutteilleTaker: function(state){
+    state.bouteilleTaken ++;
+  },
   resetVariables: function(state, placeName){
     state.activeObject = "";
     state.objects = null;
+    state.bouteilleTaken = 0;
   },
   setActiveObject: function(state, object){
     console.log(object)

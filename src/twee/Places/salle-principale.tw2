@@ -1,0 +1,17 @@
+::salle-principale
+<% if(!hasVisited("salle-principale")) { %>
+Bon ! Nous y voila.
+
+J'espère qu'on aura le temps de ranger un peu.
+
+On ne pourras pas tout faire aujourd'hui de toutes façon.
+
+Donc les objectif:
+Ranger **toutes la bouffe**, **le meuble télé** et **le frigo** et si on peut, **la buanderie**.
+
+Pour le reste on oublis !
+
+> Ok, lets go !
+<% } else if(visited("salle-principale") > 3 && hasVisited("pourquoi autant de pomme")) { %>
+<script>story.show('livraison');</script>
+<% } %>

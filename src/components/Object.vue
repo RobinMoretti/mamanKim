@@ -105,11 +105,14 @@ export default {
           if(this.object.name != this.$store.state.places.activePlace){
             if(this.detailObject.takable != null && this.detailObject.takable == false){
             }
-            else{console.log("this = !!! " + this.objectIspackable(this.$store.state.places.activePlace));
+            else{
               if (this.space != "hands") {
                 if(this.objectIspackable("hands")){
                   this.$store.commit("places/removeObject", { place: this.space, object: this.object })
                   this.$store.commit("places/addObject", { place: "hands", object: this.object })
+                  this.$nextTick(() => {
+                    this.checkForSpecialEvent();
+                  });
                 }
               }else {
                 if(this.objectIspackable(this.$store.state.places.activePlace)){
@@ -130,7 +133,17 @@ export default {
       }else if(this.playMode == "looking"){
         this.displayObject();
       }
+    },
+    checkForSpecialEvent: function(){
+      if(this.object.name == "bouteille-vide-de-biere-1" || this.object.name ==  "bouteille-vide-de-soju-1"){
+        console.log("this.$store.state.objects.bouteilleTaken = " + this.$store.state.objects.bouteilleTaken);
+        if(this.$store.state.objects.bouteilleTaken > 6){
+          this.story().show("beaucoup de bouteilles vide");
+        }
+        this.$store.commit("objects/incrementBoutteilleTaker");
+      }
 
+      // if(this.space == "vestibule" )
     },
     displayObject: function(){
       if(this.detailObject.events && this.detailObject.events.length){
@@ -152,6 +165,8 @@ export default {
       }
     },
     objectIspackable: function(target){
+      console.log("objectIspackable =  ------------/");
+      console.log('target', target)
       // weight available ------------
       var weightState = false;
       if(this.inventoryMaximumWeight(target) > 0){
@@ -163,6 +178,10 @@ export default {
       }
       else
         weightState = true;
+
+      if(!weightState){
+        this.flashError("weight", target);
+      }
 
       // space available ------------
 
@@ -177,7 +196,11 @@ export default {
 
       if((fictifHeightOffset +  this.detailObject.height) >= targetMaxHeight){
         heightAvailable = false;
+
+        this.flashError("space", target);
+
       }
+
 
       if(weightState && heightAvailable){
         return true;

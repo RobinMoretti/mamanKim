@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :id="'inventory-' + name">
 
     <vue-custom-scrollbar
         class="place-inventory"
@@ -210,4 +210,16 @@ export default {
       width: 100%;
     }
   }
+
+  .error{
+    animation-name: errorAnimation;
+    animation-duration: infinite;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes errorAnimation {
+    from {background-color: rgba(0,0,0,0);}
+    to {background-color: #EE3711;}
+  }
+
 </style>
