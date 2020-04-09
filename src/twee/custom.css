@@ -4,9 +4,9 @@ a{
 	text-align: right;
 	color: #3E2123;
 }
-
 body{
 	font-size: 1.1rem;
+	padding-right: 25px;
 }
 
 blockquote{

@@ -85,6 +85,15 @@ export default new Vuex.Store({
     },
     changePlayMode: function(state, mode){
       state.playMode = mode;
+    },
+    togglePlayMode: function (state) {
+      console.log('togglePlayMode')
+      if(state.playMode == "looking"){
+        state.playMode = "picking";
+      }
+      else {
+        state.playMode = "looking";
+      }
     }
   },
   plugins: [vuexLocal.plugin]

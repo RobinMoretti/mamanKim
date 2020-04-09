@@ -1,20 +1,26 @@
 <template>
   <div>
+    <span class="cursor-icon" v-if="playMode == 'looking'">👁</span>
+    <span class="cursor-icon" v-if="playMode == 'picking'">🖐</span>
+
     <transition-group name="fade">
       <div v-show="!loaded" key="1">Loading...</div>
       <div id="app" v-show="loaded" key="2">
-        <vue-custom-scrollbar class="mains">
+        <div class="mains">
           <h3>Dans les mains</h3>
           <inventory name="hands" :active-place-obj="handsObject"></inventory>
-          <p class="play-mode">
-            <span :class="playMode == 'looking' ? 'selected' : ''" v-on:click="changePlayMode('looking')">👁</span>
-            <span :class="playMode == 'picking' ? 'selected' : ''" v-on:click="changePlayMode('picking')">🖐</span>
-          </p>
-
           <hr>
 
+
+          <p class="play-mode">
+            <span :class="playMode == 'looking' ? 'selected' : ''" v-on:click="changePlayMode('looking')">👁<p>Regarder</p></span>
+            <span :class="playMode == 'picking' ? 'selected' : ''" v-on:click="changePlayMode('picking')">🖐<p>Prendre</p></span>
+          </p>
+          <p class="play-info" :class="{ hidden: !hideInfoMode }">Any key to switch</p>
+
+
           <iframe :src="tweeUrl" id="twee" ref="twee" @load="iframeLoaded" v-if="displayIframe"></iframe>
-        </vue-custom-scrollbar>
+        </div>
 
         <vue-custom-scrollbar class="space">
           <transition name="fade">
@@ -95,6 +101,8 @@ export default {
       tweeUrl: "twee-build/index.html",
       displayIframe: false,
       loaded: false,
+      lestKeyEvent: false,
+      hideInfoMode: true,
     }
   },
   computed: {
@@ -197,6 +205,32 @@ export default {
       //     // if()
       //   }
       // }
+    },
+    mouveCursorImgToCursor: function (event) {
+      var el = document.getElementsByClassName("cursor-icon")[0];
+      if(event.view.story != null){
+        el.style.top = (event.clientY + this.$refs.twee.offsetTop) + "px";
+        el.style.left = (event.clientX + this.$refs.twee.offsetLeft) + "px";
+
+      }else{
+        el.style.top = event.clientY + "px";
+        el.style.left = event.clientX + "px";
+      }
+    },
+    getKey:function (event) {
+      // this.shiftKey = event.shiftKey;
+      if(event.type != this.lestKeyEvent){
+        
+        this.hideInfoMode = false;
+
+        this.hideInfoModeTimeOut = setTimeout(() => {
+          this.hideInfoMode = true;
+        }, 5000);
+
+        this.$store.commit("togglePlayMode")
+      }
+
+      this.lestKeyEvent = event.type;
     }
   },
   mounted: function(){
@@ -212,11 +246,31 @@ export default {
     }
 
     this.displayIframe = true;
+
+    document.getElementsByTagName("body")[0].addEventListener('mousemove', this.mouveCursorImgToCursor);
+
+    this.$nextTick(() => {
+      // do something cool
+      this.$refs.twee.contentWindow.addEventListener('mousemove', this.mouveCursorImgToCursor)
+    })
+
+    document.getElementsByTagName("body")[0].addEventListener('keyup', this.getKey)
+    document.getElementsByTagName("body")[0].addEventListener('keydown', this.getKey)
+
+    // document..on('keyup keydown', function(e){shifted = e.shiftKey} );
+    // this.$refs.twee.addEventListener('mousemove', this.mouveCursorImgToCursor);
   }
 };
 </script>
 
 <style lang="scss">
+.cursor-icon{
+  pointer-events: none;
+  position: absolute;
+  font-size: 20px;
+  z-index: 100;
+}
+
 .hidden{
   visibility: hidden;
 }
@@ -251,12 +305,17 @@ body{
 }
 
 
-#app > div{
-}
 
-.space, .mains, .object-container{
+.space, .object-container{
   max-height: calc( 100vh - 50px );
   overflow-y: scroll;
+  padding-right: 40px;
+  display: inline-block !important;
+  margin: 10px;
+}
+.mains{
+  max-height: calc( 100vh - 50px );
+  overflow-y: hidden;
   padding-right: 40px;
   display: inline-block !important;
   margin: 10px;
@@ -296,21 +355,60 @@ body{
 }
 
 .play-mode{
+  width: 100%;
+  text-align: right;
+  font-size: 20px; 
   span{
     margin: 2px;
-    padding: 2px;
+    padding: 2px 5px;
+    position: relative;
+
+    p{
+      opacity: 0;
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      color: rgba(0,0,0,0.5);
+    }
   }
+
+  span:hover{
+    p{
+      opacity: 1;
+      font-size: 10px
+    }
+  }
+
   .selected{
+    background-color: rgba(200,200,250, 0.2);
     border: 1px solid black;
   }
 }
 
-.places-available button{
-  background: rgba(0,0,0,0);
-  border-radius: 0;
-  border: 1px solid black;
-  padding: 0.5rem 1rem;
-  margin-right: 10px;
+.play-info{
+  // opacity: 0;
+  margin-top: -8px;
+  font-size: 12px;
+  text-align: right;
+  width: 100%;
+  color: rgba(0,0,0,0.5);
+  // opacity: 0;
+}
+
+.places-available {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 300px;
+  flex-wrap: wrap;
+
+  button{
+    margin-top: 10px;
+    background: rgba(0,0,0,0);
+    border-radius: 0;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    margin-right: 10px;
+  }
 }
 
 hr{

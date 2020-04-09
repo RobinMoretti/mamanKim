@@ -213,6 +213,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .object{
+
     background: white;
     // float: left;
     // position: relative;
@@ -231,8 +232,11 @@ export default {
     position: relative;
 
     span{
+      pointer-events: none;
+      font-family: sans-serif;
+      // font-weight: bold;
       position: absolute;
-      left: 1px; top: 3px;
+      left: 3px; top: 3px;
     }
   }
 

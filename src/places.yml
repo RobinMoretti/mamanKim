@@ -4,6 +4,8 @@ outside:
   connections:
     - place: "garage"
       condition: true
+  width: 300
+  height: 100
   infinite: true
   scrollable: true
   description: >
