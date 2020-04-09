@@ -1,16 +1,17 @@
 ::Basquette bleu
 <% if(visited("Basquette bleu 1") < 1){ %>
-> Tu sais, cette paire, maman as vraiment voulu que je les essaient la dernière fois.
+> Tu sais, cette paire de chaussures, maman a vraiment voulu que je les essaie la dernière fois.
 
-Oui, c'est possible.
+Oui, c'est son genre.
 
-> C'est vrais que je parle pas bien coréen, ok. Mais les chiffres, je sais les lire.
->  Et puis si je trouve jamais de chaussure à ma taille en magasin c'est bien que les chaussures qu'on trouve dehors m'iront jamais...
+> C'est vrais que je parle pas bien coréen, ok. 
+> Mais les chiffres, je sais les lire.
+> Et puis si je trouve jamais de chaussure à ma taille en magasin, c'est bien que les chaussures qu'on trouve dehors ne m'iront jamais...
 >  En plus je vois bien qu'elles son trop petites...
 
 Alors ?
 
-> Elle as quand même tenue à ce que je les mettre
+> Elle as quand même tenue à ce que je les mettent.
 
 ...
 

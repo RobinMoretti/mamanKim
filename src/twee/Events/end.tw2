@@ -14,24 +14,31 @@ Non c'est pas moi.
 > Ah, déjà ?
 
 /C'est moi je suis rentré!/ 
-/Vous avez mangez?/
+/Vous avez mangez? Vous avez faim ?! /
 
-Non maman, on as pas mangé. Mais je commence à avoir un peu faim.
+Non maman, on n'a pas mangé. 
 
-> comment tu fais pour avoir faim ?! 
-> On as mangé un barbecue il y as deux heure!
+Mais je commence à avoir un peu faim.
 
-De ranger, ça donne faim!
+> Comment tu fais pour avoir faim ?! 
+> On a mangé un barbecue il y as deux heures !
+> On en pouvait plus à la fin.
 
-/Alors on mange! J'ai acheté de la viande!/
-/Aprés on vas jouer au go stop!/
+Ça donne faim de ranger!
+
+[[... ? ->end 11]]
+
+::end 11
+
+/Alors on mange ! J'ai acheté de la viande!/
+/Aprés on une partie de go stop!/
 
 Bonne idée ! 
 
-[[Ok, allez, on mange alors. ->credit]]
+[[Ok, allez, on mange alors. 😀 ->credit]]
 
 ::credit
-Chez maman Kim
-Crédit
-Robin hyeyoung
-Twitter / itch
+Chez maman Kim.
+Pas Beau Game-빠보게임 2020
+Robin Moretti et Hyeyoung Park
+Twitter | Itch.io

@@ -1,5 +1,9 @@
 ::palier
 
+Chez maman Kim.
+Pas Beau Game-빠보게임 2020
+Robin Moretti et Hyeyoung Park
+<a href="https://twitter.com/RobinMoretti">Twitter</a> | <a href="https://robinmoretti.itch.io/">Itch.io</a>
 
 
 <% if(visited("palier") > 0 && visited("vestibule") > 0 && !s["porte-claque"]){ %>
@@ -26,13 +30,13 @@ Bili diling 🎶
 [[Essayer d'ouvrir la porte ->essaie porte]]
 
 <% } else if(visited("palier") == 0) { %>
-On rentre?
+On rentre ?
 <% } %>
 
 ::porte claque
 [[Essayer d'ouvrir la porte ->essaie porte]]
-[[Taper le digicode ->essaie digicode]]
-<% if(s["essaie-ouvrir-porte"] && s["essaie-ouvrir-porte"] > 10) { %>
+[[Taper le code sur le digicode ->essaie digicode]]
+<% if(s["essaie-ouvrir-porte"] && s["essaie-ouvrir-porte"] > 6) { %>
 [[Toquer à la porte ->toquer la porte]]
 <% } %>
 
@@ -46,7 +50,7 @@ On rentre?
 <% } %>
 
 [[Essayer d'ouvrir la porte ->essaie porte]]
-[[Taper le digicode ->essaie digicode]]
+[[Taper le code sur le digicode ->essaie digicode]]
 <% if(s["essaie-ouvrir-porte"] && s["essaie-ouvrir-porte"] > 3) { %>
 [[Toquer à la porte ->toquer la porte]]
 <% } %>
@@ -73,11 +77,11 @@ On rentre?
 <% } else if(s["essaie-digicode"] == 4){ %>
 > Toujour pas.
 <% } else if(s["essaie-digicode"] == 5){ %>
-> Putin.
+> Bon c'est chiant maintenant.
 <% } else if(s["essaie-digicode"] == 6){ %>
-> ( *&%@#$! )
+> Putin.
 <% } else if(s["essaie-digicode"] == 7){ %>
-> Bordel de merde!! <br> Tu vas t'ouvrir ?!
+> ( *&%@#$! )
 <% } else{ %>
 <% } %>
 
@@ -118,7 +122,7 @@ On rentre?
 
 <script>setTimeout(function(){
 	story.show('hyeyoung ouvre la porte');
-}, 5000)</script>
+}, 3000)</script>
 
 [[Appeller Hyeyoung-헤영 ->appeller hyeyoung]]
 
@@ -135,17 +139,17 @@ On rentre?
 
 <script>setTimeout(function(){
 	story.show('hyeyoung ouvre la porte');
-}, 2000)</script>
+}, 3000)</script>
 
 ::hyeyoung ouvre la porte
 
-*Douu Dou Dute* 🎶
+*Didoouu Dou Dute* 🎶
 
-Et bin, tu fait quoi ?!
+Et bin, tu fais quoi ?!
 
-> J'ai oubliais ce fichus code!
+> J'ai oublié ce fichu code!
 
-T'est babo-바보 vraiment! <br>
+T'est débile-바보 vraiment! <br>
 
 <% if(s["porte-called-yobo"]) { %>
 En plus je t'ai déjà dit d'arreter de m'appeller yobo, un dirais un vieux, c'est gras-느키해.

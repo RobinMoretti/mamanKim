@@ -5,7 +5,7 @@ voiture-1:
   height: 300
   picto: 🚙
   description: >
-    Voiture grise d'une marque coréenne, plutôt ancienne. En bonne état et particulièrement propre.
+    Voiture grise d'une marque coréenne, plutôt ancienne. En bonne état et particulièrement propre. 
 telephone-1:
   name: Téléphone portable
   weight: 0.5
@@ -470,7 +470,7 @@ chaussure-1:
   picto:  👟
   description: >
     Basquette de petite taille sans marque, multicolore. En bonne état.
-
+    
 chaussure-2:
   name: Basquette bleu
   weight: 1.6
@@ -1099,7 +1099,7 @@ carton-pomme-2:
       - name: pomme-2
       - name: pomme-2
       - name: pomme-2
-      - name: pomme-2
+      - name: pomme-2 
 
 sac-de-riz-congele:
   name: Sac de riz congelé
@@ -1156,7 +1156,7 @@ meuble-tv-1:
   description: >
     Meuble de télévision rose saumon en bonne état.
   place:
-    name: Meuble de télévision
+    name: Meuble de télévision 
     width: 200
     height: 80
     infinite: false
@@ -1178,7 +1178,7 @@ dessus-meuble-tv:
   description: >
     Dessus du meuble de télévision
   place:
-    name: Dessus du meuble de télévision
+    name: Dessus du meuble de télévision 
     width: 200
     height: 100
     infinite: false
@@ -1273,7 +1273,7 @@ jeu-de-carte-1:
   height: 40
   picto: 🎴
   description: >
-    Ensemble de carte coréenne. Composé de douze catégories, une pour chaque saison, elles peuvent représenter des fleur ou des terrains (mers, montagne, plaine). Chacune compte 4 cartes, de quatre types possibles. Les cartes basique-피, les animaux-열끗, les ceintures-띠 et les lumières-광. Un des jeux le plus populaire ici, c'est aussi un jeu d'argent, le Go-Stop.
+    Ensemble de carte coréenne. Composé de douze catégories, une pour chaque saison, elles peuvent représenter des fleur ou des terrains (mers, montagne, plaine). Chacune compte 4 cartes, de quatre types possibles. Les cartes basique-피, les animaux-열끗, les ceintures-띠 et les lumières-광. Un des jeux le plus populaire ici, c'est aussi un jeu d'argent, le Go-Stop. 
 
 
 drapeau-coreen-1:
@@ -1400,7 +1400,7 @@ boite-conservation-nourriture-1-1:
   description: >
     Boite de conservation taille 5
   place:
-    name: Intérieur boite de conservation taille 5
+    name: Plateau de l'étagère en bois
     width: 45
     height: 45
     infinite: false
@@ -1480,7 +1480,7 @@ boite-conservation-nourriture-2-1:
   description: >
     Boite de conservation taille 5
   place:
-    name: Intérieur boite de conservation taille 5
+    name: Plateau de l'étagère en bois
     width: 45
     height: 45
     infinite: false
@@ -1559,7 +1559,7 @@ boite-conservation-nourriture-3-1:
   description: >
     Boite de conservation taille 5
   place:
-    name: Intérieur boite de conservation taille 5
+    name: Plateau de l'étagère en bois
     width: 45
     height: 45
     infinite: false

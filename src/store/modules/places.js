@@ -158,6 +158,9 @@ const actions = {
     dispatch("checkForInventoryEvent");
 
     dispatch("checkForSpecialEvent");
+    this.$app.$nextTick(() => {
+      dispatch("updateConnectionsConditions");
+    })
 
     dispatch("saveGame", null, { root: true });
     // console.log('tried to save')

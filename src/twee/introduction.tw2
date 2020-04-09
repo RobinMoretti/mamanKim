@@ -1,11 +1,11 @@
 ::Introduction
 Fouu.....
 
-Il fait trop beau dehors.
+Il fait trop beauuu dehors.
 
 ...
 
-[[J'avou, ça fait tellement du bien ->Introduction suite - 1]]
+[[Tellement, ça fait du bien ->Introduction suite - 1]]
 
 
 ::Introduction suite - 1
@@ -15,15 +15,15 @@ Il fait trop beau dehors.
 
 <% if(visited("Introduction suite - 1") >= 2){ %>
 
-[[On devais pas faire quelque chose? ->Introduction suite - 2]]
+[[On ne devait pas faire quelque chose ? ->Introduction suite - 2]]
 
 <% } %>
 
 ::Introduction suite - 2
 Si, on doit ranger chez maman.
 
-Elle ne rentreras pas avant 8h ce soir. 
-C'est bien si on s'y met!
+Elle ne rentrera pas avant 8 heures ce soir. 
+C'est bien si on s'y met !
 
 [[ ? ->explication]]
 
@@ -32,12 +32,12 @@ C'est bien si on s'y met!
 ::explication
 ?
 
-Il faut qu'on range, cest le bordel la dedans !!! 
-On est aussi venue ici pour s'occuper de maman.
-Elle commence un peu à veillir et comme elle travail tout le temps, 
-c'est le moment de l'aider un peu...
+Il faut qu'on range chez maman pour l'aider, c'est le bordel là-dedans !
+On est aussi venue en Corée pour s'occuper de maman.
+Elle commence un peu à vieillir et comme elle travail tout le temps en ce moment.
+C'est le moment de l'aider un peu...
 
-[[Ok ok, 대한민국 comme on dit. ->endStart]]
+[[Ok ok, 대한민국-Allez la Corée, comme on dit. ->endStart]]
 
 
 ::endStart

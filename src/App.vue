@@ -10,8 +10,6 @@
           <h3>Dans les mains</h3>
           <inventory name="hands" :active-place-obj="handsObject"></inventory>
           <hr>
-
-
           <p class="play-mode">
             <span :class="playMode == 'looking' ? 'selected' : ''" v-on:click="changePlayMode('looking')">👁<p>Regarder</p></span>
             <span :class="playMode == 'picking' ? 'selected' : ''" v-on:click="changePlayMode('picking')">🖐<p>Prendre</p></span>
@@ -69,9 +67,7 @@
         </vue-custom-scrollbar>
 
         <footer>
-          <h1>Maman Kim</h1>
-          -
-          <a href="http://robinmoretti.eu">Robin Moretti</a>
+          <h1>Chez maman Kim</h1>
           -
           <transition name="fade">
             <p v-on:click="dResetGame" v-if="!displayResetGame"> Recommencer</p>
@@ -220,7 +216,7 @@ export default {
     getKey:function (event) {
       // this.shiftKey = event.shiftKey;
       if(event.type != this.lestKeyEvent){
-        
+
         this.hideInfoMode = false;
 
         this.hideInfoModeTimeOut = setTimeout(() => {
@@ -357,7 +353,7 @@ body{
 .play-mode{
   width: 100%;
   text-align: right;
-  font-size: 20px; 
+  font-size: 20px;
   span{
     margin: 2px;
     padding: 2px 5px;
@@ -446,7 +442,10 @@ footer{
   font-style: italic;
 }
 .locked{
-  opacity: 0.3;
+  // opacity: 0.3;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+  color: rgba(0, 0, 0, 0.3) !important;
 }
 // fonts ---------------
 @font-face {
