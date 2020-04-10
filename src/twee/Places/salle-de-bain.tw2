@@ -1,7 +1,7 @@
 ::salle-de-bain
 <% if(!visited("salle-de-bain")) { %>
 Laisse ici, on ne touche à rien, ici. 
-On nettoieras la prochaine fois.
+On nettoiera la prochaine fois.
 
 > ok.
 

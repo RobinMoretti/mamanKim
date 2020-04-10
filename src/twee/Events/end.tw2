@@ -1,5 +1,5 @@
-::endGame
-
+::endGame 
+ 
 Bili diling 🎶
 
 > Ah la porte c'est ouverte.
@@ -8,20 +8,20 @@ Bili diling 🎶
 
 ::end 1
 
-Non c'est pas moi.
+Non c'est pas moi. 
 Ça doit être maman!
 
 > Ah, déjà ?
 
-/C'est moi je suis rentré!/
+/C'est moi je suis rentrée!/ 
 /Vous avez mangez? Vous avez faim ?! /
 
-Non maman, on n'a pas mangé.
+Non maman, on n'a pas mangé. 
 
 Mais je commence à avoir un peu faim.
 
-> Comment tu fais pour avoir faim ?!
-> On a mangé un barbecue il y as deux heures !
+> Comment tu fais pour avoir faim ?! 
+> On a mangé un barbecue il y a deux heures !
 > On en pouvait plus à la fin.
 
 Ça donne faim de ranger!
@@ -31,19 +31,14 @@ Mais je commence à avoir un peu faim.
 ::end 11
 
 /Alors on mange ! J'ai acheté de la viande!/
-/Aprés on une partie de go stop!/
+/Aprés on fera une partie de go stop!/
 
-Bonne idée !
+Bonne idée ! 
 
 [[Ok, allez, on mange alors. 😀 ->credit]]
 
 ::credit
-**Chez maman Kim**<br>
-*Pas Beau Game-빠보게임 2020*
-
+Chez maman Kim.
+Pas Beau Game-빠보게임 2020
 Robin Moretti et Hyeyoung Park
-
-> <a href="https://twitter.com/RobinMoretti" target="_blank">Twitter</a>
-> *Si le jeu vous as plus, soutenez les auteurs sur ⤵*
-> <a target="_blank" href="https://robinmoretti.itch.io/">Itch.io</a>
-
+Twitter | Itch.io
