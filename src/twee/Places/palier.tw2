@@ -1,11 +1,4 @@
 ::palier
-
-Chez maman Kim.
-Pas Beau Game-빠보게임 2020
-Robin Moretti et Hyeyoung Park
-<a href="https://twitter.com/RobinMoretti">Twitter</a> | <a href="https://robinmoretti.itch.io/">Itch.io</a>
-
-
 <% if(visited("palier") > 0 && visited("vestibule") > 0 && !s["porte-claque"]){ %>
 <% s["porte-claque"] = 1; %>
 <% }%>

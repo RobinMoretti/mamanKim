@@ -106,25 +106,25 @@ Tu ne le touche pas pour l&#39;instant ! On verra avec maman.
 
 Oui oui, vraiment.
 
-&gt; Ooookkkkkkk</tw-passagedata><tw-passagedata pid="5" name="endGame" tags="" position="600,100" size="100,100"> 
+&gt; Ooookkkkkkk</tw-passagedata><tw-passagedata pid="5" name="endGame" tags="" position="600,100" size="100,100">
 Bili diling 🎶
 
 &gt; Ah la porte c&#39;est ouverte.
 
 [[C&#39;est toi chérie ? -&gt;end 1]]</tw-passagedata><tw-passagedata pid="6" name="end 1" tags="" position="725,100" size="100,100">
-Non c&#39;est pas moi. 
+Non c&#39;est pas moi.
 Ça doit être maman!
 
 &gt; Ah, déjà ?
 
-/C&#39;est moi je suis rentré!/ 
+/C&#39;est moi je suis rentré!/
 /Vous avez mangez? Vous avez faim ?! /
 
-Non maman, on n&#39;a pas mangé. 
+Non maman, on n&#39;a pas mangé.
 
 Mais je commence à avoir un peu faim.
 
-&gt; Comment tu fais pour avoir faim ?! 
+&gt; Comment tu fais pour avoir faim ?!
 &gt; On a mangé un barbecue il y as deux heures !
 &gt; On en pouvait plus à la fin.
 
@@ -134,12 +134,16 @@ Mais je commence à avoir un peu faim.
 /Alors on mange ! J&#39;ai acheté de la viande!/
 /Aprés on une partie de go stop!/
 
-Bonne idée ! 
+Bonne idée !
 
-[[Ok, allez, on mange alors. 😀 -&gt;credit]]</tw-passagedata><tw-passagedata pid="8" name="credit" tags="" position="975,100" size="100,100">Chez maman Kim.
-Pas Beau Game-빠보게임 2020
+[[Ok, allez, on mange alors. 😀 -&gt;credit]]</tw-passagedata><tw-passagedata pid="8" name="credit" tags="" position="975,100" size="100,100">**Chez maman Kim**&lt;br&gt;
+*Pas Beau Game-빠보게임 2020*
+
 Robin Moretti et Hyeyoung Park
-Twitter | Itch.io</tw-passagedata><tw-passagedata pid="9" name="vole colis-1" tags="" position="1100,100" size="100,100">[[ Chérie, il y avait des colis dehors... -&gt;vole colis-1-1]]</tw-passagedata><tw-passagedata pid="10" name="vole colis-1-1" tags="" position="1225,100" size="100,100">Ah, ce n&#39;est pas à nous. &lt;br&gt;
+
+&gt; &lt;a href=&quot;https://twitter.com/RobinMoretti&quot; target=&quot;_blank&quot;&gt;Twitter&lt;/a&gt;
+&gt; *Si le jeu vous as plus, soutenez les auteurs sur ⤵*
+&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://robinmoretti.itch.io/&quot;&gt;Itch.io&lt;/a&gt;</tw-passagedata><tw-passagedata pid="9" name="vole colis-1" tags="" position="1100,100" size="100,100">[[ Chérie, il y avait des colis dehors... -&gt;vole colis-1-1]]</tw-passagedata><tw-passagedata pid="10" name="vole colis-1-1" tags="" position="1225,100" size="100,100">Ah, ce n&#39;est pas à nous. &lt;br&gt;
 Regarde c&#39;est écris **&lt;%= s[&quot;colis-1-owner&quot;] %&gt;**... &lt;br&gt;
 Remet le là où tu l&#39;as trouvé s&#39;il te plait.</tw-passagedata><tw-passagedata pid="11" name="beaucoup de bouteilles vide" tags="" position="100,225" size="100,100">&gt; Mais pourquoi il y a autant de bouteilles vides d&#39;alcools ?
 &gt; Je croyais qu&#39;elle ne buvait pas d&#39;alcool ta maman ? 
@@ -343,14 +347,7 @@ Cette année c&#39;est **pommes** 🍎.
 
 Aaah non, moi je préférais le raisin !
 
-&gt; Chacun son tour du coup.</tw-passagedata><tw-passagedata pid="36" name="outside" tags="" position="725,475" size="100,100">Il fait vraiment beau aujourd&#39;hui.</tw-passagedata><tw-passagedata pid="37" name="palier" tags="" position="850,475" size="100,100">
-Chez maman Kim.
-Pas Beau Game-빠보게임 2020
-Robin Moretti et Hyeyoung Park
-&lt;a href=&quot;https://twitter.com/RobinMoretti&quot;&gt;Twitter&lt;/a&gt; | &lt;a href=&quot;https://robinmoretti.itch.io/&quot;&gt;Itch.io&lt;/a&gt;
-
-
-&lt;% if(visited(&quot;palier&quot;) &gt; 0 &amp;&amp; visited(&quot;vestibule&quot;) &gt; 0 &amp;&amp; !s[&quot;porte-claque&quot;]){ %&gt;
+&gt; Chacun son tour du coup.</tw-passagedata><tw-passagedata pid="36" name="outside" tags="" position="725,475" size="100,100">Il fait vraiment beau aujourd&#39;hui.</tw-passagedata><tw-passagedata pid="37" name="palier" tags="" position="850,475" size="100,100">&lt;% if(visited(&quot;palier&quot;) &gt; 0 &amp;&amp; visited(&quot;vestibule&quot;) &gt; 0 &amp;&amp; !s[&quot;porte-claque&quot;]){ %&gt;
 &lt;% s[&quot;porte-claque&quot;] = 1; %&gt;
 &lt;% }%&gt;
 
