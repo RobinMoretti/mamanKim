@@ -31,7 +31,7 @@ poubelle-1:
   height: 30
   picto: P
   description: >
-    Carton usagé de livraison livraison Rocket-로겟배송 Coupang avec un intèrieur doublé en aluminium. Le *Amazon* Coréen.
+    Carton usagé de livraison livraison Rocket-로켓배송 Coupang avec un intèrieur doublé en aluminium. Le *Amazon* Coréen.
   place:
     name: Intèrieure de la boite en carton
     width: 150
@@ -570,13 +570,13 @@ bouteille-vide-de-biere-1:
     Bouteille de bière vide Cass. Recyclable pour 130won-원.
 
 bouteille-vide-de-soju-1:
-  name: Bouteille de soju-소주 de Crapeau-두커비.
+  name: Bouteille de soju-소주 de Crapeau-두꺼비.
   weight: 1
   width: 20
   height: 30
   picto: 🍾
   description: >
-    Bouteille de soju-소주 de Crapeau-두커비. Recyclable pour 100won-원.
+    Bouteille de soju-소주 de Crapeau-두꺼비. Recyclable pour 100won-원.
 
 # paquet-salade-1:
 # pochette-fermeture-eclaire:
@@ -1258,7 +1258,7 @@ tv:
     Télévision lg
 
 petite-sculpture:
-  name: Petite sculpture, Dol hareubangs-돌 하르방
+  name: Petite sculpture, Dol hareubangs-돌하르방
   weight: 1
   width: 20
   height: 20
@@ -1283,7 +1283,7 @@ drapeau-coreen-1:
   height: 40
   picto: 🇰🇷
   description: >
-    Il est composé de deux élément différentiables. L'élément centrale-티극, l'équivalent coréen du yin yang et les quatres trigrammes  représentant les quatre éléments : la terre, le ciel, le feu et l'eau. Le tout est sur un fond blanc.
+    Il est composé de deux élément différentiables. L'élément centrale-태극, l'équivalent coréen du yin yang et les quatres trigrammes  représentant les quatre éléments : la terre, le ciel, le feu et l'eau. Le tout est sur un fond blanc.
   events:
     - name: goPassage
       params:

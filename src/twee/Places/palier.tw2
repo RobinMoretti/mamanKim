@@ -106,7 +106,7 @@ On rentre ?
 > ( décidemment c'est compliqué aujourd'hui )
 
 [[Toquer fort ->toquer la porte encore encore]]
-[[Appeller Hyeyoung-헤영 ->appeller hyeyoung]]
+[[Appeller Hyeyoung-혜영 ->appeller hyeyoung]]
 
 ::toquer la porte encore encore
 *BOUM BOUM BOUM*
@@ -117,7 +117,7 @@ On rentre ?
 	story.show('hyeyoung ouvre la porte');
 }, 3000)</script>
 
-[[Appeller Hyeyoung-헤영 ->appeller hyeyoung]]
+[[Appeller Hyeyoung-혜영 ->appeller hyeyoung]]
 
 ::appeller hyeyoung
 
@@ -126,7 +126,7 @@ On rentre ?
 
 ....
 
-> YOOOOOBBBBBOOOO-여버어어어어!
+> YOOOOOBBBBBOOOO-여보오오오오오오!
 
 ....
 
@@ -145,11 +145,11 @@ Et bin, tu fais quoi ?!
 T'est débile-바보 vraiment! <br>
 
 <% if(s["porte-called-yobo"]) { %>
-En plus je t'ai déjà dit d'arreter de m'appeller yobo, un dirais un vieux, c'est gras-느키해.
+En plus je t'ai déjà dit d'arreter de m'appeller yobo, un dirais un vieux, c'est gras-느끼해.
 
 > Mais yoboo-여버 j'aim...
 
-<span class="shaking">Euuuuuuuuuuuuuuu</span>, arrête. C'est grassss-느키해애애!
+<span class="shaking">Euuuuuuuuuuuuuuu</span>, arrête. C'est grassss-느끼해애애!
 
 > Ok, ok ....
 <% } %>
