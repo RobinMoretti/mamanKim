@@ -1,4 +1,11 @@
 ::palier
+
+Chez maman Kim.
+Pas Beau Game-빠보게임 2020
+Robin Moretti et Hyeyoung Park
+<a href="https://twitter.com/RobinMoretti">Twitter</a> | <a href="https://robinmoretti.itch.io/">Itch.io</a>
+
+
 <% if(visited("palier") > 0 && visited("vestibule") > 0 && !s["porte-claque"]){ %>
 <% s["porte-claque"] = 1; %>
 <% }%>
@@ -11,7 +18,7 @@
 
 Bili diling 🎶
 
-> (La porte à claqué...)
+> (La porte a claqué...)
 
 <% s["vestibule-locked"] = true %>
 <script>console.log(story.$vue.storyFunctions("toggle-place", { place: "vestibule", value: true }))</script>
@@ -117,7 +124,7 @@ On rentre ?
 	story.show('hyeyoung ouvre la porte');
 }, 3000)</script>
 
-[[Appeller Hyeyoung-혜영 ->appeller hyeyoung]]
+[[Appeler Hyeyoung-혜영 ->appeller hyeyoung]]
 
 ::appeller hyeyoung
 
@@ -142,10 +149,10 @@ Et bin, tu fais quoi ?!
 
 > J'ai oublié ce fichu code!
 
-T'est débile-바보 vraiment! <br>
+T'es débile-바보 vraiment! <br>
 
 <% if(s["porte-called-yobo"]) { %>
-En plus je t'ai déjà dit d'arreter de m'appeller yobo, un dirais un vieux, c'est gras-느끼해.
+En plus je t'ai déjà dit d'arrêter de m'appeler yobo, on dirait un vieux, c'est gras-느끼해.
 
 > Mais yoboo-여버 j'aim...
 
