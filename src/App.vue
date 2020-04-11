@@ -220,7 +220,7 @@ export default {
 
         this.hideInfoModeTimeOut = setTimeout(() => {
           this.hideInfoMode = true;
-        }, 5000);
+        }, 10000);
 
         this.$store.commit("togglePlayMode")
       }
@@ -354,6 +354,12 @@ body{
   text-align: right;
   font-size: 20px;
   span{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
     margin: 2px;
     padding: 2px 5px;
     position: relative;
@@ -382,8 +388,14 @@ body{
 }
 
 .play-info{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
   // opacity: 0;
-  margin-top: -8px;
+  margin-top: -4px;
   font-size: 12px;
   text-align: right;
   width: 100%;
@@ -399,6 +411,12 @@ body{
   flex-wrap: wrap;
 
   button{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
     cursor: pointer;
     margin-top: 10px;
     background: rgba(0,0,0,0);

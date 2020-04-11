@@ -32,6 +32,8 @@ export default new Vuex.Store({
     storyId: null,
     saveId: null,
     endGame: false,
+    appStarted: false,
+    playTime: 0,
   },
   getters:{
     hasAutosave: state => {
@@ -41,18 +43,13 @@ export default new Vuex.Store({
   actions: {
     init: function({dispatch, commit, state, getters}){
       commit("startGame");
-
-      setTimeout(()=>{
-        this.$app.story().state["end-game"] = true;
-
-        console.log('end-game')
-      }, 900000);
       // 900000
     },
     saveGame: function({commit, state}) {
       if (this.$app.story() && state.loaded) {
         console.log('saving...')
         commit('createAutoSave', this.$app.story().saveHash());
+        commit('updatePlayTime');
       }
     },
     reset: function({dispatch, commit, state}){
@@ -66,6 +63,9 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    updatePlayTime: function(state){
+      state.playTime = Date.now() - state.appStarted;
+    },
     toggleEndGame: function(state){
       state.endGame = true;
     },
@@ -75,6 +75,8 @@ export default new Vuex.Store({
       state.saveId = null;
       state.storyId = null;
       state.endGame = false;
+      state.appStarted = false;
+      state.playTime = false;
     },
     createAutoSave: function(state, hash){
       state.saveId = hash;
@@ -82,6 +84,13 @@ export default new Vuex.Store({
     startGame: function(state){
       state.gameStarted = true;
       state.loaded = true;
+      state.appStarted = Date.now() - state.playTime;
+
+      var timeLeft = 900000 - state.playTime;
+
+      setTimeout(()=>{
+        this.$app.story().state["end-game"] = true;
+      }, timeLeft);
     },
     changePlayMode: function(state, mode){
       state.playMode = mode;
