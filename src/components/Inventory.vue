@@ -204,6 +204,7 @@ export default {
     }
 
     .top-available-hidder{
+      cursor: not-allowed !important;
       background: rgba(0,0,0,0.2);
       position: absolute;
       left: 0; top: 0;

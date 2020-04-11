@@ -6,6 +6,7 @@ outside:
       condition: true
   width: 300
   height: 100
+  inventory:
   infinite: true
   scrollable: true
   description: >
@@ -72,6 +73,7 @@ vestibule:
     - name: chaussure-1
     - name: chaussure-3
     - name: pantoufle-1
+    - name: linge-humide
     - name: pantoufle-1
     - name: pantoufle-1
     - name: bob-2
@@ -83,6 +85,7 @@ vestibule:
     - name: bouteille-vide-de-biere-1
     - name: bouteille-vide-de-biere-1
     - name: bouteille-vide-de-biere-1
+    - name: linge-humide
   connections:
     - place: "palier"
       condition: true
@@ -115,7 +118,10 @@ salle-principale:
     - name: boite-conservation-nourriture-2-3
     - name: bouteille-vide-de-soju-1
     - name: bouteille-vide-de-soju-1
+    - name: linge-humide
     - name: boite-conservation-nourriture-2-2
+    - name: parapluie-2
+    - name: parapluie-1
   connections:
     - place: "vestibule"
       condition: true
@@ -138,8 +144,11 @@ buanderie:
     - name: bouteille-vide-de-soju-1
     - name: bouteille-vide-de-soju-1
     - name: pomme-1
+    - name: pomme-1
+    - name: pomme-1
+    - name: pomme-1
+    - name: pomme-1
     - name: boite-conservation-nourriture-2-1
-    - name: boite-conservation-nourriture-2-4
     - name: crapeau
 
   connections:

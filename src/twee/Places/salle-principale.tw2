@@ -20,10 +20,16 @@ Pour le reste on oublie !
 <% } else if(s["carton-pomme"] >= 2 && !hasVisited("pomme-2-discussion") ) { %>
 <script>story.show('pomme-2-discussion');</script>
 
+<% } else if(hasVisited("pourquoi autant de pomme") && s["carton-pomme-livree"] == true) { %>
+	<% if(!s["carton-pomme"]){ %>
+Alors il y a quoi dans le carton ?
+
+>Je ne sais pas, je ne l'ai pas encore ouvert...
+	<% } %>
+
 <% } else if(visited("salle-principale") > 3 && hasVisited("pourquoi autant de pomme") && !s["carton-pomme"]) { %>
-
+<% s["carton-pomme-livree"] = true %>
 <script>story.show('livraison');</script>
-
 <% } %>
 
 
@@ -48,7 +54,7 @@ Des pommes...
 
 ...
 
-Du jus de pomme ? 
+Du jus de pomme ?
 
 > Non des pommes <%= s["carton-pomme-couleur"] %>s!
 

@@ -29,7 +29,7 @@ poubelle-1:
   weight: 0.7
   width: 30
   height: 30
-  picto: P
+  picto: 🗳
   description: >
     Carton usagé de livraison Rocket-로켓배송 Coupang avec un intérieur doublé en aluminium. Le *Amazon* Coréen.
   place:
@@ -57,7 +57,7 @@ dechet-carton-1:
   weight: 2
   width: 20
   height: 20
-  picto: D
+  picto: 🗞
   description: >
     Tas de déchets de papier et de choses cartonnées.
 publicite-1:
@@ -124,16 +124,8 @@ colis-2:
         place: vestibule
         name: colis-1-owner
         value: Park Eun Su-박은수
-    # - name: setTweeVariable
-    #   params:
-    #     path: exit
-    #     place: vestibule
-    #     name: porte-claque
-    #     value: 1
-    #     increment: true
   description: >
     Carton en parfait état. Au nom de Park Eun Su-박은수.
-
 
 
 # vestibule ---------------------------------------------------------------------------------
@@ -224,7 +216,7 @@ etagere-structure-metallique-2:
   width: 80
   height: 40
   takable: false
-  picto:  ⌣
+  picto: Étagère
   description: >
     Étagère constituée d'un maillage fin métallique.
   place:
@@ -242,7 +234,7 @@ etagere-structure-metallique-3:
   width: 80
   height: 40
   takable: false
-  picto:  ⌣
+  picto: Étagère
   description: >
     Étagère constituée d'un maillage fin métallique.
   place:
@@ -344,7 +336,7 @@ casier-meuble-1-4:
   weight: 0
   width: 50
   height: 50
-  picto: 🔲
+  picto: Casier
   takable: false
   description: >
     Casier du meuble en bois.
@@ -365,7 +357,7 @@ casier-meuble-1-5:
   weight: 0
   width: 50
   height: 50
-  picto: 🔲
+  picto: Casier
   takable: false
   description: >
     Casier du meuble en bois.
@@ -402,7 +394,7 @@ sac-2:
   weight: 0.5
   width: 50
   height: 50
-  picto:  👜
+  picto: 🛍
   description: >
     Cabas en plastique sans marque.
   place:
@@ -609,7 +601,7 @@ etandoire:
   weight: 4
   width: 40
   height: 50
-  picto: ⌤
+  picto: Etendoir
   description: >
     Simple étendoir composé de tubes métalliques.
   place:
@@ -690,6 +682,7 @@ dessus-la-table:
       - name: assiete-1
       - name: patate-douce-1
       - name: pomme-de-terre-1
+      - name: serviette-humide
       - name: verre-d-eau-1
       - name: pomme-de-terre-1
       - name: piment-1
@@ -804,6 +797,9 @@ dessous-la-table:
       - name: bouteille-vide-de-biere-1
       - name: bouteille-vide-de-biere-1
       - name: bouteille-vide-de-biere-1
+      - name: parapluie-2
+      - name: parapluie-1
+      - name: serviette-humide
       - name: bouteille-vide-de-biere-1
       - name: boite-conservation-nourriture-1-5
 
@@ -928,6 +924,7 @@ compartimant-2:
       - name: pomme-1
       - name: pomme-1
       - name: pomme-1
+      - name: serviette-humide
       - name: pomme-1
       - name: pomme-1
       - name: pomme-1
@@ -953,7 +950,6 @@ compartimant-3:
     maximumWeight: 0
     inventory:
       - name: pomme-1
-      - name: boite-conservation-nourriture-3-5
 
 compartimant-4:
   name: Compartiment
@@ -1012,6 +1008,12 @@ carton-pomme-1:
   width: 70
   height: 55
   picto: 📦
+  events:
+    - name: setTweeVariable
+      params:
+        path: take
+        name: take-carton-pomme
+        value: increment
   description: >
     Carton
   place:
@@ -1190,6 +1192,7 @@ dessus-meuble-tv:
       - name: chaussure-1
       - name: pomme-1
       - name: jeu-de-carte-1
+      - name: serviette-humide
       - name: boite-conservation-nourriture-3-3
 
 tiroire-meuble-1:
@@ -1210,6 +1213,7 @@ tiroire-meuble-1:
     maximumWeight: 0
     inventory:
       - name: rouleau-de-papier
+      - name: serviette-humide
       - name: rouleau-de-papier
       - name: rouleau-de-papier
       - name: drapeau-coreen-1
@@ -1300,7 +1304,7 @@ machine-a-laver:
   takable: false
   width: 100
   height: 80
-  picto: 🧼
+  picto: ⚙️🚿
   description: >
     Machine à laver à tube verticale.
 
@@ -1366,7 +1370,7 @@ plateau-meuble-3-2:
       - name: boite-conservation-nourriture-1-2
       - name: pomme-1
       - name: bouteille-vide-de-biere-1
-      - name: boite-conservation-nourriture-2-1
+      - name: serviette-humide
 
 plateau-meuble-3-3:
   name: Plateau de l'étagère
@@ -1396,7 +1400,7 @@ boite-conservation-nourriture-1-1:
   weight: 1
   width: 50
   height: 50
-  picto: Boite 4
+  picto: Boite 5
   description: >
     Boite de conservation taille 5
   place:
@@ -1476,7 +1480,7 @@ boite-conservation-nourriture-2-1:
   weight: 1
   width: 50
   height: 50
-  picto: Boite 4
+  picto: Boite 5
   description: >
     Boite de conservation taille 5
   place:
@@ -1555,7 +1559,7 @@ boite-conservation-nourriture-3-1:
   weight: 1
   width: 50
   height: 50
-  picto: Boite 4
+  picto: Boite 5
   description: >
     Boite de conservation taille 5
   place:

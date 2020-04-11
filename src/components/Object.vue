@@ -48,6 +48,10 @@ export default {
 
       var style = "width:" + width + "px;";
       style += "height:" + height + "px;";
+
+      if(this.$store.state.playMode == "picking" && this.detailObject.takable == false){
+        style += "cursor: not-allowed;";
+      }
       return style;
     },
     objectClass: function(){
@@ -141,19 +145,8 @@ export default {
         }
         this.$store.commit("objects/incrementBoutteilleTaker");
       }
-
-      // if(this.space == "vestibule" )
     },
     displayObject: function(){
-      if(this.detailObject.events && this.detailObject.events.length){
-        var clickEvents = this.detailObject.events.filter((event) => {
-          return event.name == "goPassage" && event.params.path == "click";
-        })
-
-        for (var i = 0; i < clickEvents.length; i++) {
-          this.story().show(clickEvents[i].params.passage)
-        }
-      }
 
       if(this.detailObject.place){
         if(this.placesStore.places[this.object.name]){
@@ -161,6 +154,17 @@ export default {
         }
       }else{
         this.$store.commit("objects/setActiveObject", this.object);
+      }
+
+      if(this.detailObject.events && this.detailObject.events.length){
+        var clickEvents = this.detailObject.events.filter((event) => {
+          return event.name == "goPassage" && event.params.path == "click";
+        })
+
+        for (var i = 0; i < clickEvents.length; i++) {
+          this.story().show(clickEvents[i].params.passage)
+          console.log(clickEvents[i].params.passage);
+        }
       }
     },
     objectIspackable: function(target){
@@ -230,8 +234,15 @@ export default {
     vertical-align: top;
 
     position: relative;
+    cursor: pointer;
 
     span{
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
       pointer-events: none;
       font-family: sans-serif;
       // font-weight: bold;
@@ -241,6 +252,7 @@ export default {
   }
 
   .untakable{
+    // cursor: not-allowed;
     background: #FFCA00;
   }
 </style>

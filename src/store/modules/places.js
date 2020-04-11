@@ -13,6 +13,9 @@ const state = {
   playerWidth: 80,
   playerHeight: 80,
   displayPlace: false,
+  gameVars: {
+    livraison: false,
+  }
 }
 
 // getters
@@ -171,33 +174,18 @@ const actions = {
     // dispatch("goTo", payload.name);
   },
   checkForInventoryEvent: function({commit, dispatch, state}){
-
     for (var i = 0; i < state.player.length; i++) {
 
       if(objectsYml[state.player[i].name].events){
         for(const eventObjProperty in objectsYml[state.player[i].name].events){
           var payload = {...objectsYml[state.player[i].name].events[eventObjProperty].params};
 
-          // console.log("checkForInventoryEvent");
-          // console.log("payload = ", payload);
-          // console.log("state.lastActivePlace = ", state.lastActivePlace);
-          // console.log("state.activePlace = ", state.activePlace);
-
           if(payload.path == 'enter'){
-            console.log("enter.");
-            console.log("state.activePlace = ", state.lastActivePlace);
-            console.log(" payload.place = ",  payload.place);
-            // console.log("enter.");
             if(state.activePlace == payload.place){
-            // console.log("enter validate.");
               dispatch(objectsYml[state.player[i].name].events[eventObjProperty].name, payload);
             }
           }else if(payload.path == 'exit'){
-            console.log("exit.");
-            console.log("state.lastActivePlace = ", state.lastActivePlace);
-            console.log(" payload.place = ",  payload.place);
             if(state.lastActivePlace == payload.place){
-            // console.log("exit validate.");
               dispatch(objectsYml[state.player[i].name].events[eventObjProperty].name, payload);
             }
           }
@@ -207,11 +195,11 @@ const actions = {
     }
   },
   checkForSpecialEvent: function({commit, dispatch, state}){
-    console.log("passage = " + this.$app.passage().name)
-
-    if(this.$app.passage().name == "livraison"){
+    if(this.$app.passage().name == "livraison" && state.gameVars['livraison'] == false){
       commit("addObject", { place: "palier", object: { name: "carton-pomme-1"} });
       commit("addObject", { place: "palier", object: { name: "carton-pomme-2"} });
+      commit("toggleGameVar", 'livraison');
+      console.log("Pomme livrais");
     }
     // pourquoi autant de pomme
   },
@@ -223,6 +211,7 @@ const actions = {
     var passagesFiltered = this.$app.story().passages.filter((passage) => {
       return passage.name == payload.passage;
     })
+    console.log("go passage !! = ", passagesFiltered);
 
     if(passagesFiltered.length){
       this.$app.story().show(payload.passage);
@@ -235,7 +224,6 @@ const actions = {
     }
 
     if(payload.increment){
-      console.log('incremmmenntt ----')
       console.log(payload.name)
       console.log(payload.value)
       this.$app.story().state[payload.name] += payload.value;
@@ -252,6 +240,9 @@ const actions = {
 
 // mutations
 const mutations = {
+  toggleGameVar: function(state, varName){
+    state.gameVars[varName] = !state.gameVars[varName];
+  },
   setConnectionsAvaibility: function(state, payload){
     console.log("payload.value = " + payload.value);
     this.$app.$set(payload.connection, "available", payload.value);
@@ -269,6 +260,9 @@ const mutations = {
     state.playerWidth = 80;
     state.playerHeight = 80;
     state.displayPlace = false;
+    state.gameVars = {
+      livraison: false
+    }
   },
   resetPlaceWeight: function(state, placeName){
     state.places[placeName].actualWeight = 0;
@@ -281,12 +275,7 @@ const mutations = {
         state.playerActualWeight += payload.weight;
       }
       else{
-        // console.log("payload.placeName = ", payload.placeName);
-        // console.log("state.places[payload.placeName] = ", state.places[payload.placeName]);
-
         state.places[payload.placeName].actualWeight += payload.weight;
-
-        // this.$app.$set(state.places, payload.placeName, state.places[payload.placeName]);
       }
   },
   setConnectionsToPlaceObject: function(state, payload){
@@ -342,6 +331,9 @@ const mutations = {
       var newPlace = placesYml[place];
       newPlace.actualWeight = 0;
       newPlace.haveEnoughSpace = false;
+      if(newPlace.inventory == null){
+        newPlace.inventory = [];
+      }
       this.$app.$set(state.places, place, newPlace);
     }
   },

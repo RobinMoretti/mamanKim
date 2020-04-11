@@ -1,5 +1,5 @@
 ::Crapeau
-<% if(!hasVisited("Crapeau")){ %>
+<% if(visited("Crapeau") < 2){ %>
 
 > WWWWWWWwhhhhhhhhaaaaaattttttt!
 > Chérieeee !!!!
@@ -16,7 +16,7 @@ Un crapeau ?
 
 ::Crapeau 1
 Oui doucement,
-Ah oui un crapeau. 
+Ah oui un crapeau.
 
 Ça va, il vas pas te manger!
 
@@ -29,23 +29,23 @@ Ah oui un crapeau.
 
 ::Crapeau 2
 
-> Chérie, il y a un **crapeau** dans la buanderie ! 
+> Chérie, il y a un **crapeau** dans la buanderie !
 > C'est dégeu et en plus comment il est arrivé là ?!
-> Comment ça doucement ?! 
+> Comment ça doucement ?!
 
 Oui, j'ai vu, ce n'est rien, juste un gentil crapeau.
 C'est propablement l'esprit de notre maison.
 
-> L'esprit de notre maison ? 
-> Et les cafards ce serait l'esprit de l'évier ? 
+> L'esprit de notre maison ?
+> Et les cafards ce serait l'esprit de l'évier ?
 
-Oh respecte ! 
+Oh respecte !
 
 ...
 
 > ...
 
-*COOooooaaa*.... 🐸 
+*COOooooaaa*.... 🐸
 
 > euu je le jette par la fenêtre ?
 > Ou je le mets dans une boite de conservation taille 5 ?
@@ -56,11 +56,11 @@ Tu ne le touches pas pour l'instant ! On verra avec maman.
 
 ::Crapeau 3
 
-> Vraiment, je le laisse dans la buanderie ? 
+> Vraiment, je le laisse dans la buanderie ?
 
 Oui oui, vraiment.
 
-> Ooookkkkkkk	
+> Ooookkkkkkk
 
 
 

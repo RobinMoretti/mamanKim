@@ -16,7 +16,6 @@
           </p>
           <p class="play-info" :class="{ hidden: !hideInfoMode }">Any key to switch</p>
 
-
           <iframe :src="tweeUrl" id="twee" ref="twee" @load="iframeLoaded" v-if="displayIframe"></iframe>
         </div>
 
@@ -369,6 +368,7 @@ body{
   }
 
   span:hover{
+    cursor: pointer;
     p{
       opacity: 1;
       font-size: 10px
@@ -388,6 +388,7 @@ body{
   text-align: right;
   width: 100%;
   color: rgba(0,0,0,0.5);
+  pointer-events: none;
   // opacity: 0;
 }
 
@@ -398,6 +399,7 @@ body{
   flex-wrap: wrap;
 
   button{
+    cursor: pointer;
     margin-top: 10px;
     background: rgba(0,0,0,0);
     border-radius: 0;
@@ -442,6 +444,7 @@ footer{
   font-style: italic;
 }
 .locked{
+  cursor: not-allowed !important;
   // opacity: 0.3;
   background-color: rgba(0, 0, 0, 0.2) !important;
   border-color: rgba(0, 0, 0, 0.3) !important;
