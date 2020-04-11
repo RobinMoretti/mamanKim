@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<tw-story tags></tw-story>
-		<!-- UUID://F2277A49-95C9-4B14-AE66-62526089F861// --><tw-storydata name="Maman Kim" startnode="51" creator="Tweego" creator-version="2.0.0+089d4ca77e5b" ifid="F2277A49-95C9-4B14-AE66-62526089F861" zoom="1" format="snowman" format-version="2.0.4" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">a{
+		<!-- UUID://F2277A49-95C9-4B14-AE66-62526089F861// --><tw-storydata name="Maman Kim" startnode="52" creator="Tweego" creator-version="2.0.0+089d4ca77e5b" ifid="F2277A49-95C9-4B14-AE66-62526089F861" zoom="1" format="snowman" format-version="2.0.4" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">a{
 	width: 100%;
 	display: block;
 	text-align: right;
@@ -57,6 +57,7 @@ var n=a(k,b,c)-h,k=k-n/l}h=k}else if(0===l)h=k;else{var k=m,m=m+.1,f=0;do n=k+(m
 e){c["ease"+a.type+b[e]]=g.fnc(d)?d:y.apply($jscomp$this,d)}}(e)),e={type:e.type};return c}(),ia={css:function(a,b,d){return a.style[b]=d},attribute:function(a,b,d){return a.setAttribute(b,d)},object:function(a,b,d){return a[b]=d},transform:function(a,b,d,c,e){c[e]||(c[e]=[]);c[e].push(b+"("+d+")")}},q=[],z=0,ja=function(){function a(){z=requestAnimationFrame(b)}function b(b){var c=q.length;if(c){for(var d=0;d<c;)q[d]&&q[d].tick(b),d++;a()}else cancelAnimationFrame(z),z=0}return a}();n.version="2.0.2";
 n.speed=1;n.running=q;n.remove=function(a){a=M(a);for(var b=q.length;b--;)for(var d=q[b],c=d.animations,e=c.length;e--;)F(a,c[e].animatable.target)&&(c.splice(e,1),c.length||d.pause())};n.getValue=J;n.path=function(a,b){var d=g.str(a)?v(a)[0]:a,c=b||100;return function(a){return{el:d,property:a,totalLength:d.getTotalLength()*(c/100)}}};n.setDashoffset=function(a){var b=a.getTotalLength();a.setAttribute("stroke-dasharray",b);return b};n.bezier=y;n.easings=N;n.timeline=function(a){var b=n(a);b.pause();
 b.duration=0;b.add=function(a){b.children.forEach(function(a){a.began=!0;a.completed=!0});w(a).forEach(function(a){var c=b.duration,d=a.offset;a.autoplay=!1;a.offset=g.und(d)?c:K(d,c);b.seek(a.offset);a=n(a);a.duration>c&&(b.duration=a.duration);a.began=!0;b.children.push(a)});b.reset();b.seek(0);b.autoplay&&b.restart();return b};return b};n.random=function(a,b){return Math.floor(Math.random()*(b-a+1))+a};return n});</script><tw-passagedata pid="1" name="Crapeau" tags="" position="100,100" size="100,100">&lt;% if(visited(&quot;Crapeau&quot;) &lt; 2){ %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 
 &gt; WWWWWWWwhhhhhhhhaaaaaattttttt!
 &gt; Chérieeee !!!!
@@ -107,7 +108,8 @@ Tu ne le touches pas pour l&#39;instant ! On verra avec maman.
 
 Oui oui, vraiment.
 
-&gt; Ooookkkkkkk</tw-passagedata><tw-passagedata pid="5" name="endGame" tags="" position="600,100" size="100,100">
+&gt; Ooookkkkkkk</tw-passagedata><tw-passagedata pid="5" name="endGame" tags="" position="600,100" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
+
 Bili diling 🎶
 
 &gt; Ah la porte c&#39;est ouverte.
@@ -144,16 +146,21 @@ Robin Moretti et Héyan Park
 
 &gt; &lt;a href=&quot;https://twitter.com/RobinMoretti&quot; target=&quot;_blank&quot;&gt;Twitter&lt;/a&gt;
 &gt; *Si le jeu vous as plus, soutenez les auteurs sur ⤵*
-&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://robinmoretti.itch.io/maman-kim&quot;&gt;Itch.io&lt;/a&gt;</tw-passagedata><tw-passagedata pid="9" name="vole colis-1" tags="" position="1100,100" size="100,100">[[ Chérie, il y avait des colis dehors... -&gt;vole colis-1-1]]</tw-passagedata><tw-passagedata pid="10" name="vole colis-1-1" tags="" position="1225,100" size="100,100">Ah, ce n&#39;est pas à nous. &lt;br&gt;
+&gt; &lt;a target=&quot;_blank&quot; href=&quot;https://robinmoretti.itch.io/maman-kim&quot;&gt;Itch.io&lt;/a&gt;</tw-passagedata><tw-passagedata pid="9" name="vole colis-1" tags="" position="1100,100" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
+[[ Chérie, il y avait des colis dehors... -&gt;vole colis-1-1]]</tw-passagedata><tw-passagedata pid="10" name="vole colis-1-1" tags="" position="1225,100" size="100,100">Ah, ce n&#39;est pas à nous. &lt;br&gt;
 Regarde c&#39;est écrit **&lt;%= s[&quot;colis-1-owner&quot;] %&gt;**... &lt;br&gt;
-Remets-le là où tu l&#39;as trouvé s&#39;il te plait.</tw-passagedata><tw-passagedata pid="11" name="beaucoup de bouteilles vide" tags="" position="100,225" size="100,100">&gt; Mais pourquoi il y a autant de bouteilles vides d&#39;alcools ?
-&gt; Je croyais qu&#39;elle ne buvait pas d&#39;alcool ta maman ? 
+Remets-le là où tu l&#39;as trouvé s&#39;il te plait.</tw-passagedata><tw-passagedata pid="11" name="beaucoup de bouteilles vide" tags="" position="100,225" size="100,100">&lt;% if(visited(&quot;beaucoup de bouteilles vide&quot; &lt; 2)) { %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
+&gt; Mais pourquoi il y a autant de bouteilles vides d&#39;alcools ?
+&gt; Je croyais qu&#39;elle ne buvait pas d&#39;alcool ta maman ?
 
-Depuis que je lui ai dit qu&#39;on pouvait récupérer de l&#39;argent en les ramenant à l&#39;épicerie du coin-편이점 ou au super marché, elle ramasse toutes les bouteilles vides du quartier.
+Depuis que je lui ai dit qu&#39;on pouvait récupérer de l&#39;argent en les ramenant à l&#39;épicerie du coin-편의점 ou au super marché, elle ramasse toutes les bouteilles vides du quartier.
 
 &gt; ah wé, mais c&#39;est un peu petit ici quand même...
 
-[[On en fait quoi du coup ?  -&gt;beaucoup de bouteilles vide 1]]</tw-passagedata><tw-passagedata pid="12" name="beaucoup de bouteilles vide 1" tags="" position="225,225" size="100,100">
+[[On en fait quoi du coup ?  -&gt;beaucoup de bouteilles vide 1]]
+
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="12" name="beaucoup de bouteilles vide 1" tags="" position="225,225" size="100,100">
 On les met de côté dehors dans des sacs ou des cartons, on les ramènera plus tard ! J&#39;espère, on en aura assez pour acheter au moins une bière 😅.
 
 &gt;Ummmmm, petite bière! Il nous en faut combien ?
@@ -163,38 +170,39 @@ On les met de côté dehors dans des sacs ou des cartons, on les ramènera plus 
 &gt; Ok! J&#39;accepte la mission.</tw-passagedata><tw-passagedata pid="13" name="Patate douce" tags="" position="350,225" size="100,100">
 Uhmmmmmm mes préférées, patates douces marrons-밤거구마!
 
-Trop bonnes, à la vapeur.</tw-passagedata><tw-passagedata pid="14" name="Sace de riz congelé" tags="" position="475,225" size="100,100">
+Trop bonnes, à la vapeur.</tw-passagedata><tw-passagedata pid="14" name="Sace de riz congelé" tags="" position="475,225" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
+
 [[Tiens, qu&#39;est-ce qu&#39;elle fait maman, avec autant de riz cuit congelé ? -&gt;Sace de riz congelé 1]]</tw-passagedata><tw-passagedata pid="15" name="Sace de riz congelé 1" tags="" position="600,225" size="100,100">Je sais pas, pourquoi ?
 
 &gt; La dernière fois, elle nous a fait des gâteaux de riz-떡 avec, non ?
 
-Non pas avec le riz déjà cuit. 
+Non pas avec le riz déjà cuit.
 
 &gt; Ah bon ? C&#39;est ce que tu m&#39;avais dis pourtant, j&#39;ai l&#39;impression...
 
-Non. 
+Non.
 
 [[Bah si, j&#39;ai pas pu l&#39;inventer ! -&gt;Sace de riz congelé 2]]</tw-passagedata><tw-passagedata pid="16" name="Sace de riz congelé 2" tags="" position="725,225" size="100,100">
-Biensur que non, tu peux. 
+Biensur que non, tu peux.
 
 &gt; Quoi non, oui, je ne l&#39;ai pas inventé !
 
-Oui, ce n&#39;est pas possible de faire faire des gâteaux de riz-떡 avec du riz déjà cuit. Donc non, tu l&#39;as inventé. 
+Oui, ce n&#39;est pas possible de faire faire des gâteaux de riz-떡 avec du riz déjà cuit. Donc non, tu l&#39;as inventé.
 
 &gt; Non je l&#39;ai inventé ?
 
 Oui.
 
 [[... ?! -&gt;Sace de riz congelé 3]]</tw-passagedata><tw-passagedata pid="17" name="Sace de riz congelé 3" tags="" position="850,225" size="100,100">
-&gt; En français chérie, non c&#39;est oui. Ça m&#39;embrouille trop là. 
+&gt; En français chérie, non c&#39;est oui. Ça m&#39;embrouille trop là.
 
 Et alors c&#39;est la Corée ici !
 
-&gt; Oui, certes. 
+&gt; Oui, certes.
 
 ...
 
-&gt; Bon ok, j&#39;abandonne.</tw-passagedata><tw-passagedata pid="18" name="livraison" tags="" position="975,225" size="100,100">
+&gt; Bon ok, j&#39;abandonne.</tw-passagedata><tw-passagedata pid="18" name="livraison" tags="" position="975,225" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
 *BOUM BOUM BOUM*
 
 Ah tiens, il y a quelqu&#39;un dehors.
@@ -216,10 +224,12 @@ Ils sont sur le palier.
 &lt;% s[&quot;carton-pomme&quot;] ++ %&gt;
 
 &lt;% if(s[&quot;carton-pomme&quot;] == 1) { %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 &gt; Non mais...
 &lt;% } %&gt;
 
 &lt;% if(s[&quot;carton-pomme&quot;] == 2) { %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 &lt;% s[&quot;carton-pomme-couleur&quot;] = &quot;rouge&quot;; %&gt;
 &gt; Argh, elle a vraiment recommandé que des pommes!
 &gt; Arrgggggg
@@ -230,38 +240,40 @@ Ils sont sur le palier.
 &lt;% s[&quot;carton-pomme&quot;] ++ %&gt;
 
 &lt;% if(s[&quot;carton-pomme&quot;] == 1) { %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 &gt; Non mais...
 &lt;% } %&gt;
 
 &lt;% if(s[&quot;carton-pomme&quot;] == 2) { %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 &lt;% s[&quot;carton-pomme-couleur&quot;] = &quot;verte&quot;; %&gt;
 &gt; Argh, elle a vraiment recommandé que des pommes!
 &gt; Arrgggggg
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="22" name="vive-la-coree" tags="" position="225,350" size="100,100">
-Euuuuhhh!
-Il est encore là. 
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="22" name="vive-la-coree" tags="" position="225,350" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
+Euuuussshhhee!
+Il est encore là.
 N&#39;importe quoi.
 
 &gt; Le drapeau ?
 
-Oui, ce drapeau. 
+Oui, ce drapeau.
 
-Elle le garde pour aller participer à des manifestations d&#39;extrême droite. 
+Elle le garde pour aller participer à des manifestations d&#39;extrême droite.
 Ça me soûle trop. On s&#39;est déjà pas mal disputé à cause de ça.
 
 [[Maman aux manifs d&#39;extrême droite ? What dafuck ?! -&gt;vive-la-coree 2]]</tw-passagedata><tw-passagedata pid="23" name="vive-la-coree 2" tags="" position="350,350" size="100,100">Ce n&#39;est pas comme en France. Mais bon quand même.
 
 &gt; Mais comment c&#39;est possible ?
-&gt; Pas que ce soit impossible, mais elle m&#39;adore. 
+&gt; Pas que ce soit impossible, mais elle m&#39;adore.
 
 &gt; Blond aux yeux bleus, j&#39;ai pas le sang pur de la longue lignée de Joseon-조선...
 
 Certes.
 
-Ce n&#39;est pas ce genre d&#39;extrême droite je te dis. 
+Ce n&#39;est pas ce genre d&#39;extrême droite je te dis.
 C&#39;est plus un parti anti communiste, pro américain quoi.
 
-&gt; ... communiste, les les rouges-빨갱이, c&#39;est ça ? C&#39;est encore dans ce genre de délire ? 
+&gt; ... communiste, les les rouges-빨갱이, c&#39;est ça ? C&#39;est encore dans ce genre de délire ?
 
 Oui, mais ne dit pas ça n&#39;important quand, c&#39;est une insulte grave ici.
 
@@ -286,8 +298,8 @@ Ils me soûlent vraiment.
 
 ...
 
-[[... -&gt;vive-la-coree 4]]</tw-passagedata><tw-passagedata pid="25" name="vive-la-coree 4" tags="" position="600,350" size="100,100">Les gens de ces manifs le détestent par principe. 
-Ils sont socialistes et pour les décrédibiliser, ils les insultent de rouge. 
+[[... -&gt;vive-la-coree 4]]</tw-passagedata><tw-passagedata pid="25" name="vive-la-coree 4" tags="" position="600,350" size="100,100">Les gens de ces manifs le détestent par principe.
+Ils sont socialistes et pour les décrédibiliser, ils les insultent de rouge.
 
 C&#39;est n&#39;importe quoi, le point godwin coréen.
 
@@ -303,12 +315,13 @@ Non, je veux plus le voir, c&#39;est sûr mais on ne jette pas les affaires de m
 
 &gt; Ok, je le remets où il était alors.
 
-Oui s&#39;il te plait.</tw-passagedata><tw-passagedata pid="27" name="Basquette bleu" tags="" position="850,350" size="100,100">&lt;% if(visited(&quot;Basquette bleu 1&quot;) &lt; 1){ %&gt;
+Oui s&#39;il te plait.</tw-passagedata><tw-passagedata pid="27" name="Basquette bleu" tags="" position="850,350" size="100,100">&lt;% if(visited(&quot;Basquette bleu 1&quot;) &lt; 2){ %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 &gt; Tu sais, cette paire de chaussures, maman a vraiment voulu que je les essaie la dernière fois.
 
 Oui, c&#39;est son genre.
 
-&gt; C&#39;est vrai que je parle pas bien coréen, ok. 
+&gt; C&#39;est vrai que je parle pas bien coréen, ok.
 &gt; Mais les chiffres, je sais les lire.
 &gt; Et puis si je trouve jamais de chaussure à ma taille en magasin, c&#39;est bien que les chaussures qu&#39;on trouve dehors ne m&#39;iront jamais...
 &gt;  En plus je vois bien qu&#39;elles son trop petites...
@@ -338,7 +351,8 @@ Ah alors ?
 &lt;script&gt;story.show(&#39;pourquoi autant de pomme&#39;);&lt;/script&gt;
 &lt;% } %&gt;</tw-passagedata><tw-passagedata pid="34" name="congelateur" tags="" position="475,475" size="100,100">&lt;% if(hasVisited(&quot;compartimant-1&quot;,&quot;compartimant-2&quot;,&quot;compartimant-3&quot;,&quot;compartimant-4&quot;,&quot;compartimant-5&quot;,&quot;congelateur&quot;) &amp;&amp; !hasVisited(&quot;pourquoi autant de pomme&quot;)) { %&gt;
 &lt;script&gt;story.show(&#39;pourquoi autant de pomme&#39;);&lt;/script&gt;
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="35" name="pourquoi autant de pomme" tags="" position="600,475" size="100,100">&gt; Chérie.
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="35" name="pourquoi autant de pomme" tags="" position="600,475" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
+&gt; Chérie.
 &gt; J&#39;avoue que je commence à en avoir un peu marre de ces pommes.
 
 Oui moi aussi !
@@ -348,12 +362,13 @@ Cette année c&#39;est **pommes** 🍎.
 
 Aaah non, moi je préférais le raisin !
 
-&gt; Chacun son tour du coup.</tw-passagedata><tw-passagedata pid="36" name="outside" tags="" position="725,475" size="100,100">Il fait vraiment beau aujourd&#39;hui.</tw-passagedata><tw-passagedata pid="37" name="palier" tags="" position="850,475" size="100,100">&lt;% if(visited(&quot;palier&quot;) &gt; 0 &amp;&amp; visited(&quot;vestibule&quot;) &gt; 0 &amp;&amp; !s[&quot;porte-claque&quot;]){ %&gt;
+&gt; Chacun son tour du coup.</tw-passagedata><tw-passagedata pid="36" name="garage" tags="" position="725,475" size="100,100"></tw-passagedata><tw-passagedata pid="37" name="outside" tags="" position="850,475" size="100,100">Il fait vraiment beau aujourd&#39;hui.</tw-passagedata><tw-passagedata pid="38" name="palier" tags="" position="975,475" size="100,100">&lt;% if(visited(&quot;palier&quot;) &gt; 0 &amp;&amp; visited(&quot;vestibule&quot;) &gt; 0 &amp;&amp; !s[&quot;porte-claque&quot;]){ %&gt;
 &lt;% s[&quot;porte-claque&quot;] = 1; %&gt;
 &lt;% }%&gt;
 
 &lt;% if(s[&quot;porte-claque&quot;] &amp;&amp; s[&quot;porte-claque&quot;] == 1){ %&gt;
 &lt;% s[&quot;porte-claque&quot;] ++ %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 *BBBLLLAAAAMMMM*
 
 ...
@@ -369,15 +384,17 @@ Bili diling 🎶
 
 &lt;% } else if(s[&quot;vestibule-locked&quot;]) { %&gt;
 
+&lt;script&gt;window.flash();&lt;/script&gt;
+&lt;script&gt;console.log(&quot;fffffffff&quot;)&lt;/script&gt;
 [[Essayer d&#39;ouvrir la porte -&gt;essaie porte]]
 
 &lt;% } else if(visited(&quot;palier&quot;) == 0) { %&gt;
 On rentre ?
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="38" name="porte claque" tags="" position="975,475" size="100,100">[[Essayer d&#39;ouvrir la porte -&gt;essaie porte]]
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="39" name="porte claque" tags="" position="1100,475" size="100,100">[[Essayer d&#39;ouvrir la porte -&gt;essaie porte]]
 [[Taper le code sur le digicode -&gt;essaie digicode]]
 &lt;% if(s[&quot;essaie-ouvrir-porte&quot;] &amp;&amp; s[&quot;essaie-ouvrir-porte&quot;] &gt; 6) { %&gt;
 [[Toquer à la porte -&gt;toquer la porte]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="39" name="essaie porte" tags="" position="1100,475" size="100,100">&gt; (Nope, la porte est fermée...)
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="40" name="essaie porte" tags="" position="1225,475" size="100,100">&gt; (Nope, la porte est fermée...)
 &lt;% if(s[&quot;essaie-ouvrir-porte&quot;] == null ) { %&gt;
 &lt;% s[&quot;essaie-ouvrir-porte&quot;] = 0 %&gt;
 &lt;% } else { %&gt;
@@ -388,7 +405,7 @@ On rentre ?
 [[Taper le code sur le digicode -&gt;essaie digicode]]
 &lt;% if(s[&quot;essaie-ouvrir-porte&quot;] &amp;&amp; s[&quot;essaie-ouvrir-porte&quot;] &gt; 3) { %&gt;
 [[Toquer à la porte -&gt;toquer la porte]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="40" name="essaie digicode" tags="" position="1225,475" size="100,100">&lt;% if(s[&quot;essaie-ouvrir-porte&quot;] == null ) { %&gt;
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="41" name="essaie digicode" tags="" position="100,600" size="100,100">&lt;% if(s[&quot;essaie-ouvrir-porte&quot;] == null ) { %&gt;
 &lt;% s[&quot;essaie-ouvrir-porte&quot;] = 0 %&gt;
 &lt;% } else { %&gt;
 &lt;% s[&quot;essaie-ouvrir-porte&quot;] += 1 %&gt;
@@ -428,17 +445,17 @@ On rentre ?
 [[2502 -&gt;essaie digicode]]
 &lt;% } else{ %&gt;
 [[Toquer à la porte -&gt;toquer la porte]]
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="41" name="toquer la porte" tags="" position="100,600" size="100,100">*Tock tock tock*
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="42" name="toquer la porte" tags="" position="225,600" size="100,100">*Tock tock tock*
 
 ....
-[[Toquer encore -&gt;toquer la porte encore]]</tw-passagedata><tw-passagedata pid="42" name="toquer la porte encore" tags="" position="225,600" size="100,100">*Boum boum boum*
+[[Toquer encore -&gt;toquer la porte encore]]</tw-passagedata><tw-passagedata pid="43" name="toquer la porte encore" tags="" position="350,600" size="100,100">*Boum boum boum*
 
 ....
 
 &gt; ( décidemment c&#39;est compliqué aujourd&#39;hui )
 
 [[Toquer fort -&gt;toquer la porte encore encore]]
-[[Appeller Hyeyoung-혜영 -&gt;appeller hyeyoung]]</tw-passagedata><tw-passagedata pid="43" name="toquer la porte encore encore" tags="" position="350,600" size="100,100">*BOUM BOUM BOUM*
+[[Appeller Hyeyoung-혜영 -&gt;appeller hyeyoung]]</tw-passagedata><tw-passagedata pid="44" name="toquer la porte encore encore" tags="" position="475,600" size="100,100">*BOUM BOUM BOUM*
 
 ....
 
@@ -446,7 +463,7 @@ On rentre ?
 	story.show(&#39;hyeyoung ouvre la porte&#39;);
 }, 3000)&lt;/script&gt;
 
-[[Appeler Hyeyoung-혜영 -&gt;appeller hyeyoung]]</tw-passagedata><tw-passagedata pid="44" name="appeller hyeyoung" tags="" position="475,600" size="100,100">
+[[Appeler Hyeyoung-혜영 -&gt;appeller hyeyoung]]</tw-passagedata><tw-passagedata pid="45" name="appeller hyeyoung" tags="" position="600,600" size="100,100">
 &lt;% s[&quot;porte-called-yobo&quot;] = true %&gt;
 &gt; Yobooo-여버어어어어 !
 
@@ -458,7 +475,7 @@ On rentre ?
 
 &lt;script&gt;setTimeout(function(){
 	story.show(&#39;hyeyoung ouvre la porte&#39;);
-}, 3000)&lt;/script&gt;</tw-passagedata><tw-passagedata pid="45" name="hyeyoung ouvre la porte" tags="" position="600,600" size="100,100">
+}, 3000)&lt;/script&gt;</tw-passagedata><tw-passagedata pid="46" name="hyeyoung ouvre la porte" tags="" position="725,600" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
 *Didoouu Dou Dute* 🎶
 
 Et bin, tu fais quoi ?!
@@ -480,15 +497,17 @@ En plus je t&#39;ai déjà dit d&#39;arrêter de m&#39;appeler yobo, on dirait u
 Allez viens on s&#39;y met.
 
 &lt;% s[&quot;vestibule-locked&quot;] = false %&gt;
-&lt;script&gt;console.log(story.$vue.storyFunctions(&quot;toggle-place&quot;, { place: &quot;vestibule&quot;, value: false }))&lt;/script&gt;</tw-passagedata><tw-passagedata pid="46" name="salle-de-bain" tags="" position="725,600" size="100,100">&lt;% if(!visited(&quot;salle-de-bain&quot;)) { %&gt;
-Laisse ici, on ne touche à rien, ici. 
+&lt;script&gt;console.log(story.$vue.storyFunctions(&quot;toggle-place&quot;, { place: &quot;vestibule&quot;, value: false }))&lt;/script&gt;</tw-passagedata><tw-passagedata pid="47" name="salle-de-bain" tags="" position="850,600" size="100,100">&lt;% if(visited(&quot;salle-de-bain&quot;) &lt; 2) { %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
+Laisse ici, on ne touche à rien, ici.
 On nettoiera la prochaine fois.
 
 &gt; ok.
 
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="47" name="salle-principale" tags="" position="850,600" size="100,100">&lt;% if(hasVisited(&quot;Crapeau&quot;, &quot;vive-la-coree&quot;) &amp;&amp; s[&quot;carton-pomme&quot;] &gt;= 2 &amp;&amp; s[&quot;end-game&quot;] == true ) { %&gt;
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="48" name="salle-principale" tags="" position="975,600" size="100,100">&lt;% if(hasVisited(&quot;Crapeau&quot;, &quot;vive-la-coree&quot;) &amp;&amp; s[&quot;carton-pomme&quot;] &gt;= 2 &amp;&amp; s[&quot;end-game&quot;] == true ) { %&gt;
 &lt;script&gt;story.show(&#39;endGame&#39;);&lt;/script&gt;
-&lt;% } else if(!hasVisited(&quot;salle-principale&quot;)) { %&gt;
+&lt;% } else if(visited(&quot;salle-principale&quot;) &lt; 2) { %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 Bon ! Nous y voila.
 
 J&#39;espère qu&#39;on aura le temps de ranger un peu.
@@ -509,6 +528,7 @@ Pour le reste on oublie !
 
 &lt;% } else if(hasVisited(&quot;pourquoi autant de pomme&quot;) &amp;&amp; s[&quot;carton-pomme-livree&quot;] == true) { %&gt;
 	&lt;% if(!s[&quot;carton-pomme&quot;]){ %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
 Alors il y a quoi dans le carton ?
 
 &gt;Je ne sais pas, je ne l&#39;ai pas encore ouvert...
@@ -517,13 +537,14 @@ Alors il y a quoi dans le carton ?
 &lt;% } else if(visited(&quot;salle-principale&quot;) &gt; 3 &amp;&amp; hasVisited(&quot;pourquoi autant de pomme&quot;) &amp;&amp; !s[&quot;carton-pomme&quot;]) { %&gt;
 &lt;% s[&quot;carton-pomme-livree&quot;] = true %&gt;
 &lt;script&gt;story.show(&#39;livraison&#39;);&lt;/script&gt;
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="48" name="pomme-1-discussion" tags="" position="975,600" size="100,100">&gt; Bon déjà un carton de pomme...
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="49" name="pomme-1-discussion" tags="" position="1100,600" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
+&gt; Bon déjà un carton de pomme...
 
 Hein ?! Des pommes encore ?
 
 &gt; Oui, j&#39;espère qu&#39;elle a au moins varié le deuxième carton...
 
-...</tw-passagedata><tw-passagedata pid="49" name="pomme-2-discussion" tags="" position="1100,600" size="100,100">
+...</tw-passagedata><tw-passagedata pid="50" name="pomme-2-discussion" tags="" position="1225,600" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
 Alors ?
 
 &gt; Devine.
@@ -536,19 +557,24 @@ Des pommes...
 
 Du jus de pomme ?
 
-&gt; Non des pommes &lt;%= s[&quot;carton-pomme-couleur&quot;] %&gt;s!</tw-passagedata><tw-passagedata pid="50" name="vestibule" tags="" position="1225,600" size="100,100">Ouffff on ne peut pas passer.
+&gt; Non des pommes &lt;%= s[&quot;carton-pomme-couleur&quot;] %&gt;s!</tw-passagedata><tw-passagedata pid="51" name="vestibule" tags="" position="100,725" size="100,100">&lt;% if(visited(&quot;vestibule&quot;) &lt; 2){ %&gt;
+&lt;script&gt;window.flash();&lt;/script&gt;
+Ouffff on ne peut pas passer.
 
 Il faut libérer le passage un minimum !
 
-&gt; Ok je vais faire de la place, t&#39;inquètes.</tw-passagedata><tw-passagedata pid="51" name="Start" tags="" position="100,725" size="100,100">&lt;script&gt;window.getStyles(&quot;custom.css&quot;);&lt;/script&gt;
+&gt; Ok je vais faire de la place, t&#39;inquètes.
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="52" name="Start" tags="" position="225,725" size="100,100">&lt;script&gt;window.getStyles(&quot;custom.css&quot;);&lt;/script&gt;
 &lt;% s[&quot;end-game&quot;] = false %&gt;
-&lt;script&gt;story.show(&#39;Introduction&#39;);&lt;/script&gt;</tw-passagedata><tw-passagedata pid="52" name="Introduction" tags="" position="225,725" size="100,100">Fouu.....
+&lt;script&gt;story.show(&#39;Introduction&#39;);&lt;/script&gt;</tw-passagedata><tw-passagedata pid="53" name="Introduction" tags="" position="350,725" size="100,100">&lt;script&gt;window.flash();&lt;/script&gt;
+
+Fouu.....
 
 Il fait trop beauuu dehors.
 
 ...
 
-[[Tellement, ça fait du bien -&gt;Introduction suite - 1]]</tw-passagedata><tw-passagedata pid="53" name="Introduction suite - 1" tags="" position="350,725" size="100,100">...
+[[Tellement, ça fait du bien -&gt;Introduction suite - 1]]</tw-passagedata><tw-passagedata pid="54" name="Introduction suite - 1" tags="" position="475,725" size="100,100">...
 
 [[... -&gt;Introduction suite - 1]]
 
@@ -556,21 +582,21 @@ Il fait trop beauuu dehors.
 
 [[On ne devait pas faire quelque chose ? -&gt;Introduction suite - 2]]
 
-&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="54" name="Introduction suite - 2" tags="" position="475,725" size="100,100">Si, on doit ranger chez maman.
+&lt;% } %&gt;</tw-passagedata><tw-passagedata pid="55" name="Introduction suite - 2" tags="" position="600,725" size="100,100">Si, on doit ranger chez maman.
 
-Elle ne rentrera pas avant 8 heures ce soir. 
+Elle ne rentrera pas avant 8 heures ce soir.
 C&#39;est bien si on s&#39;y met !
 
 [[ ? -&gt;explication]]
 
-[[La flemme, mais faut s&#39;y mettre. -&gt;endStart]]</tw-passagedata><tw-passagedata pid="55" name="explication" tags="" position="600,725" size="100,100">?
+[[La flemme, mais faut s&#39;y mettre. -&gt;endStart]]</tw-passagedata><tw-passagedata pid="56" name="explication" tags="" position="725,725" size="100,100">?
 
 Il faut qu&#39;on range chez maman pour l&#39;aider, c&#39;est le bordel là-dedans !
 On est aussi venu en Corée pour s&#39;occuper de maman.
 Elle commence un peu à vieillir et comme elle travaille tout le temps en ce moment.
 C&#39;est le moment de l&#39;aider un peu...
 
-[[Ok ok, 대한민국-Allez la Corée, comme on dit. -&gt;endStart]]</tw-passagedata><tw-passagedata pid="56" name="endStart" tags="" position="725,725" size="100,100"></tw-passagedata></tw-storydata>
+[[Ok ok, 대한민국-Allez la Corée, comme on dit. -&gt;endStart]]</tw-passagedata><tw-passagedata pid="57" name="endStart" tags="" position="850,725" size="100,100"></tw-passagedata></tw-storydata>
 		<script>
 		(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";window.either=function(){for(var n=[],t=0;t<arguments.length;t++)if(arguments[t]instanceof Array)for(var r=0;r<arguments[t].length;r++)n.push(arguments[t][r]);else n.push(arguments[t]);return n[_.random(n.length-1)]},window.hasVisited=function(){var n=null;if(1===arguments.length)return null!=(n=window.story.passage(arguments[0]))&&window.story.history.includes(n.id);for(var t=0;t<arguments.length;t++)if(null===(n=window.story.passage(arguments[t]))||!1===window.story.history.includes(n.id))return!1;return!0},window.visited=function(){for(var n=[],t=[],r=0;r<arguments.length;r++){var e=window.story.passage(arguments[r]);null!==e&&(t=window.story.history.filter(function(n){return n===e.id})),n.push(t.length)}return Math.min.apply(Math,n)},window.renderToSelector=function(n,t){var r=window.story.passage(t);null!==r&&$(n).html(r.render())},window.getStyles=function(){return $.when.apply($,$.map(arguments,function(n){return $.get(n,function(n){$("<style>"+n+"</style>").appendTo("head")})}))};

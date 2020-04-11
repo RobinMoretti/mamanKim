@@ -1,7 +1,11 @@
 ::vestibule
+<% if(visited("vestibule") < 2){ %>
+<script>window.flash();</script>
 Ouffff on ne peut pas passer.
 
 Il faut libérer le passage un minimum !
 
-> Ok je vais faire de la place, t'inquètes. 
+> Ok je vais faire de la place, t'inquètes.
+<% } %>
+
 

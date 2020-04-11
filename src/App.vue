@@ -1,9 +1,8 @@
 <template>
   <div>
     <!-- Matomo Image Tracker-->
-    <img src="https://matamo.robinmoretti.eu/matomo.php?idsite=2&amp;rec=1" style="border:0" alt="" style="position: absolute; left: -1000vw; top: -1000vw; opacity: 0;" />
+    <img src="https://matamo.robinmoretti.eu/matomo.php?idsite=2&amp;rec=1" alt="" style="border:0, position: absolute; left: -1000vw; top: -1000vw; opacity: 0;" />
     <!-- End Matomo -->
-
 
     <span class="cursor-icon" v-if="playMode == 'looking'">👁</span>
     <span class="cursor-icon" v-if="playMode == 'picking'">🖐</span>
@@ -21,7 +20,14 @@
           </p>
           <p class="play-info" :class="{ hidden: !hideInfoMode }">Any key to switch</p>
 
-          <iframe :src="tweeUrl" id="twee" ref="twee" @load="iframeLoaded" v-if="displayIframe"></iframe>
+          <iframe
+            :src="tweeUrl"
+            id="twee"
+            ref="twee"
+            @load="iframeLoaded"
+            v-if="displayIframe"
+            :class="{ 'orange-flash': flashIframe }">
+          </iframe>
         </div>
 
         <vue-custom-scrollbar class="space">
@@ -43,7 +49,7 @@
                   v-for="connection in activePlaceObj.connections"
                   v-on:click="goToPlace(connection.place, placeStore.places[connection.place], 'place')"
                   v-if="placeStore.places[connection.place]"
-                  :class="{ 'locked': (placeStore.places[connection.place].locked || connection.condition != null && connection.condition == false || connection.available != null && connection.available == false) }">
+                  :class="{ 'locked': (placeStore.places[connection.place].locked || connection.condition != null && connection.condition == false || connection.available != null && connection.available == false), 'orange-flash': (connection.available != null && connection.available == true && placeStore.places[connection.place].locked == false) }">
                     {{ placeStore.places[connection.place].name }}
                 </button>
                 <div v-if="activePlaceObj.parentPlace">
@@ -103,6 +109,7 @@ export default {
       loaded: false,
       lestKeyEvent: false,
       hideInfoMode: true,
+      flashIframe: false
     }
   },
   computed: {
@@ -231,9 +238,18 @@ export default {
       }
 
       this.lestKeyEvent = event.type;
+    },
+    toggleFlashIframe:function () {
+      console.log("flashIframe = -----------------");
+      this.flashIframe = true;
+
+      setTimeout(() => {
+        this.flashIframe = false;
+      }, 1000);
     }
   },
   mounted: function(){
+
     setTimeout(()=>{
       this.$store.dispatch("objects/init");
       this.$store.dispatch("places/init");
@@ -250,7 +266,9 @@ export default {
     document.getElementsByTagName("body")[0].addEventListener('mousemove', this.mouveCursorImgToCursor);
 
     this.$nextTick(() => {
-      // do something cool
+      // window.flash = this.toggleFlashIframe;
+      this.$refs.twee.contentWindow.flash = this.toggleFlashIframe;
+      this.$refs.twee.contentWindow.flash();
       this.$refs.twee.contentWindow.addEventListener('mousemove', this.mouveCursorImgToCursor)
     })
 
@@ -304,8 +322,6 @@ body{
   // border: grey solid 1px;
 }
 
-
-
 .space, .object-container{
   max-height: calc( 100vh - 50px );
   overflow-y: scroll;
@@ -313,9 +329,11 @@ body{
   display: inline-block !important;
   margin: 10px;
 }
+
 .mains{
   max-height: calc( 100vh - 50px );
   overflow-y: hidden;
+  overflow-x: hidden;
   padding-right: 40px;
   display: inline-block !important;
   margin: 10px;
@@ -473,6 +491,19 @@ footer{
   border-color: rgba(0, 0, 0, 0.3) !important;
   color: rgba(0, 0, 0, 0.3) !important;
 }
+
+.orange-flash{
+  animation-name: iframeAnimation;
+  animation-duration: infinite;
+  animation-duration: 0.5s;
+}
+
+@keyframes iframeAnimation {
+  0% {background-color: rgba(0,0,0,0);}
+  50% {background-color: #EEDB57;}
+  100% {background-color: rgba(0,0,0,0);}
+}
+
 // fonts ---------------
 @font-face {
   font-family: "PTSerif";

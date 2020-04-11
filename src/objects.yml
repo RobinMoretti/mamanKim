@@ -1268,7 +1268,7 @@ petite-sculpture:
   height: 20
   picto: 🗿
   description: >
-    Petite sculpture en pierre volcanique provenant de l'île de Jejudo-재주 une Dol hareubangs-돌 하르방. Lui toucher le nez porterait bonheur.
+    Petite sculpture en pierre volcanique provenant de l'île de Jejudo-제주 une Dol hareubangs-돌하르방. Lui toucher le nez porterait bonheur.
 
 jeu-de-carte-1:
   name: Ensemble de cartes coréennes, le Godori-고도리
@@ -1314,6 +1314,7 @@ meuble-3:
   width: 50
   height: 120
   picto: Étagère
+  takable: false
   description: >
     Étagère en bois
   place:
@@ -1332,8 +1333,9 @@ plateau-meuble-3-1:
   name: Plateau de l'étagère
   weight: 0
   width: 50
-  height: 20
+  height: 30
   picto: Plateau
+  takable: false
   description: >
     Plateau de l'étagère en bois
   place:
@@ -1354,8 +1356,9 @@ plateau-meuble-3-2:
   name: Plateau de l'étagère
   weight: 0
   width: 50
-  height: 20
+  height: 30
   picto: Plateau
+  takable: false
   description: >
     Plateau de l'étagère en bois
   place:
@@ -1376,8 +1379,9 @@ plateau-meuble-3-3:
   name: Plateau de l'étagère
   weight: 0
   width: 50
-  height: 20
+  height: 30
   picto: Plateau
+  takable: false
   description: >
     Plateau de l'étagère en bois
   place:

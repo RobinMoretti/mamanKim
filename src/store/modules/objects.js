@@ -52,6 +52,9 @@ const mutations = {
     state.objects = objectsYml;
     console.log('objectsYml', objectsYml )
   },
+  resetActiveObject: function(state){
+    state.activeObject = "";
+  },
 }
 
 export default {

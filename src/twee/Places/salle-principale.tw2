@@ -1,7 +1,8 @@
 ::salle-principale
 <% if(hasVisited("Crapeau", "vive-la-coree") && s["carton-pomme"] >= 2 && s["end-game"] == true ) { %>
 <script>story.show('endGame');</script>
-<% } else if(!hasVisited("salle-principale")) { %>
+<% } else if(visited("salle-principale") < 2) { %>
+<script>window.flash();</script>
 Bon ! Nous y voila.
 
 J'espère qu'on aura le temps de ranger un peu.
@@ -22,6 +23,7 @@ Pour le reste on oublie !
 
 <% } else if(hasVisited("pourquoi autant de pomme") && s["carton-pomme-livree"] == true) { %>
 	<% if(!s["carton-pomme"]){ %>
+<script>window.flash();</script>
 Alors il y a quoi dans le carton ?
 
 >Je ne sais pas, je ne l'ai pas encore ouvert...
@@ -34,6 +36,7 @@ Alors il y a quoi dans le carton ?
 
 
 ::pomme-1-discussion
+<script>window.flash();</script>
 > Bon déjà un carton de pomme...
 
 Hein ?! Des pommes encore ?
@@ -43,7 +46,7 @@ Hein ?! Des pommes encore ?
 ...
 
 ::pomme-2-discussion
-
+<script>window.flash();</script>
 Alors ?
 
 > Devine.

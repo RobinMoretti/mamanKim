@@ -160,7 +160,10 @@ const actions = {
 
     dispatch("checkForInventoryEvent");
 
+    commit("objects/resetActiveObject", null, {root: true});
     dispatch("checkForSpecialEvent");
+
+
     this.$app.$nextTick(() => {
       dispatch("updateConnectionsConditions");
     })

@@ -5,6 +5,7 @@
 
 <% if(s["porte-claque"] && s["porte-claque"] == 1){ %>
 <% s["porte-claque"] ++ %>
+<script>window.flash();</script>
 *BBBLLLAAAAMMMM*
 
 ...
@@ -20,6 +21,8 @@ Bili diling 🎶
 
 <% } else if(s["vestibule-locked"]) { %>
 
+<script>window.flash();</script>
+<script>console.log("fffffffff")</script>
 [[Essayer d'ouvrir la porte ->essaie porte]]
 
 <% } else if(visited("palier") == 0) { %>
@@ -135,7 +138,7 @@ On rentre ?
 }, 3000)</script>
 
 ::hyeyoung ouvre la porte
-
+<script>window.flash();</script>
 *Didoouu Dou Dute* 🎶
 
 Et bin, tu fais quoi ?!

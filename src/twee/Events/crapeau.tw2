@@ -1,5 +1,6 @@
 ::Crapeau
 <% if(visited("Crapeau") < 2){ %>
+<script>window.flash();</script>
 
 > WWWWWWWwhhhhhhhhaaaaaattttttt!
 > Chérieeee !!!!
