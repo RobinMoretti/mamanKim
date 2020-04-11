@@ -320,6 +320,7 @@ body{
   // align-content: center;
   height: 100%;
   // border: grey solid 1px;
+  max-width: 1500px;
 }
 
 .space, .object-container{
@@ -341,7 +342,7 @@ body{
 
 #twee{
   border: unset;
-  width: 325px;
+  width: calc(100% + 25px);
   height: calc( 100vh - 300px );
   margin-right: 20px;
   padding-right: 20px;
@@ -351,6 +352,7 @@ body{
   flex-shrink: 0;
   min-width: 300px;
   width: 33%;
+  max-width: 500px;
   margin-right: 20px;
   .description{
     width: 100%;
@@ -372,6 +374,7 @@ body{
   margin-right: 20px;
   min-width: 300px;
   width: 33%;
+  max-width: 500px;
 }
 
 .play-mode{
