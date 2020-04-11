@@ -1,5 +1,10 @@
 <template>
   <div>
+    <!-- Matomo Image Tracker-->
+    <img src="https://matamo.robinmoretti.eu/matomo.php?idsite=2&amp;rec=1" style="border:0" alt="" style="position: absolute; left: -1000vw; top: -1000vw; opacity: 0;" />
+    <!-- End Matomo -->
+
+
     <span class="cursor-icon" v-if="playMode == 'looking'">👁</span>
     <span class="cursor-icon" v-if="playMode == 'picking'">🖐</span>
 
