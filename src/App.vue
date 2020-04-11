@@ -318,7 +318,7 @@ body{
 
 #twee{
   border: unset;
-  width: 300px;
+  width: 325px;
   height: calc( 100vh - 300px );
   margin-right: 20px;
   padding-right: 20px;
