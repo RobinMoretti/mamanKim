@@ -331,7 +331,7 @@ body{
 }
 
 .mains{
-  max-height: calc( 100vh - 50px );
+  max-height: calc( 100vh - 70px );
   overflow-y: hidden;
   overflow-x: hidden;
   padding-right: 40px;
@@ -350,15 +350,16 @@ body{
 .space{
   flex-shrink: 0;
   min-width: 300px;
+  width: 33%;
   margin-right: 20px;
   .description{
-
-    width: 300px;
+    width: 100%;
     line-height: 1.5;
   }
 }
 
 .object-container{
+    flex-shrink: 0;
     // width: 300px;
     margin-left: 20px;
 }
@@ -369,7 +370,8 @@ body{
 .mains{
   flex-shrink: 0;
   margin-right: 20px;
-  width: 300px;
+  min-width: 300px;
+  width: 33%;
 }
 
 .play-mode{
