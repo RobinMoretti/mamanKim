@@ -303,7 +303,8 @@ html, body{
 }
 body{
   height: 100vh;
-  width: 1300px;
+  width: 100vw;
+  min-width: 900px;
   margin: 0;
   padding: 10px;
   box-sizing: border-box;
@@ -361,7 +362,7 @@ body{
 }
 
 .object-container{
-    flex-shrink: 0;
+    flex-shrink: 1;
     // width: 300px;
     margin-left: 20px;
 }
