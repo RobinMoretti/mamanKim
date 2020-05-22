@@ -1,0 +1,1641 @@
+voiture-1:
+  name: Voiture de la proprio
+  weight: 100
+  width: 250
+  height: 300
+  picto: 🚙
+  description: >
+    Voiture grise d'une marque coréenne, plutôt ancienne. En bonne état et particulièrement propre. 
+telephone-1:
+  name: Téléphone portable
+  weight: 0.5
+  width: 0.5
+  height: 0.8
+  picto: 📞
+  description: >
+    Samsung android A5 de 2016.
+    Fonctionnelle même si l'écran est cassé.
+velo-1:
+  name: Vélo
+  weight: 10
+  width: 200
+  height: 40
+  picto: 🚴‍
+  description: >
+    Récent, presque neuf. Semble trés chère.
+    Il n'est jamais attaché.
+poubelle-1:
+  name: Poubelle, boite en carton
+  weight: 0.7
+  width: 30
+  height: 30
+  picto: P
+  description: >
+    Carton usagé de livraison livraison Rocket-로겟배송 Coupang avec un intèrieur doublé en aluminium. Le *Amazon* Coréen.
+  place:
+    name: Intèrieure de la boite en carton
+    width: 150
+    height: 150
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: dechet-carton-1
+      - name: dechet-carton-1
+      - name: canette-1
+      - name: canette-1
+canette-1:
+  name: Cadavre de bière
+  weight: 2
+  width: 20
+  height: 30
+  picto: Cass
+  description: >
+    Canette de bière Cass, écrasé sur le côté.
+dechet-carton-1:
+  name: Tas de déchet de papier et de carton
+  weight: 2
+  width: 20
+  height: 20
+  picto: D
+  description: >
+    Tas de déchet de papier et de choses carton.
+publicite-1:
+  name: Publicité d'un restaurant chinois
+  weight: 0.01
+  width: 15
+  height: 10
+  picto: 📃
+  description: >
+    Flyer d'un restaurant chinois, beaucoup de rouge, plutôt de mauvais gout. Nouilles Chachang-짜장면, Tangsuyuk-탕수육 et autres classiques de se genre de restaurants.
+publicite-2:
+  name: Publicité d'un restaurant de poulet frit
+  weight: 0.01
+  width: 25
+  height: 13
+  picto: Pub
+  description: >
+    Flyer d'un restaurant de poulet frit. Le logo représente un poulet heureux. Il y as toutes sorte de recettes, piquant, au miel, classique.
+
+reste-restau-chinois-1:
+  name: Restes d'une livraison
+  weight: 3
+  width: 30
+  height: 30
+  picto: 🍽
+  description: >
+    Sac en plastique remplit d'assiettes et de bols sales avec des restes de nourritures et de soupes mal finit. C'est visuellement assez dégueulasse. Le livreur passeras chercher le sacs plus tard pour les nettoyer.
+
+colis-1:
+  name: Livraison Coupang
+  weight: 10
+  width: 80
+  height: 50
+  picto: 📦
+  events:
+    - name: goPassage
+      params:
+        path: enter
+        place: vestibule
+        passage: vole colis-1
+    - name: setTweeVariable
+      params:
+        path: enter
+        place: vestibule
+        name: colis-1-owner
+        value: Park Su yoon-박수윤
+  description: >
+    Carton en parfaite état, au nom de Park Su yoon-박수윤.
+colis-2:
+  name: Livraison Coupang
+  weight: 5
+  width: 50
+  height: 40
+  picto: 📦
+  events:
+    - name: goPassage
+      params:
+        path: enter
+        place: vestibule
+        passage: vole colis-1
+    - name: setTweeVariable
+      params:
+        path: enter
+        place: vestibule
+        name: colis-1-owner
+        value: Park Eun Su-박은수
+    # - name: setTweeVariable
+    #   params:
+    #     path: exit
+    #     place: vestibule
+    #     name: porte-claque
+    #     value: 1
+    #     increment: true
+  description: >
+    Carton en parfaite état. Au nom de Park Eun Su-박은수.
+
+
+
+# vestibule ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+pot-plastique-1:
+  name: Pot en plastique
+  weight: 1.5
+  width: 40
+  height: 60
+  picto: Pot
+  description: >
+    Pot cylindrique en plastique.
+  place:
+    name: Intérieure du pot en plastique
+    width: 100
+    height: 200
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: parapluie-1
+      - name: parapluie-2
+      - name: parapluie-1
+
+parapluie-1:
+  name: Vieux parapluie rouillé
+  weight: 1
+  width: 20
+  height: 60
+  picto: 🌂
+  description: >
+    Vieux parapluie noir en mauvaise états, C you.
+
+parapluie-2:
+  name: Parapluie usé
+  weight: 1
+  width: 25
+  height: 70
+  picto: ☂️
+  description: >
+    Parapluie rose aux dessins fleurales, plutôt usagé, 7 Eleven.
+
+meuble-metallique-1:
+  name: Structure métallique à étages
+  weight: 2
+  width: 40
+  height: 60
+  picto: 🗄
+  description: >
+    Petit meuble métallique noir composé trois étagères.
+  place:
+    name: Structure métallique à étages
+    width: 80
+    height: 120
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: etagere-structure-metallique-1
+      - name: etagere-structure-metallique-2
+      - name: etagere-structure-metallique-3
+
+etagere-structure-metallique-1:
+  name: Étagère métallique
+  weight: 1
+  width: 80
+  height: 40
+  takable: false
+  picto: Étagère
+  description: >
+    Étagère constitué d'un maillage fin métallique.
+  place:
+    name: Intérieure d'étagère métallique
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: sac-1
+      - name: bob-3
+      - name: bob-4
+
+etagere-structure-metallique-2:
+  name: Étagère métallique
+  weight: 1
+  width: 80
+  height: 40
+  takable: false
+  picto:  ⌣
+  description: >
+    Étagère constitué d'un maillage fin métallique.
+  place:
+    name: Intérieure d'étagère métallique
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    # inventory:
+
+etagere-structure-metallique-3:
+  name: Étagère métallique
+  weight: 1
+  width: 80
+  height: 40
+  takable: false
+  picto:  ⌣
+  description: >
+    Étagère constitué d'un maillage fin métallique.
+  place:
+    name: Intérieure d'étagère métallique
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 10
+    inventory:
+      - name: serre-tete-1
+      - name: serre-tete-2
+
+meuble-1:
+  name: Étagère en bois
+  weight: 30
+  width: 150
+  height: 40
+  takable: false
+  picto:  🗄
+  description: >
+    Étagère en bois foncé vernis, posé sur le côté. Semble servir pour ranger les chaussures.
+  place:
+    name: Intérieure de l'étagère en bois
+    width: 300
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: casier-meuble-1-1
+      - name: casier-meuble-1-2
+      - name: casier-meuble-1-3
+      - name: casier-meuble-1-4
+      - name: casier-meuble-1-5
+
+casier-meuble-1-1:
+  name: Casier de l'étagère en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: Casier
+  takable: false
+  description: >
+    Intérieure du casier de l'étagère en bois.
+  place:
+    name: Casier du meuble en bois
+    width: 60
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: chaussure-1
+      - name: chaussure-1
+
+casier-meuble-1-2:
+  name: Casier de l'étagère en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: Casier
+  takable: false
+  description: >
+    Casier de l'étagère en bois.
+  place:
+    name: Intérieure du casier de l'étagère en bois
+    width: 60
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: sac-1
+      - name: serre-tete-3
+      - name: serre-tete-4
+
+casier-meuble-1-3:
+  name: Casier de l'étagère en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: Casier
+  takable: false
+  description: >
+    Casier de l'étagère en bois.
+  place:
+    name: Intérieure du casier de l'étagère en bois
+    width: 60
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: chaussure-1
+
+casier-meuble-1-4:
+  name: Casier de l'étagère en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: 🔲
+  takable: false
+  description: >
+    Casier du meuble en bois.
+  place:
+    name: Intérieure du casier de l'étagère en bois
+    width: 60
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: sac-1
+      - name: bob-1
+      - name: bouteille-vide-de-soju-1
+
+casier-meuble-1-5:
+  name: Casier de l'étagère en bois
+  weight: 0
+  width: 50
+  height: 50
+  picto: 🔲
+  takable: false
+  description: >
+    Casier du meuble en bois.
+  place:
+    name: Intérieure du casier de l'étagère en bois
+    width: 60
+    height: 60
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: chaussure-1
+      - name: bob-2
+      - name: bob-1
+
+sac-1:
+  name: Cabas en plastique
+  weight: 0.5
+  width: 40
+  height: 40
+  picto:  👜
+  description: >
+    Cabas en plastique bleu sans marque.
+  place:
+    name: Intérieure cabas en plastique
+    width: 50
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 20
+
+sac-2:
+  name: Cabas en plastique
+  weight: 0.5
+  width: 50
+  height: 50
+  picto:  👜
+  description: >
+    Cabas en plastique sans marque.
+  place:
+    name: Intérieure cabas en plastique
+    width: 50
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 20
+
+sac-a-dos-1:
+  name: Sac à dos de randonné
+  weight: 0.5
+  width: 50
+  height: 50
+  picto:  👜
+  description: >
+    Sac à dos de randonné. Sans marque.
+  place:
+    name: Intérieure cabas en plastique
+    width: 50
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 30
+
+bob-1:
+  name: Chapeau beige
+  weight: 0.2
+  width: 30
+  height: 20
+  picto:  👒
+  description: >
+    Chapeau beige sans marque et sans motif particulier.
+bob-2:
+  name: Chapeau blanc fleural
+  weight: 0.2
+  width: 30
+  height: 20
+  picto:  👒
+  description: >
+    Chapeau blanc sans marque aux motif florales.
+bob-3:
+  name: Chapeau bleu foncé
+  weight: 0.2
+  width: 30
+  height: 20
+  picto:  👒
+  description: >
+    Chapeau bleu foncé sans marque.
+bob-4:
+  name: Chapeau bleu tricoté
+  weight: 0.2
+  width: 30
+  height: 20
+  picto:  👒
+  description: >
+    Chapeau bleu foncé fait main.
+
+chaussure-1:
+  name: Basquette
+  weight: 1.5
+  width: 16
+  height: 37
+  picto:  👟
+  description: >
+    Basquette de petite taille sans marque, multicolore. En bonne état.
+    
+chaussure-2:
+  name: Basquette bleu
+  weight: 1.6
+  width: 20
+  height: 50
+  picto:  👟
+  description: >
+    Basquette bleu de taille normale sans marque. En trés bonne état. Ressemble énormément à des runneurs Nique...
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: Basquette bleu
+
+chaussure-3:
+  name: Chaussure
+  weight: 1.5
+  width: 18
+  height: 40
+  picto:  👞
+  description: >
+    Chaussure simili cuire sans marque. Usée.
+chaussure-4:
+  name: Ballerines
+  weight: 1.5
+  width: 16
+  height: 38
+  picto:  👡
+  description: >
+    Ballerines au motif fleural.
+pantoufle-1:
+  name: Claquettes
+  weight: 1
+  width: 20
+  height: 40
+  picto:  👟
+  description: >
+    Ressemble à des claquettes de piscine. A chaque claquettes sont utilité. Marché en dehors de la maison, salle de bain, toilettes, etc.
+serre-tete-1:
+  name: Serre tête
+  weight: 0.2
+  width: 30
+  height: 10
+  picto: Ω
+  description: >
+    Serre tête rouge
+serre-tete-2:
+  name: Serre tête
+  weight: 0.2
+  width: 30
+  height: 10
+  picto: Ω
+  description: >
+    Serre tête large, violet avec des broderies fleurales
+serre-tete-3:
+  name: Serre tête
+  weight: 0.2
+  width: 30
+  height: 10
+  picto: Ω
+  description: >
+    Serre tête, vert avec des broderies fleurales
+serre-tete-4:
+  name: Serre tête
+  weight: 0.2
+  width: 30
+  height: 10
+  picto: Ω
+  description: >
+    Serre tête rouge.
+
+sac-en-plastique-1:
+  name: Gros sac en plastique
+  weight: 0.05
+  width: 50
+  height: 50
+  picto: 🛍
+  description: >
+    Sac en platique de course
+  place:
+    name: Intérieure du gros sac en plastique
+    width: 100
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 4
+    inventory:
+      - name: bouteille-vide-de-soju-1
+
+bouteille-vide-de-biere-1:
+  name: Bouteille de bière Cass.
+  weight: 1
+  width: 20
+  height: 40
+  picto: 🍾
+  description: >
+    Bouteille de bière vide Cass. Recyclable pour 130won-원.
+
+bouteille-vide-de-soju-1:
+  name: Bouteille de soju-소주 de Crapeau-두커비.
+  weight: 1
+  width: 20
+  height: 30
+  picto: 🍾
+  description: >
+    Bouteille de soju-소주 de Crapeau-두커비. Recyclable pour 100won-원.
+
+# paquet-salade-1:
+# pochette-fermeture-eclaire:
+# tableau-peinture-encre-1:
+# bac-plastique-2:
+# bac-plastique-3:
+# bac-plastique-4:
+# bac-plastique-5:
+# casserol-metal-1:
+# rouleau-papier-toilette-1:
+# bouteille-de-chaimpoing-1:
+# bouteille-de-chaimpoing-2:
+# bouteille-de-chaimpoing-3:
+# bouteille-de-javelle-1:
+# bouteille-de-desinfection-1:
+# bouteille-de-desinfection-1:
+# petit-parapluie-3:
+# petit-bol-plastique-1:
+
+
+
+
+
+# Salle principale ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+
+etandoire:
+  name: Etendoir
+  weight: 4
+  width: 40
+  height: 50
+  picto: ⌤
+  description: >
+    Simple étendoir composé de tubes métallique.
+  place:
+    name: Etendoir
+    width: 300
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 8
+    inventory:
+      - name: linge-humide
+      - name: serviette-humide
+      - name: linge-humide
+      - name: linge-humide
+      - name: serviette-humide
+      - name: serviette-humide
+
+linge-humide:
+  name: Linge humide
+  weight: 1
+  width: 20
+  height: 50
+  picto: 👕
+  description: >
+    Linge humide, sortis il y as peu de la machine à laver.
+
+serviette-humide:
+  name: Serviette de bain humide
+  weight: 0.8
+  width: 20
+  height: 40
+  picto: Se
+  description: >
+    Serviette de bain humide, très courte.
+
+table-a-manger:
+  name: Table à manger.
+  weight: 45
+  width: 100
+  height: 50
+  picto: ⎍
+  takable: false
+  description: >
+    Table en bois massif.
+  place:
+    name: Table à manger.
+    width: 300
+    height: 300
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: dessus-la-table
+      - name: dessous-la-table
+
+dessus-la-table:
+  name: Dessus de la table à manger.
+  weight: 25
+  width: 300
+  height: 40
+  takable: false
+  picto: Dessus de la table à manger
+  description: >
+    La partie supérieur de la table à manger est en bois massif vernis. Elle semble avoirs bien vécus. A certains endroits, le vernir est pas mal effacé.
+  place:
+    name: Dessus de la table à manger.
+    width: 300
+    height: 200
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: filtre-a-eau-lg
+      - name: assiete-1
+      - name: verre-d-eau-1
+      - name: sel-1
+      - name: champignons-1
+      - name: assiete-1
+      - name: patate-douce-1
+      - name: pomme-de-terre-1
+      - name: verre-d-eau-1
+      - name: pomme-de-terre-1
+      - name: piment-1
+      - name: piment-1
+      - name: pomme-1
+      - name: piment-1
+      - name: pomme-1
+      - name: boite-conservation-nourriture-1-4
+
+filtre-a-eau-lg:
+  name: Machine de filtre à eau
+  weight: 10
+  width: 100
+  height: 50
+  takable: false
+  picto: 🚰
+  description: >
+    Filtre à eau, semble moderne, Lg. Il est assez massif et  couvert d'aluminium.
+
+verre-d-eau-1:
+  name: Verre d'eau vide
+  weight: 0.3
+  width: 25
+  height: 40
+  picto: 🥛
+  description: >
+    Verre.
+
+assiete-1:
+  name: Assiette
+  weight: 0.5
+  width: 35
+  height: 35
+  picto: 🍽
+  description: >
+    Assiette blanche.
+
+patate-douce-1:
+  name: Patate douce
+  weight: 0.5
+  width: 25
+  height: 35
+  picto: 🍠
+  description: >
+    Patate douce.
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: Patate douce
+sel-1:
+  name: Salière
+  weight: 0.4
+  width: 20
+  height: 20
+  picto: sel
+  description: >
+    Salière
+
+champignons-1:
+  name: Champignons
+  weight: 0.3
+  width: 20
+  height: 40
+  picto: 🍄
+  description: >
+    Un paquet de champignons.
+
+pomme-de-terre-1:
+  name: Pomme de terre
+  weight: 0.5
+  width: 20
+  height: 30
+  picto: 🥔
+  description: >
+    Une patate.
+
+piment-1:
+  name: Piment
+  weight: 0.5
+  width: 20
+  height: 30
+  picto: 🌶
+  description: >
+    Des piments séché.
+
+dessous-la-table:
+  name: Dessous la table à manger.
+  weight: 0
+  width: 300
+  height: 260
+  takable: false
+  picto: Dessous de la table à manger
+  description: >
+    La partie inférieure de la table à manger.
+  place:
+    name: Dessous la table à manger.
+    width: 300
+    height: 200
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: carton-1
+      - name: carton-1
+      - name: carton-2
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: bouteille-vide-de-biere-1
+      - name: boite-conservation-nourriture-1-5
+
+carton-1:
+  name: Carton fermé
+  weight: 25
+  width: 100
+  height: 100
+  picto: 📦
+  description: >
+    Carton fermé par du scotch orange.
+
+carton-2:
+  name: Carton fermé
+  weight: 40
+  width: 100
+  height: 150
+  # takable: false
+  picto: 📦
+  description: >
+    Carton fermé par du scotch orange.
+
+frigo:
+  name: Frigidère
+  weight: 50
+  width: 60
+  height: 190
+  takable: false
+  picto: Frigidère
+  description: >
+    Frigidère Lg
+  place:
+    name: Intérieur du frigidère
+    width: 100
+    height: 300
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: congelateur
+      - name: compartimant-1
+      - name: compartimant-2
+      - name: compartimant-3
+      - name: compartimant-4
+      - name: compartimant-5
+
+congelateur:
+  name: Congélateur
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Congélateur
+  description: >
+    Congélateur
+  place:
+    name: Intérieur du congélateur
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: sac-de-riz-congele
+
+compartimant-1:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Intérieur compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+
+
+compartimant-2:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Intérieur compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+
+compartimant-3:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Intérieur compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: boite-conservation-nourriture-3-5
+
+compartimant-4:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Intérieur compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+
+compartimant-5:
+  name: Compartiment
+  weight: 0
+  width: 100
+  height: 50
+  takable: false
+  picto: Compartiment
+  description: >
+    Compartiment du Frigidère.
+  place:
+    name: Intérieur compartiment
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: jus-pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: boite-conservation-nourriture-3-4
+
+carton-pomme-1:
+  name: Carton
+  weight: 0.5
+  width: 70
+  height: 55
+  picto: 📦
+  description: >
+    Carton
+  place:
+    name: Intérieur du carton
+    width: 100
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 30
+    inventory:
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+      - name: pomme-1
+carton-pomme-2:
+  name: Carton
+  weight: 0.5
+  width: 70
+  height: 55
+  picto: 📦
+  description: >
+    Carton
+  place:
+    name: Intérieur du carton
+    width: 100
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 30
+    inventory:
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2
+      - name: pomme-2 
+
+sac-de-riz-congele:
+  name: Sac de riz congelé
+  weight: 2
+  width: 50
+  height: 50
+  picto: 🍚
+  description: >
+    Gros sac de riz congelé.
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: Sace de riz congelé
+
+pomme-1:
+  name: Pomme
+  weight: 0.7
+  width: 20
+  height: 20
+  picto: 🍎
+  description: >
+    Grosse pomme rouge.
+pomme-2:
+  name: Pomme
+  weight: 0.7
+  width: 20
+  height: 20
+  picto: 🍏
+  description: >
+    Grosse pomme Verte.
+
+jus-pomme-1:
+  name: Jus de pomme
+  weight: 0.2
+  width: 20
+  height: 20
+  picto: 🍷
+  description: >
+    Jus de pomme contenue dans un petit sachet de 10cl, très sucré.
+
+
+
+
+# Salle principale ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+meuble-tv-1:
+  name: Meuble de télévision
+  weight: 25
+  width: 150
+  height: 60
+  picto: 🗄
+  description: >
+    Meuble de télévision rose saumon en bonne état.
+  place:
+    name: Meuble de télévision 
+    width: 200
+    height: 80
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: dessus-meuble-tv
+      - name: tiroire-meuble-1
+      - name: tiroire-meuble-2
+
+
+dessus-meuble-tv:
+  name: Dessus du meuble de télévision
+  weight: 0
+  width: 150
+  height: 20
+  takable: false
+  picto: Dessus
+  description: >
+    Dessus du meuble de télévision
+  place:
+    name: Dessus du meuble de télévision 
+    width: 200
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: tv
+      - name: petite-sculpture
+      - name: chaussure-1
+      - name: pomme-1
+      - name: jeu-de-carte-1
+      - name: boite-conservation-nourriture-3-3
+
+tiroire-meuble-1:
+  name: Tiroir gauche du meuble de télévision
+  weight: 0
+  width: 75
+  height: 60
+  takable: false
+  picto: Tiroir gauche
+  description: >
+    Tiroir gauche du meuble de télévision
+  place:
+    name: Tiroir de gauche du meuble de télévision
+    width: 100
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: rouleau-de-papier
+      - name: rouleau-de-papier
+      - name: rouleau-de-papier
+      - name: drapeau-coreen-1
+
+tiroire-meuble-2:
+  name: Tiroir droite du meuble de télévision
+  weight: 0
+  width: 75
+  height: 60
+  takable: false
+  picto: Tiroir droite
+  description: >
+    Tiroir de droite du meuble de télévision
+  place:
+    name: Tiroir gauche du meuble de télévision
+    width: 100
+    height: 50
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: bouteille-vide-de-soju-1
+      - name: bouteille-vide-de-soju-1
+      - name: champignons-1
+      - name: pomme-de-terre-1
+      - name: pomme-1
+      - name: pomme-1
+
+rouleau-de-papier:
+  name: Rouleau de papier coréen
+  weight: 3
+  width: 20
+  height: 50
+  picto: 📜
+  description: >
+    Rouleau de papier vierge.
+
+tv:
+  name: TV Lg
+  weight: 5
+  width: 170
+  height: 20
+  takable: false
+  picto: 🖥
+  description: >
+    Télévision lg
+
+petite-sculpture:
+  name: Petite sculpture, Dol hareubangs-돌 하르방
+  weight: 1
+  width: 20
+  height: 20
+  picto: 🗿
+  description: >
+    Petite sculpture en pierre volcanique provenant de l'île de Jejudo-재주 une Dol hareubangs-돌 하르방. Lui toucher le nez porterais bonheurs.
+
+jeu-de-carte-1:
+  name: Ensemble de carte coréenne, le Godori-고도리
+  weight: 0.4
+  width: 20
+  height: 40
+  picto: 🎴
+  description: >
+    Ensemble de carte coréenne. Composé de douze catégories, une pour chaque saison, elles peuvent représenter des fleur ou des terrains (mers, montagne, plaine). Chacune compte 4 cartes, de quatre types possibles. Les cartes basique-피, les animaux-열끗, les ceintures-띠 et les lumières-광. Un des jeux le plus populaire ici, c'est aussi un jeu d'argent, le Go-Stop. 
+
+
+drapeau-coreen-1:
+  name: Drapeau de la République de Corée du Sud-태극기.
+  weight: 0.4
+  width: 20
+  height: 40
+  picto: 🇰🇷
+  description: >
+    Il est composé de deux élément différentiables. L'élément centrale-티극, l'équivalent coréen du yin yang et les quatres trigrammes  représentant les quatre éléments : la terre, le ciel, le feu et l'eau. Le tout est sur un fond blanc.
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: vive-la-coree
+
+
+# Salle principale ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+machine-a-laver:
+  name: Machine à laver d'une marque coréen
+  weight: 35
+  takable: false
+  width: 100
+  height: 80
+  picto: 🧼
+  description: >
+    Machine à lavé à tube verticale.
+
+meuble-3:
+  name: Meuble à étages
+  weight: 20
+  width: 50
+  height: 120
+  picto: Étagère
+  description: >
+    Étagère en bois
+  place:
+    name: Intérieur de l'étagère en bois
+    width: 50
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: plateau-meuble-3-1
+      - name: plateau-meuble-3-2
+      - name: plateau-meuble-3-3
+
+plateau-meuble-3-1:
+  name: Plateau de l'étagère
+  weight: 0
+  width: 50
+  height: 20
+  picto: Plateau
+  description: >
+    Plateau de l'étagère en bois
+  place:
+    name: Plateau de l'étagère en bois
+    width: 300
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: bouteille-vide-de-soju-1
+      - name: pomme-1
+      - name: bouteille-vide-de-soju-1
+      - name: pomme-1
+      - name: boite-conservation-nourriture-3-1
+
+plateau-meuble-3-2:
+  name: Plateau de l'étagère
+  weight: 0
+  width: 50
+  height: 20
+  picto: Plateau
+  description: >
+    Plateau de l'étagère en bois
+  place:
+    name: Plateau de l'étagère en bois
+    width: 300
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-1-1
+      - name: boite-conservation-nourriture-1-2
+      - name: pomme-1
+      - name: bouteille-vide-de-biere-1
+      - name: boite-conservation-nourriture-2-1
+
+plateau-meuble-3-3:
+  name: Plateau de l'étagère
+  weight: 0
+  width: 50
+  height: 20
+  picto: Plateau
+  description: >
+    Plateau de l'étagère en bois
+  place:
+    name: Plateau de l'étagère en bois
+    width: 300
+    height: 100
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-3-2
+
+
+# Boite de conservation ---------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------
+
+
+boite-conservation-nourriture-1-1:
+  name: Grande boite de conservation
+  weight: 1
+  width: 50
+  height: 50
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 5
+  place:
+    name: Plateau de l'étagère en bois
+    width: 45
+    height: 45
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-1-3
+
+boite-conservation-nourriture-1-2:
+  name: Boite de conservation
+  weight: 1
+  width: 45
+  height: 45
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 4
+  place:
+    name: Boite de conservation
+    width: 40
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+
+boite-conservation-nourriture-1-3:
+  name: Petite boite de conservation
+  weight: 1
+  width: 40
+  height: 40
+  picto: Boite 3
+  description: >
+    Boite de conservation taille 3
+  place:
+    name: Petite boite de conservation
+    width: 35
+    height: 35
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+
+boite-conservation-nourriture-1-4:
+  name: Trés petite boite de conservation
+  weight: 1
+  width: 35
+  height: 35
+  picto: Boite 2
+  description: >
+    Boite de conservation taille 2
+  place:
+    name: Trés petite boite de conservation
+    width: 20
+    height: 20
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-1-5:
+  name: Vraiment trés petite boite de conservation
+  weight: 1
+  width: 20
+  height: 20
+  picto: Boite 1
+  description: >
+    Boite de conservation taille 1
+
+# --------------
+
+
+boite-conservation-nourriture-2-1:
+  name: Grande boite de conservation
+  weight: 1
+  width: 50
+  height: 50
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 5
+  place:
+    name: Plateau de l'étagère en bois
+    width: 45
+    height: 45
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-2-2:
+  name: Boite de conservation
+  weight: 1
+  width: 45
+  height: 45
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 4
+  place:
+    name: Boite de conservation
+    width: 40
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-2-5
+
+
+boite-conservation-nourriture-2-3:
+  name: Petite boite de conservation
+  weight: 1
+  width: 40
+  height: 40
+  picto: Boite 3
+  description: >
+    Boite de conservation taille 3
+  place:
+    name: Petite boite de conservation
+    width: 35
+    height: 35
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+
+boite-conservation-nourriture-2-4:
+  name: Trés petite boite de conservation
+  weight: 1
+  width: 35
+  height: 35
+  picto: Boite 2
+  description: >
+    Boite de conservation taille 2
+  place:
+    name: Trés petite boite de conservation
+    width: 20
+    height: 20
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-2-5:
+  name: Vraiment trés petite boite de conservation
+  weight: 1
+  width: 20
+  height: 20
+  picto: Boite 1
+  description: >
+    Boite de conservation taille 1
+
+# --------------
+
+boite-conservation-nourriture-3-1:
+  name: Grande boite de conservation
+  weight: 1
+  width: 50
+  height: 50
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 5
+  place:
+    name: Plateau de l'étagère en bois
+    width: 45
+    height: 45
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-3-2:
+  name: Boite de conservation
+  weight: 1
+  width: 45
+  height: 45
+  picto: Boite 4
+  description: >
+    Boite de conservation taille 4
+  place:
+    name: Boite de conservation
+    width: 40
+    height: 40
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+
+boite-conservation-nourriture-3-3:
+  name: Petite boite de conservation
+  weight: 1
+  width: 40
+  height: 40
+  picto: Boite 3
+  description: >
+    Boite de conservation taille 3
+  place:
+    name: Petite boite de conservation
+    width: 35
+    height: 35
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+
+boite-conservation-nourriture-3-4:
+  name: Trés petite boite de conservation
+  weight: 1
+  width: 35
+  height: 35
+  picto: Boite 2
+  description: >
+    Boite de conservation taille 2
+  place:
+    name: Trés petite boite de conservation
+    width: 20
+    height: 20
+    infinite: false
+    scrollable: false
+    maximumWeight: 0
+    inventory:
+      - name: boite-conservation-nourriture-3-5
+
+boite-conservation-nourriture-3-5:
+  name: Vraiment trés petite boite de conservation
+  weight: 1
+  width: 20
+  height: 20
+  picto: Boite 1
+  description: >
+    Boite de conservation taille 1
+
+crapeau:
+  name: Crapeau
+  weight: 1
+  width: 30
+  height: 20
+  picto: 🐸
+  description: >
+    Crapeau
+  events:
+    - name: goPassage
+      params:
+        path: click
+        passage: Crapeau

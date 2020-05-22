@@ -1,0 +1,21 @@
+a{
+	width: 100%;
+	display: block;
+	text-align: right;
+	color: #3E2123;
+}
+body{
+	font-size: 1.1rem;
+	padding-right: 25px;
+	padding-left: 5px;
+}
+
+blockquote{
+	width: 100%;
+	text-align: right;
+	color: #3E2123;
+	font-size: 1.1rem;
+	margin-right: 0;
+	margin-left: 0;
+	opacity: 0.8;
+}

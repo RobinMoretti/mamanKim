@@ -1,0 +1,141 @@
+::vole colis-1
+<script>window.flash();</script>
+[[ Chérie, il y avait des colis dehors... ->vole colis-1-1]]
+
+::vole colis-1-1
+Ah, ce n'est pas à nous. <br>
+Regarde c'est écrit **<%= s["colis-1-owner"] %>**... <br>
+Remets-le là où tu l'as trouvé s'il te plait.
+
+::beaucoup de bouteilles vide
+<% if(visited("beaucoup de bouteilles vide" < 2)) { %>
+<script>window.flash();</script>
+> Mais pourquoi il y a autant de bouteilles vides d'alcools ?
+> Je croyais qu'elle ne buvait pas d'alcool ta maman ?
+
+Depuis que je lui ai dit qu'on pouvait récupérer de l'argent en les ramenant à l'épicerie du coin-편의점 ou au super marché, elle ramasse toutes les bouteilles vides du quartier.
+
+> ah wé, mais c'est un peu petit ici quand même...
+
+[[On en fait quoi du coup ?  ->beaucoup de bouteilles vide 1]]
+
+<% } %>
+
+::beaucoup de bouteilles vide 1
+
+On les met de côté dehors dans des sacs ou des cartons, on les ramènera plus tard ! J'espère, on en aura assez pour acheter au moins une bière 😅.
+
+>Ummmmm, petite bière! Il nous en faut combien ?
+
+ 100원-won chacunes, donc au moins une vingtaine !
+
+> Ok! J'accepte la mission.
+
+::Patate douce
+
+Uhmmmmmm mes préférées, patates douces marrons-밤거구마!
+
+Trop bonnes, à la vapeur.
+
+::Sace de riz congelé
+<script>window.flash();</script>
+
+[[Tiens, qu'est-ce qu'elle fait maman, avec autant de riz cuit congelé ? ->Sace de riz congelé 1]]
+
+::Sace de riz congelé 1
+Je sais pas, pourquoi ?
+
+> La dernière fois, elle nous a fait des gâteaux de riz-떡 avec, non ?
+
+Non pas avec le riz déjà cuit.
+
+> Ah bon ? C'est ce que tu m'avais dis pourtant, j'ai l'impression...
+
+Non.
+
+[[Bah si, j'ai pas pu l'inventer ! ->Sace de riz congelé 2]]
+
+::Sace de riz congelé 2
+
+Biensur que non, tu peux.
+
+> Quoi non, oui, je ne l'ai pas inventé !
+
+Oui, ce n'est pas possible de faire faire des gâteaux de riz-떡 avec du riz déjà cuit. Donc non, tu l'as inventé.
+
+> Non je l'ai inventé ?
+
+Oui.
+
+[[... ?! ->Sace de riz congelé 3]]
+
+::Sace de riz congelé 3
+
+> En français chérie, non c'est oui. Ça m'embrouille trop là.
+
+Et alors c'est la Corée ici !
+
+> Oui, certes.
+
+...
+
+> Bon ok, j'abandonne.
+
+::livraison
+<script>window.flash();</script>
+*BOUM BOUM BOUM*
+
+Ah tiens, il y a quelqu'un dehors.
+
+Je reviens.
+
+> Ok, je fais ma vie moi.
+
+[[ ... ->livraison 1]]
+
+::livraison 1
+
+On a reçu deux énormes cartons.
+
+Tu peux les récuper ?
+Ils sont sur le palier.
+
+> Yeap, biensur.
+
+::carton-pomme-1
+<% if(s["carton-pomme"] == null) { %>
+<% s["carton-pomme"] = 0 %>
+<% } %>
+
+<% s["carton-pomme"] ++ %>
+
+<% if(s["carton-pomme"] == 1) { %>
+<script>window.flash();</script>
+> Non mais...
+<% } %>
+
+<% if(s["carton-pomme"] == 2) { %>
+<script>window.flash();</script>
+<% s["carton-pomme-couleur"] = "rouge"; %>
+> Argh, elle a vraiment recommandé que des pommes!
+> Arrgggggg
+<% } %>
+
+::carton-pomme-2
+<% if(s["carton-pomme"] == null) { %>
+<% s["carton-pomme"] = 0 %>
+<% } %>
+
+<% s["carton-pomme"] ++ %>
+
+<% if(s["carton-pomme"] == 1) { %>
+<script>window.flash();</script>
+> Non mais...
+<% } %>
+
+<% if(s["carton-pomme"] == 2) { %>
+<script>window.flash();</script>
+<% s["carton-pomme-couleur"] = "verte"; %>
+> Argh, elle a vraiment recommandé que des pommes!
+> Arrgggggg
+<% } %>

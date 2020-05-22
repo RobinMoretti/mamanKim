@@ -1,0 +1,165 @@
+::palier
+<% if(visited("palier") > 0 && visited("vestibule") > 0 && !s["porte-claque"]){ %>
+<% s["porte-claque"] = 1; %>
+<% }%>
+
+<% if(s["porte-claque"] && s["porte-claque"] == 1){ %>
+<% s["porte-claque"] ++ %>
+<script>window.flash();</script>
+*BBBLLLAAAAMMMM*
+
+...
+
+Bili diling 🎶
+
+> (La porte a claqué...)
+
+<% s["vestibule-locked"] = true %>
+<script>console.log(story.$vue.storyFunctions("toggle-place", { place: "vestibule", value: true }))</script>
+
+[[Ah.... ->porte claque]]
+
+<% } else if(s["vestibule-locked"]) { %>
+
+<script>window.flash();</script>
+<script>console.log("fffffffff")</script>
+[[Essayer d'ouvrir la porte ->essaie porte]]
+
+<% } else if(visited("palier") == 0) { %>
+On rentre ?
+<% } %>
+
+::porte claque
+[[Essayer d'ouvrir la porte ->essaie porte]]
+[[Taper le code sur le digicode ->essaie digicode]]
+<% if(s["essaie-ouvrir-porte"] && s["essaie-ouvrir-porte"] > 6) { %>
+[[Toquer à la porte ->toquer la porte]]
+<% } %>
+
+
+::essaie porte
+> (Nope, la porte est fermée...)
+<% if(s["essaie-ouvrir-porte"] == null ) { %>
+<% s["essaie-ouvrir-porte"] = 0 %>
+<% } else { %>
+<% s["essaie-ouvrir-porte"] += 1 %>
+<% } %>
+
+[[Essayer d'ouvrir la porte ->essaie porte]]
+[[Taper le code sur le digicode ->essaie digicode]]
+<% if(s["essaie-ouvrir-porte"] && s["essaie-ouvrir-porte"] > 3) { %>
+[[Toquer à la porte ->toquer la porte]]
+<% } %>
+
+::essaie digicode
+<% if(s["essaie-ouvrir-porte"] == null ) { %>
+<% s["essaie-ouvrir-porte"] = 0 %>
+<% } else { %>
+<% s["essaie-ouvrir-porte"] += 1 %>
+<% } %>
+
+<% if(s["essaie-digicode"] == null ) { %>
+<% s["essaie-digicode"] = 0 %>
+<% } else { %>
+<% s["essaie-digicode"] += 1 %>
+<% } %>
+
+<% if(s["essaie-digicode"] == 1) { %>
+> ...mmmm
+<% } else if(s["essaie-digicode"] == 2){ %>
+> non.
+<% } else if(s["essaie-digicode"] == 3){ %>
+> non...
+<% } else if(s["essaie-digicode"] == 4){ %>
+> Toujour pas.
+<% } else if(s["essaie-digicode"] == 5){ %>
+> Bon c'est chiant maintenant.
+<% } else if(s["essaie-digicode"] == 6){ %>
+> Putin.
+<% } else if(s["essaie-digicode"] == 7){ %>
+> ( *&%@#$! )
+<% } else{ %>
+<% } %>
+
+
+<% if(s["essaie-digicode"] < 7) { %>
+[[2303 ->essaie digicode]]
+[[2503 ->essaie digicode]]
+[[2305 ->essaie digicode]]
+[[2505 ->essaie digicode]]
+[[2205 ->essaie digicode]]
+[[2302 ->essaie digicode]]
+[[2502 ->essaie digicode]]
+<% } else{ %>
+[[Toquer à la porte ->toquer la porte]]
+<% } %>
+
+
+::toquer la porte
+*Tock tock tock*
+
+....
+[[Toquer encore ->toquer la porte encore]]
+
+::toquer la porte encore
+*Boum boum boum*
+
+....
+
+> ( décidemment c'est compliqué aujourd'hui )
+
+[[Toquer fort ->toquer la porte encore encore]]
+[[Appeller Hyeyoung-혜영 ->appeller hyeyoung]]
+
+::toquer la porte encore encore
+*BOUM BOUM BOUM*
+
+....
+
+<script>setTimeout(function(){
+	story.show('hyeyoung ouvre la porte');
+}, 3000)</script>
+
+[[Appeler Hyeyoung-혜영 ->appeller hyeyoung]]
+
+::appeller hyeyoung
+
+<% s["porte-called-yobo"] = true %>
+> Yobooo-여버어어어어 !
+
+....
+
+> YOOOOOBBBBBOOOO-여보오오오오오오!
+
+....
+
+<script>setTimeout(function(){
+	story.show('hyeyoung ouvre la porte');
+}, 3000)</script>
+
+::hyeyoung ouvre la porte
+<script>window.flash();</script>
+*Didoouu Dou Dute* 🎶
+
+Et bin, tu fais quoi ?!
+
+> J'ai oublié ce fichu code!
+
+T'es débile-바보 vraiment! <br>
+
+<% if(s["porte-called-yobo"]) { %>
+En plus je t'ai déjà dit d'arrêter de m'appeler yobo, on dirait un vieux, c'est gras-느끼해.
+
+> Mais yoboo-여버 j'aim...
+
+<span class="shaking">Euuuuuuuuuuuuuuu</span>, arrête. C'est grassss-느끼해애애!
+
+> Ok, ok ....
+<% } %>
+
+Allez viens on s'y met.
+
+<% s["vestibule-locked"] = false %>
+<script>console.log(story.$vue.storyFunctions("toggle-place", { place: "vestibule", value: false }))</script>
+
+

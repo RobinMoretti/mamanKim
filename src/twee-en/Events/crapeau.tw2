@@ -1,0 +1,74 @@
+::Crapeau
+<% if(visited("Crapeau") < 2){ %>
+<script>window.flash();</script>
+
+> WWWWWWWwhhhhhhhhaaaaaattttttt!
+> Chérieeee !!!!
+> There is a toad in the laundry !!!
+
+...
+
+OOooowww easy !
+A Toad ?
+
+[[ Eeeeasy ?! ->Crapeau 1]]
+
+<% } %>
+
+::Crapeau 1
+Yes, easy,
+
+...
+
+Oh, really, a cute toad!
+
+He won't bite you!
+
+>...
+
+...
+
+[[... ->Crapeau 2]]
+
+
+::Crapeau 2
+
+> Chérie, there is a **toad** 
+> In
+> the laundry room !
+> So disgusting, how is it possible in the middle of Seoul ?! 
+
+It's just a small toad, it's ok.
+It's our house's spirit!
+
+> House's spirit ?
+> And... bugs are... sink's spirit ?
+
+Oh ! Keep some respect of my culture !
+
+...
+
+> ...
+
+*CRRRROOooooaaak*.... 🐸
+
+> Am I throwing it through the window ?
+> Or Am I putting it in Tupperware 5 size ?
+
+Don't touch it ! Let's see with mom when she's back.
+
+[[... ->Crapeau 3]]
+
+::Crapeau 3
+
+> Seriously ?
+
+Yes honey, seriously.
+
+> Ooookkkkkkk
+
+
+
+
+
+

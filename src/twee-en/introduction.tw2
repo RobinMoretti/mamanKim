@@ -1,0 +1,44 @@
+::Introduction
+<script>window.flash();</script>
+
+awwwwhhhhhhh.....
+
+It's nice out.
+
+...
+
+[[So nice so good... ->Introduction suite - 1]]
+
+
+::Introduction suite - 1
+...
+
+[[... ->Introduction suite - 1]]
+
+<% if(visited("Introduction suite - 1") >= 2){ %>
+
+[[Shouldn't we be doing something? ->Introduction suite - 2]]
+
+<% } %>
+
+::Introduction suite - 2
+Yep, we have to clean mam's house.
+
+She'll not be back before 8.
+It's should be great to start now!
+
+[[ ? ->explication]]
+
+[[Boring... But ok, let's go. ->endStart]]
+
+::explication
+?
+
+We have to clean inside, it's a mess inside. 
+We are also come in korea for take care of her.
+She's starting to be old and she's working so much right now.
+It's time to support her!
+
+[[Ok ok, 대한민국-Make korea great again. ->endStart]]
+
+::endStart

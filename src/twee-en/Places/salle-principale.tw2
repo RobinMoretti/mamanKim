@@ -1,0 +1,64 @@
+::salle-principale
+<% if(hasVisited("Crapeau", "vive-la-coree") && s["carton-pomme"] >= 2 && s["end-game"] == true ) { %>
+<script>story.show('endGame');</script>
+<% } else if(visited("salle-principale") < 2) { %>
+<script>window.flash();</script>
+Bon ! Nous y voila.
+
+J'espère qu'on aura le temps de ranger un peu.
+
+On ne pourra pas tout faire aujourd'hui de toutes façons.
+
+Donc les objectif:
+Ranger **toute la bouffe**, **le meuble télé** et **le frigo** et si on peut, **la buanderie**.
+
+Pour le reste on oublie !
+
+> Ok, lets go !
+
+<% } else if(s["carton-pomme"] == 1 && !hasVisited("pomme-1-discussion")) { %>
+<script>story.show('pomme-1-discussion');</script>
+<% } else if(s["carton-pomme"] >= 2 && !hasVisited("pomme-2-discussion") ) { %>
+<script>story.show('pomme-2-discussion');</script>
+
+<% } else if(hasVisited("pourquoi autant de pomme") && s["carton-pomme-livree"] == true) { %>
+	<% if(!s["carton-pomme"]){ %>
+<script>window.flash();</script>
+Alors il y a quoi dans le carton ?
+
+>Je ne sais pas, je ne l'ai pas encore ouvert...
+	<% } %>
+
+<% } else if(visited("salle-principale") > 3 && hasVisited("pourquoi autant de pomme") && !s["carton-pomme"]) { %>
+<% s["carton-pomme-livree"] = true %>
+<script>story.show('livraison');</script>
+<% } %>
+
+
+::pomme-1-discussion
+<script>window.flash();</script>
+> Bon déjà un carton de pomme...
+
+Hein ?! Des pommes encore ?
+
+> Oui, j'espère qu'elle a au moins varié le deuxième carton...
+
+...
+
+::pomme-2-discussion
+<script>window.flash();</script>
+Alors ?
+
+> Devine.
+
+Des pommes...
+
+> Oui mais pas que!
+
+...
+
+Du jus de pomme ?
+
+> Non des pommes <%= s["carton-pomme-couleur"] %>s!
+
+

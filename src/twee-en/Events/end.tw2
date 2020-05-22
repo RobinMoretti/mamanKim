@@ -1,0 +1,49 @@
+::endGame
+<script>window.flash();</script>
+
+Bili diling 🎶
+
+> Ah la porte c'est ouverte.
+
+[[C'est toi chérie ? ->end 1]]
+
+::end 1
+
+Non c'est pas moi.
+Ça doit être maman!
+
+> Ah, déjà ?
+
+왔어.
+밥 먹었어? 배고파?
+
+Non maman, on n'a pas mangé.
+
+Mais je commence à avoir un peu faim.
+
+> Comment tu fais pour avoir faim ?!
+> On a mangé un barbecue il y a deux heures !
+> On en pouvait plus à la fin.
+
+Ça donne faim de ranger!
+
+[[... ? ->end 11]]
+
+::end 11
+
+밥 먹자-manger! 고기-viande 사왔어!
+밥 먹고 고스톱-GoStop 치자!
+
+Bonne idée !
+
+[[Ok, allez, on mange alors. 😀 ->credit]]
+
+::credit
+**Chez maman Kim**-김씨네<br>
+*Pas Beau Game-빠보게임 2020*
+
+Robin Moretti et Héyan Park
+
+> <a href="https://twitter.com/RobinMoretti" target="_blank">Twitter</a>
+> *Si le jeu vous as plus, soutenez les auteurs sur ⤵*
+> <a target="_blank" href="https://robinmoretti.itch.io/maman-kim">Itch.io</a>

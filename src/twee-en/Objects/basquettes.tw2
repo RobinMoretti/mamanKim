@@ -1,0 +1,29 @@
+::Basquette bleu
+<% if(visited("Basquette bleu 1") < 2){ %>
+<script>window.flash();</script>
+> Tu sais, cette paire de chaussures, maman a vraiment voulu que je les essaie la dernière fois.
+
+Oui, c'est son genre.
+
+> C'est vrai que je parle pas bien coréen, ok.
+> Mais les chiffres, je sais les lire.
+> Et puis si je trouve jamais de chaussure à ma taille en magasin, c'est bien que les chaussures qu'on trouve dehors ne m'iront jamais...
+>  En plus je vois bien qu'elles son trop petites...
+
+Alors ?
+
+> Elle a quand même tenu à ce que je les mettes.
+
+...
+
+[[ ... ->Basquette bleu 1]]
+<% } %>
+
+::Basquette bleu 1
+...
+
+> Et bien, elles ne m'allaient pas du tout.
+
+Ah alors ?
+
+> Elles sont toujours là.
