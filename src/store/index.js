@@ -52,11 +52,12 @@ export default new Vuex.Store({
         commit('updatePlayTime');
       }
     },
-    reset: function({dispatch, commit, state}){
+    reset: function({dispatch, commit, state}, reload){
       dispatch("places/reset");
       dispatch("objects/reset");
       commit("resetSave");
-      location.reload(true);
+      if(reload)
+        location.reload(true);
     },
     endGame: function({commit}) {
       commit("toggleEndGame");

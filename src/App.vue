@@ -11,12 +11,16 @@
       <div v-show="!loaded" key="1">Loading...</div>
       <div id="app" v-show="loaded" key="2">
         <div class="mains">
-          <h3>Dans les mains</h3>
+          <h3>{{ $t("game.mains") }}</h3>
           <inventory name="hands" :active-place-obj="handsObject"></inventory>
           <hr>
           <p class="play-mode">
-            <span :class="playMode == 'looking' ? 'selected' : ''" v-on:click="changePlayMode('looking')">👁<p>Regarder</p></span>
-            <span :class="playMode == 'picking' ? 'selected' : ''" v-on:click="changePlayMode('picking')">🖐<p>Prendre</p></span>
+            <span :class="playMode == 'looking' ? 'selected' : ''" v-on:click="changePlayMode('looking')">
+              👁<p>{{$t("game.regarder")}}</p>
+            </span>
+            <span :class="playMode == 'picking' ? 'selected' : ''" v-on:click="changePlayMode('picking')">
+              🖐<p>{{$t("game.prendre")}}</p>
+            </span>
           </p>
           <p class="play-info" :class="{ hidden: !hideInfoMode }">Any key to switch</p>
 
@@ -32,7 +36,6 @@
 
         <vue-custom-scrollbar class="space">
           <transition name="fade">
-
             <div v-if="displayPlace && activePlaceObj && !endGame">
               <h3 v-if="placeStore.places[activePlaceName]">{{ placeStore.places[activePlaceName].name }}</h3>
 
@@ -77,11 +80,24 @@
         </vue-custom-scrollbar>
 
         <footer>
-          <h1>Chez maman Kim</h1>
+          <h1>{{ $t("app.app-name") }}</h1>
           -
           <transition name="fade">
-            <p v-on:click="dResetGame" v-if="!displayResetGame"> Recommencer</p>
-            <p v-else> <a href="#" v-on:click="resetGame">vraiment ?</a> la sauvegarde vas être supprimé. </p>
+            <p v-on:click="dResetGame" v-if="!displayResetGame"> {{ $t('game.recommencer') }}</p>
+            <p v-else> <a href="#" v-on:click="resetGame">{{ $t('game.vraiment') }}</a> {{ $t('game.sauvegarde-supprime') }} </p>
+          </transition>
+          -
+          <transition name="fade">
+            <p v-if="!displayChangingLang" class="languages-container">
+              {{ $t('lang.langues') }}
+              <span class="languages">
+                <a href="#" v-on:click="dChangingLang('fr')" :class="{ inactive: this.$i18n.locale == 'fr'}">{{ $t('lang.français') }}</a>
+                <a href="#" v-on:click="dChangingLang('en')" :class="{ inactive: this.$i18n.locale == 'en'}">{{ $t('lang.anglais') }}</a>
+              </span>
+            </p>
+            <p v-else>
+              <a href="#" v-on:click="changingLang">{{ $t('game.vraiment') }}</a> {{ $t('game.sauvegarde-supprime') }}
+            </p>
           </transition>
         </footer>
       </div>
@@ -104,12 +120,15 @@ export default {
         maxScrollbarLength: 60
       },
       displayResetGame: false,
+      displayLanguages: false,
+      displayChangingLang: false,
       tweeUrl: "twee-build/index.html",
       displayIframe: false,
       loaded: false,
       lestKeyEvent: false,
       hideInfoMode: true,
-      flashIframe: false
+      flashIframe: false,
+      tempLang: null
     }
   },
   computed: {
@@ -162,11 +181,28 @@ export default {
     dResetGame: function() {
       this.displayResetGame = true;
       setTimeout(()=>{
-        this.displayResetGame = true;
+        this.displayResetGame = false;
       }, 3000);
     },
+    dChangingLang: function(lang) {
+      this.tempLang = lang;
+      this.displayChangingLang = true;
+
+      console.log("this.tempLang = " + this.tempLang);
+
+      setTimeout(()=>{
+        this.displayChangingLang = false;
+        this.tempLang = null;
+      }, 3000);
+    },
+    changingLang: function() {
+      this.$store.dispatch("reset", false);
+      var url = new URL(location.href);
+      url.searchParams.set('lang', this.tempLang);
+      location.href = url.href;
+    },
     resetGame: function() {
-      this.$store.dispatch("reset");
+      this.$store.dispatch("reset", true);
     },
     resetPlayer: function(){
       this.$store.commit("places/resetPlayer");
@@ -490,6 +526,29 @@ footer{
 
   font-style: italic;
 }
+
+.languages-container{
+  .languages{
+    width: 0;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    bottom: -3px;
+
+    .inactive{
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+  }
+}
+
+.languages-container:hover{
+  .languages{
+    width: unset;
+  }
+}
+
 .locked{
   cursor: not-allowed !important;
   // opacity: 0.3;

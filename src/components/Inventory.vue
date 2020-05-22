@@ -19,6 +19,7 @@
           v-if="topAvailable"
           :style="topAvailableStyle"></div>
     </vue-custom-scrollbar>
+
     <div class="place-inventory" :id="name" :style="inventoryStyle"  v-else>
       <p-object
           :space="name"
@@ -35,7 +36,7 @@
     </div>
 
     <div class="informations">
-      <p>Poid maximum: {{actualWeight}}/{{maximumWeight}}</p>
+      <p>{{$t("game.poid-maximum")}}: {{actualWeight}}/{{maximumWeight}}</p>
     </div>
   </div>
 </template>
@@ -87,9 +88,6 @@ export default {
       if(this.name == "hands"){
         return this.$store.state.places.playerMaximunWeight;
       }else if(this.activePlaceObj){
-
-        var maximumWeight = null;
-
         if(this.activePlaceObj.maximumWeight){
           return this.activePlaceObj.maximumWeight;
         }
@@ -116,13 +114,10 @@ export default {
     },
     placeObjects: function () {
       if(this.name != "hands"){
-        // console.log("this.name = " + this.name);
-        var placeStore = this.$store.state.places;
-        return placeStore.places[this.name].inventory;
+        return this.$store.state.places.places[this.name].inventory;
       }
       else {
-        var placeStore = this.$store.state.places;
-        return placeStore.player;
+        return this.$store.state.places.player;
       }
     },
     objects: function(){

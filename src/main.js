@@ -18,10 +18,27 @@ import styles from 'normalize.css'
 
 import objectsYml from './objects.yml'
 
+window.lang = new URL(location.href).searchParams.get('lang');
+if(!window.lang){
+	window.lang = 'fr';
+}
+
+import VueI18n from 'vue-i18n'
+import messages from './translation';
+
+Vue.use(VueI18n)
+
+const i18n = new VueI18n({
+  	locale: window.lang, // set locale
+  	messages, // set locale messages
+	fallbackLocale: 'fr',
+})
+
 Vue.mixin({
 	data () {
 	  return {
 	    publicPath: process.env.BASE_URL,
+	    lang: 'fr',
 	  }
 	},
 	computed: {
@@ -104,9 +121,11 @@ Vue.mixin({
 })
 
 const app = new Vue({
-	store,
-	render: h => h(App),
+    store,
+	i18n,
+    render: h => h(App)
 }).$mount('#app')
+
 
 // store configaration
 store.$app = app;
