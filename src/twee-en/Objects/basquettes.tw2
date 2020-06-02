@@ -1,18 +1,18 @@
 ::Basquette bleu
 <% if(visited("Basquette bleu 1") < 2){ %>
 <script>window.flash();</script>
-> Tu sais, cette paire de chaussures, maman a vraiment voulu que je les essaie la dernière fois.
+> Do you know this shoes, mam insisted a lot that I try them last time. 
 
-Oui, c'est son genre.
+Yes, that's her style.
 
-> C'est vrai que je parle pas bien coréen, ok.
-> Mais les chiffres, je sais les lire.
-> Et puis si je trouve jamais de chaussure à ma taille en magasin, c'est bien que les chaussures qu'on trouve dehors ne m'iront jamais...
->  En plus je vois bien qu'elles son trop petites...
+> I know, I'm not able to speak correctly in Korean.
+> But numbers... I know them. 
+> Et more, It's already super hard to find shoes at  my size right ? 
+> So I knew they are a way too small for me. 
 
-Alors ?
+So ? 
 
-> Elle a quand même tenu à ce que je les mettes.
+> She continued to insist.
 
 ...
 
@@ -22,8 +22,8 @@ Alors ?
 ::Basquette bleu 1
 ...
 
-> Et bien, elles ne m'allaient pas du tout.
+> Well, they didn't suit me at all.
 
-Ah alors ?
+Soooooo ?
 
-> Elles sont toujours là.
+> They are still here.

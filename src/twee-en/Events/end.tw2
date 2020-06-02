@@ -3,43 +3,42 @@
 
 Bili diling 🎶
 
-> Ah la porte c'est ouverte.
+> Ah that's the door.
 
-[[C'est toi chérie ? ->end 1]]
+[[Hey sweetie, is that you ? ->end 1]]
 
 ::end 1
 
-Non c'est pas moi.
-Ça doit être maman!
+No, it should be mom!
 
-> Ah, déjà ?
+> Already ?
 
 왔어.
 밥 먹었어? 배고파?
 
-Non maman, on n'a pas mangé.
+No mam, we already eat.
 
-Mais je commence à avoir un peu faim.
+But I'm starting to feel hungry...
 
-> Comment tu fais pour avoir faim ?!
-> On a mangé un barbecue il y a deux heures !
-> On en pouvait plus à la fin.
+> How is it possible ?!
+> We eat a barbecue two hours ago!
+> We were so full...
 
-Ça donne faim de ranger!
+Stowing makes me hungry !
 
 [[... ? ->end 11]]
 
 ::end 11
 
-밥 먹자-manger! 고기-viande 사왔어!
+밥 먹자-Eat! 고기-Meat 사왔어!
 밥 먹고 고스톱-GoStop 치자!
 
-Bonne idée !
+Good idea !
 
-[[Ok, allez, on mange alors. 😀 ->credit]]
+[[Ok ok, let's eat 😀 ->credit]]
 
 ::credit
-**Chez maman Kim**-김씨네<br>
+**Kim's one room**-김씨네<br>
 *Pas Beau Game-빠보게임 2020*
 
 Robin Moretti et Héyan Park

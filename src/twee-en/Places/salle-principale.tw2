@@ -3,16 +3,16 @@
 <script>story.show('endGame');</script>
 <% } else if(visited("salle-principale") < 2) { %>
 <script>window.flash();</script>
-Bon ! Nous y voila.
+So, here we are.
 
-J'espère qu'on aura le temps de ranger un peu.
+Hope we will have time to clean some. 
 
-On ne pourra pas tout faire aujourd'hui de toutes façons.
+We can't do everything today anyway.
 
-Donc les objectif:
-Ranger **toute la bouffe**, **le meuble télé** et **le frigo** et si on peut, **la buanderie**.
+Objectives are:
+Clean **the food** and **the fridge**, the **tv place** and if we can **the laundry room**.  
 
-Pour le reste on oublie !
+Forgot about anything else.
 
 > Ok, lets go !
 
@@ -24,9 +24,9 @@ Pour le reste on oublie !
 <% } else if(hasVisited("pourquoi autant de pomme") && s["carton-pomme-livree"] == true) { %>
 	<% if(!s["carton-pomme"]){ %>
 <script>window.flash();</script>
-Alors il y a quoi dans le carton ?
+What's inside the box ?
 
->Je ne sais pas, je ne l'ai pas encore ouvert...
+> I don't know, I hadnt open it yet.
 	<% } %>
 
 <% } else if(visited("salle-principale") > 3 && hasVisited("pourquoi autant de pomme") && !s["carton-pomme"]) { %>
@@ -37,28 +37,28 @@ Alors il y a quoi dans le carton ?
 
 ::pomme-1-discussion
 <script>window.flash();</script>
-> Bon déjà un carton de pomme...
+> Ok, one big apple delivery box.
 
-Hein ?! Des pommes encore ?
+Hein ?! Apples again ? 😟
 
-> Oui, j'espère qu'elle a au moins varié le deuxième carton...
+> Yes, I hope the next one is different...
 
 ...
 
 ::pomme-2-discussion
 <script>window.flash();</script>
-Alors ?
+So ?
 
-> Devine.
+> Try to guess.
 
-Des pommes...
+Apples...
 
-> Oui mais pas que!
+> Yes but not only!
 
 ...
 
-Du jus de pomme ?
+Apple juice ?
 
-> Non des pommes <%= s["carton-pomme-couleur"] %>s!
+> No, <%= s["carton-pomme-couleur"] %> apples!
 
 

@@ -12,7 +12,7 @@
 
 Bili diling 🎶
 
-> (La porte a claqué...)
+> (The door slammed...)
 
 <% s["vestibule-locked"] = true %>
 <script>console.log(story.$vue.storyFunctions("toggle-place", { place: "vestibule", value: true }))</script>
@@ -22,33 +22,32 @@ Bili diling 🎶
 <% } else if(s["vestibule-locked"]) { %>
 
 <script>window.flash();</script>
-<script>console.log("fffffffff")</script>
-[[Essayer d'ouvrir la porte ->essaie porte]]
+[[Open the door ->essaie porte]]
 
 <% } else if(visited("palier") == 0) { %>
-On rentre ?
+Let's get inside.
 <% } %>
 
 ::porte claque
-[[Essayer d'ouvrir la porte ->essaie porte]]
-[[Taper le code sur le digicode ->essaie digicode]]
+[[Open the door ->essaie porte]]
+[[Write the digicode ->essaie digicode]]
 <% if(s["essaie-ouvrir-porte"] && s["essaie-ouvrir-porte"] > 6) { %>
-[[Toquer à la porte ->toquer la porte]]
+[[Nock at the door ->toquer la porte]]
 <% } %>
 
 
 ::essaie porte
-> (Nope, la porte est fermée...)
+> (Nope, the door is close...)
 <% if(s["essaie-ouvrir-porte"] == null ) { %>
 <% s["essaie-ouvrir-porte"] = 0 %>
 <% } else { %>
 <% s["essaie-ouvrir-porte"] += 1 %>
 <% } %>
 
-[[Essayer d'ouvrir la porte ->essaie porte]]
-[[Taper le code sur le digicode ->essaie digicode]]
+[[Open the door ->essaie porte]]
+[[Write the digicode ->essaie digicode]]
 <% if(s["essaie-ouvrir-porte"] && s["essaie-ouvrir-porte"] > 3) { %>
-[[Toquer à la porte ->toquer la porte]]
+[[Nock at the door ->toquer la porte]]
 <% } %>
 
 ::essaie digicode
@@ -67,15 +66,15 @@ On rentre ?
 <% if(s["essaie-digicode"] == 1) { %>
 > ...mmmm
 <% } else if(s["essaie-digicode"] == 2){ %>
-> non.
+> no.
 <% } else if(s["essaie-digicode"] == 3){ %>
-> non...
+> no...
 <% } else if(s["essaie-digicode"] == 4){ %>
-> Toujour pas.
+> Still not.
 <% } else if(s["essaie-digicode"] == 5){ %>
-> Bon c'est chiant maintenant.
+> Getting tired.
 <% } else if(s["essaie-digicode"] == 6){ %>
-> Putin.
+> Shit.
 <% } else if(s["essaie-digicode"] == 7){ %>
 > ( *&%@#$! )
 <% } else{ %>
@@ -91,7 +90,7 @@ On rentre ?
 [[2302 ->essaie digicode]]
 [[2502 ->essaie digicode]]
 <% } else{ %>
-[[Toquer à la porte ->toquer la porte]]
+[[Nock at the door ->toquer la porte]]
 <% } %>
 
 
@@ -106,10 +105,10 @@ On rentre ?
 
 ....
 
-> ( décidemment c'est compliqué aujourd'hui )
+> ( decidedly, today is complex )
 
-[[Toquer fort ->toquer la porte encore encore]]
-[[Appeller Hyeyoung-혜영 ->appeller hyeyoung]]
+[[Nock harder ->toquer la porte encore encore]]
+[[Call Hyeyoung-혜영 ->appeller hyeyoung]]
 
 ::toquer la porte encore encore
 *BOUM BOUM BOUM*
@@ -120,7 +119,7 @@ On rentre ?
 	story.show('hyeyoung ouvre la porte');
 }, 3000)</script>
 
-[[Appeler Hyeyoung-혜영 ->appeller hyeyoung]]
+[[Call Hyeyoung-혜영 ->appeller hyeyoung]]
 
 ::appeller hyeyoung
 
@@ -141,23 +140,23 @@ On rentre ?
 <script>window.flash();</script>
 *Didoouu Dou Dute* 🎶
 
-Et bin, tu fais quoi ?!
+Hey, what are you doing ?!
 
-> J'ai oublié ce fichu code!
+> I forgot this dainm 
 
-T'es débile-바보 vraiment! <br>
+So stupid-바보 sometime! <br>
 
 <% if(s["porte-called-yobo"]) { %>
-En plus je t'ai déjà dit d'arrêter de m'appeler yobo, on dirait un vieux, c'est gras-느끼해.
+And stop to call me yobo, I feel it like you're so old guy and so slimy-느끼해.
 
-> Mais yoboo-여버 j'aim...
+> But yoboo-여버, I lik...
 
-<span class="shaking">Euuuuuuuuuuuuuuu</span>, arrête. C'est grassss-느끼해애애!
+<span class="shaking">Euuuuuuuuuuuuuuu</span>, Stop it. So slimmmy-느끼해애애!
 
 > Ok, ok ....
 <% } %>
 
-Allez viens on s'y met.
+Come on, let's get inside.
 
 <% s["vestibule-locked"] = false %>
 <script>console.log(story.$vue.storyFunctions("toggle-place", { place: "vestibule", value: false }))</script>

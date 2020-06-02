@@ -1,11 +1,11 @@
 ::vestibule
 <% if(visited("vestibule") < 2){ %>
 <script>window.flash();</script>
-Ouffff on ne peut pas passer.
+Oufff, we can't go farther.
 
-Il faut libérer le passage un minimum !
+We have to clear the way.
 
-> Ok je vais faire de la place, t'inquètes.
+> Ok dont worry, I'll do it.
 <% } %>
 
 

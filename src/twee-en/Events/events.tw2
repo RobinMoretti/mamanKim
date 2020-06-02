@@ -1,106 +1,107 @@
 ::vole colis-1
 <script>window.flash();</script>
-[[ Chérie, il y avait des colis dehors... ->vole colis-1-1]]
+[[ Honey, there was some parcel outside... ->vole colis-1-1]]
 
 ::vole colis-1-1
-Ah, ce n'est pas à nous. <br>
-Regarde c'est écrit **<%= s["colis-1-owner"] %>**... <br>
-Remets-le là où tu l'as trouvé s'il te plait.
+Mmmm, it is not our's. <br>
+Look, it is written **<%= s["colis-1-owner"] %>**... <br>
+Put it back where it was, please.
 
 ::beaucoup de bouteilles vide
 <% if(visited("beaucoup de bouteilles vide" < 2)) { %>
 <script>window.flash();</script>
-> Mais pourquoi il y a autant de bouteilles vides d'alcools ?
-> Je croyais qu'elle ne buvait pas d'alcool ta maman ?
+> But why there is so many empty bottles of alcohol ?
+> I thought mam dont drink...
 
-Depuis que je lui ai dit qu'on pouvait récupérer de l'argent en les ramenant à l'épicerie du coin-편의점 ou au super marché, elle ramasse toutes les bouteilles vides du quartier.
+Since I told her we are able to get some coins if we get back these bottle at the convenience store-편의점 or at the super market, she's bringing back all the street's bottles.
 
-> ah wé, mais c'est un peu petit ici quand même...
+> Well, it seem to be too smalll here for that.
 
-[[On en fait quoi du coup ?  ->beaucoup de bouteilles vide 1]]
+[[What are we doing ? ->beaucoup de bouteilles vide 1]]
 
 <% } %>
 
 ::beaucoup de bouteilles vide 1
 
-On les met de côté dehors dans des sacs ou des cartons, on les ramènera plus tard ! J'espère, on en aura assez pour acheter au moins une bière 😅.
+Now, just put it all in a bag or in a box outside, we will go to the store later with it ! Maybe there will be enough to buy some beers 😅.
 
->Ummmmm, petite bière! Il nous en faut combien ?
+>Ummmmm, beeers! How much do we need ?
 
- 100원-won chacunes, donc au moins une vingtaine !
+ It's 100원-won each, at least twenty of them.
 
-> Ok! J'accepte la mission.
+> Duty approuved !.
 
 ::Patate douce
 
-Uhmmmmmm mes préférées, patates douces marrons-밤거구마!
+Uhmmmmmm my favorite, chestnuts sweet potatoes-밤거구마!
 
-Trop bonnes, à la vapeur.
+Steamed, 🤤.
 
 ::Sace de riz congelé
 <script>window.flash();</script>
 
-[[Tiens, qu'est-ce qu'elle fait maman, avec autant de riz cuit congelé ? ->Sace de riz congelé 1]]
+[[Well, well, what's mam is doing with so much cooked rice ? ->Sace de riz congelé 1]]
 
 ::Sace de riz congelé 1
-Je sais pas, pourquoi ?
+I don't know, why ?
 
-> La dernière fois, elle nous a fait des gâteaux de riz-떡 avec, non ?
+> Last time, she made rice cakes-떡 with it, right ?
 
-Non pas avec le riz déjà cuit.
+Not with cooked rice.
 
-> Ah bon ? C'est ce que tu m'avais dis pourtant, j'ai l'impression...
+> But, I feel it's what you told me before...
 
-Non.
+Nop.
 
-[[Bah si, j'ai pas pu l'inventer ! ->Sace de riz congelé 2]]
+[[So do I lost my mind ? Did I create that memory ->Sace de riz congelé 2]]
 
 ::Sace de riz congelé 2
 
-Biensur que non, tu peux.
+No, you did. 
 
-> Quoi non, oui, je ne l'ai pas inventé !
+> What no ? Yes, I didn't create it !
 
-Oui, ce n'est pas possible de faire faire des gâteaux de riz-떡 avec du riz déjà cuit. Donc non, tu l'as inventé.
+Yes, It is not possible to make rice cake-떡 with COOKED rice. So no, you created it.
 
-> Non je l'ai inventé ?
+> No, I created it ?
 
-Oui.
+Yes .
 
 [[... ?! ->Sace de riz congelé 3]]
 
 ::Sace de riz congelé 3
 
-> En français chérie, non c'est oui. Ça m'embrouille trop là.
+> Honey, we are talking in Korean. You confused me.
 
-Et alors c'est la Corée ici !
+Hey, where are we ?
 
-> Oui, certes.
+> ...
+> yeuse, but ...
 
 ...
 
-> Bon ok, j'abandonne.
+> Ok, this time, you win.
 
 ::livraison
 <script>window.flash();</script>
 *BOUM BOUM BOUM*
 
-Ah tiens, il y a quelqu'un dehors.
+Oh, well, there is someone outside.
 
-Je reviens.
+I'll check the guy out.
 
-> Ok, je fais ma vie moi.
+> Yeap, je fais ma vie.
 
 [[ ... ->livraison 1]]
 
 ::livraison 1
 
-On a reçu deux énormes cartons.
+We received two big packages.
 
-Tu peux les récuper ?
-Ils sont sur le palier.
+Can you grab them and put them inside ?
+There are on the landing.
 
-> Yeap, biensur.
+> Yes sure.
 
 ::carton-pomme-1
 <% if(s["carton-pomme"] == null) { %>
@@ -111,13 +112,13 @@ Ils sont sur le palier.
 
 <% if(s["carton-pomme"] == 1) { %>
 <script>window.flash();</script>
-> Non mais...
+> Seriusly...
 <% } %>
 
 <% if(s["carton-pomme"] == 2) { %>
 <script>window.flash();</script>
 <% s["carton-pomme-couleur"] = "rouge"; %>
-> Argh, elle a vraiment recommandé que des pommes!
+> Argh, she ordered only apples ?!
 > Arrgggggg
 <% } %>
 
@@ -130,12 +131,12 @@ Ils sont sur le palier.
 
 <% if(s["carton-pomme"] == 1) { %>
 <script>window.flash();</script>
-> Non mais...
+> Seriusly...
 <% } %>
 
 <% if(s["carton-pomme"] == 2) { %>
 <script>window.flash();</script>
 <% s["carton-pomme-couleur"] = "verte"; %>
-> Argh, elle a vraiment recommandé que des pommes!
+> Argh, she ordered only apples ?!
 > Arrgggggg
 <% } %>

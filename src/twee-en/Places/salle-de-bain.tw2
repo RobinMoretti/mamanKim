@@ -1,8 +1,7 @@
 ::salle-de-bain
 <% if(visited("salle-de-bain") < 2) { %>
 <script>window.flash();</script>
-Laisse ici, on ne touche à rien, ici.
-On nettoiera la prochaine fois.
+Don't touch anything here. Let's clean that another time.
 
 > ok.
 
