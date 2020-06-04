@@ -102,10 +102,10 @@ export default {
 
       if(this.playMode == "picking" || shift){
 
-      // console.log("picked = ");
+      console.log("picked = ");
 
         this.$nextTick(() => {
-          console.log('trying to take')
+          // console.log('trying to take')
           if(this.object.name != this.$store.state.places.activePlace){
             if(this.detailObject.takable != null && this.detailObject.takable == false){
             }
@@ -163,13 +163,13 @@ export default {
 
         for (var i = 0; i < clickEvents.length; i++) {
           this.story().show(clickEvents[i].params.passage)
-          console.log(clickEvents[i].params.passage);
+          // console.log(clickEvents[i].params.passage);
         }
       }
     },
     objectIspackable: function(target){
-      console.log("objectIspackable =  ------------/");
-      console.log('target', target)
+      // console.log("objectIspackable =  ------------/");
+      // console.log('target', target)
       // weight available ------------
       var weightState = false;
       if(this.inventoryMaximumWeight(target) > 0){
@@ -186,6 +186,8 @@ export default {
         this.flashError("weight", target);
       }
 
+      console.log("check weight");
+
       // space available ------------
 
       var heightAvailable = true;
@@ -200,10 +202,12 @@ export default {
       if((fictifHeightOffset +  this.detailObject.height) >= targetMaxHeight){
 
         heightAvailable = false;
-
+        // console.log("space error = ");
         this.flashError("space", target);
 
       }
+
+      console.log("check space");
 
       var activePlaceIsNotAChildOfObject = true;
 
@@ -223,24 +227,24 @@ export default {
         var getActivePlaceObject = this.placesStore.places[target];
         var getActivePlaceName = target;
 
-        console.log("getActivePlaceObject = ", getActivePlaceObject);
-        console.log("getActivePlaceObjectparentName = ", getActivePlaceObject.parentPlace);
-        console.log("activeObjectName = ", activeObjectName);
-        console.log("target = ", target);
-        console.log("getActivePlaceName = ", getActivePlaceName);
+        // console.log("getActivePlaceObject = ", getActivePlaceObject);
+        // console.log("getActivePlaceObjectparentName = ", getActivePlaceObject.parentPlace);
+        // console.log("activeObjectName = ", activeObjectName);
+        // console.log("target = ", target);
+        // console.log("getActivePlaceName = ", getActivePlaceName);
 
         if(getActivePlaceObject.parentPlace && getActivePlaceObject.parentPlace != activeObjectName){
           while (getActivePlaceObject.parentPlace && getActivePlaceObject.parentPlace != activeObjectName) {
-            console.log("this!!! = ", getActivePlaceObject);
+            // console.log("this!!! = ", getActivePlaceObject);
             getActivePlaceObject = this.placesStore.places[getActivePlaceObject.parentPlace];
 
-            console.log("getActivePlaceObject.parentPlace = " + getActivePlaceObject.parentPlace);
+            // console.log("getActivePlaceObject.parentPlace = " + getActivePlaceObject.parentPlace);
             if(getActivePlaceObject.parentPlace != activeObjectName){
               activePlaceIsNotAChildOfObject = true;
             }
             else{
               activePlaceIsNotAChildOfObject = false;
-              console.log("Is Child error");
+              // console.log("Is Child error");
             }
 
             if(getActivePlaceObject.parentPlace == "hands"){
@@ -249,10 +253,18 @@ export default {
 
           }
         }else {
-          console.log("Is Child error");
+          // console.log("Is Child error");
           this.flashError("targetIsChild", { objectName: this.object.name, space: this.space, target: target });
         }
+
+
+        console.log("check children stat = ");
       }
+
+
+      // console.log("weightState = " + weightState);
+      // console.log("heightAvailable = " + heightAvailable);
+      // console.log("activePlaceIsNotAChildOfObject = " + activePlaceIsNotAChildOfObject);
 
       if(weightState && heightAvailable && activePlaceIsNotAChildOfObject){
         return true;

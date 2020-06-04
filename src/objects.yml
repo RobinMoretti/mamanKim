@@ -1155,6 +1155,7 @@ meuble-tv-1:
   width: 150
   height: 60
   picto: 🗄
+  takable: false
   description: >
     Meuble de télévision rose saumon en bon état.
   place:

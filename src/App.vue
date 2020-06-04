@@ -606,4 +606,11 @@ footer{
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+.fade-error-enter-active, .fade-error-leave-active {
+  transition: background-color .5s;
+}
+.fade-error-enter, .fade-error-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  background-color: red;
+}
 </style>

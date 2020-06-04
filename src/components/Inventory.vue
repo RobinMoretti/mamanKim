@@ -1,8 +1,8 @@
 <template>
   <div :id="'inventory-' + name">
-
     <vue-custom-scrollbar
-        class="place-inventory"
+        class="place-inventory special"
+        :class="{ error: error}"
         :id="name"
         :style="inventoryStyle"
         v-if="activePlaceObj.scrollable">
@@ -20,7 +20,11 @@
           :style="topAvailableStyle"></div>
     </vue-custom-scrollbar>
 
-    <div class="place-inventory" :id="name" :style="inventoryStyle"  v-else>
+    <div class="place-inventory"
+      :id="name"
+      :style="inventoryStyle"
+      :class="{ error: error }"
+      v-else>
       <p-object
           :space="name"
           :object="object"
@@ -43,15 +47,17 @@
 
 <script>
 import vueCustomScrollbar from 'vue-custom-scrollbar'
+import EventBus from './../event-bus';
 
 export default {
   components: {
     vueCustomScrollbar
   },
-  // data: function () {
-  //  return {
-  //  }
-  // },
+  data: function () {
+   return {
+    error: false
+   }
+  },
   props: {
     name: String,
     activePlaceObj: Object
@@ -129,6 +135,19 @@ export default {
   mounted: function(){
     this.$store.dispatch('places/updatePlaceWeight', this.name);
     // this.actualWeight = weight;
+
+    EventBus.$on("FLASH_IVENTORY", (payLoad) => {
+      // console.log("payLoad = " + payLoad);
+      // console.log("payLoad = " + this.name);
+      if(payLoad == this.name){
+        console.log("FLASH_IVENTORY");
+        this.error = true;
+
+        setTimeout(()=>{
+          this.error = false;
+        }, 800);
+      }
+    });
   }
 }
 </script>

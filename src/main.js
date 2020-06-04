@@ -34,6 +34,8 @@ const i18n = new VueI18n({
 	fallbackLocale: 'fr',
 })
 
+import EventBus from './event-bus';
+
 Vue.mixin({
 	data () {
 	  return {
@@ -65,8 +67,8 @@ Vue.mixin({
 			// return false;
 		},
 		flashError: function(erorType, target){
-			console.log("target = " + target)
-			console.log("erorType = " + erorType)
+			// console.log("target = " + target)
+			// console.log("erorType = " + erorType)
 
 			if(erorType == "weight"){
 				var parentTarget = document.querySelector('#inventory-' + target + " .informations");
@@ -77,12 +79,7 @@ Vue.mixin({
 					parentTarget.classList.remove("error");
 				}, 500);
 			} else if(erorType == "space"){
-				var parentTarget = document.querySelector('#inventory-' + target + " #" + target);
-				parentTarget.classList.add("error");
-
-				setTimeout(()=>{
-					parentTarget.classList.remove("error");
-				}, 500);
+       			EventBus.$emit('FLASH_IVENTORY', target);
 			} else if(erorType == "targetIsChild"){
 				var parentTarget = document.querySelector('#' + target.space + '-' + target.objectName);
 				var parentTarget1 = document.querySelector('#inventory-' + target.target + " .place-inventory" );
