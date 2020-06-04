@@ -76,15 +76,24 @@ Vue.mixin({
 				setTimeout(()=>{
 					parentTarget.classList.remove("error");
 				}, 500);
-			}
-
-			if(erorType == "space"){
+			} else if(erorType == "space"){
 				var parentTarget = document.querySelector('#inventory-' + target + " #" + target);
 				parentTarget.classList.add("error");
 
 				setTimeout(()=>{
 					parentTarget.classList.remove("error");
 				}, 500);
+			} else if(erorType == "targetIsChild"){
+				var parentTarget = document.querySelector('#' + target.space + '-' + target.objectName);
+				var parentTarget1 = document.querySelector('#inventory-' + target.target + " .place-inventory" );
+				parentTarget.classList.add("error");
+				parentTarget1.classList.add("error");
+
+				setTimeout(()=>{
+					parentTarget.classList.remove("error");
+					parentTarget1.classList.remove("error");
+				}, 500);
+
 			}
 		},
 		updatePassage:function(passage){

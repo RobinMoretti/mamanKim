@@ -2,8 +2,7 @@
   <span
       class="object"
       :class="objectClass"
-      :id='space + "-" +
-      object.name'
+      :id='space + "-" + object.name'
       :style="objectStyle"
       v-on:click="picked">
     <span v-html="detailObject.picto" v-if="objects != null && object"></span>
@@ -106,6 +105,7 @@ export default {
       // console.log("picked = ");
 
         this.$nextTick(() => {
+          console.log('trying to take')
           if(this.object.name != this.$store.state.places.activePlace){
             if(this.detailObject.takable != null && this.detailObject.takable == false){
             }
@@ -168,7 +168,7 @@ export default {
       }
     },
     objectIspackable: function(target){
-      // console.log("objectIspackable =  ------------/");
+      console.log("objectIspackable =  ------------/");
       console.log('target', target)
       // weight available ------------
       var weightState = false;
@@ -198,14 +198,63 @@ export default {
       var fictifHeightOffset = fictifDiv.offsetTop - 4;
 
       if((fictifHeightOffset +  this.detailObject.height) >= targetMaxHeight){
+
         heightAvailable = false;
 
         this.flashError("space", target);
 
       }
 
+      var activePlaceIsNotAChildOfObject = true;
 
-      if(weightState && heightAvailable){
+      if(target != "hands"){
+        activePlaceIsNotAChildOfObject = false;
+        // if is no in the child
+        var place = this.placesStore.places[this.object.name];
+
+        // get the active place
+        // go trgouht all parent and check if there is no active object
+
+        var isChild = false;
+        var level = 0;
+        var index = 0;
+
+        var activeObjectName = this.object.name;
+        var getActivePlaceObject = this.placesStore.places[target];
+        var getActivePlaceName = target;
+
+        console.log("getActivePlaceObject = ", getActivePlaceObject);
+        console.log("getActivePlaceObjectparentName = ", getActivePlaceObject.parentPlace);
+        console.log("activeObjectName = ", activeObjectName);
+        console.log("target = ", target);
+        console.log("getActivePlaceName = ", getActivePlaceName);
+
+        if(getActivePlaceObject.parentPlace && getActivePlaceObject.parentPlace != activeObjectName){
+          while (getActivePlaceObject.parentPlace && getActivePlaceObject.parentPlace != activeObjectName) {
+            console.log("this!!! = ", getActivePlaceObject);
+            getActivePlaceObject = this.placesStore.places[getActivePlaceObject.parentPlace];
+
+            console.log("getActivePlaceObject.parentPlace = " + getActivePlaceObject.parentPlace);
+            if(getActivePlaceObject.parentPlace != activeObjectName){
+              activePlaceIsNotAChildOfObject = true;
+            }
+            else{
+              activePlaceIsNotAChildOfObject = false;
+              console.log("Is Child error");
+            }
+
+            if(getActivePlaceObject.parentPlace == "hands"){
+              break;
+            }
+
+          }
+        }else {
+          console.log("Is Child error");
+          this.flashError("targetIsChild", { objectName: this.object.name, space: this.space, target: target });
+        }
+      }
+
+      if(weightState && heightAvailable && activePlaceIsNotAChildOfObject){
         return true;
       }
       return false;

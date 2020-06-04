@@ -13,7 +13,7 @@ export default {
 		'sauvegarde-supprime': "la sauvegarde vas être supprimé.",
 		"prendre": "Prendre",
 		"regarder": "Regarder",
-		"Poid maximum": "Poid maximum",
+		"poid-maximum": "Poid maximum",
 		"mains": "Dans les Mains"
 	}
 }

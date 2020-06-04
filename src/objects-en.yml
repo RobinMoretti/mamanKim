@@ -217,9 +217,9 @@ etagere-structure-metallique-2:
   takable: false
   picto: Rack
   description: >
-    Étagère constituée d'un maillage fin métallique.
+    A black rack with a metalic mesh.
   place:
-    name: Intérieur d'Metalic rack
+    name: Metalic rack interior
     width: 200
     height: 100
     infinite: false
@@ -235,9 +235,9 @@ etagere-structure-metallique-3:
   takable: false
   picto: Rack
   description: >
-    Étagère constituée d'un maillage fin métallique.
+    A black rack with a metalic mesh.
   place:
-    name: Intérieur d'Metalic rack
+    name: Metalic rack interior
     width: 200
     height: 100
     infinite: false
@@ -248,16 +248,16 @@ etagere-structure-metallique-3:
       - name: serre-tete-2
 
 meuble-1:
-  name: Étagère en bois
+  name: Wood shelf
   weight: 30
   width: 150
   height: 40
   takable: false
   picto:  🗄
   description: >
-    Étagère en bois foncé vernis, posée sur le côté. Semble servir pour ranger les chaussures.
+    Varnished wood shelf, put on the side. Used to put shoes.
   place:
-    name: Intérieur de l'étagère en bois
+    name: Wooden shelf interior
     width: 300
     height: 50
     infinite: false
@@ -271,7 +271,7 @@ meuble-1:
       - name: casier-meuble-1-5
 
 casier-meuble-1-1:
-  name: Casier de l'étagère en bois
+  name: Shelf storage rack
   weight: 0
   width: 50
   height: 50
