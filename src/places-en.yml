@@ -1,6 +1,6 @@
 
 outside:
-  name: Dehors
+  name: Outside
   connections:
     - place: "garage"
       condition: true
@@ -10,8 +10,8 @@ outside:
   infinite: true
   scrollable: true
   description: >
-    Il n'y a pas vraiment de trottoir dans cette rue, seulement du goudron. Ce bâtiment est une villa-빌라 si on traduit littéralement, c'est un petit immeuble. Les murs sont faits en briques rouges aux angles légèrement arrondis. Il y a toute sorte de choses grimpantes le long des murs, tuyaux de gaz, câbles internet, climatisations. En l'air, un grand ciel bleu légèrement crème, sûrement dû à la pollution, beaucoup de câbles électriques désordonnés. Les bâtiments sont très carrés ici. C'est un quartier plutôt riche en apparence, GanamGu-강남구, le quartier des riches éclairs-벼락부자. La plupart de ces petits immeubles appartiennent à une seule personne. Plus les appartements sont bas en niveau, plus ils sont petits et souvent délabrés. Le dernier étage est souvent le plus grand et le plus luxueux, celui du propriétaire. Nous, nous sommes au premier niveau.
-
+  There is not really a sidewalk on this street, only tar. This building is a villa-빌라 if we literally translate, it is a small building. The walls are made of red bricks with slightly smoothed angles. There are all kinds of climbing things along the walls, gas pipes, internet cables, air conditioning. In the air, a big blue sky slightly cream, pollution I guess and lots of untidy electric cables. The buildings are very square here. It is a district which is rather rich in appearance, GanamGu-강남구, the district of the lightning rich-벼락 부자. Most of these small buildings are owned by one person. Lower the apartments are, smaller and often dilapidated they are. The top floor is often the largest and most luxurious one, that the owner one. We are on the first upper floor, the second level in Korean.
+  
 garage:
   name: Garage
   width: 300
@@ -28,10 +28,10 @@ garage:
     - place: "palier"
       condition: true
   description: >
-    Les murs et le sol sont gris bleu, plutôt sales avec beaucoup de traces d'huile. Il y a une marche sur le côté droit qui va jusqu'à la porte. Le début de la marche fait office de zone à poubelles. Il n'y a pas de porte métallique fermant le garage. C'est simplement une grande pièce constamment ouverte, plein sud, c'est très lumineux. Au fond, une porte donne sur le palier du rez-de-chaussée.
+	  The walls and the ground grey blue, pretty dirty with some oil traces. There is a step on the right side used for until the door. The start of the step is used as a junk zone. The entry is never closed, there is no metal door here. It's simply a big room constantly open, facing south, very bright. At the back, a door give access to the landing on the ground floor.
 
 palier:
-  name: Palier du 1er étage
+  name: 1st floor landing
   width: 300
   height: 300
   infinite: true
@@ -48,8 +48,8 @@ palier:
     - place: "vestibule"
       condition: true
   description: >
-    Au sol, des carreaux gris marbré, les murs sont blancs, crépis. Le sol est un peu vieux, mais plutôt propre. Les portes bleues sont en métal avec une étrange chatière de couleur bronze. Elles servaient pour donner le courrier autre fois. On peut y voir des décorations florales en bas-relief. Les poignées métalliques sont rondes. Au-dessus de la poignée, un clavier digital sert de verrou, j'ai presque oublié le bruit du tintement d'un trousseau de clef. Il y a également un panneau électrique avec une porte métallique fermée prête à tomber même si deux gros morceaux de scotch la supportent.
-
+	  At the ground, some gray marbled tiles. Walls are white.
+    Au sol, gray marbled tiles, les murs sont blancs, plastered.  Doors are metallic and blue with a strange bronze cat flap. It's was used by postmen in the old days. You can see floral decorations in bas-relief. The metal handles are round and smooth. Above handles, there is a digital keyboard serve as a lock. I almost forgot the sound of the ringing of a bunch of keys. There is also an electronic panel ready to fall, stick with some orange tape. 
 
 vestibule:
   name: Vestibule
@@ -94,18 +94,20 @@ vestibule:
     - place: "salle-principale"
       condition: "topAvailable"
   description: >
-    Comme sur le palier, au sol, les carreaux sont gris marbré. C'est une petite pièce de quatre mètres carrés. Tout les murs sont tapissés d'un papier texturé beige, parfois légèrement rosé. Sur un des murs, un cadre en bois imposant sous verre contient un tableau tissé d'un champ de coquelicot et d'une montagne en fond. Juste à côté, une petite horloge ronde, fixée sur le même clou qu'un calendrier. C'est la salle où on ôte les chaussures. En intérieur les chaussures sont interdites, c'est le lieu dédié à cette action, enlever ses chaussures...
+	  As on the landing, at the ground, some grey blue marble tiles. It is a small room of four square meters. All the walls are lined with beige textured paper, sometimes slightly pink. On one of the walls, an imposing wooden frame under glass contains a painting woven from a poppy field and a mountain in the background. Right next to it, a small round clock, fixed on the same nail as a calendar. This is the room where you take off your shoes.
+	  
+    Comme sur le palier, au sol, les carreaux sont gris marbré. C'est une petite pièce de quatre mètres carrés. All the walls are lined with beige textured paper, sometimes slightly pink. Sur un des murs, un cadre en bois imposant sous verre contient un tableau tissé d'un champ de coquelicot et d'une montagne en fond. Juste à côté, une petite horloge ronde, fixée sur le même clou qu'un calendrier. C'est la salle où on ôte les chaussures. Indoors shoes are prohibited, it is the place dedicated to this action, take off your shoes ...
 
 salle-de-bain:
-  name: Salle de bain
+  name: Bathroom
   connections:
     - place: "vestibule"
       condition: true
   description: >
-    Au sol des petit carreaux carrés oranges avec un doublage en bois rajouté pour laisser passer l'eau. Il y a une odeur d'humidité assez forte. C'est une salle d'eau d'environ deux mètres carrés. Un énorme rouleau de papier toilette est accroché au mur. Des brosses à dents et des bouteilles de shampoings sont sur une petite étagère d'angle. Il y a aussi une plante grasse avec les pieds dans un petit pot en verre, qui semble heureuse comme tout ici dans l'humidité et l'obscurité. Par contre, pas d'ouverture, seulement une petite VMC pour absorber l'humidité.
-
+		  Small orange square tiles on the floor with a wooden lining added to let the water pass. There is a fairly strong smell of humidity. It is a powder room of about two square meters. A huge roll of toilet paper hangs on the wall. Toothbrushes and bottles of shampoo are on a small corner shelf. There is also a succulent plant with the feet in a small glass pot, which seems happy like everything here in the humidity and the dark. On the other hand, no opening, only a small VMC to absorb moisture.
+		  
 salle-principale:
-  name: La chambre/salon/salle à manger.
+  name: Room/living room/dinning room.
   width: 250
   height: 300
   infinite: false
@@ -128,12 +130,12 @@ salle-principale:
     - place: "buanderie"
       condition: true
   description: >
-    Salle principale d'une traditionnelle One room-원룸 coréenne. Tout y est.
-    Le sol est fait d'un plastique simili bois, chaud, il est en permanence chauffé électriquement grâce au chauffage au sol traditionnel-온돌. C'est parfois brûlant, mais là, c'est parfaitement agréable. Au mur et aux plafonds, encore ce papier blanc beige texturé. La pièce est très chargée. Sur le côté gauche de l'entrée, des grands placards, en face une grande rangée de fenêtres donnant plein Sud. C'est très lumineux. Les vitres sont comme doublées. Il y a deux rangées de fenêtres séparées de 30 cm.
-    Cet espace est rempli de fleurs et de plantes en tous genres et de différentes tailles. Des cactus, des salades comestibles, des plants de sésame, dont on mange également les feuilles lorsqu'on en a suffisamment. Pas de lit dans cette pièce seulement un tas de couverture plié dans le coin à côté du meuble TV. Le sol est légèrement mou, sûrement l'épaisseur du plastique. L'appartement sent parfois la soupe de poisson, mais aujourd'hui, il sent bon l'huile de sésame.
+	  Main room of a traditional Korean one room-원룸. Everything's here.
+		  The ground is made of an imitation wood plastic, haut, it is permanently electrically heated with a traditional underfloor heating. Sometime, it's burning my feet, but now it's perfectly plaisant. At the ground and the ceilings, this beige textured white paper. The room is vusually busy. On the left side of the entrance, large closets, opposite a large row of windows facing south. It’s very bright. The windows are as lined. There are two rows of windows 30 cm apart.
+		  This space is full of plats and flowers with various size and style. Some cactus, edible salads, sesame plants, the leaves of which we also eat when we got enough of it. No bedroom here, only a pile of different folded blankets in the corner of the room just aside of the tv stand. The soil is slightly soft, probably the thickness of the plastic. The apartment sometimes smell fish soup or kimchi-, but today it smells sesame oil.
 
 buanderie:
-  name: Une sorte de buanderie
+  name: A kind of laundry room
   width: 100
   height: 210
   infinite: false
@@ -155,7 +157,7 @@ buanderie:
     - place: "salle-principale"
       condition: true
   description: >
-    Voilà une pièce particulière, dans le coin de la salle principale se trouve la buanderie-다용도실. C'est une petite pièce de deux ou trois mètres carrés dont tous les appartements sont équipés. Les carreaux au sol sont orange foncé, légèrement penchés dans la direction d'un siphon, sur un des murs il y a robinet d'eau proche du sol. Un des murs est constitué de portes coulissantes en verre. Ici, elles sont constamment ouvertes. Le mur opposé accueille une rangée de fenêtres similaires à celles de la pièce principale, encore une fois rempli de toute sorte de plantes et encore une fois, c'est très lumineux.
+	  This is a special room, in the corner of the main room is the laundry room-다용도실. It is a small room of two or three square meters with which all the apartments are equipped. The tiles on the floor are dark orange, slightly leaning in the direction of a siphon, on one of the walls there is a water tap near the floor. One of the walls consists of sliding glass doors. Here they are constantly open. The opposite wall hosts a row of windows similar to those of the main room, again filled with all kinds of plants and again, it is very bright.
 
 # frigo:
 #   name: frigo
