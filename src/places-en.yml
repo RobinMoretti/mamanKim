@@ -10,7 +10,7 @@ outside:
   infinite: true
   scrollable: true
   description: >
-  There is not really a sidewalk on this street, only tar. This building is a villa-빌라 if we literally translate, it is a small building. The walls are made of red bricks with slightly smoothed angles. There are all kinds of climbing things along the walls, gas pipes, internet cables, air conditioning. In the air, a big blue sky slightly cream, pollution I guess and lots of untidy electric cables. The buildings are very square here. It is a district which is rather rich in appearance, GanamGu-강남구, the district of the lightning rich-벼락 부자. Most of these small buildings are owned by one person. Lower the apartments are, smaller and often dilapidated they are. The top floor is often the largest and most luxurious one, that the owner one. We are on the first upper floor, the second level in Korean.
+    There is not really a sidewalk on this street, only tar. This building is a villa-빌라 if we literally translate, it is a small building. The walls are made of red bricks with slightly smoothed angles. There are all kinds of climbing things along the walls, gas pipes, internet cables, air conditioning. In the air, a big blue sky slightly cream, pollution I guess and lots of untidy electric cables. The buildings are very square here. It is a district which is rather rich in appearance, GanamGu-강남구, the district of the lightning rich-벼락 부자. Most of these small buildings are owned by one person. Lower the apartments are, smaller and often dilapidated they are. The top floor is often the largest and most luxurious one, that the owner one. We are on the first upper floor, the second level in Korean.
   
 garage:
   name: Garage
@@ -28,7 +28,7 @@ garage:
     - place: "palier"
       condition: true
   description: >
-	  The walls and the ground grey blue, pretty dirty with some oil traces. There is a step on the right side used for until the door. The start of the step is used as a junk zone. The entry is never closed, there is no metal door here. It's simply a big room constantly open, facing south, very bright. At the back, a door give access to the landing on the ground floor.
+    The walls and the ground grey blue, pretty dirty with some oil traces. There is a step on the right side used for until the door. The start of the step is used as a junk zone. The entry is never closed, there is no metal door here. It's simply a big room constantly open, facing south, very bright. At the back, a door give access to the landing on the ground floor.
 
 palier:
   name: 1st floor landing
@@ -48,7 +48,7 @@ palier:
     - place: "vestibule"
       condition: true
   description: >
-	  At the ground, some gray marbled tiles. Walls are white.
+    At the ground, some gray marbled tiles. Walls are white.
     Au sol, gray marbled tiles, les murs sont blancs, plastered.  Doors are metallic and blue with a strange bronze cat flap. It's was used by postmen in the old days. You can see floral decorations in bas-relief. The metal handles are round and smooth. Above handles, there is a digital keyboard serve as a lock. I almost forgot the sound of the ringing of a bunch of keys. There is also an electronic panel ready to fall, stick with some orange tape. 
 
 vestibule:
@@ -94,8 +94,8 @@ vestibule:
     - place: "salle-principale"
       condition: "topAvailable"
   description: >
-	  As on the landing, at the ground, some grey blue marble tiles. It is a small room of four square meters. All the walls are lined with beige textured paper, sometimes slightly pink. On one of the walls, an imposing wooden frame under glass contains a painting woven from a poppy field and a mountain in the background. Right next to it, a small round clock, fixed on the same nail as a calendar. This is the room where you take off your shoes.
-	  
+    As on the landing, at the ground, some grey blue marble tiles. It is a small room of four square meters. All the walls are lined with beige textured paper, sometimes slightly pink. On one of the walls, an imposing wooden frame under glass contains a painting woven from a poppy field and a mountain in the background. Right next to it, a small round clock, fixed on the same nail as a calendar. This is the room where you take off your shoes.
+    
     Comme sur le palier, au sol, les carreaux sont gris marbré. C'est une petite pièce de quatre mètres carrés. All the walls are lined with beige textured paper, sometimes slightly pink. Sur un des murs, un cadre en bois imposant sous verre contient un tableau tissé d'un champ de coquelicot et d'une montagne en fond. Juste à côté, une petite horloge ronde, fixée sur le même clou qu'un calendrier. C'est la salle où on ôte les chaussures. Indoors shoes are prohibited, it is the place dedicated to this action, take off your shoes ...
 
 salle-de-bain:
@@ -104,8 +104,8 @@ salle-de-bain:
     - place: "vestibule"
       condition: true
   description: >
-		  Small orange square tiles on the floor with a wooden lining added to let the water pass. There is a fairly strong smell of humidity. It is a powder room of about two square meters. A huge roll of toilet paper hangs on the wall. Toothbrushes and bottles of shampoo are on a small corner shelf. There is also a succulent plant with the feet in a small glass pot, which seems happy like everything here in the humidity and the dark. On the other hand, no opening, only a small VMC to absorb moisture.
-		  
+    Small orange square tiles on the floor with a wooden lining added to let the water pass. There is a fairly strong smell of humidity. It is a powder room of about two square meters. A huge roll of toilet paper hangs on the wall. Toothbrushes and bottles of shampoo are on a small corner shelf. There is also a succulent plant with the feet in a small glass pot, which seems happy like everything here in the humidity and the dark. On the other hand, no opening, only a small VMC to absorb moisture.
+    
 salle-principale:
   name: Room/living room/dinning room.
   width: 250
@@ -130,9 +130,9 @@ salle-principale:
     - place: "buanderie"
       condition: true
   description: >
-	  Main room of a traditional Korean one room-원룸. Everything's here.
-		  The ground is made of an imitation wood plastic, haut, it is permanently electrically heated with a traditional underfloor heating. Sometime, it's burning my feet, but now it's perfectly plaisant. At the ground and the ceilings, this beige textured white paper. The room is vusually busy. On the left side of the entrance, large closets, opposite a large row of windows facing south. It’s very bright. The windows are as lined. There are two rows of windows 30 cm apart.
-		  This space is full of plats and flowers with various size and style. Some cactus, edible salads, sesame plants, the leaves of which we also eat when we got enough of it. No bedroom here, only a pile of different folded blankets in the corner of the room just aside of the tv stand. The soil is slightly soft, probably the thickness of the plastic. The apartment sometimes smell fish soup or kimchi-, but today it smells sesame oil.
+    Main room of a traditional Korean one room-원룸. Everything's here.
+    The ground is made of an imitation wood plastic, haut, it is permanently electrically heated with a traditional underfloor heating. Sometime, it's burning my feet, but now it's perfectly plaisant. At the ground and the ceilings, this beige textured white paper. The room is vusually busy. On the left side of the entrance, large closets, opposite a large row of windows facing south. It’s very bright. The windows are as lined. There are two rows of windows 30 cm apart.
+    This space is full of plats and flowers with various size and style. Some cactus, edible salads, sesame plants, the leaves of which we also eat when we got enough of it. No bedroom here, only a pile of different folded blankets in the corner of the room just aside of the tv stand. The soil is slightly soft, probably the thickness of the plastic. The apartment sometimes smell fish soup or kimchi-, but today it smells sesame oil.
 
 buanderie:
   name: A kind of laundry room
@@ -157,7 +157,7 @@ buanderie:
     - place: "salle-principale"
       condition: true
   description: >
-	  This is a special room, in the corner of the main room is the laundry room-다용도실. It is a small room of two or three square meters with which all the apartments are equipped. The tiles on the floor are dark orange, slightly leaning in the direction of a siphon, on one of the walls there is a water tap near the floor. One of the walls consists of sliding glass doors. Here they are constantly open. The opposite wall hosts a row of windows similar to those of the main room, again filled with all kinds of plants and again, it is very bright.
+    This is a special room, in the corner of the main room is the laundry room-다용도실. It is a small room of two or three square meters with which all the apartments are equipped. The tiles on the floor are dark orange, slightly leaning in the direction of a siphon, on one of the walls there is a water tap near the floor. One of the walls consists of sliding glass doors. Here they are constantly open. The opposite wall hosts a row of windows similar to those of the main room, again filled with all kinds of plants and again, it is very bright.
 
 # frigo:
 #   name: frigo

@@ -529,7 +529,7 @@ serre-tete-3:
   height: 10
   picto: Ω
   description: >
-	  Green headband with floral embroidery
+    Green headband with floral embroidery
 
 serre-tete-4:
   name: Headband
@@ -565,7 +565,7 @@ bouteille-vide-de-biere-1:
   height: 40
   picto: 🍾
   description: >
-	  Bottle of Cass beer. Recyclable for 130won-원.
+    Bottle of Cass beer. Recyclable for 130won-원.
 
 bouteille-vide-de-soju-1:
   name: Empty soju-소주 bottle from the Toad brand-두꺼비.
@@ -574,7 +574,7 @@ bouteille-vide-de-soju-1:
   height: 30
   picto: 🍾
   description: >
-	  Bottle of soju-소주 from the Toad brand-두꺼비. Recyclable for 100won-원.
+    Bottle of soju-소주 from the Toad brand-두꺼비. Recyclable for 100won-원.
 
 # paquet-salade-1:
 # pochette-fermeture-eclaire:
@@ -706,7 +706,7 @@ filtre-a-eau-lg:
   takable: false
   picto: 🚰
   description: >
-	  A water filter machine, seem quit modern. Pretty heavy and made of aluminium.
+    A water filter machine, seem quit modern. Pretty heavy and made of aluminium.
 
 verre-d-eau-1:
   name: Glass
@@ -836,7 +836,7 @@ frigo:
   takable: false
   picto: Fridge
   description: >
-		Lg fridge
+    Lg fridge
   place:
     name: Fridge interior
     width: 100
@@ -1162,7 +1162,7 @@ meuble-tv-1:
   height: 60
   picto: 🗄
   description: >
-	  Salmon pink TV stand in good condition.
+    Salmon pink TV stand in good condition.
   place:
     name: TV stand
     width: 200
@@ -1274,7 +1274,7 @@ petite-sculpture:
   height: 20
   picto: 🗿
   description: >
-	  Small volcanic stone sculpture from the Jejudo island-제주 a Dol hareubangs-돌하르방. Touching her nose would bring good luck.
+    Small volcanic stone sculpture from the Jejudo island-제주 a Dol hareubangs-돌하르방. Touching her nose would bring good luck.
 
 jeu-de-carte-1:
   name: Godori-고도리
@@ -1283,7 +1283,7 @@ jeu-de-carte-1:
   height: 40
   picto: 🎴
   description: >
-	  Set of Korean cards. Composed of twelve categories, one for each season, they can represent flowers or grounds (sea, mountain, plain). Each has 4 cards, of four possible types. Basic cards-피, animals-열끗, belts-띠 and lights-광. One of the most popular games here is the Go-Stop-, a gambling game.
+    Set of Korean cards. Composed of twelve categories, one for each season, they can represent flowers or grounds (sea, mountain, plain). Each has 4 cards, of four possible types. Basic cards-피, animals-열끗, belts-띠 and lights-광. One of the most popular games here is the Go-Stop-, a gambling game.
 
 drapeau-coreen-1:
   name: Flag of the korean republic-태극기.
@@ -1292,7 +1292,7 @@ drapeau-coreen-1:
   height: 40
   picto: 🇰🇷
   description: >
-	  It is made up of two differentiable elements. The central element-태극, Korean yin yang and the four trigrams representing the four elements: earth, sky, fire and water. Everything is on a white background.
+    It is made up of two differentiable elements. The central element-태극, Korean yin yang and the four trigrams representing the four elements: earth, sky, fire and water. Everything is on a white background.
   events:
     - name: goPassage
       params:
