@@ -484,7 +484,7 @@ chaussure-3:
   picto:  👞
   description: >
     Unbranded faux leather shoes. Worn out.
-        
+
 chaussure-4:
   name: Ballerinas
   weight: 1.5
@@ -495,7 +495,7 @@ chaussure-4:
     Ballerinas with floral pattern.
 
 
-    
+
 pantoufle-1:
   name: Sandals
   weight: 1
@@ -504,7 +504,7 @@ pantoufle-1:
   picto:  👟
   description: >
     Looks like pool slides. Each Sandals has its usefulness. Walk outside the house, bathroom, toilet, etc.
-    
+
 serre-tete-1:
   name: Headband
   weight: 0.2
@@ -521,7 +521,7 @@ serre-tete-2:
   picto: Ω
   description: >
     Wide purple headband with floral embroidery
-    
+
 serre-tete-3:
   name: Headband
   weight: 0.2
@@ -1184,7 +1184,7 @@ dessus-meuble-tv:
   takable: false
   picto: Dessus
   description: >
-    Above tray of the TV stand 
+    Above tray of the TV stand
   place:
     name: Above the TV stand
     width: 200
@@ -1202,16 +1202,16 @@ dessus-meuble-tv:
       - name: boite-conservation-nourriture-3-3
 
 tiroire-meuble-1:
-  name: Left drawer of the tv stand  
+  name: Left drawer of the tv stand
   weight: 0
   width: 75
   height: 60
   takable: false
   picto: Left drawer
   description: >
-    Left drawer of the tv stand  
+    Left drawer of the tv stand
   place:
-    name: Left drawer of the tv stand  
+    name: Left drawer of the tv stand
     width: 100
     height: 50
     infinite: false
@@ -1225,16 +1225,16 @@ tiroire-meuble-1:
       - name: drapeau-coreen-1
 
 tiroire-meuble-2:
-  name: Right drawer of the tv stand  
+  name: Right drawer of the tv stand
   weight: 0
   width: 75
   height: 60
   takable: false
   picto: Right drawer
   description: >
-    Right drawer of the tv stand 
+    Right drawer of the tv stand
   place:
-    name: Right drawer of the tv stand 
+    name: Right drawer of the tv stand
     width: 100
     height: 50
     infinite: false
@@ -1409,7 +1409,7 @@ boite-conservation-nourriture-1-1:
   weight: 1
   width: 50
   height: 50
-  picto: Boite 5
+  picto: Box 5
   description: >
     Plastic food-storage container size 5
   place:
@@ -1427,7 +1427,7 @@ boite-conservation-nourriture-1-2:
   weight: 1
   width: 45
   height: 45
-  picto: Boite 4
+  picto: Box 4
   description: >
     Plastic food-storage container size 4
   place:
@@ -1444,7 +1444,7 @@ boite-conservation-nourriture-1-3:
   weight: 1
   width: 40
   height: 40
-  picto: Boite 3
+  picto: Box 3
   description: >
     Plastic food-storage container size 3
   place:
@@ -1461,7 +1461,7 @@ boite-conservation-nourriture-1-4:
   weight: 1
   width: 35
   height: 35
-  picto: Boite 2
+  picto: Box 2
   description: >
     Plastic food-storage container size 2
   place:
@@ -1477,7 +1477,7 @@ boite-conservation-nourriture-1-5:
   weight: 1
   width: 20
   height: 20
-  picto: Boite 1
+  picto: Box 1
   description: >
     Plastic food-storage container size 1
 
@@ -1489,7 +1489,7 @@ boite-conservation-nourriture-2-1:
   weight: 1
   width: 50
   height: 50
-  picto: Boite 5
+  picto: Box 5
   description: >
     Plastic food-storage container size 5
   place:
@@ -1505,7 +1505,7 @@ boite-conservation-nourriture-2-2:
   weight: 1
   width: 45
   height: 45
-  picto: Boite 4
+  picto: Box 4
   description: >
     Plastic food-storage container size 4
   place:
@@ -1524,7 +1524,7 @@ boite-conservation-nourriture-2-3:
   weight: 1
   width: 40
   height: 40
-  picto: Boite 3
+  picto: Box 3
   description: >
     Plastic food-storage container size 3
   place:
@@ -1541,7 +1541,7 @@ boite-conservation-nourriture-2-4:
   weight: 1
   width: 35
   height: 35
-  picto: Boite 2
+  picto: Box 2
   description: >
     Plastic food-storage container size 2
   place:
@@ -1557,7 +1557,7 @@ boite-conservation-nourriture-2-5:
   weight: 1
   width: 20
   height: 20
-  picto: Boite 1
+  picto: Box 1
   description: >
     Plastic food-storage container size 1
 
@@ -1568,7 +1568,7 @@ boite-conservation-nourriture-3-1:
   weight: 1
   width: 50
   height: 50
-  picto: Boite 5
+  picto: Box 5
   description: >
     Plastic food-storage container size 5
   place:
@@ -1584,7 +1584,7 @@ boite-conservation-nourriture-3-2:
   weight: 1
   width: 45
   height: 45
-  picto: Boite 4
+  picto: Box 4
   description: >
     Plastic food-storage container size 4
   place:
@@ -1601,7 +1601,7 @@ boite-conservation-nourriture-3-3:
   weight: 1
   width: 40
   height: 40
-  picto: Boite 3
+  picto: Box 3
   description: >
     Plastic food-storage container size 3
   place:
@@ -1617,7 +1617,7 @@ boite-conservation-nourriture-3-4:
   weight: 1
   width: 35
   height: 35
-  picto: Boite 2
+  picto: Box 2
   description: >
     Plastic food-storage container size 2
   place:
@@ -1635,7 +1635,7 @@ boite-conservation-nourriture-3-5:
   weight: 1
   width: 20
   height: 20
-  picto: Boite 1
+  picto: Box 1
   description: >
     Plastic food-storage container size 1
 

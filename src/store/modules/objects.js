@@ -1,6 +1,6 @@
 // initial state
-
 import objectsYml from './../../objects.yml'
+import objectsYmlEn from './../../objects-en.yml'
 
 const state = {
   activeObject: "",
@@ -49,8 +49,12 @@ const mutations = {
     state.activeObject = object.name;
   },
   initObjects: function(state){
-    state.objects = objectsYml;
-    console.log('objectsYml', objectsYml )
+
+    if(window.lang == "en"){
+      state.objects = objectsYmlEn;
+    }else{
+      state.objects = objectsYml;
+    }
   },
   resetActiveObject: function(state){
     state.activeObject = "";

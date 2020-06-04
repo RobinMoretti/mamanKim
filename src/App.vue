@@ -286,6 +286,9 @@ export default {
   },
   mounted: function(){
 
+    if(window.lang == "en"){
+      this.tweeUrl = "twee-build/index-en.html"
+    }
     setTimeout(()=>{
       this.$store.dispatch("objects/init");
       this.$store.dispatch("places/init");

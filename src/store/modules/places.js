@@ -1,9 +1,26 @@
 // initial state
 
-import placesYml from './../../places.yml'
-import objectsYml from './../../objects.yml'
+// import placesYml from './../../places.yml'
+// import objectsYml from './../../objects.yml'
+
+
+import placesYmlFr from './../../places.yml'
+import objectsYmlFr from './../../objects.yml'
+
 import placesYmlEn from './../../places-en.yml'
 import objectsYmlEn from './../../objects-en.yml'
+
+var placesYml;
+var objectsYml;
+
+if(window.lang == "en"){
+  placesYml = placesYmlEn;
+  objectsYml = objectsYmlEn;
+}else{
+  placesYml = placesYmlFr;
+  objectsYml = objectsYmlFr;
+}
+
 
 const state = {
   activePlace: "salle-principale",
@@ -44,15 +61,6 @@ const getters = {
 // actions
 const actions = {
   init: function({dispatch, commit, state, rootState}){
-    if(window.lang == "en"){
-      console.log('placesYml', placesYml)
-      console.log('placesYmlEn', placesYmlEn)
-      console.log('objectsYml', objectsYml)
-      console.log('objectsYmlEn', objectsYmlEn)
-      // placesYml = placesYmlEn;
-      // objectsYml = objectsYmlEn;
-    }
-
     if(!rootState.gameStarted){
       commit('initPlaces');
       commit('addAllObjectSpaces');
