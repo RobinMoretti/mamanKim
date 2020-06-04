@@ -86,7 +86,7 @@
             <p v-on:click="dResetGame" v-if="!displayResetGame"> {{ $t('game.recommencer') }}</p>
             <p v-else> <a href="#" v-on:click="resetGame">{{ $t('game.vraiment') }}</a> {{ $t('game.sauvegarde-supprime') }} </p>
           </transition>
-          -
+          <!-- -
           <transition name="fade">
             <p v-if="!displayChangingLang" class="languages-container">
               {{ $t('lang.langues') }}
@@ -98,7 +98,7 @@
             <p v-else>
               <a href="#" v-on:click="changingLang">{{ $t('game.vraiment') }}</a> {{ $t('game.sauvegarde-supprime') }}
             </p>
-          </transition>
+          </transition> -->
         </footer>
       </div>
 
