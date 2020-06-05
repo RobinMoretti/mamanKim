@@ -211,7 +211,7 @@ export default {
 
       var activePlaceIsNotAChildOfObject = true;
 
-      if(target != "hands"){
+      if(target != "hands" && this.placesStore.places[target].parentPlace){
         activePlaceIsNotAChildOfObject = false;
         // if is no in the child
         var place = this.placesStore.places[this.object.name];
@@ -227,18 +227,19 @@ export default {
         var getActivePlaceObject = this.placesStore.places[target];
         var getActivePlaceName = target;
 
-        // console.log("getActivePlaceObject = ", getActivePlaceObject);
-        // console.log("getActivePlaceObjectparentName = ", getActivePlaceObject.parentPlace);
-        // console.log("activeObjectName = ", activeObjectName);
-        // console.log("target = ", target);
-        // console.log("getActivePlaceName = ", getActivePlaceName);
+        console.log("getActivePlaceObject = ", getActivePlaceObject);
+        console.log("getActivePlaceObjectparentName = ", getActivePlaceObject.parentPlace);
+        console.log("activeObjectName = ", activeObjectName);
+        console.log("target = ", target);
+        console.log("getActivePlaceName = ", getActivePlaceName);
 
         if(getActivePlaceObject.parentPlace && getActivePlaceObject.parentPlace != activeObjectName){
           while (getActivePlaceObject.parentPlace && getActivePlaceObject.parentPlace != activeObjectName) {
             // console.log("this!!! = ", getActivePlaceObject);
             getActivePlaceObject = this.placesStore.places[getActivePlaceObject.parentPlace];
 
-            // console.log("getActivePlaceObject.parentPlace = " + getActivePlaceObject.parentPlace);
+            console.log("getActivePlaceObject.parentPlace = " + getActivePlaceObject.parentPlace);
+            console.log("activeObjectName = " + activeObjectName);
             if(getActivePlaceObject.parentPlace != activeObjectName){
               activePlaceIsNotAChildOfObject = true;
             }
@@ -253,7 +254,7 @@ export default {
 
           }
         }else {
-          // console.log("Is Child error");
+          console.log("Is Child error");
           this.flashError("targetIsChild", { objectName: this.object.name, space: this.space, target: target });
         }
 
@@ -262,9 +263,9 @@ export default {
       }
 
 
-      // console.log("weightState = " + weightState);
-      // console.log("heightAvailable = " + heightAvailable);
-      // console.log("activePlaceIsNotAChildOfObject = " + activePlaceIsNotAChildOfObject);
+      console.log("weightState = " + weightState);
+      console.log("heightAvailable = " + heightAvailable);
+      console.log("activePlaceIsNotAChildOfObject = " + activePlaceIsNotAChildOfObject);
 
       if(weightState && heightAvailable && activePlaceIsNotAChildOfObject){
         return true;
