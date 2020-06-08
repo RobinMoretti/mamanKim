@@ -1,5 +1,5 @@
 <template>
-  <div :id="'inventory-' + name">
+  <div :id="'inventory-' + name" class="inventory-component">
     <vue-custom-scrollbar
         class="place-inventory special"
         :class="{ error: error}"
@@ -154,6 +154,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+  .inventory-component{
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+    *{
+      -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+           -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none;
+    }
+  }
   .informations{
     p{
       margin-top: 10px;

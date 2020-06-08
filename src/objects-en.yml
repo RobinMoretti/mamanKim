@@ -275,7 +275,7 @@ casier-meuble-1-1:
   weight: 0
   width: 50
   height: 50
-  picto: Tray
+  picto: Shelf
   takable: false
   description: >
     Wooden shelf.
@@ -295,7 +295,7 @@ casier-meuble-1-2:
   weight: 0
   width: 50
   height: 50
-  picto: Tray
+  picto: Shelf
   takable: false
     Wooden shelf.
   place:
@@ -315,7 +315,7 @@ casier-meuble-1-3:
   weight: 0
   width: 50
   height: 50
-  picto: Tray
+  picto: Shelf
   takable: false
   description: >
     Wooden shelf.
@@ -334,7 +334,7 @@ casier-meuble-1-4:
   weight: 0
   width: 50
   height: 50
-  picto: Tray
+  picto: Shelf
   takable: false
   description: >
     Wooden shelf.
@@ -355,7 +355,7 @@ casier-meuble-1-5:
   weight: 0
   width: 50
   height: 50
-  picto: Tray
+  picto: Shelf
   takable: false
   description: >
     Wooden shelf.
@@ -473,7 +473,7 @@ chaussure-2:
     - name: goPassage
       params:
         path: click
-        passage: Basquette bleue
+        passage: Basquette bleu
 
 chaussure-3:
   name: Shoes
@@ -1317,7 +1317,7 @@ meuble-3:
   weight: 20
   width: 50
   height: 120
-  picto: Tray
+  picto: Rack
   takable: false
   description: >
     Wooden shelf

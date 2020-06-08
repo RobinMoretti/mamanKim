@@ -475,7 +475,7 @@ chaussure-2:
     - name: goPassage
       params:
         path: click
-        passage: Basquette bleue
+        passage: Basquette bleu
 
 chaussure-3:
   name: Chaussure
