@@ -3,7 +3,14 @@ a{
 	display: block;
 	text-align: right;
 	color: #3E2123;
+	color: #7D4C10;
+	font-size: 19px;
+	border-right: 3px #7D4C10 solid;
+	position: relative;
+	right: 10px;
+	padding-right: 10px;
 }
+
 body{
 	font-size: 1.1rem;
 	padding-right: 25px;

@@ -17,24 +17,24 @@ It's nice out.
 
 <% if(visited("Introduction suite - 1") >= 2){ %>
 
-[[Shouldn't we be doing something? ->Introduction suite - 2]]
+[[Shouldn't we be doing something ? ->Introduction suite - 2]]
 
 <% } %>
 
 ::Introduction suite - 2
-Yep, we have to clean mam's house.
+Yep, we should clean mom's house.
 
-She'll not be back before 8.
-It's should be great to start now!
+She will not be back before 8.
+It's great to start now!
 
 [[ ? ->explication]]
 
-[[Boring... But ok, let's go. ->endStart]]
+[[Urgh ok, let's go. ->endStart]]
 
 ::explication
 ?
 
-We have to clean inside, it's a mess inside. 
+We have to clean inside, it's a mess. 
 We are also come in korea for take care of her.
 She's starting to be old and she's working so much right now.
 It's time to support her!

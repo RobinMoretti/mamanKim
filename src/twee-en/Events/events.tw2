@@ -1,6 +1,6 @@
 ::vole colis-1
 <script>window.flash();</script>
-[[ Honey, there was some parcel outside... ->vole colis-1-1]]
+[[ Honey, there was some parcels outside... ->vole colis-1-1]]
 
 ::vole colis-1-1
 Mmmm, it is not our's. <br>
@@ -11,9 +11,9 @@ Put it back where it was, please.
 <% if(visited("beaucoup de bouteilles vide" < 2)) { %>
 <script>window.flash();</script>
 > But why there is so many empty bottles of alcohol ?
-> I thought mam dont drink...
+> I thought mom don't drink...
 
-Since I told her we are able to get some coins if we get back these bottle at the convenience store-편의점 or at the super market, she's bringing back all the street's bottles.
+Since I told her we are able to get some coins if we get back these bottle at the convenience store-편의점 or at the super market, she's bringing back all the bottles found in the street.
 
 > Well, it seem to be too smalll here for that.
 
@@ -25,9 +25,9 @@ Since I told her we are able to get some coins if we get back these bottle at th
 
 Now, just put it all in a bag or in a box outside, we will go to the store later with it ! Maybe there will be enough to buy some beers 😅.
 
->Ummmmm, beeers! How much do we need ?
+>Ummmmm, beeers! How much of it do we need ?
 
- It's 100원-won each, at least twenty of them.
+It's 100원-won for small and 120원-won for the big ones. So at least twenty of them.
 
 > Duty approuved !.
 
@@ -40,18 +40,18 @@ Steamed, 🤤.
 ::Sace de riz congelé
 <script>window.flash();</script>
 
-[[Well, well, what's mam is doing with so much cooked rice ? ->Sace de riz congelé 1]]
+[[Well, well, what's mom doing with so much cooked rice ? ->Sace de riz congelé 1]]
 
 ::Sace de riz congelé 1
 I don't know, why ?
 
 > Last time, she made rice cakes-떡 with it, right ?
 
-Not with cooked rice.
+No, she didn't, not with cooked rice.
 
 > But, I feel it's what you told me before...
 
-Nop.
+No.
 
 [[So do I lost my mind ? Did I create that memory ->Sace de riz congelé 2]]
 
@@ -61,26 +61,26 @@ No, you did.
 
 > What no ? Yes, I didn't create it !
 
-Yes, It is not possible to make rice cake-떡 with COOKED rice. So no, you created it.
+Yes, It is not possible to make rice cake-떡 with COOKED rice. So no, you did creat it.
 
 > No, I created it ?
 
-Yes .
+Yes.
 
 [[... ?! ->Sace de riz congelé 3]]
 
 ::Sace de riz congelé 3
 
-> Honey, we are talking in Korean. You confused me.
+> Honey, are we talking in Korean ? You confused me. Yes, I did or no I didn't...
 
 Hey, where are we ?
 
 > ...
-> yeuse, but ...
+> Mmmmm, Korea, but ...
 
 ...
 
-> Ok, this time, you win.
+> Ok, you win.
 
 ::livraison
 <script>window.flash();</script>
@@ -90,7 +90,7 @@ Oh, well, there is someone outside.
 
 I'll check the guy out.
 
-> Yeap, je fais ma vie.
+> Yeap, I'm busy anyway.
 
 [[ ... ->livraison 1]]
 
@@ -98,7 +98,7 @@ I'll check the guy out.
 
 We received two big packages.
 
-Can you grab them and put them inside ?
+Can you grab and put them inside ?
 There are on the landing.
 
 > Yes sure.
@@ -112,13 +112,13 @@ There are on the landing.
 
 <% if(s["carton-pomme"] == 1) { %>
 <script>window.flash();</script>
-> Seriusly...
+> Seriously...
 <% } %>
 
 <% if(s["carton-pomme"] == 2) { %>
 <script>window.flash();</script>
-<% s["carton-pomme-couleur"] = "rouge"; %>
-> Argh, she ordered only apples ?!
+<% s["carton-pomme-couleur"] = "red"; %>
+> Argh, was she order only apples ?!
 > Arrgggggg
 <% } %>
 
@@ -131,12 +131,12 @@ There are on the landing.
 
 <% if(s["carton-pomme"] == 1) { %>
 <script>window.flash();</script>
-> Seriusly...
+> Seriously...
 <% } %>
 
 <% if(s["carton-pomme"] == 2) { %>
 <script>window.flash();</script>
-<% s["carton-pomme-couleur"] = "verte"; %>
-> Argh, she ordered only apples ?!
+<% s["carton-pomme-couleur"] = "green"; %>
+> Argh, was she order only apples ?!
 > Arrgggggg
 <% } %>

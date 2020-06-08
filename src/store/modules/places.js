@@ -3,6 +3,7 @@
 // import placesYml from './../../places.yml'
 // import objectsYml from './../../objects.yml'
 
+var lang = new URL(location.href).searchParams.get('lang');
 
 import placesYmlFr from './../../places.yml'
 import objectsYmlFr from './../../objects.yml'
@@ -13,7 +14,9 @@ import objectsYmlEn from './../../objects-en.yml'
 var placesYml;
 var objectsYml;
 
-if(window.lang == "en"){
+console.log('window.lang', window.lang)
+
+if(lang == "en"){
   placesYml = placesYmlEn;
   objectsYml = objectsYmlEn;
 }else{

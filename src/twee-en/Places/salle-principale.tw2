@@ -5,16 +5,16 @@
 <script>window.flash();</script>
 So, here we are.
 
-Hope we will have time to clean some. 
+I hope we have enough time to clean up.
 
-We can't do everything today anyway.
+We can't do everything today.
 
 Objectives are:
 Clean **the food** and **the fridge**, the **tv place** and if we can **the laundry room**.  
 
-Forgot about anything else.
+Forget the rest.
 
-> Ok, lets go !
+> Ok, let's go !
 
 <% } else if(s["carton-pomme"] == 1 && !hasVisited("pomme-1-discussion")) { %>
 <script>story.show('pomme-1-discussion');</script>
@@ -24,9 +24,9 @@ Forgot about anything else.
 <% } else if(hasVisited("pourquoi autant de pomme") && s["carton-pomme-livree"] == true) { %>
 	<% if(!s["carton-pomme"]){ %>
 <script>window.flash();</script>
-What's inside the box ?
+What are inside the box ?
 
-> I don't know, I hadnt open it yet.
+> I don't know, I had'nt open it yet.
 	<% } %>
 
 <% } else if(visited("salle-principale") > 3 && hasVisited("pourquoi autant de pomme") && !s["carton-pomme"]) { %>
@@ -37,7 +37,7 @@ What's inside the box ?
 
 ::pomme-1-discussion
 <script>window.flash();</script>
-> Ok, one big apple delivery box.
+> Ok, one, big apple delivery box.
 
 Hein ?! Apples again ? 😟
 
@@ -53,12 +53,12 @@ So ?
 
 Apples...
 
-> Yes but not only!
+> Yes, but not only!
 
 ...
 
 Apple juice ?
 
-> No, <%= s["carton-pomme-couleur"] %> apples!
+> Nop, <%= s["carton-pomme-couleur"] %> apples!
 
 

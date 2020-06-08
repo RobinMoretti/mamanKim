@@ -25,15 +25,15 @@ velo-1:
     Recent, almost new. Seem expensive.
     It's never hooked.
 poubelle-1:
-  name: Waste carton box
+  name: Waste delivery box
   weight: 0.7
   width: 30
   height: 30
   picto: 🗳
   description: >
-    Used carton form Coupang rocket deliveries-로켓배송 with an aluminium lining. Coupang is the korean *Amazon*.
+    Used delivery box from *Coupang rocket deliveries*-로켓배송 with an aluminium lining. *Coupang* is the korean *Amazon*.
   place:
-    name: Waste carton box interior
+    name: Inside the waste deli very box
     width: 150
     height: 150
     infinite: false
@@ -53,13 +53,13 @@ canette-1:
   description: >
     *Cass* beer can, crushed on the side.
 dechet-carton-1:
-  name: A carton pile of wastes
+  name: A delivery box of wastes
   weight: 2
   width: 20
   height: 20
   picto: 🗞
   description: >
-    A pile of wastes of carton things.
+    A pile of wastes of carton and paper things.
 publicite-1:
   name: Chinese restaurant ad
   weight: 0.01
@@ -67,7 +67,7 @@ publicite-1:
   height: 10
   picto: 📃
   description: >
-    Chinese restaurant leaflet with a lot of red, rather bad taste. Chachang noodles-짜장면, Tangsuyuk-탕수육 and other classics.
+    Chinese restaurant leaflet with a lot of red, rather bad looking. Chachang noodles-짜장면, Tangsuyuk-탕수육 and other classics.
 publicite-2:
   name: Chicken fried restaurant leaflet.
   weight: 0.01
@@ -75,16 +75,16 @@ publicite-2:
   height: 13
   picto: 📃
   description: >
-    A fried chicken leaflet. The logo is a happy chicken. There is many different recipies, spuicy, sweet with honey, classic.
+    A fried chicken leaflet. The logo is a happy chicken. There is many different recipies, spicy, sweet with honey, classic.
 
 reste-restau-chinois-1:
-  name: Leftovers from a meal
+  name: Leftovers
   weight: 3
   width: 30
   height: 30
   picto: 🍽
   description: >
-    Plastic bag full of leftovers from a meal, dirty plates and bowls with foods. It's visually disgusting. The delivery guy will be back later for bringing back the bag and clean everything.
+    Plastic bag full of leftovers, dirty plates and bowls. It's visually disgusting. The delivery guy will be back later for bringing back the bag and clean everything.
 colis-1:
   name: Coupang delivery
   weight: 10
@@ -104,9 +104,9 @@ colis-1:
         name: colis-1-owner
         value: Park Su yoon-박수윤
   description: >
-    Carton in perfect condition, with Park Su yoon-박수윤 marked.
+    Carton in perfect condition, for Park Su yoon-박수윤.
 colis-2:
-  name: Livraison Coupang
+  name: Coupang delivery
   weight: 5
   width: 50
   height: 40
@@ -124,7 +124,7 @@ colis-2:
         name: colis-1-owner
         value: Park Eun Su-박은수
   description: >
-    Carton in perfect condition, with Park Eun Su-박은수 marked.
+    Carton in perfect condition, for Park Eun Su-박은수.
 
 
 # vestibule ---------------------------------------------------------------------------------
@@ -139,7 +139,7 @@ pot-plastique-1:
   description: >
     Cylindric plastic jar.
   place:
-    name: Plastic jar interior
+    name: Inside the plastic jar
     width: 100
     height: 200
     infinite: false
@@ -157,7 +157,7 @@ parapluie-1:
   height: 60
   picto: 🌂
   description: >
-    A verry old umbrella from *C you*.
+    A verry old umbrella from *CU*.
 
 parapluie-2:
   name: Used umbrella
@@ -166,18 +166,18 @@ parapluie-2:
   height: 70
   picto: ☂️
   description: >
-    A pink umbrella with some flower pattern, 7 Eleven.
+    A pink umbrella with some flower patterns of *7 Eleven* brand.
 
 meuble-metallique-1:
-  name: Metalic shelf
+  name: Metalic rack
   weight: 2
   width: 40
   height: 60
   picto: 🗄
   description: >
-    A black shelf with thee racks.
+    A black rack with three shelfs.
   place:
-    name: Metalic shelf
+    name: Metalic rack
     width: 80
     height: 120
     infinite: false
@@ -189,16 +189,16 @@ meuble-metallique-1:
       - name: etagere-structure-metallique-3
 
 etagere-structure-metallique-1:
-  name: Metalic rack
+  name: Shelf
   weight: 1
   width: 80
   height: 40
   takable: false
   picto: Rack
   description: >
-    A black rack with a metalic mesh.
+    A black shelf made of a metalic mesh.
   place:
-    name: Metalic rack interior
+    name: Inside the shelf
     width: 200
     height: 100
     infinite: false
@@ -210,16 +210,16 @@ etagere-structure-metallique-1:
       - name: bob-4
 
 etagere-structure-metallique-2:
-  name: Metalic rack
+  name: Shelf
   weight: 1
   width: 80
   height: 40
   takable: false
-  picto: Rack
+  picto: Shelf
   description: >
-    A black rack with a metalic mesh.
+    A black shelf made of a metalic mesh.
   place:
-    name: Metalic rack interior
+    name: Inside the shelf
     width: 200
     height: 100
     infinite: false
@@ -228,16 +228,16 @@ etagere-structure-metallique-2:
     # inventory:
 
 etagere-structure-metallique-3:
-  name: Metalic rack
+  name: Shelf
   weight: 1
   width: 80
   height: 40
   takable: false
   picto: Rack
   description: >
-    A black rack with a metalic mesh.
+    A black shelf made of a metalic mesh.
   place:
-    name: Metalic rack interior
+    name: Inside the shelf
     width: 200
     height: 100
     infinite: false
@@ -248,16 +248,16 @@ etagere-structure-metallique-3:
       - name: serre-tete-2
 
 meuble-1:
-  name: Wood shelf
+  name: Wooden rack
   weight: 30
   width: 150
   height: 40
   takable: false
   picto:  🗄
   description: >
-    Varnished wood shelf, put on the side. Used to put shoes.
+    Varnished wooden rack, put on the side. Used to stow shoes.
   place:
-    name: Wooden shelf interior
+    name: Inside the wooden rack
     width: 300
     height: 50
     infinite: false
@@ -271,16 +271,16 @@ meuble-1:
       - name: casier-meuble-1-5
 
 casier-meuble-1-1:
-  name: Shelf storage tray
+  name: Shelf
   weight: 0
   width: 50
   height: 50
   picto: Tray
   takable: false
   description: >
-    Wooden shelf storage tray.
+    Wooden shelf.
   place:
-    name: Storage tray interior
+    name: Inside the wooden shelf
     width: 60
     height: 50
     infinite: false
@@ -291,16 +291,15 @@ casier-meuble-1-1:
       - name: chaussure-1
 
 casier-meuble-1-2:
-  name: Shelf storage tray
+  name: Shelf
   weight: 0
   width: 50
   height: 50
   picto: Tray
   takable: false
-  description: >
-    Wooden shelf storage tray.
+    Wooden shelf.
   place:
-    name: Storage tray interior
+    name: Inside the wooden shelf
     width: 60
     height: 50
     infinite: false
@@ -312,16 +311,16 @@ casier-meuble-1-2:
       - name: serre-tete-4
 
 casier-meuble-1-3:
-  name: Shelf storage tray
+  name: Shelf
   weight: 0
   width: 50
   height: 50
   picto: Tray
   takable: false
   description: >
-    Wooden shelf storage tray.
+    Wooden shelf.
   place:
-    name: Storage tray interior
+    name: Inside the wooden shelf
     width: 60
     height: 50
     infinite: false
@@ -331,16 +330,16 @@ casier-meuble-1-3:
       - name: chaussure-1
 
 casier-meuble-1-4:
-  name: Shelf storage tray
+  name: Shelf
   weight: 0
   width: 50
   height: 50
   picto: Tray
   takable: false
   description: >
-    Wooden shelf storage tray.
+    Wooden shelf.
   place:
-    name: Storage tray interior
+    name: Inside the wooden shelf
     width: 60
     height: 50
     infinite: false
@@ -352,16 +351,16 @@ casier-meuble-1-4:
       - name: bouteille-vide-de-soju-1
 
 casier-meuble-1-5:
-  name: Shelf storage tray
+  name: Shelf
   weight: 0
   width: 50
   height: 50
   picto: Tray
   takable: false
   description: >
-    Wooden shelf storage tray.
+    Wooden shelf.
   place:
-    name: Storage tray interior
+    name: Inside the wooden shelf
     width: 60
     height: 60
     infinite: false
@@ -373,15 +372,15 @@ casier-meuble-1-5:
       - name: bob-1
 
 sac-1:
-  name: Plastic shooping bag
+  name: Plastic shopping bag
   weight: 0.5
   width: 40
   height: 40
   picto:  👜
   description: >
-    Unbranded shooping bag.
+    Unbranded shopping bag.
   place:
-    name: Shooping bag interior
+    name: Inside the shopping bag
     width: 50
     height: 50
     infinite: false
@@ -389,15 +388,15 @@ sac-1:
     maximumWeight: 20
 
 sac-2:
-  name: Plastic shooping bag
+  name: Plastic shopping bag
   weight: 0.5
   width: 50
   height: 50
   picto: 🛍
   description: >
-    Unbranded shooping bag.
+    Unbranded shopping bag.
   place:
-    name: Shooping bag interior
+    name: Inside shopping bag
     width: 50
     height: 50
     infinite: false
@@ -411,9 +410,9 @@ sac-a-dos-1:
   height: 50
   picto:  👜
   description: >
-    Hiking backpack. Without brand.
+    Unbranded hiking backpack
   place:
-    name: Hiking backpack interior
+    name: Inside the hiking backpack
     width: 50
     height: 50
     infinite: false
@@ -435,7 +434,7 @@ bob-2:
   height: 20
   picto:  👒
   description: >
-    White hat unbranded with floral patterns.
+    Unbranded white hat with some floral patterns.
 bob-3:
   name: Dark blue hat
   weight: 0.2
@@ -454,22 +453,22 @@ bob-4:
     Handmade dark blue hat.
 
 chaussure-1:
-  name: Basquette
+  name: Running shoes
   weight: 1.5
   width: 16
   height: 37
   picto:  👟
   description: >
-    Small, unbranded, multicolored basquette. In good condition.
+    Small, unbranded, multicolored shoes, in good condition.
 
 chaussure-2:
-  name: Blue basquette
+  name: Blue running shoes
   weight: 1.6
   width: 20
   height: 50
   picto:  👟
   description: >
-    Normal size blue Basquette without mark. In very good shape. Looks a lot like Nique runners...
+    Normal sized blue shoes, unbranded. In very good shape. Looks a lot like Nique runners...
   events:
     - name: goPassage
       params:
@@ -483,7 +482,7 @@ chaussure-3:
   height: 40
   picto:  👞
   description: >
-    Unbranded faux leather shoes. Worn out.
+    Unbranded fake leather shoes. Worn out.
 
 chaussure-4:
   name: Ballerinas
@@ -492,7 +491,7 @@ chaussure-4:
   height: 38
   picto:  👡
   description: >
-    Ballerinas with floral pattern.
+    Ballerinas with some floral patterns.
 
 
 
@@ -503,7 +502,7 @@ pantoufle-1:
   height: 40
   picto:  👟
   description: >
-    Looks like pool slides. Each Sandals has its usefulness. Walk outside the house, bathroom, toilet, etc.
+    Looks like pool slides. Each Sandals has its usefulness. Walking outside the house, bathroom, toilet, etc.
 
 serre-tete-1:
   name: Headband
@@ -520,7 +519,7 @@ serre-tete-2:
   height: 10
   picto: Ω
   description: >
-    Wide purple headband with floral embroidery
+    Wide purple headband with some floral embroideries
 
 serre-tete-3:
   name: Headband
@@ -529,7 +528,7 @@ serre-tete-3:
   height: 10
   picto: Ω
   description: >
-    Green headband with floral embroidery
+    Green headband with floral embroideries
 
 serre-tete-4:
   name: Headband
@@ -541,15 +540,15 @@ serre-tete-4:
     Red headband.
 
 sac-en-plastique-1:
-  name: Big shopping plastic bag.
+  name: Shopping plastic bag
   weight: 0.05
   width: 50
   height: 50
   picto: 🛍
   description: >
-    Shopping plastic bag.
+    Big shopping plastic bag.
   place:
-    name: Big plastic bag interior
+    name: Inside the plastic bag
     width: 100
     height: 100
     infinite: false
@@ -559,22 +558,22 @@ sac-en-plastique-1:
       - name: bouteille-vide-de-soju-1
 
 bouteille-vide-de-biere-1:
-  name: Bottle of Cass beer.
+  name: Empty *Cass* beer bottle.
   weight: 1
   width: 20
   height: 40
   picto: 🍾
   description: >
-    Bottle of Cass beer. Recyclable for 130won-원.
+    Empty *Cass* beer bottle, recyclable for 130won-원.
 
 bouteille-vide-de-soju-1:
-  name: Empty soju-소주 bottle from the Toad brand-두꺼비.
+  name: Empty soju-소주 bottle
   weight: 1
   width: 20
   height: 30
   picto: 🍾
   description: >
-    Bottle of soju-소주 from the Toad brand-두꺼비. Recyclable for 100won-원.
+    Bottle of soju-소주 from the Toad brand-두꺼비,ecyclable for 100won-원.
 
 # paquet-salade-1:
 # pochette-fermeture-eclaire:
@@ -632,7 +631,7 @@ linge-humide:
   height: 50
   picto: 👕
   description: >
-    Wet laundry, recently out of the washing machine.
+    Wet laundry, recently got out of the washing machine.
 
 serviette-humide:
   name: Wet bath towel
@@ -641,7 +640,7 @@ serviette-humide:
   height: 40
   picto: Se
   description: >
-    Very short, damp bath towel.
+    Very short, wet bath towel.
 
 table-a-manger:
   name: Dinning table
@@ -706,7 +705,7 @@ filtre-a-eau-lg:
   takable: false
   picto: 🚰
   description: >
-    A water filter machine, seem quit modern. Pretty heavy and made of aluminium.
+    A water filter machine, seems quit modern, pretty heavy and made of aluminium.
 
 verre-d-eau-1:
   name: Glass
@@ -715,7 +714,7 @@ verre-d-eau-1:
   height: 40
   picto: 🥛
   description: >
-    Empty glass of water
+    Empty water glass.
 
 assiete-1:
   name: Plate
@@ -733,7 +732,7 @@ patate-douce-1:
   height: 35
   picto: 🍠
   description: >
-    Sweet potato.
+    Steam cooked sweet potato.
   events:
     - name: goPassage
       params:
@@ -746,16 +745,16 @@ sel-1:
   height: 20
   picto: Salt
   description: >
-    Salt shaker
+    Salt shaker.
 
 champignons-1:
-  name: mushrooms
+  name: Mushrooms
   weight: 0.3
   width: 20
   height: 40
   picto: 🍄
   description: >
-    A packet of mushrooms.
+    A mushroom box.
 
 pomme-de-terre-1:
   name: Potato
@@ -773,7 +772,7 @@ piment-1:
   height: 30
   picto: 🌶
   description: >
-    Some dry chilli peppers, really spicy, be careful.
+    Dry chilli pepper, really spicy, be careful.
 
 dessous-la-table:
   name: Under the dinning table.
@@ -810,23 +809,23 @@ dessous-la-table:
       - name: boite-conservation-nourriture-1-5
 
 carton-1:
-  name: Full carton
+  name: Full box
   weight: 25
   width: 100
   height: 100
   picto: 📦
   description: >
-    Full carton closed with some orange tape.
+    Full box closed with some orange tape.
 
 carton-2:
-  name: Full carton
+  name: Full box
   weight: 40
   width: 100
   height: 150
   # takable: false
   picto: 📦
   description: >
-    Full carton closed with some orange tape.
+    Full box closed with some orange tape.
 
 frigo:
   name: Fridge
@@ -838,7 +837,7 @@ frigo:
   description: >
     Lg fridge
   place:
-    name: Fridge interior
+    name: Inside the fridge
     width: 100
     height: 300
     infinite: false
@@ -862,7 +861,7 @@ congelateur:
   description: >
     Freezer
   place:
-    name: Freezer interior
+    name: Inside the freezer
     width: 200
     height: 100
     infinite: false
@@ -885,7 +884,7 @@ compartimant-1:
   description: >
     Fridge compartment.
   place:
-    name: Compartment interior
+    name: Inside the fridge compartment
     width: 200
     height: 100
     infinite: false
@@ -912,7 +911,7 @@ compartimant-2:
   description: >
     Fridge compartment.
   place:
-    name: Fridge compartment interior
+    name: Inside the fridge compartment
     width: 200
     height: 100
     infinite: false
@@ -948,7 +947,7 @@ compartimant-3:
   description: >
     Fridge compartment.
   place:
-    name: Fridge compartment interior
+    name: Inside the fridge compartment
     width: 200
     height: 100
     infinite: false
@@ -967,7 +966,7 @@ compartimant-4:
   description: >
     Fridge compartment.
   place:
-    name: Fridge compartment interior
+    name: Inside the fridge compartment
     width: 200
     height: 100
     infinite: false
@@ -989,7 +988,7 @@ compartimant-5:
   description: >
     Fridge compartment.
   place:
-    name: Fridge compartment interior
+    name: Inside the fridge compartment
     width: 200
     height: 100
     infinite: false
@@ -1009,7 +1008,7 @@ compartimant-5:
       - name: boite-conservation-nourriture-3-4
 
 carton-pomme-1:
-  name: Carton
+  name: Delivery box
   weight: 0.5
   width: 70
   height: 55
@@ -1021,9 +1020,9 @@ carton-pomme-1:
         name: take-carton-pomme
         value: increment
   description: >
-    Carton
+    Delivery box.
   place:
-    name: Carton interior
+    name: Inside the delivery box
     width: 100
     height: 100
     infinite: false
@@ -1062,15 +1061,15 @@ carton-pomme-1:
       - name: pomme-1
       - name: pomme-1
 carton-pomme-2:
-  name: Carton
+  name: Delivery box
   weight: 0.5
   width: 70
   height: 55
   picto: 📦
   description: >
-    Carton
+    Delivery box.
   place:
-    name: Intérieur du carton
+    name: Inside the delivery box.
     width: 100
     height: 100
     infinite: false
@@ -1184,7 +1183,7 @@ dessus-meuble-tv:
   takable: false
   picto: Dessus
   description: >
-    Above tray of the TV stand
+    Above the TV stand.
   place:
     name: Above the TV stand
     width: 200
@@ -1202,16 +1201,16 @@ dessus-meuble-tv:
       - name: boite-conservation-nourriture-3-3
 
 tiroire-meuble-1:
-  name: Left drawer of the tv stand
+  name: Tv stand left drawer
   weight: 0
   width: 75
   height: 60
   takable: false
   picto: Left drawer
   description: >
-    Left drawer of the tv stand
+    Tv stand left drawer.
   place:
-    name: Left drawer of the tv stand
+    name: Inside the tv stand left drawer
     width: 100
     height: 50
     infinite: false
@@ -1225,16 +1224,16 @@ tiroire-meuble-1:
       - name: drapeau-coreen-1
 
 tiroire-meuble-2:
-  name: Right drawer of the tv stand
+  name: Tv stand right drawer
   weight: 0
   width: 75
   height: 60
   takable: false
   picto: Right drawer
   description: >
-    Right drawer of the tv stand
+    Tv stand right drawer.
   place:
-    name: Right drawer of the tv stand
+    name: Inside the tv stand right drawer
     width: 100
     height: 50
     infinite: false
@@ -1274,7 +1273,7 @@ petite-sculpture:
   height: 20
   picto: 🗿
   description: >
-    Small volcanic stone sculpture from the Jejudo island-제주 a Dol hareubangs-돌하르방. Touching her nose would bring good luck.
+    Small volcanic stone sculpture from the Jejudo island-제주, a Dol hareubangs-돌하르방. Touching her nose should bring luck.
 
 jeu-de-carte-1:
   name: Godori-고도리
@@ -1283,7 +1282,7 @@ jeu-de-carte-1:
   height: 40
   picto: 🎴
   description: >
-    Set of Korean cards. Composed of twelve categories, one for each season, they can represent flowers or grounds (sea, mountain, plain). Each has 4 cards, of four possible types. Basic cards-피, animals-열끗, belts-띠 and lights-광. One of the most popular games here is the Go-Stop-, a gambling game.
+    Set of Korean cards. Composed of twelve categories, one for each seasons, they represent flowers or grounds (sea, mountain, plain). Each has 4 cards, of four possible types. Basic cards-피, animals-열끗, belts-띠 and lights-광. One of the most popular games here is the Go-Stop-, a gambling game.
 
 drapeau-coreen-1:
   name: Flag of the korean republic-태극기.
@@ -1304,17 +1303,17 @@ drapeau-coreen-1:
 # -------------------------------------------------------------------------------------------
 
 machine-a-laver:
-  name: Korean brand washing machine
+  name: Korean washing machine
   weight: 35
   takable: false
   width: 100
   height: 80
   picto: ⚙️🚿
   description: >
-    Washing machine with vertical tube.
+    Washing machine with a vertical tube.
 
 meuble-3:
-  name: Multi-storey furniture
+  name: Metalic rack
   weight: 20
   width: 50
   height: 120
@@ -1323,7 +1322,7 @@ meuble-3:
   description: >
     Wooden shelf
   place:
-    name: Wooden shelf interior
+    name: Inside the metalic rack
     width: 50
     height: 100
     infinite: false
@@ -1335,16 +1334,16 @@ meuble-3:
       - name: plateau-meuble-3-3
 
 plateau-meuble-3-1:
-  name: Wooden shelf tray
+  name: Shelf
   weight: 0
   width: 50
   height: 30
-  picto: Tray
+  picto: Shelf
   takable: false
   description: >
-    Rack of the wooden shelf
+    Shelf.
   place:
-    name: Wooden shelf tray
+    name: Inside the shelf
     width: 300
     height: 100
     infinite: false
@@ -1358,16 +1357,16 @@ plateau-meuble-3-1:
       - name: boite-conservation-nourriture-3-1
 
 plateau-meuble-3-2:
-  name: Wooden shelf tray
+  name: Shelf
   weight: 0
   width: 50
   height: 30
-  picto: Tray
+  picto: Shelf
   takable: false
   description: >
-    The tray of the wooden shelf.
+    Shelf.
   place:
-    name: Wooden shelf tray
+    name: Inside the shelf
     width: 300
     height: 100
     infinite: false
@@ -1381,16 +1380,16 @@ plateau-meuble-3-2:
       - name: serviette-humide
 
 plateau-meuble-3-3:
-  name: Wooden shelf tray
+  name: Shelf
   weight: 0
   width: 50
   height: 30
-  picto: Plateau
+  picto: Shelf
   takable: false
   description: >
-    The tray of the wooden shelf.
+    Shelf.
   place:
-    name: Wooden shelf tray
+    name: Inside the shelf
     width: 300
     height: 100
     infinite: false
@@ -1413,7 +1412,7 @@ boite-conservation-nourriture-1-1:
   description: >
     Plastic food-storage container size 5
   place:
-    name: Plastic food-storage container size 5 interior
+    name: Inside plastic food-storage container size 5
     width: 45
     height: 45
     infinite: false
@@ -1431,7 +1430,7 @@ boite-conservation-nourriture-1-2:
   description: >
     Plastic food-storage container size 4
   place:
-    name: Plastic food-storage container
+    name: Inside the plastic food-storage container
     width: 40
     height: 40
     infinite: false
@@ -1448,7 +1447,7 @@ boite-conservation-nourriture-1-3:
   description: >
     Plastic food-storage container size 3
   place:
-    name: Small plastic food-storage container
+    name: Inside the small plastic food-storage container
     width: 35
     height: 35
     infinite: false
@@ -1465,7 +1464,7 @@ boite-conservation-nourriture-1-4:
   description: >
     Plastic food-storage container size 2
   place:
-    name: Very small plastic food-storage container
+    name: Inside the very small plastic food-storage container
     width: 20
     height: 20
     infinite: false
@@ -1493,7 +1492,7 @@ boite-conservation-nourriture-2-1:
   description: >
     Plastic food-storage container size 5
   place:
-    name: Plastic food-storage container size 5 interior
+    name: Inside plastic food-storage container size 5
     width: 45
     height: 45
     infinite: false
@@ -1509,7 +1508,7 @@ boite-conservation-nourriture-2-2:
   description: >
     Plastic food-storage container size 4
   place:
-    name: Plastic food-storage container
+    name: Inside the plastic food-storage container
     width: 40
     height: 40
     infinite: false
@@ -1528,7 +1527,7 @@ boite-conservation-nourriture-2-3:
   description: >
     Plastic food-storage container size 3
   place:
-    name: Small plastic food-storage container
+    name: Inside the small plastic food-storage container
     width: 35
     height: 35
     infinite: false
@@ -1545,7 +1544,7 @@ boite-conservation-nourriture-2-4:
   description: >
     Plastic food-storage container size 2
   place:
-    name: Very small plastic food-storage container
+    name: Inside the very small plastic food-storage container
     width: 20
     height: 20
     infinite: false
@@ -1572,7 +1571,7 @@ boite-conservation-nourriture-3-1:
   description: >
     Plastic food-storage container size 5
   place:
-    name: Plastic food-storage container size 5 interior
+    name: Inside plastic food-storage container size 5
     width: 45
     height: 45
     infinite: false
@@ -1588,7 +1587,7 @@ boite-conservation-nourriture-3-2:
   description: >
     Plastic food-storage container size 4
   place:
-    name: Plastic food-storage container
+    name: Inside the plastic food-storage container
     width: 40
     height: 40
     infinite: false
@@ -1605,7 +1604,7 @@ boite-conservation-nourriture-3-3:
   description: >
     Plastic food-storage container size 3
   place:
-    name: Small plastic food-storage container
+    name: Inside the small plastic food-storage container
     width: 35
     height: 35
     infinite: false
@@ -1621,7 +1620,7 @@ boite-conservation-nourriture-3-4:
   description: >
     Plastic food-storage container size 2
   place:
-    name: Very small plastic food-storage container
+    name: Inside the very small plastic food-storage container
     width: 20
     height: 20
     infinite: false

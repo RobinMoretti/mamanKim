@@ -37,7 +37,7 @@ Let's get inside.
 
 
 ::essaie porte
-> (Nope, the door is close...)
+> (Nope, the door is closed...)
 <% if(s["essaie-ouvrir-porte"] == null ) { %>
 <% s["essaie-ouvrir-porte"] = 0 %>
 <% } else { %>
@@ -142,16 +142,16 @@ Let's get inside.
 
 Hey, what are you doing ?!
 
-> I forgot this dainm 
+> I forgot this dainm code. 
 
-So stupid-바보 sometime! <br>
+You are stupid-바보 sometime! <br>
 
 <% if(s["porte-called-yobo"]) { %>
-And stop to call me yobo, I feel it like you're so old guy and so slimy-느끼해.
+And stop to call me yobo, I feel you are like old guy and so cheesy-느끼해.
 
 > But yoboo-여버, I lik...
 
-<span class="shaking">Euuuuuuuuuuuuuuu</span>, Stop it. So slimmmy-느끼해애애!
+<span class="shaking">Euuuuuuuuuuuuuuu</span>, Stop it. So  cheesy-느끼해애애!
 
 > Ok, ok ....
 <% } %>

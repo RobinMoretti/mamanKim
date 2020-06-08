@@ -1,18 +1,18 @@
 ::Basquette bleu
 <% if(visited("Basquette bleu 1") < 2){ %>
 <script>window.flash();</script>
-> Do you know this shoes, mam insisted a lot that I try them last time. 
+> Did I tell you about this shoes ? Mom insisted a lot that I try them last time. 
 
-Yes, that's her style.
+No. And yes, that's her style.
 
 > I know, I'm not able to speak correctly in Korean.
 > But numbers... I know them. 
-> Et more, It's already super hard to find shoes at  my size right ? 
-> So I knew they are a way too small for me. 
+> And more, It's already super hard to find shoes at my size right ? 
+> I knew, they are a way too small for me. 
 
 So ? 
 
-> She continued to insist.
+> She insisted again.
 
 ...
 
