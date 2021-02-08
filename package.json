@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "marked": "^1.2.0",
+    "marked": "^2.0.0",
     "normalize.css": "^8.0.1",
     "vue": "^2.6.11",
     "vue-cli-plugin-yaml": "^1.0.1",
