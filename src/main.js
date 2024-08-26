@@ -110,6 +110,8 @@ Vue.mixin({
 			}
 
         	this.$store.dispatch("saveGame");
+			
+        	this.$store.dispatch("resetTimer");
 
         	if(!this.story().$vue){
         		this.story().$vue = this;

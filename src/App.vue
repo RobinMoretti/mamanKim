@@ -1,9 +1,5 @@
 <template>
   <div>
-    <!-- Matomo Image Tracker-->
-    <img src="https://matamo.robinmoretti.eu/matomo.php?idsite=2&amp;rec=1" alt="" style="border:0, position: absolute; left: -1000vw; top: -1000vw; opacity: 0;" />
-    <!-- End Matomo -->
-
     <span class="cursor-icon" v-if="playMode == 'looking'">👁</span>
     <span class="cursor-icon" v-if="playMode == 'picking'">🖐</span>
 
@@ -109,6 +105,8 @@
 <script>
 
 import vueCustomScrollbar from 'vue-custom-scrollbar'
+import "vue-custom-scrollbar/dist/vueScrollbar.css"
+
 export default {
   components: {
     vueCustomScrollbar
@@ -128,7 +126,7 @@ export default {
       lestKeyEvent: false,
       hideInfoMode: true,
       flashIframe: false,
-      tempLang: null
+      tempLang: null,
     }
   },
   computed: {
@@ -250,6 +248,7 @@ export default {
       // }
     },
     mouveCursorImgToCursor: function (event) {
+      this.$store.dispatch("resetTimer");
       var el = document.getElementsByClassName("cursor-icon")[0];
       if(event.view.story != null){
         el.style.top = (event.clientY + this.$refs.twee.offsetTop) + "px";
@@ -259,6 +258,7 @@ export default {
         el.style.top = event.clientY + "px";
         el.style.left = event.clientX + "px";
       }
+      
     },
     getKey:function (event) {
       // this.shiftKey = event.shiftKey;
@@ -276,7 +276,7 @@ export default {
       this.lestKeyEvent = event.type;
     },
     toggleFlashIframe:function () {
-      console.log("flashIframe = -----------------");
+      this.$store.dispatch("resetTimer");
       this.flashIframe = true;
 
       setTimeout(() => {
@@ -285,6 +285,12 @@ export default {
     }
   },
   mounted: function(){
+    window.timer = 0;
+    window.intervalTimer = setInterval(() => {
+      window.timer += 1;
+      if(window.timer > 180) this.resetGame();
+    }, 1000);
+    console.log('time =', window.timer)
 
     if(window.lang == "en"){
       this.tweeUrl = "twee-build/index-en.html"
@@ -313,9 +319,6 @@ export default {
 
     document.getElementsByTagName("body")[0].addEventListener('keyup', this.getKey)
     document.getElementsByTagName("body")[0].addEventListener('keydown', this.getKey)
-
-    // document..on('keyup keydown', function(e){shifted = e.shiftKey} );
-    // this.$refs.twee.addEventListener('mousemove', this.mouveCursorImgToCursor);
   }
 };
 </script>
