@@ -45,6 +45,10 @@ export default new Vuex.Store({
       commit("startGame");
       // 900000
     },
+    resetTimer: function (){
+      if(timer > 0)
+        window.timer = 0;
+    },
     saveGame: function({commit, state}) {
       if (this.$app.story() && state.loaded) {
         console.log('saving...')
